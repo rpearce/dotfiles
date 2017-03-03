@@ -1,0 +1,5 @@
+# Reset not being able to find camera
+
+fix-camera() {
+  sudo killall VDCAssistant
+}

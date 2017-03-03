@@ -1,0 +1,21 @@
+[user]
+	name = Robert Pearce
+	email = me@robertwpearce.com
+
+[github]
+  user = rpearce
+
+[core]
+  editor = vim
+
+[credential]
+	helper = osxkeychain
+
+[grep]
+  lineNumber = true
+
+[help]
+  autocorrect = 1
+
+[fetch]
+  prune = true

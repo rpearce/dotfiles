@@ -1,0 +1,25 @@
+# Start postgres
+
+alias pg-start="pg_ctl -D /usr/local/var/postgres start"
+
+# Use NPM Trash as rm to avoid stupidity
+
+alias rm="trash"
+
+# Serve current dir
+
+alias srv="ruby -run -e httpd . -p $1"
+
+# Recursively remove Apple meta files
+
+alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanupad="find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \;"
+
+# Network
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+# Misc
+
+alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"

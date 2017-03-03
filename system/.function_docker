@@ -1,0 +1,18 @@
+docker-start() {
+  machine_status=$(docker-machine status)
+
+  if [ "Stopped" == $machine_status ]
+  then
+    docker-machine start default
+  fi
+
+  eval $(docker-machine env default)
+}
+
+docker-rm-dangling() {
+  docker rmi $(docker images -q --filter "dangling=true")
+}
+
+docker-rm-stopped() {
+  docker rm $(docker ps -a -q)
+}
