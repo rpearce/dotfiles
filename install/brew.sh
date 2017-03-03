@@ -28,12 +28,12 @@ binaries=(
   erlang
   elixir
   heroku-toolbelt
-  macvim
   neovim/neovim/neovim
   postgres
   redis
   watchman
   valgrind
+  vim
 )
 
 brew install ${binaries[@]}
