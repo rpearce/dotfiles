@@ -6,8 +6,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | P
 
 # Install latest node version
 
-nvm install 7.7.1
-nvm alias default 7.7.1
+nvm install 7.7.2
+nvm alias default 7.7.2
 
 # Install global packages
 
