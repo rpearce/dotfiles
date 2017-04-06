@@ -8,11 +8,3 @@ docker-start() {
 
   eval $(docker-machine env default)
 }
-
-docker-rm-dangling() {
-  docker rmi $(docker images -q --filter "dangling=true")
-}
-
-docker-rm-stopped() {
-  docker rm $(docker ps -a -q)
-}
