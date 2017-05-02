@@ -9,6 +9,7 @@ ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.ackrc" ~
 ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 
 # Package managers & packages
 
