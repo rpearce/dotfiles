@@ -1,3 +1,7 @@
+""
+"" Plugins
+""
+
 call plug#begin('~/.vim/plugged')
 " Themes
 Plug 'joshdick/onedark.vim'
@@ -48,14 +52,39 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 call plug#end()
 
-" Set the color scheme
+
+""
+"" Set the color scheme
+""
+
 color onedark
 
-" Force some filetypes to load
-au BufRead,BufNewFile *.jbuilder set filetype=ruby
-au BufRead,BufNewFile *.ejs set filetype=javascript
 
-" NERD Tree
+""
+"" File types
+""
+
+" In Makefiles, use real tabs, not tabs expanded to spaces
+au FileType make setlocal noexpandtab
+
+" Force some file types to load
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.jbuilder} set filetype=ruby
+au BufRead,BufNewFile *.ejs set filetype=javascript
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown
+
+" make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python setlocal tabstop=4 shiftwidth=4
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  \| exe "normal! g`\"" | endif
+
+
+""
+"" NERD Tree
+""
+
 let NERDTreeHijackNetrw = 0
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
@@ -112,7 +141,11 @@ function s:UpdateNERDTree(...)
   endif
 endfunction
 
-" CTRLP
+
+""
+"" CTRLP
+""
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
@@ -120,7 +153,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
   \ }
 
-" Syntastic
+
+""
+"" Syntastic
+""
+
 let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -132,15 +169,114 @@ let g:syntastic_style_warning_symbol = 'W}'
 let g:syntastic_style_error_symbol = 'E}'
 let g:syntastic_stl_format = '[%E{E:%e(#%fe)}%B{,}%W{W:%w(#%fw)}]'
 
-" Elm
+
+""
+"" Status Line
+""
+
+" always show the status bar
+set laststatus=2
+
+" start the status line
+set statusline=%f\ %m\ %r
+set statusline+=Line:%l/%L[%p%%]
+set statusline+=Col:%v
+set statusline+=Buf:#%n
+set statusline+=[%b][0x%B]
+
+
+""
+"" Elm
+""
+
 let g:elm_classic_hightlighting = 0
 let g:elm_format_autosave = 1
 
-" JSX
+
+""
+"" JSX
+""
+
 let g:jsx_ext_required = 0
 
+
+""
+"" Basic Setup
+""
+
+set number            " Show line numbers
+set ruler             " Show line and column number
+syntax enable         " Turn on syntax highlighting allowing local overrides
+
+
+""
+"" Whitespace
+""
+
+set nowrap                        " don't wrap lines
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set expandtab                     " use spaces, not tabs
+set list                          " Show invisible characters
+set backspace=indent,eol,start    " backspace through everything in insert mode
+
+" List chars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the left of the screen
+
+""
+"" Searching
+""
+
+set hlsearch    " highlight matches
+set incsearch   " incremental searching
+set ignorecase  " searches are case insensitive...
+set smartcase   " ... unless they contain at least one capital letter
+
+
+""
+"" Wild settings
+""
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
+set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
+
+" Ignore rails temporary asset caches
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+" Disable node_modules, log and tmp
 set wildignore+=*/node_modules/*,*/log/*,*/tmp/*
-set hidden
+
+
+""
+"" Backup and swap files
+""
+
+set backupdir^=~/.vim/_backup//    " where to put backup files.
+set directory^=~/.vim/_temp//      " where to put swap files.
+
+
+""
+"" Misc
+""
+
 set guifont=Menlo\ Regular:h14
 set clipboard=unnamed
 set termguicolors
