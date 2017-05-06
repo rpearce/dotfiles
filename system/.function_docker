@@ -8,3 +8,7 @@ docker-start() {
 
   eval $(docker-machine env default)
 }
+
+dc() {
+  docker-compose run --rm app "$@"
+}

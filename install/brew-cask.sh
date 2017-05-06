@@ -13,6 +13,7 @@ apps=(
   firefox
   flux
   google-chrome
+  haskell-platform
   keka
   ifunbox
   iterm2
