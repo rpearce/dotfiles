@@ -6,12 +6,7 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
-
-brew update
-brew upgrade
+brewup
 
 # Install Terminal Utils
 
