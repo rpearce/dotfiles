@@ -9,7 +9,7 @@ bab() {
 
 # Weather
 
-meteo() {
-  local CITY=${1:-Utrecht}
+weather() {
+  local CITY=${1:-Auckland}
   curl -4 "wttr.in/$CITY"
 }
