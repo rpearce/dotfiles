@@ -18,3 +18,4 @@ syntax enable                     " Turn on syntax highlighting allowing local o
 set guifont=Menlo\ Regular:h14    " Font stuff
 set clipboard=unnamed             " Allow for x-app pasting
 set termguicolors                 " Use full colors
+set hidden                        " hide buffers instead of removing them
