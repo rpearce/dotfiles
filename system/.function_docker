@@ -1,4 +1,4 @@
-docker-start() {
+ds() {
   machine_status=$(docker-machine status)
 
   if [ "Stopped" == $machine_status ]
