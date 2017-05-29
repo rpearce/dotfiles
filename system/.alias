@@ -8,7 +8,7 @@ alias rm="trash"
 
 # Serve current dir
 
-alias srv="ruby -run -e httpd . -p $1"
+alias srv="ruby -run -e httpd . -p ${1:-3000}"
 
 # Recursively remove Apple meta files
 
