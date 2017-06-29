@@ -1,12 +1,3 @@
-# Articulate Rise Helpers
-
-bab() {
-  npm run authoring
-  npm run runtime
-  npm run management
-  cp ~/projects/articulate/rise-frontend/runtime/assets/* ~/projects/articulate/rise-runtime/public/runtimes
-}
-
 # Weather
 
 weather() {
