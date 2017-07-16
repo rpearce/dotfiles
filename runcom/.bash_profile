@@ -25,3 +25,5 @@ eval "$(rbenv init -)"
 # `$ hub create`.
 
 eval "$(hub alias -s)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
