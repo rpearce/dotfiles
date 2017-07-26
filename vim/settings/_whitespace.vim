@@ -9,6 +9,10 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
+" Custom whitespace per file type
+autocmd FileType elm set tabstop=4
+autocmd FileType elm set shiftwidth=4
+
 " List chars
 set listchars=""                  " Reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
