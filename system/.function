@@ -1,6 +1,6 @@
 # Weather
 
 weather() {
-  local CITY=${1:-Auckland}
-  curl -4 "wttr.in/$CITY"
+  local CITY=${1}
+  curl "wttr.in/$CITY"
 }
