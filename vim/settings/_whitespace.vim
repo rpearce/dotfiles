@@ -12,6 +12,10 @@ set backspace=indent,eol,start    " backspace through everything in insert mode
 " Custom whitespace per file type
 autocmd FileType elm set tabstop=4
 autocmd FileType elm set shiftwidth=4
+autocmd FileType haskell set tabstop=8
+autocmd FileType haskell set softtabstop=4
+autocmd FileType haskell set shiftwidth=4
+autocmd FileType haskell set shiftround
 
 " List chars
 set listchars=""                  " Reset the listchars
