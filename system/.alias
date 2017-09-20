@@ -10,6 +10,10 @@ alias rm="trash"
 
 alias srv="ruby -run -e httpd . -p ${1:-3000}"
 
+# Run previous command with sudo
+
+alias please='sudo "$BASH" -c "$(history -p !!)"'
+
 # Recursively remove Apple meta files
 
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
