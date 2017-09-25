@@ -5,17 +5,20 @@
 [github]
   user = rpearce
 
+[alias]
+  praise = blame
+
 [core]
   editor = vim
 
 [credential]
 	helper = osxkeychain
 
+[fetch]
+  prune = true
+
 [grep]
   lineNumber = true
 
 [help]
   autocorrect = 1
-
-[fetch]
-  prune = true
