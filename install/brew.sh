@@ -33,4 +33,4 @@ binaries=(
 
 brew install ${binaries[@]}
 
-brew cleanup
+brewup
