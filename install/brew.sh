@@ -26,6 +26,7 @@ binaries=(
   neovim/neovim/neovim
   postgres
   redis
+  speedtest-cli
   watchman
   valgrind
   vim
