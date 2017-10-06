@@ -10,6 +10,9 @@ curl -sSL https://get.haskellstack.org/ | sh
 # Upgrade in case its already installed
 stack upgrade
 
+# Add missing binaries if applicable (ghc, e.g.)
+stack setup
+
 # Install ghc-mod for editor support:
 # https://github.com/DanielG/ghc-mod/wiki/Installing#using-the-stack-tool
 stack install ghc-mod
