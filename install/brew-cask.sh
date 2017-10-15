@@ -13,19 +13,16 @@ apps=(
   firefox
   flux
   google-chrome
-  haskell-platform
-  keka
   ifunbox
   iterm2
+  keka
   licecap
-  nylas-n1
   psequel
   screenhero
-  skype
   sketch
+  skype
   slack
   spotify
-  virtualbox
   vlc
 )
 
