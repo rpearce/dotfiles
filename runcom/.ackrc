@@ -26,9 +26,13 @@ coverage
 --ignore-dir
 vendor/bundle
 --ignore-dir
+dist
+--ignore-dir
 log
 --ignore-dir
 tmp
+--ignore-dir
+public/assets
 --ignore-file
 match:bundle.css
 --ignore-file
@@ -37,5 +41,3 @@ match:bundle.js
 match:npm-debug.log
 --ignore-file
 match:yarn.lock
---ignore-dir
-dist
