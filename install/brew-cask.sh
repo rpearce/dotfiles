@@ -18,9 +18,7 @@ apps=(
   keka
   licecap
   psequel
-  screenhero
   sketch
-  skype
   slack
   spotify
   vlc

@@ -15,10 +15,11 @@ ln -sfv "$DOTFILES_DIR/vim/.vimrc" ~
 
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/brew-cask.sh"
-. "$DOTFILES_DIR/install/nvm.sh"
+. "$DOTFILES_DIR/install/node.sh"
 . "$DOTFILES_DIR/install/ruby.sh"
 . "$DOTFILES_DIR/install/haskell.sh"
 . "$DOTFILES_DIR/install/git.sh"
 
 # Misc
+mkdir -p ~/.config/nvim/
 ln -sfv "$DOTFILES_DIR/vim/init.vim" ~/.config/nvim/init.vim

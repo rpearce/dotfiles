@@ -6,7 +6,11 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brewup
+brew update
+brew upgrade
+brew cleanup
+brew prune
+brew doctor
 
 # Install Terminal Utils
 
@@ -34,4 +38,8 @@ binaries=(
 
 brew install ${binaries[@]}
 
-brewup
+brew update
+brew upgrade
+brew cleanup
+brew prune
+brew doctor
