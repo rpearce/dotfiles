@@ -2,10 +2,6 @@
 
 alias pg-start="pg_ctl -D /usr/local/var/postgres start"
 
-# Use NPM Trash as rm to avoid stupidity
-
-alias rm="trash"
-
 # Serve current dir
 
 alias srv="ruby -run -e httpd . -p ${1:-3000}"
