@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ###############################################################################
 # Git Auto-Completion
@@ -18,6 +18,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 
-echo "Now go online to GitHub.com > Settings > SSH & GPG Keys > New SSH Key and paste in the copied public key"
 echo "***************"
-echo "Make sure to create a new GitHub token, as well, and use that as your CLI GitHub Password"
+echo "Now go online to GitHub.com > Settings > SSH & GPG Keys > New SSH Key and paste in the copied public key"
+echo "Make sure to create a new GitHub token and use that as your CLI GitHub Password"
+echo "***************"
