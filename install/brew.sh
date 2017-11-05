@@ -27,7 +27,7 @@ binaries=(
   erlang
   elixir
   heroku-toolbelt
-  neovim/neovim/neovim
+  neovim
   postgres
   redis
   speedtest-cli
