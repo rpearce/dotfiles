@@ -13,11 +13,17 @@ sudo nvram SystemAudioVolume=" "
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
+# Use a dark menu bar / dock
+defaults write -g AppleInterfaceStyle Dark
+
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
