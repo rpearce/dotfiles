@@ -1,6 +1,6 @@
 [user]
-	name = Robert Pearce
-	email = me@robertwpearce.com
+  name = Robert Pearce
+  email = me@robertwpearce.com
 
 [github]
   user = rpearce
@@ -12,7 +12,7 @@
   editor = vim
 
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 
 [fetch]
   prune = true

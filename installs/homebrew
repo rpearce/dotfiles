@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Check for Homebrew and install if we don't have it
+
+if test ! $(which brew); then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Install from Brewfile
+brew bundle -v --file="$XDG_CONFIG_HOME/homebrew/Brewfile"
+
+brew update
+brew upgrade
+brew cleanup
+brew prune
+brew doctor

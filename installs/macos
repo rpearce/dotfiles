@@ -1,10 +1,4 @@
-#!/bin/sh
-
-# Ask for the administrator password upfront
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+#!/usr/bin/env bash
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -31,12 +25,16 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
+defaults write -g com.apple.mouse.tapBehavior -int 1
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Disable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 ###############################################################################
 # Screen                                                                      #
@@ -120,6 +118,29 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
+# Set DuckDuckGo as the search engine
+defaults write -g NSPreferredWebServices '{
+  NSWebServicesProviderWebSearch = {
+    NSDefaultDisplayName = DuckDuckGo;
+    NSProviderIdentifier = "com.duckduckgo";
+  };
+}'
+
+# Hide Safari’s bookmarks bar by default
+defaults write com.apple.safari ShowFavoritesBar -bool false
+
+# Add a context menu item for showing the Web Inspector in web views
+defaults write -g WebKitDeveloperExtras -bool true
+
+# Warn about fraudulent websites
+defaults write com.apple.safari WarnAboutFraudulentWebsites -bool true
+
+# Enable “Do Not Track”
+defaults write com.apple.safari SendDoNotTrackHTTPHeader -bool true
+
+# Update extensions automatically
+defaults write com.apple.safari InstallExtensionUpdatesAutomatically -bool true
+
 ###############################################################################
 # Terminal                                                                    #
 ###############################################################################
@@ -176,6 +197,15 @@ defaults write com.apple.commerce AutoUpdate -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
+
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "iCal"; do
   killall "${app}" &> /dev/null
 done
+
+###############################################################################
+# Clear out the dock                                                          #
+###############################################################################
+
+dockutil --no-restart --remove all
+
+killall Dock

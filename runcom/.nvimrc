@@ -2,7 +2,7 @@
 "" Source all our settings
 ""
 
-for f in split(glob('~/.dotfiles/vim/settings/*.vim'), '\n')
+for f in split(glob($XDG_CONFIG_HOME ."/nvim/settings/*.vim"), '\n')
   exe 'source' f
 endfor
 

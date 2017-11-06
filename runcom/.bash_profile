@@ -1,4 +1,4 @@
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$XDG_CONFIG_HOME"
 
 # Source dotfiles
 
@@ -25,9 +25,3 @@ eval "$(rbenv init -)"
 # `$ hub create`.
 
 eval "$(hub alias -s)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$HOME/.yarn/bin:$PATH"
