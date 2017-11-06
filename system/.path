@@ -1,1 +1,5 @@
-export PATH="$HOME/.yarn/bin:$HOME/.local/bin:$PATH"
+LOCAL="$HOME/.local/bin"
+YARN="$HOME/.yarn/bin"
+PYTHON="/usr/local/opt/python/libexec/bin"
+
+export PATH="$LOCAL:$YARN:$PYTHON:$PATH"
