@@ -1,16 +1,16 @@
-DOTFILES_DIR="$XDG_CONFIG_HOME"
+XDG_CONFIG_HOME="$HOME/.config"
 
 # Source dotfiles
 
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,prompt,nvm}; do
-  [ -f "$DOTFILE" ] && . "$DOTFILE"
+for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm}; do
+  . "$DOTFILE"
 done
 
 # Clean up
 
 unset DOTFILE
 
-export DOTFILES_DIR
+export XDG_CONFIG_HOME
 
 # iTerm2 stuff
 

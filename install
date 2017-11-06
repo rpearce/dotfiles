@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-export DOTFILES_DIR
-export XDG_CONFIG_HOME
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
 
 set -e -o pipefail -p
 
@@ -21,12 +19,12 @@ trap 'exit 1' INT TERM
 
 # Bunch of symlinks
 
-ln -sfv "$DOTFILES_DIR/runcom/.ackrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
-ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
-ln -sfv "$DOTFILES_DIR/runcom/.nvimrc" ~
-ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.ackrc" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.bash_profile" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.gemrc" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.inputrc" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.nvimrc" ~
+ln -sfv "$XDG_CONFIG_HOME/git/.gitconfig" ~
 
 # macOS Install
 
@@ -36,10 +34,10 @@ if [[ $(uname -s) == 'Darwin' ]]; then
     exit 1
   fi
 
-  . "$DOTFILES_DIR/installs/homebrew"
-  . "$DOTFILES_DIR/installs/node"
-  . "$DOTFILES_DIR/installs/ruby"
-  . "$DOTFILES_DIR/installs/haskell"
-  . "$DOTFILES_DIR/installs/git"
-  . "$DOTFILES_DIR/installs/macos"
+  . "$XDG_CONFIG_HOME/installs/homebrew"
+  . "$XDG_CONFIG_HOME/installs/node"
+  . "$XDG_CONFIG_HOME/installs/ruby"
+  . "$XDG_CONFIG_HOME/installs/haskell"
+  . "$XDG_CONFIG_HOME/installs/git"
+  . "$XDG_CONFIG_HOME/installs/macos"
 fi
