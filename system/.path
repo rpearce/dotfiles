@@ -1,5 +1,6 @@
-LOCAL="$HOME/.local/bin"
+LOCAL="/usr/local/bin"
+DOT_LOCAL="$HOME/.local/bin"
 YARN="$HOME/.yarn/bin"
 PYTHON="/usr/local/opt/python/libexec/bin"
 
-export PATH="$LOCAL:$YARN:$PYTHON:$PATH"
+export PATH="$LOCAL:$DOT_LOCAL:$YARN:$PYTHON:$PATH"

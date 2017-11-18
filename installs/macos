@@ -31,7 +31,7 @@ defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
 defaults write -g com.apple.mouse.tapBehavior -int 1
 
@@ -170,10 +170,10 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 ###############################################################################
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+hash tmutil &> /dev/null && sudo tmutil disable
 
 # Disable local Time Machine snapshots
-sudo tmutil disablelocal
+sudo tmutil disable
 
 ###############################################################################
 # Mac App Store                                                               #
