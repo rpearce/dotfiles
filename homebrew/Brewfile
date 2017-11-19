@@ -1,6 +1,7 @@
 tap "caskroom/cask"
 tap "caskroom/versions"
 brew "ack"
+brew "awscli"
 brew "bash"
 brew "dockutil"
 brew "elixir"
