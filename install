@@ -48,5 +48,4 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   . "$XDG_CONFIG_HOME/installs/haskell"
   . "$XDG_CONFIG_HOME/installs/git"
   . "$XDG_CONFIG_HOME/installs/macos"
-  . "$XDG_CONFIG_HOME/installs/docker"
 fi
