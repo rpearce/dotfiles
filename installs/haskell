@@ -3,9 +3,9 @@
 # Create the directory
 mkdir -p ~/.local/bin
 
-# Install the stack tool:
+# Install the stack tool if not installed via homebrew:
 # https://docs.haskellstack.org/en/stable/README/
-curl -sSL https://get.haskellstack.org/ | sh
+# curl -sSL https://get.haskellstack.org/ | sh
 
 # Upgrade in case its already installed
 stack upgrade
