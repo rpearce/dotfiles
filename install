@@ -32,6 +32,7 @@ ln -sfv "$XDG_CONFIG_HOME/runcom/.bash_profile" ~
 ln -sfv "$XDG_CONFIG_HOME/runcom/.gemrc" ~
 ln -sfv "$XDG_CONFIG_HOME/runcom/.inputrc" ~
 ln -sfv "$XDG_CONFIG_HOME/runcom/.nvimrc" ~
+ln -sfv "$XDG_CONFIG_HOME/runcom/.psqlrc" ~
 ln -sfv "$XDG_CONFIG_HOME/git/.gitconfig" ~
 
 # macOS Install
