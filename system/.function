@@ -4,3 +4,7 @@ weather() {
   local CITY=${1}
   curl "wttr.in/$CITY"
 }
+
+timestamp() {
+  date +%Y-%m-%dT%H:%M:%SZ
+}
