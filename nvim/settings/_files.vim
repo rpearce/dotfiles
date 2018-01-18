@@ -8,7 +8,7 @@ au FileType make setlocal noexpandtab
 " Force some file types to load
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.jbuilder} set filetype=ruby
 au BufRead,BufNewFile *.ejs set filetype=javascript
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown textwidth=80 formatoptions+=t colorcolumn=80
 
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal tabstop=4 shiftwidth=4
