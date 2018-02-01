@@ -18,4 +18,3 @@ tags
 configstore
 exercism.json
 heroku
-system/.secret

@@ -2,7 +2,7 @@ XDG_CONFIG_HOME="$HOME/.config"
 
 # Source dotfiles
 
-for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm,secret}; do
+for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm}; do
   . "$DOTFILE"
 done
 

@@ -21,10 +21,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 trap 'exit 1' INT TERM
 
-# Copy secret example file
-
-cp ./system/.secret.example ./system/.secret
-
 # Bunch of symlinks
 
 ln -sfv "$XDG_CONFIG_HOME/runcom/.ackrc" ~
