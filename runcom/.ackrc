@@ -33,6 +33,8 @@ log
 tmp
 --ignore-dir
 public/assets
+--ignore-dir
+.cache
 --ignore-file
 match:bundle.css
 --ignore-file

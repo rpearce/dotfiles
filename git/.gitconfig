@@ -28,7 +28,7 @@
   zap = fetch -p
 
 [core]
-  editor = vim
+  editor = nvim
 
 [credential]
   helper = osxkeychain
