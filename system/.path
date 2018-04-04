@@ -1,6 +1,7 @@
-LOCAL="/usr/local/bin"
+ART="$HOME/.articulate/art/bin"
 DOT_LOCAL="$HOME/.local/bin"
-YARN="$HOME/.yarn/bin"
+LOCAL="/usr/local/bin"
 PYTHON="/usr/local/opt/python/libexec/bin"
+YARN="$HOME/.yarn/bin"
 
-export PATH="$LOCAL:$DOT_LOCAL:$YARN:$PYTHON:$PATH"
+export PATH="$LOCAL:$DOT_LOCAL:$YARN:$PYTHON:$PATH:$ART"
