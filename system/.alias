@@ -24,3 +24,7 @@ alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([
 
 alias dc="docker-compose"
 alias dcr="docker-compose run --rm ${1}"
+
+# timetrack
+
+alias tt="timetrack"
