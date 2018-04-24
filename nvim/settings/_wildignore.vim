@@ -21,4 +21,7 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 set wildignore+=*.swp,*~,._*
 
 " Disable node_modules, log and tmp
-set wildignore+=*/node_modules/*,*/log/*,*/tmp/*
+set wildignore+=*/node_modules/*,*/log/*,*.log,*/tmp/*
+
+" Disable stack build files
+set wildignore+=*/.stack-work/*
