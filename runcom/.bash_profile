@@ -1,4 +1,5 @@
 XDG_CONFIG_HOME="$HOME/.config"
+XDG_DATA_HOME="$HOME/Dropbox/.data"
 
 # Source dotfiles
 
@@ -11,6 +12,7 @@ done
 unset DOTFILE
 
 export XDG_CONFIG_HOME
+export XDG_DATA_HOME
 
 # iTerm2 stuff
 
