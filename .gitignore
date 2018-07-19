@@ -16,5 +16,5 @@ tags
 
 .DS_Store
 configstore
-exercism.json
+exercism
 heroku
