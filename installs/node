@@ -11,4 +11,4 @@ nvm alias default node
 
 # Install yarn
 
-curl -o- -L https://yarnpkg.com/install.sh | bash
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
