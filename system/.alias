@@ -28,3 +28,7 @@ alias dcr="docker-compose run --rm ${1}"
 # timetrack
 
 alias tt="timetrack"
+
+# bat > cat
+
+alias cat="bat"
