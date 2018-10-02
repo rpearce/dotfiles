@@ -25,6 +25,13 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
+# Disable Captive Portal
+# https://github.com/drduh/macOS-Security-and-Privacy-Guide#captive-portal
+defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
+# Disable Crash Reporter
+defaults write com.apple.CrashReporter DialogType none
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
