@@ -7,7 +7,10 @@ if test ! $(which brew); then
 fi
 
 # Install from Brewfile
+
 brew bundle -v --file="$XDG_CONFIG_HOME/homebrew/Brewfile"
+
+# Cleanup
 
 brew update
 brew upgrade
