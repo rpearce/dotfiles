@@ -37,6 +37,8 @@ public/assets
 .cache
 --ignore-dir
 .stack-work
+--ignore-dir
+.bundle
 --ignore-file
 match:bundle.css
 --ignore-file
