@@ -1,0 +1,2 @@
+:set prompt "\ESC[0;32m%s\n\ESC[38;5;172mλ > \ESC[m"
+:set prompt-cont " \ESC[38;5;172m> \ESC[m"
