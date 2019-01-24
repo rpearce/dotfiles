@@ -3,7 +3,7 @@ XDG_DATA_HOME="$HOME/Dropbox/.data"
 
 # Source dotfiles
 
-for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm}; do
+for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm,nix}; do
   . "$DOTFILE"
 done
 

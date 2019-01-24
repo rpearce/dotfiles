@@ -42,6 +42,7 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   fi
 
   . "$XDG_CONFIG_HOME/installs/homebrew"
+  . "$XDG_CONFIG_HOME/installs/nix"
   . "$XDG_CONFIG_HOME/installs/node"
   . "$XDG_CONFIG_HOME/installs/ruby"
   . "$XDG_CONFIG_HOME/installs/haskell"
