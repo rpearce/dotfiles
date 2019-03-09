@@ -33,6 +33,10 @@ alias tt="timetrack"
 
 alias cat="bat"
 
+# exa > ls
+
+alias ls="exa"
+
 # ncdu > du
 
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
