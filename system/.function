@@ -1,5 +1,3 @@
-# Weather
-
 weather() {
   local CITY=${1}
   curl "wttr.in/$CITY"

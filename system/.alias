@@ -1,3 +1,7 @@
+# source ~/.bash_profile
+
+alias rel="source ~/.bash_profile"
+
 # Start postgres
 
 alias pg-start="pg_ctl -D /usr/local/var/postgres start"
