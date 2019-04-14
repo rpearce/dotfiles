@@ -37,9 +37,9 @@ alias tt="timetrack"
 
 alias cat="bat"
 
-# exa > ls
+# long listing
 
-alias ls="exa"
+alias ll="ls -laG"
 
 # ncdu > du
 
