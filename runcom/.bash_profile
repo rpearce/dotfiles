@@ -3,7 +3,7 @@ XDG_DATA_HOME="$HOME/Dropbox/.data"
 
 # Source dotfiles
 
-for DOTFILE in $XDG_CONFIG_HOME/system/.{function,function_*,path,env,alias,prompt,nvm,nix}; do
+for DOTFILE in $XDG_CONFIG_HOME/system/.{path,nix,env,alias,prompt,function,function_*,nvm}; do
   . "$DOTFILE"
 done
 
@@ -21,9 +21,3 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 # Start rbenv
 
 eval "$(rbenv init -)"
-
-# Use git command instead of hub.
-# E.g., `$ git create` is really
-# `$ hub create`.
-
-eval "$(hub alias -s)"

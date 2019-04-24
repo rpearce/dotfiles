@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 
 " Languages
+Plug 'LnL7/vim-nix'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'derekwyatt/vim-scala'

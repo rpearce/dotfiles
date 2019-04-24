@@ -1,3 +1,18 @@
 #!/usr/bin/env bash
 
 curl https://nixos.org/nix/install | sh
+
+# home-manager
+
+mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+
+nix-shell '<home-manager>' -A install
+
+home-manager switch
+
+# cleanup
+
+nix-collect-gargabe -d
