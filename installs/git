@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Git Auto-Completion
-###############################################################################
-
-echo "Downloading git-completion script"
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-
-###############################################################################
 # Git Config & SSH Key Generation
 ###############################################################################
 

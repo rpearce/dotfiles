@@ -1,4 +1,5 @@
 home:
 	@echo "# Applying home configuration"
-	home-manager -f ./nixpkgs/home.nix switch
+	nix-channel --update
+	home-manager -f ./home.nix switch
 	nix-collect-garbage -d

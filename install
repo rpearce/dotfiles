@@ -21,17 +21,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 trap 'exit 1' INT TERM
 
-# Bunch of symlinks
+# install
 
-ln -sfv "$XDG_CONFIG_HOME/runcom/.ackrc" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.bash_profile" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.gemrc" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.ghci" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.inputrc" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.nvimrc" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.psqlrc" ~
-ln -sfv "$XDG_CONFIG_HOME/runcom/.tmux.conf" ~
-ln -sfv "$XDG_CONFIG_HOME/git/.gitconfig" ~
+. "$XDG_CONFIG_HOME/installs/nix"
 
 # macOS Install
 
@@ -42,9 +34,6 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   fi
 
   . "$XDG_CONFIG_HOME/installs/homebrew"
-  . "$XDG_CONFIG_HOME/installs/nix"
-  . "$XDG_CONFIG_HOME/installs/node"
-  . "$XDG_CONFIG_HOME/installs/ruby"
   . "$XDG_CONFIG_HOME/installs/haskell"
   . "$XDG_CONFIG_HOME/installs/git"
   . "$XDG_CONFIG_HOME/installs/macos"

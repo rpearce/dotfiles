@@ -17,7 +17,3 @@ export XDG_DATA_HOME
 # iTerm2 stuff
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-# Start rbenv
-
-eval "$(rbenv init -)"

@@ -15,4 +15,4 @@ home-manager switch
 
 # cleanup
 
-nix-collect-gargabe -d
+nix-collect-garbage -d

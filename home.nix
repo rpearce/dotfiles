@@ -26,10 +26,13 @@ in rec {
     #perl-ack
     #openssl
     ncdu
+    nodejs-11_x
     rename
+    ruby_2_6
     speedtest-cli
     tldr
     tree
+    yarn
 
     # Haskell
     #haskellPackages.hakyll
@@ -61,4 +64,13 @@ in rec {
   programs.home-manager = {
     enable = true;
   };
+
+  home.file.".ackrc".source = ./runcom/.ackrc;
+  home.file.".bash_profile".source = ./runcom/.bash_profile;
+  home.file.".gemrc".source = ./runcom/.gemrc;
+  home.file.".ghci".source = ./runcom/.ghci;
+  home.file.".nvimrc".source = ./runcom/.nvimrc;
+  home.file.".psqlrc".source = ./runcom/.psqlrc;
+  home.file.".tmux.conf".source = ./runcom/.tmux.conf;
+  home.file.".stack/config.yml".source = ./stack/config.yml;
 }
