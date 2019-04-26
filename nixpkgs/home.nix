@@ -1,33 +1,63 @@
 { config, pkgs, ... }:
 
-{
-  home.packages = [
-    # CLI
-    pkgs.awscli
-    pkgs.asciinema
-    pkgs.bash
-    pkgs.bat
-    pkgs.exercism
-    pkgs.findutils
-    pkgs.git
-    pkgs.gitAndTools.diff-so-fancy
-    pkgs.jq
-    #pkgs.perl-ack
-    pkgs.ncdu
-    pkgs.neovim
-    pkgs.rename
-    pkgs.speedtest-cli
-    pkgs.stack
-    pkgs.tldr
-    pkgs.tree
-    pkgs.vim
-  ];
+let
+  home_dir = builtins.getEnv "HOME";
 
-  programs.git = {
+in rec {
+  nixpkgs.config.allowUnfree = true;
+
+  xdg = {
     enable = true;
+    configHome = "${home_dir}/.config";
   };
 
-  # Let Home Manager install and manage itself.
+  home.packages = with pkgs; [
+    # CLI
+    awscli
+    asciinema
+    bash
+    bat
+    coreutils
+    #exercism
+    findutils
+    ffmpeg
+    gnupg
+    jq
+    #perl-ack
+    #openssl
+    ncdu
+    rename
+    speedtest-cli
+    tldr
+    tree
+
+    # Haskell
+    #haskellPackages.hakyll
+    haskellPackages.hlint
+    haskellPackages.pandoc
+    haskellPackages.stylish-haskell
+    stack
+
+    # Git
+    git
+    gitAndTools.diff-so-fancy
+
+    # Editors
+    neovim
+
+    # Apps
+    #docker
+    #dropbox
+    #firefox
+    #google-chrome
+    #iterm2
+    #psequel
+    #sketch
+    #slack
+    #spotify
+    #vlc
+  ];
+
   programs.home-manager = {
     enable = true;
   };

@@ -15,12 +15,12 @@ stack setup
 
 # Install ghc-mod for editor support:
 # https://github.com/DanielG/ghc-mod/wiki/Installing#using-the-stack-tool
-stack install ghc-mod
+#stack install ghc-mod
 
 # Install stylish-haskell for format-on-save:
 # https://github.com/jaspervdj/stylish-haskell
-stack install stylish-haskell
+#stack install stylish-haskell
 
 # Install hlint for file linting:
 # https://github.com/ndmitchell/hlint
-stack install hlint
+#stack install hlint
