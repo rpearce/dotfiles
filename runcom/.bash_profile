@@ -4,7 +4,7 @@ XDG_CACHE_HOME="$HOME/.cache"
 
 # Source dotfiles
 
-for DOTFILE in $XDG_CONFIG_HOME/system/.{path,nix,env,alias,prompt,fn*,git}; do
+for DOTFILE in $XDG_CONFIG_HOME/system/.{path,env,pkgs,prompt,git,alias,fn*}; do
   . "$DOTFILE"
 done
 

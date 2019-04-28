@@ -1,4 +1,0 @@
-function sysup {
-  brewup
-  cd ~/.config && make home
-}

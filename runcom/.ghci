@@ -1,3 +1,5 @@
+:def hoogle \x -> return $ ":!hoogle --count=15 \"" ++ x ++ "\""
+:def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
 :set -Wall
 :set -fno-warn-type-defaults
 :set prompt "\ESC[0;32m%s\n\ESC[38;5;172mλ > \ESC[m"

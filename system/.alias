@@ -2,6 +2,10 @@
 
 alias rel="source ~/.bash_profile"
 
+# Update system packages
+
+alias sysup="brewup; nixup"
+
 # Start postgres
 
 alias pg-start="pg_ctl -D /usr/local/var/postgres start"
