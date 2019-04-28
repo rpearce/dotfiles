@@ -37,6 +37,8 @@ in rec {
     yarn
 
     # Haskell
+    cabal2nix
+    haskellPackages.ghcid
     #haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.pandoc
