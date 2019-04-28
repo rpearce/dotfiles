@@ -2,10 +2,6 @@
 # Custom Prompt
 ####################################################
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
-
 DIR_COLOR="\[\e[0;32m\]"
 GIT_BRANCH_COLOR="\[\e[0;36m\]"
 GIT_CLEAN_COLOR="\[\e[1;32m\]"

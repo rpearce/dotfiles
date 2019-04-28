@@ -9,6 +9,8 @@ in rec {
   xdg = {
     enable = true;
     configHome = "${home_dir}/.config";
+    dataHome = "${home_dir}/Dropbox/.data";
+    cacheHome = "${home_dir}/.cache";
   };
 
   home.packages = with pkgs; [
@@ -63,6 +65,7 @@ in rec {
 
   programs.home-manager = {
     enable = true;
+    path = "${xdg.configHome}/home.nix";
   };
 
   home.file.".ackrc".source = ./runcom/.ackrc;
