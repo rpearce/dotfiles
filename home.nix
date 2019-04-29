@@ -77,5 +77,5 @@ in rec {
   home.file.".nvimrc".source = ./runcom/.nvimrc;
   home.file.".psqlrc".source = ./runcom/.psqlrc;
   home.file.".tmux.conf".source = ./runcom/.tmux.conf;
-  home.file.".stack/config.yml".source = ./stack/config.yml;
+  home.file.".stack/config.yaml".source = ./stack/config.yaml;
 }
