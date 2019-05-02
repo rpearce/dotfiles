@@ -72,10 +72,11 @@ in rec {
 
   home.file.".ackrc".source = ./runcom/.ackrc;
   home.file.".bash_profile".source = ./runcom/.bash_profile;
+  home.file.".cabal/config".source = ./cabal/config;
   home.file.".gemrc".source = ./runcom/.gemrc;
   home.file.".ghci".source = ./runcom/.ghci;
   home.file.".nvimrc".source = ./runcom/.nvimrc;
   home.file.".psqlrc".source = ./runcom/.psqlrc;
-  home.file.".tmux.conf".source = ./runcom/.tmux.conf;
   home.file.".stack/config.yaml".source = ./stack/config.yaml;
+  home.file.".tmux.conf".source = ./runcom/.tmux.conf;
 }
