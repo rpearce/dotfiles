@@ -28,6 +28,7 @@ in rec {
     #perl-ack
     #openssl
     ncdu
+		nix-prefetch-git
     rename
     ruby_2_6
     speedtest-cli
@@ -52,7 +53,7 @@ in rec {
     gitAndTools.diff-so-fancy
 
     # Editors
-    neovim
+    #neovim
 
     # Apps
     #docker
@@ -67,17 +68,16 @@ in rec {
     #vlc
   ];
 
-  programs.home-manager = {
-    enable = true;
-    path = "${xdg.configHome}/home.nix";
-  };
+  imports = [
+    ./programs/home-manager.nix
+    ./programs/neovim/default.nix
+  ];
 
   home.file.".ackrc".source = ./runcom/.ackrc;
   home.file.".bash_profile".source = ./runcom/.bash_profile;
   home.file.".cabal/config".source = ./cabal/config;
   home.file.".gemrc".source = ./runcom/.gemrc;
   home.file.".ghci".source = ./runcom/.ghci;
-  home.file.".nvimrc".source = ./runcom/.nvimrc;
   home.file.".psqlrc".source = ./runcom/.psqlrc;
   home.file.".stack/config.yaml".source = ./stack/config.yaml;
   home.file.".tmux.conf".source = ./runcom/.tmux.conf;

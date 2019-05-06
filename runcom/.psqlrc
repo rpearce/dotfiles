@@ -17,4 +17,4 @@
 set intervalstyle to 'postgres_verbose';
 
 \setenv LESS '-iMFXSx4R'
-\setenv EDITOR '/usr/local/bin/nvim'
+\setenv EDITOR '~/.nix-profile/bin/nvim'
