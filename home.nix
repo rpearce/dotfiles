@@ -28,13 +28,15 @@ in rec {
     #perl-ack
     #openssl
     ncdu
-    nodejs-11_x
     rename
     ruby_2_6
     speedtest-cli
     tldr
     tree
-    yarn
+
+    # node
+    nodejs-11_x
+    (yarn.override { nodejs = nodejs-11_x; })
 
     # Haskell
     cabal2nix
