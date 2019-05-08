@@ -8,7 +8,7 @@ fi
 
 function nixup {
 	nix-channel --update
-	home-manager -f $XDG_CONFIG_HOME/home.nix switch
+	home-manager switch
 	nix-collect-garbage -d
 }
 
