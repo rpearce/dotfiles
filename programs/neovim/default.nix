@@ -42,28 +42,9 @@ in {
         vim-vroom
 
         # Languages
-        vim-markdown
         vim-stylish-haskell
         vim-polyglot
-        #csv-vim
-        #elm-vim
-        #scss-syntax-vim
-        #typescript-vim
-        #vim-coffee-script
-        #vim-elixir
-        #vim-go
-        #vim-haml
-        #vim-haskell
-        #vim-javascript
-        #vim-jsx
-        #vim-mustache-handlebars
-        #vim-pug
-        #vim-rails
-        #vim-rspec
-        #vim-ruby
         #vim-ruby-minitest
-        #vim-scala
-        #vimerl
       ];
     };
   };

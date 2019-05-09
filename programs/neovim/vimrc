@@ -95,6 +95,13 @@ let g:jsx_ext_required = 0
 
 
 ""
+"" Markdown
+""
+
+let g:vim_markdown_folding_disabled = 1
+
+
+""
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
 
