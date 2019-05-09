@@ -27,7 +27,7 @@ in rec {
     gnupg
     jq
     ncdu
-		nix-prefetch-git
+    nix-prefetch-git
     rename
     ruby_2_6
     speedtest-cli

@@ -7,9 +7,9 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 function nixup {
-	nix-channel --update
-	home-manager switch
-	nix-collect-garbage -d
+  nix-channel --update
+  home-manager switch
+  nix-collect-garbage -d
 }
 
 # homebrew
