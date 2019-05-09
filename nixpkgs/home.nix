@@ -48,7 +48,6 @@ in rec {
     stack
 
     # Git
-    git
     gitAndTools.diff-so-fancy
 
     # Apps
@@ -67,6 +66,7 @@ in rec {
   imports = [
     ../programs/home-manager.nix
     ../programs/neovim/default.nix
+    ../programs/git.nix
   ];
 
   home.file.".ackrc".source = ../runcom/.ackrc;
