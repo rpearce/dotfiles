@@ -64,6 +64,35 @@ let g:ctrlp_custom_ignore = {
 let g:elm_classic_hightlighting = 0
 let g:elm_format_autosave = 1
 
+" Whitespace
+
+autocmd FileType elm set tabstop=4
+autocmd FileType elm set shiftwidth=4
+
+
+""
+"" Haskell
+""
+
+filetype plugin indent on                 " recommended from https://github.com/neovimhaskell/haskell-vim
+
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+let g:haskell_classic_highlighting = 0    " to enable classic highlighting
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_indent_disable = 0          " to disable haskell-vim indentation
+
+" Whitespace
+"
+autocmd FileType haskell set tabstop=8
+autocmd FileType haskell set softtabstop=4
+autocmd FileType haskell set shiftwidth=4
+autocmd FileType haskell set shiftround
+
 
 ""
 "" Files
@@ -307,14 +336,6 @@ set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
-
-" Custom whitespace per file type
-autocmd FileType elm set tabstop=4
-autocmd FileType elm set shiftwidth=4
-autocmd FileType haskell set tabstop=8
-autocmd FileType haskell set softtabstop=4
-autocmd FileType haskell set shiftwidth=4
-autocmd FileType haskell set shiftround
 
 " List chars
 set listchars=""                  " Reset the listchars
