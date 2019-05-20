@@ -35,8 +35,8 @@ in rec {
     tree
 
     # node
-    nodejs-slim-12_x
-    (yarn.override { nodejs = nodejs-slim-12_x; })
+    nodejs-12_x
+    (yarn.override { nodejs = nodejs-12_x; })
 
     # Haskell
     cabal2nix
