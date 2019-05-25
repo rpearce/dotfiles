@@ -4,7 +4,7 @@ let
   home_dir = builtins.getEnv "HOME";
 
 in rec {
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = import ./config.nix;
 
   xdg = {
     enable = true;
@@ -32,6 +32,7 @@ in rec {
     ruby_2_6
     speedtest-cli
     tldr
+    timetrack-cli
     tree
 
     # node
