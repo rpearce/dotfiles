@@ -2,13 +2,13 @@
 
 haskellPackages.mkDerivation rec {
   pname = "timetrack-cli";
-  version = "0.1.0.4";
+  version = "0.1.0.5";
 
   src = fetchFromGitHub {
     owner = "rpearce";
     repo = "timetrack-cli";
     rev = "v${version}";
-    sha256 = "15186nljdmnh06rkabvrcgj6bs5qjwfcn5xd3c6d0ilbxjq4xal5";
+    sha256 = "0hqmjn3ddkq1prhp5kdz0mjskfgbcm4wh5p0nkr0m7ymxscn097q";
   };
 
   isLibrary = false;
