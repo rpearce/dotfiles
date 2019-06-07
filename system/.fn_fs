@@ -1,7 +1,7 @@
 # Create a new directory and enter it
 
 mk() {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd $_
 }
 
 # Fuzzy find file/dir
