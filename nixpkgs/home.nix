@@ -42,7 +42,7 @@ in rec {
     # Haskell
     cabal2nix
     haskellPackages.ghcid
-    #haskellPackages.hakyll
+    haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.pandoc
     haskellPackages.stylish-haskell
