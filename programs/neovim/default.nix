@@ -20,8 +20,8 @@ in {
         ale
 
         # Search
-        ack-vim
         ctrlp-vim
+        vim-ripgrep
 
         # Tools
         nerdcommenter
@@ -44,7 +44,6 @@ in {
         # Languages
         vim-stylish-haskell
         vim-polyglot
-        #vim-ruby-minitest
       ];
     };
   };

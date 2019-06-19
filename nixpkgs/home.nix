@@ -15,7 +15,6 @@ in rec {
 
   home.packages = with pkgs; [
     # CLI
-    #ack
     asciinema
     awscli
     bash
@@ -29,6 +28,7 @@ in rec {
     ncdu
     nix-prefetch-git
     rename
+    ripgrep
     ruby_2_6
     speedtest-cli
     tldr
