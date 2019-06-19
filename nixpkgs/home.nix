@@ -75,6 +75,7 @@ in rec {
   home.file.".gemrc".source = ../runcom/.gemrc;
   home.file.".ghci".source = ../runcom/.ghci;
   home.file.".psqlrc".source = ../runcom/.psqlrc;
+  home.file.".ripgreprc".source = ../runcom/.ripgreprc;
   home.file.".stack/config.yaml".source = ../stack/config.yaml;
   home.file.".tmux.conf".source = ../runcom/.tmux.conf;
 }
