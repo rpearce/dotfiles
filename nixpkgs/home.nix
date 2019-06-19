@@ -70,7 +70,6 @@ in rec {
     ../programs/git.nix
   ];
 
-  home.file.".ackrc".source = ../runcom/.ackrc;
   home.file.".bash_profile".source = ../runcom/.bash_profile;
   home.file.".cabal/config".source = ../cabal/config;
   home.file.".gemrc".source = ../runcom/.gemrc;

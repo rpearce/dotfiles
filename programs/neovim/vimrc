@@ -14,13 +14,6 @@ set hidden                        " hide buffers instead of removing them
 
 
 ""
-"" Ack
-""
-
-map <leader>f :Ack<space>
-
-
-""
 "" w0rp/ale
 ""
 
