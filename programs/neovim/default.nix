@@ -36,6 +36,7 @@ in {
         vim-eunuch
         vim-fugitive
         vim-gitgutter
+        vim-localvimrc
         vim-multiple-cursors
         vim-snipmate
         vim-trailing-whitespace
