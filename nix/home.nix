@@ -4,7 +4,7 @@ let
   home_dir = builtins.getEnv "HOME";
 
 in rec {
-  nixpkgs.config = import ./config.nix;
+  nixpkgs.config = import ./nixpkgs/config.nix;
 
   xdg = {
     enable = true;
@@ -16,7 +16,6 @@ in rec {
   home.packages = with pkgs; [
     # CLI
     asciinema
-    awscli
     bash
     bat
     coreutils
@@ -24,9 +23,11 @@ in rec {
     findutils
     ffmpeg
     gnupg
+    heroku
     jq
     ncdu
     nix-prefetch-git
+    patat
     rename
     ripgrep
     ruby_2_6
@@ -65,17 +66,17 @@ in rec {
   ];
 
   imports = [
-    ../programs/home-manager.nix
-    ../programs/neovim/default.nix
-    ../programs/git.nix
+    ./programs/home-manager.nix
+    ./programs/neovim/default.nix
+    ./programs/git.nix
   ];
 
-  home.file.".bash_profile".source = ../runcom/.bash_profile;
-  home.file.".cabal/config".source = ../cabal/config;
-  home.file.".gemrc".source = ../runcom/.gemrc;
-  home.file.".ghci".source = ../runcom/.ghci;
-  home.file.".psqlrc".source = ../runcom/.psqlrc;
-  home.file.".ripgreprc".source = ../runcom/.ripgreprc;
-  home.file.".stack/config.yaml".source = ../stack/config.yaml;
-  home.file.".tmux.conf".source = ../runcom/.tmux.conf;
+  home.file.".bash_profile".source = ../dotfiles/system/.bash_profile;
+  home.file.".cabal/config".source = ../dotfiles/runcom/cabal.cabal;
+  home.file.".gemrc".source = ../dotfiles/runcom/.gemrc;
+  home.file.".ghci".source = ../dotfiles/runcom/.ghci;
+  home.file.".psqlrc".source = ../dotfiles/runcom/.psqlrc;
+  home.file.".ripgreprc".source = ../dotfiles/runcom/.ripgreprc;
+  home.file.".stack/config.yaml".source = ../dotfiles/runcom/stack.yaml;
+  home.file.".tmux.conf".source = ../dotfiles/runcom/.tmux.conf;
 }

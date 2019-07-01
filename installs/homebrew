@@ -8,12 +8,11 @@ fi
 
 # Install from Brewfile
 
-brew bundle -v --file="$XDG_CONFIG_HOME/homebrew/Brewfile"
+brew bundle -v --file="$XDG_CONFIG_HOME/installs/Brewfile"
 
 # Cleanup
 
 brew update
 brew upgrade
 brew cleanup
-brew prune
 brew doctor

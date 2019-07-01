@@ -2,14 +2,15 @@
 
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-  . $HOME/.nix-profile/etc/profile.d/nix.sh;
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+  . ~/.nix-profile/etc/profile.d/nix.sh;
 fi
 
 function nixup {
   nix-channel --update
-  home-manager switch
-  nix-collect-garbage -d
+  home-manager -f $XDG_CONFIG_HOME/nix/home.nix switch
+  nix-collect-garbage --delete-older-than 30d
+  nix optimise-store
 }
 
 # homebrew

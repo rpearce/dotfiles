@@ -1,18 +1,26 @@
 #!/usr/bin/env bash
 
-curl https://nixos.org/nix/install | sh
+# Check or nix and install if we don't have it
+
+if test ! $(which nix); then
+  curl https://nixos.org/nix/install | sh
+fi
 
 # home-manager
 
-mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+if [[ $(uname -s) == 'Darwin' ]]; then
+  mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+fi
 
-nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
+if test ! $(which home-manager); then
+  nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
+fi
 
-nix-shell '<home-manager>' -A install
+home-manager -f $XDG_CONFIG_HOME/nix/home.nix switch
 
-home-manager switch
-
-# cleanup
+# Cleanup
 
 nix-collect-garbage -d
+nix optimise-store

@@ -27,7 +27,7 @@ defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
 # Disable Captive Portal
 # https://github.com/drduh/macOS-Security-and-Privacy-Guide#captive-portal
-defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control.plist Active -bool false
 
 # Disable Crash Reporter
 defaults write com.apple.CrashReporter DialogType none
@@ -265,7 +265,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+#sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if you are using macOS 10.9 or older):
