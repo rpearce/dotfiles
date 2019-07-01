@@ -6,6 +6,9 @@
     enable = true;
     userName = "Robert Pearce";
     userEmail = "me@robertwpearce.com";
+    #github = {
+    #  user = "rpearce";
+    #};
     signing = {
       key = "88E8DC924E5269C9";
       signByDefault = true;
@@ -64,10 +67,6 @@
 
       fetch = {
         prune = true;
-      };
-
-      github = {
-        user = "rpearce";
       };
 
       grep = {

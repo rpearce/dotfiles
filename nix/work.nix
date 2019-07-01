@@ -1,17 +1,9 @@
 { config, pkgs, ... }:
 
-let
-  home_dir = builtins.getEnv "HOME";
-
-in rec {
+{
   nixpkgs.config = import ./nixpkgs/config.nix;
 
-  xdg = {
-    enable = true;
-    configHome = "${home_dir}/.config";
-    dataHome = "${home_dir}/.data";
-    cacheHome = "${home_dir}/.cache";
-  };
+  xdg = import ./xdg.nix;
 
   home.packages = with pkgs; [
     # CLI
@@ -42,12 +34,12 @@ in rec {
 
   imports = [
     ./programs/home-manager.nix
+    ./programs/bash/default.nix
     ./programs/neovim/default.nix
     ./programs/git.nix
   ];
 
-  home.file.".bash_profile".source = ../dotfiles/system/.bash_profile;
-  home.file.".gemrc".source = ../dotfiles/runcom/.gemrc;
-  home.file.".psqlrc".source = ../dotfiles/runcom/.psqlrc;
-  home.file.".ripgreprc".source = ../dotfiles/runcom/.ripgreprc;
+  home.file.".gemrc".source = ../conf/.gemrc;
+  home.file.".psqlrc".source = ../conf/.psqlrc;
+  home.file.".ripgreprc".source = ../conf/.ripgreprc;
 }

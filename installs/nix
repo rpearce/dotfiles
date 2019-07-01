@@ -6,6 +6,10 @@ if test ! $(which nix); then
   curl https://nixos.org/nix/install | sh
 fi
 
+# Source nix
+
+. ~/.nix-profile/etc/profile.d/nix.sh
+
 # home-manager
 
 if [[ $(uname -s) == 'Darwin' ]]; then
@@ -17,10 +21,3 @@ if test ! $(which home-manager); then
   nix-channel --update
   nix-shell '<home-manager>' -A install
 fi
-
-home-manager -f $XDG_CONFIG_HOME/nix/home.nix switch
-
-# Cleanup
-
-nix-collect-garbage -d
-nix optimise-store

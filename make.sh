@@ -4,12 +4,14 @@
 # for help in general and continued inspiration!
 #
 # Thanks to Patrick Klingemann (https://github.com/pklingem)
-# and Craig Wills (https://github.com/cdwills) for pushing
-# me to always make stuff like this better!
+# and Craig Wills (https://github.com/cdwills) for encouraging
+# me to always make stuff better!
 
 set -o errexit
-set -o nounset
+#set -o nounset
 set -o pipefail
+
+# Helpers
 
 function trace() {
   echo "! $@" >&2; $@
@@ -20,9 +22,10 @@ cat <<EOF
 Usage:
   $0 clean
   $0 help
-  $0 home
-  $0 install
-  $0 work
+  $0 install-home
+  $0 install-work
+  $0 switch-home
+  $0 switch-work
 EOF
 }
 
@@ -47,7 +50,13 @@ function install() {
 
   # Nix install
 
-  trace . "$XDG_CONFIG_HOME/installs/nix"
+  trace . ./installs/nix
+  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+  trace switch-to $1
+
+  # Source generated ~/.profile
+
+  . ~/.profile
 
   # macOS install
 
@@ -57,18 +66,21 @@ function install() {
       exit 1
     fi
 
-    trace . "$XDG_CONFIG_HOME/installs/homebrew"
-    trace . "$XDG_CONFIG_HOME/installs/stack"
-    trace . "$XDG_CONFIG_HOME/installs/macos"
+    trace . ./installs/homebrew || true
+    trace . ./installs/macos || true
   fi
 }
 
 function switch-to() {
   trace nix-channel --update
-  trace home-manager -f $XDG_CONFIG_HOME/nix/$1.nix switch
+  trace home-manager -f ./nix/$1.nix switch
 }
 
+# Check if no command is provided
+
 [[ $# -lt 1 ]] && unknown-cmd
+
+# Determine command
 
 cmd="$1"
 shift
@@ -81,14 +93,17 @@ case "$cmd" in
   "help")
     usage
     ;;
-  "home")
-    switch-to home
+  "install-home")
+    trace install home
     ;;
-  "install")
-    trace install
+  "install-work")
+    trace install work
     ;;
-  "work")
-    switch-to work
+  "switch-home")
+    trace switch-to home
+    ;;
+  "switch-work")
+    trace switch-to work
     ;;
   *)
     unknown-cmd
