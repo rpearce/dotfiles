@@ -16,8 +16,9 @@ if [[ $(uname -s) == 'Darwin' ]]; then
   mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
 fi
 
-if test ! $(which home-manager); then
-  nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
-fi
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+
+export NIX_PATH=$HOME/.nix-defexpr/channels/${NIX_PATH:+:}$NIX_PATH
+
+nix-shell '<home-manager>' -A install

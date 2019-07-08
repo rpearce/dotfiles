@@ -16,6 +16,9 @@ sudo systemsetup -setrestartfreeze on
 # Use a dark menu bar / dock
 defaults write -g AppleInterfaceStyle Dark
 
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
@@ -44,9 +47,6 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 
 # Found this computer? info
 sudo defaults write /Library/Preferences/com.apple.loginwindow Loginwindowtext "Found this computer? Please contact rpearce at me@robertwpearce.com"
-
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
 
 # Disable Notification Center and remove the menu bar icon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
