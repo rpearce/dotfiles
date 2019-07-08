@@ -42,7 +42,7 @@
     cat = "bat";
 
     # long listing
-    ll = "ls -laG";
+    ll = "ls --color=auto -laG";
 
     # ncdu > du
     du = "ncdu --color dark -rr -x --exclude .git --exclude node_modules";

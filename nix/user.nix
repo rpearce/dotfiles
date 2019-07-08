@@ -2,8 +2,8 @@
   git = {
     userName = "Robert Pearce";
     userEmail = "me@robertwpearce.com";
-    gpgKey = "167A3334C0472B6146B7D4E6E5B81378101800D9";
+    gpgKey = "96AAB0DE08E23CA9BE3739D488E8DC924E5269C9";
   };
 
-  hostname = "boberticulate";
+  hostname = "house-atreides";
 }

@@ -77,6 +77,7 @@ function install() {
 function switch-to() {
   trace nix-channel --update
   trace home-manager -f ./nix/$1.nix switch
+  trace exec $SHELL -l
 }
 
 # Check if no command is provided
