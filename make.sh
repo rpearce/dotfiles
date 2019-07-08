@@ -18,7 +18,7 @@ function trace() {
 }
 
 function usage() {
-cat <<EOF
+  cat <<EOF
 Usage:
   $0 clean
   $0 help
@@ -51,24 +51,27 @@ function install() {
   # Nix install
 
   trace . ./installs/nix
-  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
   trace switch-to $1
-
-  # Source generated ~/.profile
-
-  . ~/.profile
 
   # macOS install
 
   if [[ $(uname -s) == 'Darwin' ]]; then
-    if [[ -z "$(xcode-select -p)" ]]; then
-      echo "Either XCode isn't installed or isn't linked. Install it, or link with xcode-select."
-      exit 1
-    fi
+    # Source generated ~/.profile
 
-    trace . ./installs/homebrew || true
-    trace . ./installs/macos || true
+    . ~/.profile
+
+    # Install Homebrew
+
+    trace ./installs/homebrew || true
+
+    # macOS-specific options
+
+    trace ./installs/macos || true
   fi
+
+  # Reload current shell
+
+  trace exec $SHELL -l
 }
 
 function switch-to() {

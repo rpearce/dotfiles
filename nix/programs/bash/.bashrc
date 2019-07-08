@@ -1,23 +1,22 @@
 ####################################################
-# pkgs
+# nix
 ####################################################
 
-# nix
-
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-  . ~/.nix-profile/etc/profile.d/nix.sh;
-fi
+[[ -f ~/.nix-profile/etc/profile.d/nix.sh ]] && . ~/.nix-profile/etc/profile.d/nix.sh
 
 export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 
-function nixup {
-  nix-channel --update
-  home-manager -f $XDG_CONFIG_HOME/nix/home.nix switch
-  nix-collect-garbage --delete-older-than 30d
-  nix optimise-store
-}
+####################################################
+# completion
+####################################################
 
+[[ -f ~/.nix-profile/etc/profile.d/bash_completion.sh ]] && . ~/.nix-profile/etc/profile.d/bash_completion.sh
+[[ -f ~/.nix-profile/etc/bash_completion.d/git-completion.bash ]] && . ~/.nix-profile/etc/bash_completion.d/git-completion.bash
+[[ -f ~/.nix-profile/etc/bash_completion.d/git-prompt.sh ]] && . ~/.nix-profile/etc/bash_completion.d/git-prompt.sh
+
+####################################################
 # homebrew
+####################################################
 
 function brewup() {
   brew update
@@ -28,16 +27,8 @@ function brewup() {
 
 if type brew 2&>/dev/null; then
   for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
-    source "$completion_file"
+    . "$completion_file"
   done
-fi
-
-####################################################
-# git-completion
-####################################################
-
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
 fi
 
 ####################################################
@@ -104,4 +95,4 @@ hostname2ip() {
 # iTerm2
 ####################################################
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"

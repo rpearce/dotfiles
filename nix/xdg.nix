@@ -1,9 +1,9 @@
 let
   home_dir = builtins.getEnv "HOME";
 
-in rec {
+in {
   enable = true;
   configHome = "${home_dir}/.config";
-  dataHome = "${home_dir}/Dropbox/.data";
+  dataHome = "${home_dir}/.data";
   cacheHome = "${home_dir}/.cache";
 }

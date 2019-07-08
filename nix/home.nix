@@ -1,9 +1,16 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-{
-  nixpkgs.config = import ./nixpkgs/config.nix;
-
+let
+  nixpkgsConfig = import ./nixpkgs/config.nix;
+  user = import ./user.nix;
   xdg = import ./xdg.nix;
+
+in {
+  nixpkgs = {
+    config = nixpkgsConfig;
+  };
+
+  xdg = xdg;
 
   home.packages = with pkgs; [
     # CLI
@@ -19,7 +26,7 @@
     jq
     ncdu
     nix-prefetch-git
-    patat
+    #patat
     rename
     ripgrep
     ruby_2_6
@@ -32,7 +39,7 @@
     nodejs-12_x
     (yarn.override { nodejs = nodejs-12_x; })
 
-    # Haskell
+    # haskell
     cabal2nix
     haskellPackages.ghcid
     haskellPackages.hakyll
@@ -41,10 +48,10 @@
     haskellPackages.stylish-haskell
     stack
 
-    # Git
+    # git
     gitAndTools.diff-so-fancy
 
-    # Apps
+    # apps
     #docker
     #dropbox
     #firefox
@@ -57,12 +64,10 @@
     #vlc
   ];
 
-  imports = [
-    ./programs/home-manager.nix
-    ./programs/bash/default.nix
-    ./programs/neovim/default.nix
-    ./programs/git.nix
-  ];
+  programs.home-manager = (import ./programs/home-manager.nix { });
+  programs.bash = (import ./programs/bash/default.nix { xdg = xdg; });
+  programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
+  programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
 
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;
