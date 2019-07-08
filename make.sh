@@ -8,7 +8,7 @@
 # me to always make stuff better!
 
 set -o errexit
-#set -o nounset
+set -o nounset
 set -o pipefail
 
 # Helpers
@@ -35,7 +35,17 @@ function unknown-cmd() {
   return 1
 }
 
+function unknown-user() {
+  echo "File is missing: $(pwd)/nix/user.nix"
+  echo "Try running 'cp -n $(pwd)/nix/user{.example,}.nix' and filling out your information"
+  return 1
+}
+
 function install() {
+  # Check if ./nix/user.nix exists before we get started
+
+  [[ -f ./nix/user.nix ]] || unknown-user
+
   # Keep the computer awake for the duration of this script.
 
   [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
@@ -43,10 +53,6 @@ function install() {
   # Ask for the administrator password
 
   trace sudo -v
-
-  # sudo keep-alive
-
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
   # Nix install
 
