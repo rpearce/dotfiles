@@ -58,7 +58,7 @@ function install() {
   if [[ $(uname -s) == 'Darwin' ]]; then
     # Source generated ~/.profile
 
-    . ~/.profile
+    trace . ~/.profile
 
     # Install Homebrew
 
