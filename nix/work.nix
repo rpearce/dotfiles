@@ -25,6 +25,7 @@ in {
     jq
     ncdu
     nix-prefetch-git
+    openvpn
     rename
     ripgrep
     ruby_2_6
