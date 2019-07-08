@@ -50,7 +50,7 @@ function install() {
 
   # Nix install
 
-  trace . ./installs/nix
+  trace ./installs/nix || true
   trace switch-to $1
 
   # macOS install
@@ -77,7 +77,6 @@ function install() {
 function switch-to() {
   trace nix-channel --update
   trace home-manager -f ./nix/$1.nix switch
-  trace exec $SHELL -l
 }
 
 # Check if no command is provided
@@ -105,9 +104,11 @@ case "$cmd" in
     ;;
   "switch-home")
     trace switch-to home
+    trace exec $SHELL -l
     ;;
   "switch-work")
     trace switch-to work
+    trace exec $SHELL -l
     ;;
   *)
     unknown-cmd
