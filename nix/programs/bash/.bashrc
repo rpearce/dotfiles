@@ -23,6 +23,7 @@ function brewup() {
   brew upgrade
   brew cleanup
   brew doctor
+  brew cask upgrade
 }
 
 if type brew 2&>/dev/null; then
