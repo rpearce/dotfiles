@@ -26,7 +26,6 @@ in {
     jq
     ncdu
     nix-prefetch-git
-    #patat
     rename
     ripgrep
     ruby_2_6
@@ -45,6 +44,7 @@ in {
     haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.pandoc
+    haskellPackages.patat
     haskellPackages.stylish-haskell
     stack
 
