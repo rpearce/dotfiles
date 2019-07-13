@@ -47,7 +47,7 @@ function install() {
 
   [[ -f ./nix/user.nix ]] || unknown-user
 
-  # Keep the computer awake for the duration of this script.
+  # Keep the computer awake for the duration of this script
 
   [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
 
@@ -81,7 +81,7 @@ function install() {
 }
 
 function switch-to() {
-  # Keep the computer awake for the duration of this script.
+  # Keep the computer awake for the duration of this script
 
   [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
 

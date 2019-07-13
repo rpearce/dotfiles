@@ -1,7 +1,6 @@
 tap "caskroom/cask"
 tap "caskroom/versions"
 tap "heroku/brew"
-brew "dockutil"
 cask "docker"
 cask "dropbox"
 cask "firefox"

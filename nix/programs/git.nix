@@ -65,7 +65,7 @@
     };
 
     credential = {
-      helper = "osxkeychain";
+      helper = gitConfig.credentialHelper;
     };
 
     fetch = {
