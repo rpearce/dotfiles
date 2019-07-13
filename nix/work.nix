@@ -47,6 +47,7 @@ in {
   programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
 
   home.file.".gemrc".source = ../conf/.gemrc;
+  home.file.".inputrc".source = ../conf/.inputrc;
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
 }

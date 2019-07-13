@@ -72,6 +72,7 @@ in {
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;
   home.file.".ghci".source = ../conf/.ghci;
+  home.file.".inputrc".source = ../conf/.inputrc;
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
   home.file.".stack/config.yaml".source = ../conf/stack.yaml;
