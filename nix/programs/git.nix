@@ -12,7 +12,7 @@
                 signByDefault = true;
                 gpgPath = "gpg";
               }
-              else {}
+              else { key = ""; }
             );
 
   aliases = {

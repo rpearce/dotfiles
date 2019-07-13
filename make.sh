@@ -27,6 +27,7 @@ Usage:
   $0 switch-home
   $0 switch-work
 EOF
+  return 0
 }
 
 function unknown-cmd() {
@@ -56,23 +57,22 @@ function install() {
 
   # Nix install
 
-  trace ./installs/nix || true
-  trace switch-to $1
+  trace ./installs/nix $1
 
   # macOS install
 
   if [[ $(uname -s) == 'Darwin' ]]; then
     # Source generated ~/.profile
 
-    trace . ~/.profile
+    trace source ~/.profile
 
     # Install Homebrew
 
-    trace ./installs/homebrew || true
+    trace ./installs/homebrew
 
     # macOS-specific options
 
-    trace ./installs/macos || true
+    trace ./installs/macos
   fi
 
   # Reload current shell
@@ -81,6 +81,12 @@ function install() {
 }
 
 function switch-to() {
+  # Keep the computer awake for the duration of this script.
+
+  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+
+  # Update nix-channels and run home-manager
+
   trace nix-channel --update
   trace home-manager -f ./nix/$1.nix switch
 }
