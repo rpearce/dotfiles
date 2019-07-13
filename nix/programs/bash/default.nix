@@ -1,16 +1,16 @@
-{ xdg, ... }:
+{ hostname, xdg, ... }:
 
 {
   enable = true;
 
   sessionVariables = {
+    CONFIG_HOSTNAME = hostname;
     EDITOR = "nvim";
+    NPM_TOKEN = "`cat ~/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
+    RIPGREP_CONFIG_PATH = ~/.ripgreprc;
     XDG_CACHE_HOME = xdg.cacheHome;
     XDG_CONFIG_HOME = xdg.configHome;
     XDG_DATA_HOME = xdg.dataHome;
-
-    NPM_TOKEN = "`cat ~/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
-    RIPGREP_CONFIG_PATH = ~/.ripgreprc;
   };
 
   shellAliases = {
