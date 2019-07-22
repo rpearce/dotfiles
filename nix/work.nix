@@ -36,6 +36,7 @@ in {
     # node
     nodejs-12_x
     (yarn.override { nodejs = nodejs-12_x; })
+    nodePackages.eslint
 
     # git
     gitAndTools.diff-so-fancy
