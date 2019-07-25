@@ -68,7 +68,7 @@ function install() {
 
     # Install Homebrew
 
-    trace ./installs/homebrew
+    trace ./installs/homebrew $1
 
     # macOS-specific options
 
