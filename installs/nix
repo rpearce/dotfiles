@@ -21,7 +21,9 @@ nix-channel --update
 
 export NIX_PATH=$HOME/.nix-defexpr/channels/${NIX_PATH:+:}$NIX_PATH
 
-nix-shell '<home-manager>' -A install
+if test ! $(which home-manager); then
+  nix-shell '<home-manager>' -A install
+fi
 
 home-manager -f $(pwd)/nix/$1.nix switch
 
