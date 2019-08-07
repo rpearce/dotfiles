@@ -18,14 +18,6 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 # homebrew
 ####################################################
 
-function brewup() {
-  brew update
-  brew upgrade
-  brew cleanup
-  brew doctor
-  brew cask upgrade
-}
-
 if type brew 2&>/dev/null; then
   for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
     . "$completion_file"

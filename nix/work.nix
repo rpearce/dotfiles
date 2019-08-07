@@ -32,11 +32,13 @@ in {
     speedtest-cli
     tldr
     tree
+    watchman
 
     # node
     nodejs-12_x
     (yarn.override { nodejs = nodejs-12_x; })
     nodePackages.eslint
+    nodePackages.node2nix
 
     # git
     gitAndTools.diff-so-fancy

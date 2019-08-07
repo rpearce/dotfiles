@@ -89,6 +89,10 @@ function switch-to() {
 
   trace nix-channel --update
   trace home-manager -f ./nix/$1.nix switch
+
+  # Exec homebrew
+
+  trace ./installs/homebrew $1
 }
 
 # Check if no command is provided
