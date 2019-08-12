@@ -17,6 +17,7 @@ in {
     asciinema
     bash
     bat
+    cachix
     coreutils
     exercism
     findutils
@@ -37,6 +38,7 @@ in {
     # node
     nodejs-12_x
     (yarn.override { nodejs = nodejs-12_x; })
+    nodePackages.node2nix
 
     # haskell
     cabal2nix
@@ -50,18 +52,6 @@ in {
 
     # git
     gitAndTools.diff-so-fancy
-
-    # apps
-    #docker
-    #dropbox
-    #firefox
-    #google-chrome
-    #iterm2
-    #psequel
-    #sketch
-    #slack
-    #spotify
-    #vlc
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });

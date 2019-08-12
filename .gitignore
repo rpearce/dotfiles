@@ -16,9 +16,11 @@ tags
 
 .DS_Store
 asciinema
+cachix
 configstore
 exercism
 git
 heroku
-result
 nix/user.nix
+nixpkgs
+result

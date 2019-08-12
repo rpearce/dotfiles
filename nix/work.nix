@@ -40,6 +40,9 @@ in {
     nodePackages.eslint
     nodePackages.node2nix
 
+    # haskell
+    haskellPackages.patat
+
     # git
     gitAndTools.diff-so-fancy
   ];
