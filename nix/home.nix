@@ -17,7 +17,7 @@ in {
     asciinema
     bash
     bat
-    cachix
+    #cachix
     coreutils
     exercism
     findutils
