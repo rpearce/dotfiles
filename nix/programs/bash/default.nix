@@ -46,6 +46,9 @@
 
     # ncdu > du
     du = "ncdu --color dark -rr -x --exclude .git --exclude node_modules";
+
+    # AntiVirus Scan: ClamAV
+    vscan = "clamscan -ri --bell \${1}";
   };
 
   shellOptions = [
