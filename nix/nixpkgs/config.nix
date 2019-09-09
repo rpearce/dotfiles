@@ -1,5 +1,5 @@
 {
-  allowBroken = true;
+  #allowBroken = true;
   allowUnfree = true;
 
   packageOverrides = pkgs: rec {

@@ -43,10 +43,10 @@ in {
     # haskell
     cabal2nix
     haskellPackages.ghcid
-    haskellPackages.hakyll
+    #haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.pandoc
-    haskellPackages.patat
+    #haskellPackages.patat
     haskellPackages.stylish-haskell
     stack
 
