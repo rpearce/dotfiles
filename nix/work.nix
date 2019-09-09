@@ -41,7 +41,7 @@ in {
     nodePackages.node2nix
 
     # haskell
-    haskellPackages.patat
+    #haskellPackages.patat
 
     # git
     gitAndTools.diff-so-fancy
