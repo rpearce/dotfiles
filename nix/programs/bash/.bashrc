@@ -25,6 +25,12 @@ if type brew 2&>/dev/null; then
 fi
 
 ####################################################
+# bat
+####################################################
+
+export MANPAGER="sh -c 'col -b | bat -l man -p'"
+
+####################################################
 # misc functions
 ####################################################
 
@@ -59,7 +65,6 @@ ff()  { find . -type f -iname "$1";   }
 fff() { find . -type f -iname "*$1*"; }
 fd()  { find . -type d -iname "$1";   }
 fdf() { find . -type d -iname "*$1*"; }
-
 
 # Get gzipped file size
 
