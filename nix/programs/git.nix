@@ -26,7 +26,7 @@
     dc = "diff --changed";
     ds = "diff --staged";
     f = "fetch";
-    loll = "log --graph --decorate --pretty=oneline --abbrev-commit";
+    loll = "log --abbrev-commit --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --";
     m = "merge";
     one = "log --pretty=oneline";
     outstanding = "rebase -i @{u}";
