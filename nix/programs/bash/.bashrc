@@ -66,6 +66,12 @@ fff() { find . -type f -iname "*$1*"; }
 fd()  { find . -type d -iname "$1";   }
 fdf() { find . -type d -iname "*$1*"; }
 
+# Open git project in browser
+
+gh() {
+  open $(git config remote.origin.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")/$1$2
+}
+
 # Get gzipped file size
 
 gz() {

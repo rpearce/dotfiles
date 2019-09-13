@@ -14,38 +14,38 @@
   };
 
   shellAliases = {
+    # Recursively remove Apple meta files
+    cleanupds = "find . -type f -name '*.DS_Store' -ls -delete";
+    cleanupad = "find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \\;";
+
+    # Docker
+    dc = "docker-compose";
+    dcr = "docker-compose run --rm \${1}";
+
+    # bat > cat
+    cat = "bat";
+
+    # ncdu > du
+    du = "ncdu --color dark -rr -x --exclude .git --exclude node_modules";
+
+    # Network
+    ip = "dig +short myip.opendns.com @resolver1.opendns.com";
+    ipl = "ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
+
+    # long listing
+    ll = "ls --color=auto -laG";
+
+    # Run previous command with sudo
+    please = "sudo \"$BASH\" -c \"$(history -p !!)\"";
+
     # Reload profile
     rel = "exec $SHELL -l";
 
     # Serve current dir
     srv = "ruby -run -e httpd . -p \${1:-3000}";
 
-    # Run previous command with sudo
-    please = "sudo \"$BASH\" -c \"$(history -p !!)\"";
-
-    # Recursively remove Apple meta files
-    cleanupds = "find . -type f -name '*.DS_Store' -ls -delete";
-    cleanupad = "find . -type d -name '.AppleD*' -ls -exec /bin/rm -r {} \\;";
-
-    # Network
-    ip = "dig +short myip.opendns.com @resolver1.opendns.com";
-    ipl = "ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
-
-    # Docker
-    dc = "docker-compose";
-    dcr = "docker-compose run --rm \${1}";
-
     # timetrack-cli
     tt = "timetrack-cli";
-
-    # bat > cat
-    cat = "bat";
-
-    # long listing
-    ll = "ls --color=auto -laG";
-
-    # ncdu > du
-    du = "ncdu --color dark -rr -x --exclude .git --exclude node_modules";
 
     # AntiVirus Scan: ClamAV
     vscan = "clamscan -ri --bell \${1}";
