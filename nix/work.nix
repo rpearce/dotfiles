@@ -20,6 +20,7 @@ in {
     bash-completion
     bat
     coreutils
+    ctop
     findutils
     gnupg
     jq

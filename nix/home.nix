@@ -19,6 +19,7 @@ in {
     bat
     #cachix
     coreutils
+    ctop
     exercism
     findutils
     ffmpeg
