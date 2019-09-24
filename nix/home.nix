@@ -4,7 +4,7 @@ let
   nixpkgsConfig = import ./nixpkgs/config.nix;
   user = import ./user.nix;
   xdg = import ./xdg.nix;
-  #all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 
 in {
   nixpkgs = {
@@ -47,15 +47,15 @@ in {
     haskellPackages.ghcid
     #haskellPackages.hakyll
     haskellPackages.hlint
+    haskellPackages.hoogle
     haskellPackages.pandoc
     #haskellPackages.patat
     haskellPackages.stylish-haskell
     stack
+    (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
 
     # git
     gitAndTools.diff-so-fancy
-
-    #(all-hies.selection { selector = p: { inherit (p) ghc881; }; })
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
