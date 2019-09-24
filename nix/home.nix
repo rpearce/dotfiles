@@ -4,6 +4,7 @@ let
   nixpkgsConfig = import ./nixpkgs/config.nix;
   user = import ./user.nix;
   xdg = import ./xdg.nix;
+  #all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 
 in {
   nixpkgs = {
@@ -17,7 +18,7 @@ in {
     asciinema
     bash
     bat
-    #cachix
+    cachix
     coreutils
     ctop
     exercism
@@ -53,6 +54,8 @@ in {
 
     # git
     gitAndTools.diff-so-fancy
+
+    #(all-hies.selection { selector = p: { inherit (p) ghc881; }; })
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });

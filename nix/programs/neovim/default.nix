@@ -24,6 +24,7 @@ in {
       vim-ripgrep
 
       # Tools
+      #coc-nvim
       nerdcommenter
       nerdtree
       supertab

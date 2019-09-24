@@ -17,10 +17,12 @@ tags
 .DS_Store
 asciinema
 cachix
+coc
 configstore
 exercism
 git
 heroku
+nix/nix.conf
 nix/user.nix
 nixpkgs
 result
