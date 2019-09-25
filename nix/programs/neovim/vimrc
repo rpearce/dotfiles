@@ -79,6 +79,7 @@ let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_indent_disable = 0          " to disable haskell-vim indentation
 
+
 " Whitespace
 "
 autocmd FileType haskell set tabstop=8

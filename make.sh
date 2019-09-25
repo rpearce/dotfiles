@@ -93,6 +93,10 @@ function switch-to() {
   # Exec homebrew
 
   trace ./installs/homebrew $1
+
+  # Reload current shell
+
+  trace exec $SHELL -l
 }
 
 # Check if no command is provided
@@ -106,7 +110,7 @@ shift
 
 case "$cmd" in
   "clean")
-    trace nix-collect-garbage --delete-older-than 30d
+    trace nix-collect-garbage --delete-older-than 7d
     trace nix optimise-store
     ;;
   "help")
@@ -120,11 +124,9 @@ case "$cmd" in
     ;;
   "switch-home")
     trace switch-to home
-    trace exec $SHELL -l
     ;;
   "switch-work")
     trace switch-to work
-    trace exec $SHELL -l
     ;;
   *)
     unknown-cmd
