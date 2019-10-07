@@ -109,23 +109,23 @@ cmd="$1"
 shift
 
 case "$cmd" in
-  "clean")
+  clean|-d)
     trace nix-collect-garbage --delete-older-than 7d
     trace nix optimise-store
     ;;
-  "help")
+  help|-h|--help)
     usage
     ;;
-  "install-home")
+  install-home|ihome)
     trace install home
     ;;
-  "install-work")
+  install-work|iwork)
     trace install work
     ;;
-  "switch-home")
+  switch-home|home)
     trace switch-to home
     ;;
-  "switch-work")
+  switch-work|work)
     trace switch-to work
     ;;
   *)
