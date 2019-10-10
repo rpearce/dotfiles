@@ -14,10 +14,10 @@ fi
 
 if [[ $(uname -s) == 'Darwin' ]]; then
   mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
-  nix-channel --add https://nixos.org/channels/nixpkgs-19.09-darwin nixpkgs
 fi
 
 nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 
 export NIX_PATH=$HOME/.nix-defexpr/channels/${NIX_PATH:+:}$NIX_PATH
