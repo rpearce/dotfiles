@@ -20,12 +20,14 @@ function trace() {
 function usage() {
   cat <<EOF
 Usage:
-  $0 clean
-  $0 help
-  $0 install-home
-  $0 install-work
-  $0 switch-home
-  $0 switch-work
+  $0 clean           (-d)
+  $0 help            (-h|--help)
+  $0 install-home    (ihome)
+  $0 install-work    (iwork)
+  $0 news-home       (nhome)
+  $0 news-work       (nwork)
+  $0 switch-home     (home)
+  $0 switch-work     (work)
 EOF
   return 0
 }
@@ -62,9 +64,10 @@ function install() {
   # macOS install
 
   if [[ $(uname -s) == 'Darwin' ]]; then
-    # Source generated ~/.profile
+    # Source generated ~/.profile or ~/.zprofile
 
-    trace source ~/.profile
+    [[ -f ~/.profile ]] && source ~/.profile
+    [[ -f ~/.zprofile ]] && source ~/.zprofile
 
     # Install Homebrew
 
@@ -78,6 +81,10 @@ function install() {
   # Reload current shell
 
   trace exec $SHELL -l
+}
+
+function news() {
+  trace home-manager -f ./nix/$1.nix news
 }
 
 function switch-to() {
@@ -121,6 +128,12 @@ case "$cmd" in
     ;;
   install-work|iwork)
     trace install work
+    ;;
+  news-home|nhome)
+    trace news home
+    ;;
+  news-work|nwork)
+    trace news work
     ;;
   switch-home|home)
     trace switch-to home

@@ -2,7 +2,7 @@
 
 # Check or nix and install if we don't have it
 
-if test ! $(which nix); then
+if ! type "nix" &> /dev/null; then
   curl https://nixos.org/nix/install | sh
 fi
 
@@ -22,7 +22,7 @@ nix-channel --update
 
 export NIX_PATH=$HOME/.nix-defexpr/channels/${NIX_PATH:+:}$NIX_PATH
 
-if test ! $(which home-manager); then
+if ! type "home-manager" &> /dev/null; then
   nix-shell '<home-manager>' -A install
 fi
 

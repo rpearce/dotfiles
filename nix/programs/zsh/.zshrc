@@ -1,4 +1,52 @@
 ####################################################
+# prompt
+####################################################
+
+function __git_branch_status {
+  if $(__git_repo_initialized); then
+    if [[ -z $(git status -s) ]]; then
+      echo -e "%F{green}✔"
+    else
+      echo -e "%F{red}✗"
+    fi
+  fi
+}
+
+function __git_repo_initialized {
+  git ls-files >& /dev/null
+}
+
+autoload -Uz vcs_info
+autoload -U colors && colors
+autoload -Uz compinit && compinit
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' actionformats "%b|%a %m%u%c"
+zstyle ':vcs_info:git*' formats "%F{242}%b%f %m%u%c"
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+
+typeset prompt_newline=$'\n%{\r%}'
+typeset prompt_path=$'%F{blue}%B%~%b%f '
+typeset prompt_symbol=$'%F{214}%Bλ%b%f '
+typeset prompt_vcs_info=$'$vcs_info_msg_0_'
+typeset prompt_branch_status=$'$(__git_branch_status)'
+
+local -ah ps1
+
+ps1=(
+  $prompt_path
+  $prompt_vcs_info
+  $prompt_branch_status
+  $prompt_newline
+  $prompt_symbol
+)
+
+setopt prompt_subst
+PROMPT="${(j..)ps1}"
+
+####################################################
 # nix
 ####################################################
 
@@ -11,17 +59,16 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 ####################################################
 
 [[ -f ~/.nix-profile/etc/profile.d/bash_completion.sh ]] && . ~/.nix-profile/etc/profile.d/bash_completion.sh
-[[ -f ~/.nix-profile/etc/bash_completion.d/git-completion.bash ]] && . ~/.nix-profile/etc/bash_completion.d/git-completion.zsh
+[[ -f ~/.nix-profile/etc/bash_completion.d/git-completion.bash ]] && . ~/.nix-profile/etc/bash_completion.d/git-completion.bash
 [[ -f ~/.nix-profile/etc/bash_completion.d/git-prompt.sh ]] && . ~/.nix-profile/etc/bash_completion.d/git-prompt.sh
 
 ####################################################
 # homebrew
 ####################################################
 
-if type brew 2&>/dev/null; then
-  for completion_file in $(brew --prefix)/etc/bash_completion.d/*; do
-    . "$completion_file"
-  done
+if test ! $(command -v brew); then
+  [[ -f $(brew --prefix)/etc/bash_completion.d/brew ]] && . $(brew --prefix)/etc/bash_completion.d/brew
+  [[ -f $(brew --prefix)/etc/bash_completion.d/brew-services ]] && . $(brew --prefix)/etc/bash_completion.d/brew-services
 fi
 
 ####################################################
