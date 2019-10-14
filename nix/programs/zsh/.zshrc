@@ -17,17 +17,19 @@ function __git_repo_initialized() {
 }
 
 function __git_arrows() {
-  local arrows left right
-  local -a counts
+  if $(__git_repo_initialized); then
+    local arrows left right
+    local -a counts
 
-  counts=($(command git rev-list --left-right --count HEAD...@'{u}'))
-  left=counts[1]
-  right=counts[2]
+    counts=($(command git rev-list --left-right --count HEAD...@'{u}'))
+    left=counts[1]
+    right=counts[2]
 
-	(( right > 0 )) && arrows+="⇣"
-	(( left > 0 )) && arrows+="⇡"
+    (( right > 0 )) && arrows+="⇣"
+    (( left > 0 )) && arrows+="⇡"
 
-  echo -e $arrows
+    echo -e $arrows
+  fi
 }
 
 autoload -Uz vcs_info
