@@ -2,18 +2,32 @@
 # prompt
 ####################################################
 
-function __git_branch_status {
+function __git_branch_status() {
   if $(__git_repo_initialized); then
     if [[ -z $(git status -s) ]]; then
-      echo -e "%F{green}✔"
+      echo -e "%B%F{green}✔%f%b"
     else
-      echo -e "%F{red}✗"
+      echo -e "%B%F{red}✗%f%b"
     fi
   fi
 }
 
-function __git_repo_initialized {
+function __git_repo_initialized() {
   git ls-files >& /dev/null
+}
+
+function __git_arrows() {
+  local arrows left right
+  local -a counts
+
+  counts=($(command git rev-list --left-right --count HEAD...@'{u}'))
+  left=counts[1]
+  right=counts[2]
+
+	(( right > 0 )) && arrows+="⇣"
+	(( left > 0 )) && arrows+="⇡"
+
+  echo -e $arrows
 }
 
 autoload -Uz vcs_info
@@ -31,7 +45,8 @@ typeset prompt_newline=$'\n%{\r%}'
 typeset prompt_path=$'%F{blue}%B%~%b%f '
 typeset prompt_symbol=$'%F{214}%Bλ%b%f '
 typeset prompt_vcs_info=$'$vcs_info_msg_0_'
-typeset prompt_branch_status=$'$(__git_branch_status)'
+typeset prompt_branch_status=$'$(__git_branch_status) '
+typeset prompt_arrows=$'%B%F{cyan}$(__git_arrows)%f%b'
 
 local -ah ps1
 
@@ -39,6 +54,7 @@ ps1=(
   $prompt_path
   $prompt_vcs_info
   $prompt_branch_status
+  $prompt_arrows
   $prompt_newline
   $prompt_symbol
 )
