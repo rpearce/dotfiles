@@ -25,7 +25,6 @@ in {
     gnupg
     jq
     ncdu
-    nix-prefetch-git
     openvpn
     rename
     ripgrep
@@ -41,11 +40,9 @@ in {
     nodePackages.eslint
     nodePackages.node2nix
 
-    # haskell
-    #haskellPackages.patat
-
     # git
     gitAndTools.diff-so-fancy
+    nix-prefetch-git
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });

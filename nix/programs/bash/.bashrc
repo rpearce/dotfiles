@@ -11,7 +11,7 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 ####################################################
 
 [[ -f ~/.nix-profile/etc/profile.d/bash_completion.sh ]] && . ~/.nix-profile/etc/profile.d/bash_completion.sh
-[[ -f ~/.nix-profile/etc/bash_completion.d/git-completion.bash ]] && . ~/.nix-profile/etc/bash_completion.d/git-completion.zsh
+[[ -f ~/.nix-profile/etc/bash_completion.d/git-completion.bash ]] && . ~/.nix-profile/etc/bash_completion.d/git-completion.bash
 [[ -f ~/.nix-profile/etc/bash_completion.d/git-prompt.sh ]] && . ~/.nix-profile/etc/bash_completion.d/git-prompt.sh
 
 ####################################################
