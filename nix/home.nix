@@ -29,7 +29,6 @@ in {
     heroku
     jq
     ncdu
-    nix-prefetch-git
     rename
     ripgrep
     ruby_2_6
@@ -37,6 +36,7 @@ in {
     tldr
     timetrack-cli
     tree
+    zsh-completions
 
     # node
     nodejs-12_x
@@ -46,7 +46,7 @@ in {
     # haskell
     cabal2nix
     haskellPackages.ghcid
-    #haskellPackages.hakyll
+    haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.pandoc
@@ -57,10 +57,10 @@ in {
 
     # git
     gitAndTools.diff-so-fancy
+    nix-prefetch-git
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
-  #programs.bash = (import ./programs/bash/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
   programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
