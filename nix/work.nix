@@ -33,6 +33,7 @@ in {
     tldr
     tree
     watchman
+    zsh-completions
 
     # node
     nodejs-12_x
@@ -46,7 +47,7 @@ in {
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
-  programs.bash = (import ./programs/bash/default.nix { xdg = xdg; hostname = user.hostname; });
+  programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
   programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
 
