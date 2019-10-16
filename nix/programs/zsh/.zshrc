@@ -81,6 +81,12 @@ export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
 [[ -f ~/.nix-profile/etc/bash_completion.d/git-prompt.sh ]] && . ~/.nix-profile/etc/bash_completion.d/git-prompt.sh
 
 ####################################################
+# iTerm2
+####################################################
+
+[[ -f ~/.iterm2_shell_integration.bash ]] && . ~/.iterm2_shell_integration.bash
+
+####################################################
 # homebrew
 ####################################################
 
@@ -159,9 +165,3 @@ fix-camera() {
 hostname2ip() {
   ping -c 1 "$1" | egrep -m1 -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
 }
-
-####################################################
-# iTerm2
-####################################################
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && . "${HOME}/.iterm2_shell_integration.bash"
