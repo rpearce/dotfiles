@@ -50,7 +50,6 @@ in {
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.pandoc
-    #haskellPackages.patat
     haskellPackages.stylish-haskell
     stack
     (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
