@@ -42,6 +42,7 @@ in {
     nodePackages.node2nix
 
     # git
+    git-lfs
     gitAndTools.diff-so-fancy
     nix-prefetch-git
   ];
