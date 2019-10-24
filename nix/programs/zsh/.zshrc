@@ -37,7 +37,7 @@ autoload -U colors && colors
 autoload -Uz compinit && compinit
 
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' actionformats "%b|%a %m%u%c"
+zstyle ':vcs_info:git*' actionformats "%F{242}%b%f%F{cyan}|%f%a %m%u%c"
 zstyle ':vcs_info:git*' formats "%F{242}%b%f %m%u%c"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
