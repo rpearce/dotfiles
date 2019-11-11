@@ -18,6 +18,7 @@
   aliases = {
     a = "add";
     amend = "commit --amend";
+    branches = "for-each-ref --sort=-committerdate --format='%(color:cyan)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)' refs/remotes";
     c = "commit";
     ca = "commit --amend";
     ci = "commit -a";
