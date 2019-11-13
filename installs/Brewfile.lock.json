@@ -1,0 +1,86 @@
+{
+  "entries": {
+    "tap": {
+      "caskroom/cask": {
+        "revision": "26500f518c2cddd379dfaccfa77d281f6a133956"
+      },
+      "caskroom/versions": {
+        "revision": "fa640da0b12824679de78080828d93f740ea67f0"
+      }
+    },
+    "brew": {
+      "postgres": null
+    },
+    "cask": {
+      "deckset": {
+        "version": "2.0.12,2539"
+      },
+      "docker": {
+        "version": "2.0.0.3-ce-mac81,31259"
+      },
+      "dropbox": {
+        "version": "latest"
+      },
+      "firefox": {
+        "version": "67.0.4"
+      },
+      "firefox-developer-edition": {
+        "version": "latest"
+      },
+      "flux": {
+        "version": "39.987"
+      },
+      "google-chrome": {
+        "version": "75.0.3770.100"
+      },
+      "iterm2": {
+        "version": "3.2.9"
+      },
+      "muzzle": {
+        "version": "1.5,304"
+      },
+      "oversight": {
+        "version": "1.2.0"
+      },
+      "postico": {
+        "version": "1.5.10"
+      },
+      "pgadmin4": {
+        "version": "4.14"
+      },
+      "psequel": {
+        "version": "1.5.3"
+      },
+      "sketch": {
+        "version": "55.2-78181"
+      },
+      "slack": {
+        "version": "3.4.2"
+      },
+      "spotify": {
+        "version": "latest"
+      },
+      "virtualbox": {
+        "version": "6.0.14,133895"
+      },
+      "virtualbox-extension-pack": {
+        "version": "6.0.14"
+      },
+      "vlc": {
+        "version": "3.0.7.1"
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "catalina": {
+        "HOMEBREW_VERSION": "2.1.16",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "b6ed91a6e354d1d87172b1eebe851e27dd276764",
+        "CLT": "",
+        "Xcode": "11.2.1",
+        "macOS": "10.15.1"
+      }
+    }
+  }
+}
