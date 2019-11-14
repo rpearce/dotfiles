@@ -17,6 +17,8 @@ set hidden                        " hide buffers instead of removing them
 "" w0rp/ale
 ""
 
+"let g:ale_javascript_eslint_executable = 'eslint'
+"let g:ale_javascript_eslint_use_global = 0
 "let g:ale_lint_on_text_changed = 0
 "let g:ale_fixers = {
 "\   'javascript': ['prettier'],
