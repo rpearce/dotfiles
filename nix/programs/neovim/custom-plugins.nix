@@ -6,8 +6,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "joshdick";
       repo = "onedark.vim";
-      rev = "a9225db0fd9a2511dbb50d1a77f641411e959db1";
-      sha256 = "0bgdv11b6k92p3c9ziicii93anc4drj2jk0rpr72ji3321p18ii3";
+      rev = "cdff3a934cf67ce22568b426566492bbf318acd3";
+      sha256 = "0xibsj7dxdgbq9xmj2522clqb2gbnypz501jhw04inykbp10bdzq";
     };
   };
 
@@ -16,8 +16,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "tpope";
       repo = "vim-endwise";
-      rev = "f67d022169bd04d3c000f47b1c03bfcbc4209470";
-      sha256 = "0lq2sphh2mfciva184b4b3if202hr4yls4d2gzbjx7ibch45zb9i";
+      rev = "bf90d8be447de667f4532b934d1a70881be56dd8";
+      sha256 = "1czx891via5783yk222mhki94wvq75hxxp1xk1d5m90vwqb3azfn";
     };
   };
 
