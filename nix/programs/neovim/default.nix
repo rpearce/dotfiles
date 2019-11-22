@@ -39,7 +39,9 @@ in {
       vim-gitgutter
       vim-localvimrc
       vim-multiple-cursors
+      vim-repeat
       vim-snipmate
+      vim-surround
       vim-trailing-whitespace
       vim-vroom
 
