@@ -38,7 +38,7 @@ in {
     # node
     nodejs-12_x
     (yarn.override { nodejs = nodejs-12_x; })
-    nodePackages.node2nix
+    #nodePackages.node2nix
 
     # git
     git-lfs
