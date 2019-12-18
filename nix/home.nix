@@ -44,7 +44,7 @@ in {
     nodePackages.node2nix
 
     # haskell
-    cabal2nix
+    #cabal2nix
     haskellPackages.ghcid
     haskellPackages.hakyll
     haskellPackages.hlint
