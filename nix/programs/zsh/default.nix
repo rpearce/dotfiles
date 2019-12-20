@@ -24,6 +24,7 @@
     # Docker
     dc = "docker-compose";
     dcr = "docker-compose run --rm \${1}";
+    dcrp = "dcr postgres psql postgresql://postgres@postgres:5432";
 
     # bat > cat
     cat = "bat";
