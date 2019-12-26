@@ -36,8 +36,8 @@ in {
     zsh-completions
 
     # node
-    nodejs-12_x
-    (yarn.override { nodejs = nodejs-12_x; })
+    nodejs-13_x
+    (yarn.override { nodejs = nodejs-13_x; })
     nodePackages.node2nix
 
     # git

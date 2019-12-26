@@ -7,4 +7,10 @@
   };
 
   hostname = "my-machine-hostname";
+
+  npm = {
+    initAuthorName = "My Name";
+    initAuthorEmail = "me@myname.com";
+    initAuthorUrl = "https://mywebsite.com";
+  };
 }
