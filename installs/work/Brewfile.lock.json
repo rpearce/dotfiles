@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "87ef398501d9277894892c72131abd101d8f50cc"
+        "revision": "0be26903f7bf4ac470e1e389e38bcc1f46ef7e9f"
       },
       "caskroom/versions": {
-        "revision": "3e9a77a5eb1002d41ebf86f726e8ddebbba739b8"
+        "revision": "113796204a94f3b3bae3ac8d058397ed2c19f2d4"
       }
     },
     "brew": {
@@ -68,15 +68,18 @@
       },
       "vlc": {
         "version": "3.0.7.1"
+      },
+      "zeplin": {
+        "version": "2.8,786"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.1",
+        "HOMEBREW_VERSION": "2.2.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1d8285af57a9a24414559f3792f28fe37b509f99",
+        "Homebrew/homebrew-core": "65a19c2a181f1b14ce98ee9225e75788eb8112ff",
         "CLT": "",
         "Xcode": "11.3",
         "macOS": "10.15.2"
