@@ -42,7 +42,7 @@
     rel = "exec $SHELL -l";
 
     # Serve current dir
-    srv = "ruby -run -e httpd . -p \${1:-3000}";
+    srv = "npx serve";
 
     # timetrack-cli
     tt = "timetrack-cli";

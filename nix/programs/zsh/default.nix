@@ -32,6 +32,9 @@
     # ncdu > du
     du = "ncdu --color dark -rr -x --exclude .git --exclude node_modules";
 
+    # gpg
+    gpgkill = "gpgconf --kill gpg-agent";
+
     # Network
     ip = "dig +short myip.opendns.com @resolver1.opendns.com";
     ipl = "ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
@@ -46,7 +49,7 @@
     rel = "exec $SHELL -l";
 
     # Serve current dir
-    srv = "ruby -run -e httpd . -p \${1:-3000}";
+    srv = "npx serve";
 
     # timetrack-cli
     tt = "timetrack-cli";
