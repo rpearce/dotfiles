@@ -91,6 +91,16 @@ autocmd FileType haskell set shiftround
 
 
 ""
+"" TypeScript
+""
+
+" Whitespace
+
+autocmd FileType typescript set tabstop=2
+autocmd FileType typescript set shiftwidth=2
+
+
+""
 "" Files
 ""
 
