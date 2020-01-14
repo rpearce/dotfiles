@@ -19,7 +19,7 @@ in {
     bash
     bash-completion
     bat
-    cachix
+    #cachix
     coreutils
     ctop
     exercism
@@ -53,6 +53,13 @@ in {
     haskellPackages.stylish-haskell
     stack
     (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
+
+    # elm
+    elmPackages.elm
+    elmPackages.elm-format
+
+    # elixir
+    elixir
 
     # git
     gitAndTools.diff-so-fancy
