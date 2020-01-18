@@ -1,4 +1,4 @@
-{ pkgs, ...  }:
+{ config, pkgs, ... }:
 
 let
   nixpkgsConfig = import ./nixpkgs/config.nix;
@@ -55,4 +55,17 @@ in {
   home.file.".inputrc".source = ../conf/.inputrc;
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
+
+  # NPM config options in lieu of no easy static config file
+  home.activation.setNpmOptions =
+    let
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-13_x}/bin/npm set";
+    in
+      config.lib.dag.entryAfter ["writeBoundary"] ''
+        ${npmSet} init.author.name "${user.npm.initAuthorName}"
+        ${npmSet} init.author.email "${user.npm.initAuthorEmail}"
+        ${npmSet} init.author.url "${user.npm.initAuthorUrl}"
+        ${npmSet} init.license "${user.npm.initLicense}"
+        ${npmSet} init.version "${user.npm.initVersion}"
+      '';
 }
