@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "b8446cc243e1f9041aa3fad54d9fb757a4c1feca"
+        "revision": "9362c8c4b24fb76dfc1d6038e25febdecf9c76e1"
       },
       "caskroom/versions": {
-        "revision": "113796204a94f3b3bae3ac8d058397ed2c19f2d4"
+        "revision": "97f29b879a0c510a85f5cb7f89146f256f6d33dd"
       }
     },
     "brew": {
@@ -46,7 +46,7 @@
         "version": "1.5.10"
       },
       "pgadmin4": {
-        "version": "4.16"
+        "version": "4.17"
       },
       "psequel": {
         "version": "1.5.3"
@@ -61,10 +61,10 @@
         "version": "latest"
       },
       "virtualbox": {
-        "version": "6.1.0,135406"
+        "version": "6.1.2,135662"
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.0"
+        "version": "6.1.2"
       },
       "vlc": {
         "version": "3.0.7.1"
@@ -77,11 +77,11 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.2",
+        "HOMEBREW_VERSION": "2.2.3",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "9e2e5a500de93e5339f90ae778494a9b0b757f75",
+        "Homebrew/homebrew-core": "c9882801013d6bc5202b91ef56ff5838d18bbab2",
         "CLT": "",
-        "Xcode": "11.3",
+        "Xcode": "11.3.1",
         "macOS": "10.15.2"
       }
     }
