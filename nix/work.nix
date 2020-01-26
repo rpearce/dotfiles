@@ -14,7 +14,7 @@ in {
 
   home.packages = with pkgs; [
     # CLI
-    asciinema
+    #asciinema
     awscli
     bash
     bash-completion
@@ -22,6 +22,7 @@ in {
     coreutils
     ctop
     findutils
+    fswatch
     gnupg
     jq
     ncdu

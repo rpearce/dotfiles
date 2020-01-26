@@ -15,7 +15,7 @@ in {
 
   home.packages = with pkgs; [
     # CLI
-    asciinema
+    #asciinema
     bash
     bash-completion
     bat
@@ -24,7 +24,8 @@ in {
     ctop
     exercism
     findutils
-    ffmpeg
+    #ffmpeg
+    fswatch
     gnupg
     heroku
     jq
