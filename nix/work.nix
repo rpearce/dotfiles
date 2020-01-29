@@ -41,6 +41,9 @@ in {
     (yarn.override { nodejs = nodejs-13_x; })
     nodePackages.node2nix
 
+    # elixir
+    elixir
+
     # git
     git-lfs
     gitAndTools.diff-so-fancy
