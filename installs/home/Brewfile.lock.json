@@ -2,33 +2,33 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "23990f2c5f21e7f792a56cc74f5a51f5cd80fb5d"
+        "revision": "00b9709b180a35efd246d945c9ef6ea32f053ed0"
       },
       "caskroom/versions": {
-        "revision": "53ea2bc84e8406a6edc5540c9f6d85481a7280c6"
+        "revision": "9be45d279b7508e7ec0064d6959c9355c0b6abe3"
       },
       "heroku/brew": {
-        "revision": "fe7924aeded2f3bf5da7d876dea9ceba5e46f792"
+        "revision": "269b75ce57ee410561d1e5673833ce0f1eb2deb1"
       }
     },
     "brew": {
       "clamav": {
-        "version": "0.102.1",
+        "version": "0.102.2",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.1.catalina.bottle.tar.gz",
-              "sha256": "8240d37b0fa38f3728a57ce6b80e41e437e9501cdb07ea59e42ecc7ade8709d1"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2.catalina.bottle.tar.gz",
+              "sha256": "544f511ddd1c68b88a93f017617c968a4e5d34fc6a010af15e047a76c5b16a9f"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.1.mojave.bottle.tar.gz",
-              "sha256": "ed4be5269f9254ebb369de26cd0f39e57bd66ffcdb708b66e785db1ef083b80a"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2.mojave.bottle.tar.gz",
+              "sha256": "a92959f8a348642739db5e023e4302809c8272da1bea75336635267e449aacdf"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.1.high_sierra.bottle.tar.gz",
-              "sha256": "72ecdcf3473919c7665a099686926b21fe3a9b4b467bd9607d80181d3d1bbc67"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2.high_sierra.bottle.tar.gz",
+              "sha256": "252446ee2509c9653fc9ab160811232d228f9995fcd7d4e9378c128bccd5ecaa"
             }
           }
         }
@@ -37,61 +37,106 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.13,2551"
+        "version": "2.0.13,2551",
+        "options": {
+          "full_name": "deckset"
+        }
       },
       "docker": {
-        "version": "2.0.0.3-ce-mac81,31259"
+        "version": "2.0.0.3-ce-mac81,31259",
+        "options": {
+          "full_name": "docker"
+        }
       },
       "dropbox": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "dropbox"
+        }
       },
       "firefox": {
         "version": "68.0"
       },
       "firefox-developer-edition": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "firefox-developer-edition"
+        }
       },
       "flux": {
-        "version": "39.987"
+        "version": "39.987",
+        "options": {
+          "full_name": "flux"
+        }
       },
       "google-chrome": {
-        "version": "75.0.3770.100"
+        "version": "75.0.3770.100",
+        "options": {
+          "full_name": "google-chrome"
+        }
       },
       "iterm2": {
-        "version": "3.2.9"
+        "version": "3.2.9",
+        "options": {
+          "full_name": "iterm2"
+        }
       },
       "muzzle": {
-        "version": "1.5,304"
+        "version": "1.5,304",
+        "options": {
+          "full_name": "muzzle"
+        }
       },
       "oversight": {
-        "version": "1.2.0"
+        "version": "1.2.0",
+        "options": {
+          "full_name": "oversight"
+        }
       },
       "postico": {
-        "version": "1.5.10"
+        "version": "1.5.10",
+        "options": {
+          "full_name": "postico"
+        }
       },
       "psequel": {
-        "version": "1.5.3"
+        "version": "1.5.3",
+        "options": {
+          "full_name": "psequel"
+        }
       },
       "sketch": {
-        "version": "55.2-78181"
+        "version": "55.2-78181",
+        "options": {
+          "full_name": "sketch"
+        }
       },
       "slack": {
-        "version": "3.4.2"
+        "version": "3.4.2",
+        "options": {
+          "full_name": "slack"
+        }
       },
       "spotify": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "spotify"
+        }
       },
       "vlc": {
-        "version": "3.0.7.1"
+        "version": "3.0.7.1",
+        "options": {
+          "full_name": "vlc"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.4",
+        "HOMEBREW_VERSION": "2.2.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "f28ccab881edd703d4f53fdac9661696f0f414d6",
+        "Homebrew/homebrew-core": "0745f27ed2eee8a8f62248938a8b8acdbd6002c2",
         "CLT": "11.0.33.8",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"

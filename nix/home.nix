@@ -19,7 +19,7 @@ in {
     bash
     bash-completion
     bat
-    #cachix
+    cachix
     coreutils
     ctop
     exercism
