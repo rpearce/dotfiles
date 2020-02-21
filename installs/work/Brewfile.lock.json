@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "5352159754d97c22ca62ada498e8d4489ef9084f"
+        "revision": "1806bbeeee3cd0a6c47f601af25f9da5520ee755"
       },
       "caskroom/versions": {
-        "revision": "8aa2247afa6298f7fcc3b8b1b9a781faecd7070f"
+        "revision": "2ae69b81616ffebcb8d8cb0e27aac7695bf82f14"
       }
     },
     "brew": {
@@ -13,73 +13,130 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.13,2551"
+        "version": "2.0.13,2551",
+        "options": {
+          "full_name": "deckset"
+        }
       },
       "docker": {
-        "version": "2.0.0.3-ce-mac81,31259"
+        "version": "2.0.0.3-ce-mac81,31259",
+        "options": {
+          "full_name": "docker"
+        }
       },
       "dropbox": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "dropbox"
+        }
       },
       "firefox": {
         "version": "67.0.4"
       },
       "firefox-developer-edition": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "firefox-developer-edition"
+        }
       },
       "flux": {
-        "version": "39.987"
+        "version": "39.987",
+        "options": {
+          "full_name": "flux"
+        }
       },
       "google-chrome": {
-        "version": "75.0.3770.100"
+        "version": "75.0.3770.100",
+        "options": {
+          "full_name": "google-chrome"
+        }
       },
       "iterm2": {
-        "version": "3.2.9"
+        "version": "3.2.9",
+        "options": {
+          "full_name": "iterm2"
+        }
       },
       "muzzle": {
-        "version": "1.5,304"
+        "version": "1.5,304",
+        "options": {
+          "full_name": "muzzle"
+        }
       },
       "oversight": {
-        "version": "1.2.0"
+        "version": "1.2.0",
+        "options": {
+          "full_name": "oversight"
+        }
       },
       "postico": {
-        "version": "1.5.10"
+        "version": "1.5.10",
+        "options": {
+          "full_name": "postico"
+        }
       },
       "pgadmin4": {
-        "version": "4.17"
+        "version": "4.18",
+        "options": {
+          "full_name": "pgadmin4"
+        }
       },
       "psequel": {
-        "version": "1.5.3"
+        "version": "1.5.3",
+        "options": {
+          "full_name": "psequel"
+        }
       },
       "sketch": {
-        "version": "55.2-78181"
+        "version": "55.2-78181",
+        "options": {
+          "full_name": "sketch"
+        }
       },
       "slack": {
-        "version": "3.4.2"
+        "version": "3.4.2",
+        "options": {
+          "full_name": "slack"
+        }
       },
       "spotify": {
-        "version": "latest"
+        "version": "latest",
+        "options": {
+          "full_name": "spotify"
+        }
       },
       "virtualbox": {
-        "version": "6.1.2,135662"
+        "version": "6.1.2,135662",
+        "options": {
+          "full_name": "virtualbox"
+        }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.2"
+        "version": "6.1.2",
+        "options": {
+          "full_name": "virtualbox-extension-pack"
+        }
       },
       "vlc": {
-        "version": "3.0.7.1"
+        "version": "3.0.7.1",
+        "options": {
+          "full_name": "vlc"
+        }
       },
       "zeplin": {
-        "version": "2.8,786"
+        "version": "2.8,786",
+        "options": {
+          "full_name": "zeplin"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.4",
+        "HOMEBREW_VERSION": "2.2.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "225327585fc7a139e27b24866c0d3b6566080131",
+        "Homebrew/homebrew-core": "1248f444d5e8e5a81945d416fd158ae8422c9da0",
         "CLT": "",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
