@@ -49,9 +49,9 @@ date_ymd() {
 
 # Instagram movie function
 
-square_movie() {
-  ffmpeg -i $1 -an -vf "pad=max(iw\,ih):ow:(ow-iw)/2:(oh-ih)/2:color=white" $2
-}
+#square_movie() {
+#  ffmpeg -i $1 -an -vf "pad=max(iw\,ih):ow:(ow-iw)/2:(oh-ih)/2:color=white" $2
+#}
 
 # Create a new directory and enter it
 
