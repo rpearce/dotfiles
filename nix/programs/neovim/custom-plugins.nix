@@ -6,8 +6,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "joshdick";
       repo = "onedark.vim";
-      rev = "2b0e71843eb022efd42428873841cb911a504195";
-      sha256 = "0ygwzdbv72gqdy2ks24m7bbangn0k83ihgm4817888vy1i6j9ihk";
+      rev = "d7b596a2528ca109a5917d9babc526b49b74e5ec";
+      sha256 = "1y1bql2626qhhb1cikfmpnydmxrvgvf86hga4m0ajd3q4a261qsk";
     };
   };
 
