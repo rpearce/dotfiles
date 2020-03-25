@@ -62,6 +62,8 @@
 
     core = {
       editor = "nvim";
+      excludesfile = "~/.gitignore";
+      #hooksPath = "~/.githooks";
       pager = "diff-so-fancy | less --tabs=4 -RFX";
     };
 
