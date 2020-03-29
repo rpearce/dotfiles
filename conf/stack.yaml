@@ -10,7 +10,7 @@ templates:
   params:
     author-name: "Robert Pearce"
     author-email: "me@robertwpearce.com"
-    copyright: "MIT"
+    copyright: "BSD-3"
     github-username: "rpearce"
 nix:
   enable: true

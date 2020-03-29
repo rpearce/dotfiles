@@ -2,13 +2,13 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "923337868a38ed87ec73d11ad386c691c8bcf196"
+        "revision": "edef97f6ed16e08383c656b786d0070c6b4cc31e"
       },
       "caskroom/versions": {
-        "revision": "0da6975d681c9b8ebd075b64a118a6d0ee0b34c0"
+        "revision": "b7a12d7c746ff0435852d7430ba3892b758904f3"
       },
       "heroku/brew": {
-        "revision": "269b75ce57ee410561d1e5673833ce0f1eb2deb1"
+        "revision": "230c64b6b7b7a3e845136bcf2e3407237faf99fb"
       }
     },
     "brew": {
@@ -94,7 +94,7 @@
         }
       },
       "postico": {
-        "version": "1.5.10",
+        "version": "1.5.12",
         "options": {
           "full_name": "postico"
         }
@@ -128,18 +128,30 @@
         "options": {
           "full_name": "vlc"
         }
+      },
+      "vscodium": {
+        "version": "1.43.2",
+        "options": {
+          "full_name": "vscodium"
+        }
+      },
+      "zoom": {
+        "version": "1.1.5",
+        "options": {
+          "full_name": "zoom"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.6",
+        "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "32dae6428d5d9a8c0c321d18e08d16a0a13212f4",
+        "Homebrew/homebrew-core": "590a44c2365c2e28b9a30a5ec1fa91e4cc990cde",
         "CLT": "11.0.33.8",
-        "Xcode": "11.3.1",
-        "macOS": "10.15.3"
+        "Xcode": "11.4",
+        "macOS": "10.15.4"
       }
     }
   }

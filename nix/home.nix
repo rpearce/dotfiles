@@ -1,15 +1,29 @@
-{ config, pkgs, ... }:
+{ config
+, ...
+}:
 
 let
-  nixpkgsConfig = import ./nixpkgs/config.nix;
+  pkgs = import ./pkgs.nix;
   user = import ./user.nix;
   xdg = import ./xdg.nix;
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 
 in {
   nixpkgs = {
-    config = nixpkgsConfig;
+    config = {
+      _module.args = {
+        pkgs = pkgs;
+      };
+
+      allowBroken = true;
+      allowUnfree = true;
+
+      packageOverrides = pkgs: rec {
+        timetrack-cli = pkgs.haskellPackages.callPackage ./nixpkgs/timetrack-cli/default.nix { };
+      };
+    };
   };
+
 
   xdg = xdg;
 
@@ -35,7 +49,7 @@ in {
     ruby_2_6
     speedtest-cli
     tldr
-    timetrack-cli
+    #timetrack-cli
     tree
     zsh-completions
 
@@ -53,7 +67,7 @@ in {
     haskellPackages.pandoc
     haskellPackages.stylish-haskell
     stack
-    (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
+    (all-hies.selection { selector = p: { inherit (p) ghc882; }; })
 
     # elm
     elmPackages.elm
@@ -70,7 +84,8 @@ in {
   programs.home-manager = (import ./programs/home-manager.nix { });
   programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
-  programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
+  #programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
+  programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; });
 
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;

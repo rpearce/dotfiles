@@ -1,4 +1,6 @@
-{ gitConfig, pkgs }:
+{ gitConfig
+, pkgs
+}:
 
 {
   package = pkgs.gitAndTools.gitFull;

@@ -20,6 +20,7 @@ cachix
 coc
 configstore
 exercism
+gatsby
 git
 heroku
 nix/nix.conf

@@ -1,14 +1,17 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs ? import ./pkgs.nix
+, ...
+}:
 
 let
-  nixpkgsConfig = import ./nixpkgs/config.nix;
+  #nixpkgsConfig = import ./nixpkgs/config.nix;
   user = import ./user.nix;
   xdg = import ./xdg.nix;
 
 in {
-  nixpkgs = {
-    config = nixpkgsConfig;
-  };
+  #nixpkgs = {
+  #  config = nixpkgsConfig;
+  #};
 
   xdg = xdg;
 
