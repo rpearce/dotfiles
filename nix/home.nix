@@ -18,9 +18,9 @@ in {
       allowBroken = true;
       allowUnfree = true;
 
-      packageOverrides = pkgs: rec {
-        timetrack-cli = pkgs.haskellPackages.callPackage ./nixpkgs/timetrack-cli/default.nix { };
-      };
+      #packageOverrides = pkgs: rec {
+      #  timetrack-cli = pkgs.haskellPackages.callPackage ./nixpkgs/timetrack-cli/default.nix { };
+      #};
     };
   };
 
