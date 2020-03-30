@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "4885ffe7deb6a54bf8fa04dfb4be526d32619230"
+        "revision": "b2580fc17d50be738d9df0028b3ac07f0487727a"
       },
       "caskroom/versions": {
-        "revision": "6bea2219260ba361c19fc3b5825e21a2451f89a6"
+        "revision": "5ab1666fd11b9b7d8d28718ffe1071e7da105c0e"
       }
     },
     "brew": {
@@ -70,13 +70,13 @@
         }
       },
       "postico": {
-        "version": "1.5.10",
+        "version": "1.5.12",
         "options": {
           "full_name": "postico"
         }
       },
       "pgadmin4": {
-        "version": "4.18",
+        "version": "4.19",
         "options": {
           "full_name": "pgadmin4"
         }
@@ -128,18 +128,24 @@
         "options": {
           "full_name": "zeplin"
         }
+      },
+      "zoom": {
+        "version": "1.1.5",
+        "options": {
+          "full_name": "zoom"
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.7",
+        "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4d4270c2682534bbf55eae28334038c147d0b892",
+        "Homebrew/homebrew-core": "8606ac1620b049eef95fa1a08c5b498d54b217da",
         "CLT": "",
-        "Xcode": "11.3.1",
-        "macOS": "10.15.3"
+        "Xcode": "11.4",
+        "macOS": "10.15.4"
       }
     }
   }
