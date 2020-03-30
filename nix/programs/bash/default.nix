@@ -5,7 +5,7 @@
 
   sessionVariables = {
     CONFIG_HOSTNAME = hostname;
-    EDITOR = "nvim";
+    EDITOR = "vim";
     NPM_TOKEN = "`cat ~/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
     RIPGREP_CONFIG_PATH = ~/.ripgreprc;
     XDG_CACHE_HOME = xdg.cacheHome;
