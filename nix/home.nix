@@ -24,7 +24,6 @@ in {
     };
   };
 
-
   xdg = xdg;
 
   home.packages = with pkgs; [

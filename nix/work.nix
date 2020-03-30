@@ -1,23 +1,28 @@
 { config
-, pkgs ? import ./pkgs.nix
 , ...
 }:
 
 let
-  #nixpkgsConfig = import ./nixpkgs/config.nix;
+  pkgs = import ./pkgs.nix;
   user = import ./user.nix;
   xdg = import ./xdg.nix;
 
 in {
-  #nixpkgs = {
-  #  config = nixpkgsConfig;
-  #};
+  nixpkgs = {
+    config = {
+      _module.args = {
+        pkgs = pkgs;
+      };
+
+      allowBroken = true;
+      allowUnfree = true;
+    };
+  };
 
   xdg = xdg;
 
   home.packages = with pkgs; [
     # CLI
-    #asciinema
     awscli
     bash
     bash-completion
@@ -56,7 +61,8 @@ in {
   programs.home-manager = (import ./programs/home-manager.nix { });
   programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
-  programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
+  #programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
+  programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; });
 
   home.file.".gemrc".source = ../conf/.gemrc;
   home.file.".gitignore".source = ../conf/.gitignore;
