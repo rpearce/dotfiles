@@ -3,10 +3,21 @@
 }:
 
 let
-  pkgs = import ./pkgs.nix;
+  sources = import ./sources.nix;
+
+  nixpkgsConfig = import ./nixpkgs/config.nix // {
+    packageOverrides = pkgz: rec {
+      timetrack-cli = pkgz.haskell.packages.ghc882.callPackage
+        "${sources.timetrack-cli.outPath}/default.nix"
+        { };
+    };
+  };
+  pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
+
+  all-hies = import sources.all-hies { };
+
   user = import ./user.nix;
   xdg = import ./xdg.nix;
-  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 
 in {
   nixpkgs = {
@@ -14,13 +25,6 @@ in {
       _module.args = {
         pkgs = pkgs;
       };
-
-      allowBroken = true;
-      allowUnfree = true;
-
-      #packageOverrides = pkgs: rec {
-      #  timetrack-cli = pkgs.haskellPackages.callPackage ./nixpkgs/timetrack-cli/default.nix { };
-      #};
     };
   };
 
@@ -28,7 +32,6 @@ in {
 
   home.packages = with pkgs; [
     # CLI
-    #asciinema
     bash
     bash-completion
     bat
@@ -37,7 +40,6 @@ in {
     ctop
     exercism
     findutils
-    #ffmpeg
     fswatch
     gnupg
     heroku
@@ -55,10 +57,8 @@ in {
     # node
     nodejs-13_x
     (yarn.override { nodejs = nodejs-13_x; })
-    nodePackages.node2nix
 
     # haskell
-    cabal2nix
     haskellPackages.ghcid
     haskellPackages.hakyll
     haskellPackages.hlint

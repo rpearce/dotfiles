@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "19538f87d72d4adf50483f3b3649a1b6fff718ff"
+        "revision": "43e85f40ff31f893a3e9f17607867a1ffcedb684"
       },
       "caskroom/versions": {
-        "revision": "db747e6d9a1fdd4da48ed0ff39c9f0c14c40396e"
+        "revision": "42248e68c4b275cd0b0683771124f2425b88bbbb"
       },
       "heroku/brew": {
         "revision": "f3277d920f2c783935db846f97068e1e15c5cc00"
@@ -146,6 +146,12 @@
         "options": {
           "full_name": "screen"
         }
+      },
+      "zoomus": {
+        "version": "4.6.19273.0402",
+        "options": {
+          "full_name": "zoomus"
+        }
       }
     }
   },
@@ -154,7 +160,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "25266de411334ca392810b93bffe6539f2aca2dd",
+        "Homebrew/homebrew-core": "316247f697c58498321ca5c00cd834cff1ed1330",
         "CLT": "11.0.33.8",
         "Xcode": "11.4",
         "macOS": "10.15.4"

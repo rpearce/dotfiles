@@ -3,7 +3,11 @@
 }:
 
 let
-  pkgs = import ./pkgs.nix;
+  sources = import ./sources.nix;
+
+  nixpkgsConfig = import ./nixpkgs/config.nix;
+  pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
+
   user = import ./user.nix;
   xdg = import ./xdg.nix;
 
@@ -13,9 +17,6 @@ in {
       _module.args = {
         pkgs = pkgs;
       };
-
-      allowBroken = true;
-      allowUnfree = true;
     };
   };
 
@@ -47,7 +48,6 @@ in {
     # node
     nodejs-13_x
     (yarn.override { nodejs = nodejs-13_x; })
-    nodePackages.node2nix
 
     # elixir
     elixir
