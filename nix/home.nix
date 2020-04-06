@@ -45,6 +45,7 @@ in {
     heroku
     jq
     ncdu
+    niv
     rename
     ripgrep
     ruby_2_6

@@ -9,7 +9,7 @@ set hidden                        " hide buffers instead of removing them
 set number                        " Show line numbers
 set ruler                         " Show line and column number
 set termguicolors                 " Use full colors
-set clipboard=unnamed             " Allow for x-app pasting
+"set clipboard=unnamed             " Allow for x-app pasting
 "colorscheme onedark               " Set the color scheme
 
 
