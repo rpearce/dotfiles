@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "0a49b84b05f4a92e0062406a78d08f5dffbcc072"
+        "revision": "a959a7e21bd99dff44c73a1657006750902dccf6"
       },
       "caskroom/versions": {
         "revision": "43a512e2f2799585fcc5546d6f341ad931110713"
