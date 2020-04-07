@@ -3,14 +3,14 @@
 ""
 
 syntax on
-syntax enable                      " Turn on syntax highlighting allowing local overrides
+syntax enable                     " Turn on syntax highlighting allowing local overrides
 set guifont=Menlo\ Regular:h14    " Font stuff
 set hidden                        " hide buffers instead of removing them
 set number                        " Show line numbers
 set ruler                         " Show line and column number
 set termguicolors                 " Use full colors
-"set clipboard=unnamed             " Allow for x-app pasting
-"colorscheme onedark               " Set the color scheme
+set clipboard=unnamed             " Allow for x-app pasting
+colorscheme onedark               " Set the color scheme
 
 
 ""
@@ -35,9 +35,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "" Backup and swap files
 ""
 
-set backupdir^=~/.vim/_backup//    " where to put backup files.
-set directory^=~/.vim/_temp//      " where to put swap files.
-
+set backupdir=$XDG_DATA_HOME/vim/backup//    " where to put backup files
+set directory=$XDG_DATA_HOME/vim/swap//      " where to put swap files
+set undodir=$XDG_DATA_HOME/vim/undo//        " where to put undo files
 
 ""
 "" CTRLP

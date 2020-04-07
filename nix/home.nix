@@ -97,6 +97,13 @@ in {
   home.file.".stack/config.yaml".source = ../conf/stack.yaml;
   home.file.".tmux.conf".source = ../conf/.tmux.conf;
 
+  home.activation.setVimDirs =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p ${xdg.dataHome}/vim/backup//
+      mkdir -p ${xdg.dataHome}/vim/swap//
+      mkdir -p ${xdg.dataHome}/vim/undo//
+    '';
+
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let

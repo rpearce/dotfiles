@@ -71,6 +71,13 @@ in {
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
 
+  home.activation.setVimDirs =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p ${xdg.dataHome}/vim/backup//
+      mkdir -p ${xdg.dataHome}/vim/swap//
+      mkdir -p ${xdg.dataHome}/vim/undo//
+    '';
+
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
