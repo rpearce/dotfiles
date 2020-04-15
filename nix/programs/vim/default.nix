@@ -1,7 +1,7 @@
-{ pkgs }:
+{ pkgs, sources }:
 
 let
-  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix { };
+  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix { sources = sources; };
 
 in {
   enable = true;
@@ -24,25 +24,25 @@ in {
     nerdcommenter
     nerdtree
     supertab
-    tlib_vim
-    vim-addon-mw-utils
     vim-buffergator
     vim-css-color
-    vim-easymotion
-    vim-endwise
-    vim-eunuch
     vim-fugitive
     vim-gitgutter
     vim-localvimrc
     vim-multiple-cursors
-    vim-repeat
-    vim-snipmate
     vim-surround
     vim-trailing-whitespace
-    vim-vroom
 
     # Languages
     vim-stylish-haskell
     vim-polyglot
+
+    # Removable
+    #tlib_vim
+    #vim-snipmate
+    #vim-repeat
+    #vim-addon-mw-utils
+    #vim-easymotion
+    #vim-eunuch
   ];
 }

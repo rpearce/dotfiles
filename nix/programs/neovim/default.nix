@@ -1,53 +1,40 @@
-{ pkgs }:
+{ pkgs, sources }:
 
 let
-  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix {};
+  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix { sources = sources; };
 
 in {
   enable = true;
 
-  viAlias = true;
-  vimAlias = true;
+  extraConfig = builtins.readFile ./vimrc;
 
-  configure = {
-    customRC = builtins.readFile ./vimrc;
+  plugins = with plugins; [
+    # Themes
+    onedark-vim
 
-    plug.plugins = with plugins; [
-      # Themes
-      onedark-vim
+    # Linting
+    ale
 
-      # Linting
-      ale
+    # Search
+    ctrlp-vim
+    vim-ripgrep
 
-      # Search
-      ctrlp-vim
-      vim-ripgrep
+    # Tools
+    coc-nvim
+    nerdcommenter
+    nerdtree
+    supertab
+    vim-buffergator
+    vim-css-color
+    vim-fugitive
+    vim-gitgutter
+    vim-localvimrc
+    vim-multiple-cursors
+    vim-surround
+    vim-trailing-whitespace
 
-      # Tools
-      coc-nvim
-      nerdcommenter
-      nerdtree
-      supertab
-      tlib_vim
-      vim-addon-mw-utils
-      vim-buffergator
-      vim-css-color
-      vim-easymotion
-      vim-endwise
-      vim-eunuch
-      vim-fugitive
-      vim-gitgutter
-      vim-localvimrc
-      vim-multiple-cursors
-      vim-repeat
-      vim-snipmate
-      vim-surround
-      vim-trailing-whitespace
-      vim-vroom
-
-      # Languages
-      vim-stylish-haskell
-      vim-polyglot
-    ];
-  };
+    # Languages
+    vim-stylish-haskell
+    vim-polyglot
+  ];
 }
