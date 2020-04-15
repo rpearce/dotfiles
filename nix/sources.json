@@ -29,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "8686922e68dfce2786722acad9593ad392297188",
-        "sha256": "1pc92s1nbr9hlsmzlf8w2pc90rlma649y3fvyfww0sbcwn0lb65n",
+        "rev": "1ad005458f4de1d194bea97c431c36e758c2fee4",
+        "sha256": "1lnw7adzqs7rc34ya7wwxvd9mzsxj9zdx29cmcgk0gyym797vya5",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/8686922e68dfce2786722acad9593ad392297188.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/1ad005458f4de1d194bea97c431c36e758c2fee4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {

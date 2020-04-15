@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "85d3e6c4e1f2b4fb22deb27cf6ec67a6844c866b"
+        "revision": "a069610ccbcb1c715e164ff25ef3ba4d6edbf8d4"
       },
       "caskroom/versions": {
-        "revision": "585f6fee67ebbd935b84d97ea1bcfb715d999143"
+        "revision": "fdd4d2e86f5f11a002155c775f63c89cd8e108cb"
       },
       "heroku/brew": {
         "revision": "f3277d920f2c783935db846f97068e1e15c5cc00"
@@ -160,7 +160,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.13",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4a242ea963d8ea73b74c2e35a27333a28955c097",
+        "Homebrew/homebrew-core": "f4fcdedb3590173d9bd605a68dc3f163ad117956",
         "CLT": "11.0.33.8",
         "Xcode": "11.4",
         "macOS": "10.15.4"
