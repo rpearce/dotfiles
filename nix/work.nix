@@ -63,7 +63,7 @@ in {
   programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
   programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
   #programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; });
-  programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; });
+  programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; sources = sources; });
 
   home.file.".gemrc".source = ../conf/.gemrc;
   home.file.".gitignore".source = ../conf/.gitignore;
