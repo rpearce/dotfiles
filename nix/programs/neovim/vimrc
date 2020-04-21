@@ -4,7 +4,7 @@
 
 syntax on
 syntax enable                     " Turn on syntax highlighting allowing local overrides
-set guifont=Menlo\ Regular:h14    " Font stuff
+set guifont=Monaco\ Regular:h12   " Font stuff
 set hidden                        " hide buffers instead of removing them
 set number                        " Show line numbers
 set ruler                         " Show line and column number
