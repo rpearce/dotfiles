@@ -36,13 +36,5 @@ in {
     # Languages
     vim-stylish-haskell
     vim-polyglot
-
-    # Removable
-    #tlib_vim
-    #vim-snipmate
-    #vim-repeat
-    #vim-addon-mw-utils
-    #vim-easymotion
-    #vim-eunuch
   ];
 }

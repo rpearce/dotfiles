@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
 
-# Thanks to Utku Demir (https://github.com/utdemir)
-# for help in general and continued inspiration!
-#
-# Thanks to Patrick Klingemann (https://github.com/pklingem)
-# and Craig Wills (https://github.com/cdwills) for encouraging
-# me to always make stuff better!
-
 set -o errexit
 #set -o nounset
-set -o pipefail
+set -eou pipefail
 
 # Helpers
 

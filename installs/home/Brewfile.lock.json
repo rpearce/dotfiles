@@ -2,13 +2,13 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "45eecb0676210194ec505dd532d006cb1b40fede"
+        "revision": "cd410c4b93cb303e213d8e5a6ee865d524eb4d9e"
       },
       "caskroom/versions": {
-        "revision": "49a063a8e17e6bd0469908dd8bbcdd330fa150ff"
+        "revision": "bce6c0b4c791555eeb63cb414cb121834eded5ea"
       },
       "heroku/brew": {
-        "revision": "4b6a8d88f5de60dde10659e5c6e30ad60365f352"
+        "revision": "d1e3fa5c2a281c5a507decd5de27ab1d08a9c7f6"
       }
     },
     "brew": {
@@ -94,7 +94,7 @@
         }
       },
       "postico": {
-        "version": "1.5.12",
+        "version": "1.5.13",
         "options": {
           "full_name": "postico"
         }
@@ -160,7 +160,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.13",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "5720b821081d4cf95774527ae1916b3a5d9627c8",
+        "Homebrew/homebrew-core": "1f0de69a690a344aebabc65c71d6fd22a15ef08b",
         "CLT": "11.4.1.0.1.1586360307",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"

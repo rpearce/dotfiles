@@ -37,4 +37,8 @@ in {
     vim-stylish-haskell
     vim-polyglot
   ];
+
+  viAlias = true;
+  vimAlias = true;
+  vimdiffAlias = true;
 }

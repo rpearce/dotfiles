@@ -14,7 +14,7 @@ set termguicolors                 " Use full colors
 
 
 ""
-"" w0rp/ale
+"" ale (linting)
 ""
 
 "let g:ale_javascript_eslint_executable = 'eslint'
@@ -109,9 +109,8 @@ au FileType make setlocal noexpandtab
 
 " Force some file types to load
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.jbuilder} set filetype=ruby
-au BufRead,BufNewFile *.ejs set filetype=javascript
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set filetype=markdown textwidth=80 formatoptions+=t colorcolumn=80 expandtab
-au BufRead,BufNewFile *.{js,jsx,ts,tsx} set colorcolumn=80
+au BufRead,BufNewFile *.{ejs,mjs} set filetype=javascript
+au BufRead,BufNewFile *.{md,mdx,markdown,mdown,mkd,mkdn,txt} set filetype=markdown textwidth=80 formatoptions+=t
 
 " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python setlocal tabstop=4 shiftwidth=4
@@ -141,8 +140,8 @@ let g:vim_markdown_folding_disabled = 1
 ""
 
 " Toggle paste mode
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+"nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+"imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
@@ -343,11 +342,12 @@ set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
-set list                          " Show invisible characters
+set colorcolumn=80                " visual line at column 80
+set list                          " show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
 " List chars
-set listchars=""                  " Reset the listchars
+set listchars=""                  " reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
 set listchars+=extends:>          " The character to show in the last column when wrap is
