@@ -346,6 +346,7 @@ set textwidth=80                  " max suggested text width
 set colorcolumn=80                " visual line at column 80
 set list                          " show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
+set nofixendofline                " don't automatically add new line to end of files
 
 " List chars
 set listchars=""                  " reset the listchars

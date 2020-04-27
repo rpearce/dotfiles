@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "41e9b40528ee035182a2672bcefee2acf69da3a9"
+        "revision": "9b8bf5b9ad4f08fa8c2e4e87d4dab5303c2f9e83"
       },
       "caskroom/versions": {
-        "revision": "bb021fab15fe2b68d8ff5ca2c4049b617247f8fe"
+        "revision": "65a8b97978ef0c526bfa781968e19f9973f5dbde"
       }
     },
     "brew": {
@@ -106,13 +106,13 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.4,136177",
+        "version": "6.1.6,137129",
         "options": {
           "full_name": "virtualbox"
         }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.4",
+        "version": "6.1.6",
         "options": {
           "full_name": "virtualbox-extension-pack"
         }
@@ -154,7 +154,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.13",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e676652e197db11b659cd9fb7741fc6ede97754e",
+        "Homebrew/homebrew-core": "b8cdb6f2e46cfe933851106e92a4f1bd3f19d464",
         "CLT": "",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"

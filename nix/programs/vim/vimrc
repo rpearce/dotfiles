@@ -83,7 +83,7 @@ let g:haskell_indent_disable = 0          " to disable haskell-vim indentation
 
 
 " Whitespace
-"
+
 autocmd FileType haskell set tabstop=8
 autocmd FileType haskell set softtabstop=4
 autocmd FileType haskell set shiftwidth=4
@@ -345,6 +345,7 @@ set expandtab                     " use spaces, not tabs
 set colorcolumn=80                " visual line at column 80
 set list                          " show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
+set nofixendofline                " don't automatically add new line to end of files
 
 " List chars
 set listchars=""                  " reset the listchars
