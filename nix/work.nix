@@ -47,8 +47,8 @@ in {
     zsh-completions
 
     # node
-    nodejs-slim-14_x
-    (yarn.override { nodejs = nodejs-slim-14_x; })
+    nodejs-14_x
+    (yarn.override { nodejs = nodejs-14_x; })
 
     # elixir
     elixir
@@ -81,7 +81,7 @@ in {
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
-      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-slim-14_x}/bin/npm set";
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-14_x}/bin/npm set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
         ${npmSet} init.author.name "${user.npm.initAuthorName}"
