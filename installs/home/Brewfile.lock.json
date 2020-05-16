@@ -2,33 +2,33 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "8d7452733ccf4da56ca0b412901418c786fcdccb"
+        "revision": "f3aaf4f5b64c52af5cb41da2542133ceb75960fd"
       },
       "caskroom/versions": {
-        "revision": "df43945d996b4d15136fac571aa2f0899ff721f4"
+        "revision": "8f94a4533ea303108e785e6e66938cbe40ac6cad"
       },
       "heroku/brew": {
-        "revision": "92f6e3ffab6be2de6a7a936ac83258c128cdddeb"
+        "revision": "f7fa3b71a7fd3b93dacd9c3b31d2e5f856ba8e3a"
       }
     },
     "brew": {
       "clamav": {
-        "version": "0.102.2_2",
+        "version": "0.102.3",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2_2.catalina.bottle.tar.gz",
-              "sha256": "03315a351ef099050af0c00a8989dd6d9ce522729f648faacb9960e0436d65aa"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3.catalina.bottle.tar.gz",
+              "sha256": "14f69086a768c2a4a30fd5c4316201363b5265eb4a303159fd7773bc44d42e05"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2_2.mojave.bottle.tar.gz",
-              "sha256": "7d00d36a11a8edbc643c92757a7206598db4e629d9cd379be8fdaad106da61d7"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3.mojave.bottle.tar.gz",
+              "sha256": "1de7b34afbff07514302deb8ea6f3fb79095509911be98e3ab4f5d674f0f8ef2"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.2_2.high_sierra.bottle.tar.gz",
-              "sha256": "0bdd0b6b44fedbb2e1bea8fdccc49b5e5d5b6c00d6dcd6c7440eb10537c648d1"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3.high_sierra.bottle.tar.gz",
+              "sha256": "7d2140eef1f3af64ec2dc22c78d4a8f1778f56eb9ae84ee3a38fa1814d70d98a"
             }
           }
         }
@@ -37,7 +37,7 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.14,2575",
+        "version": "2.0.16,2578",
         "options": {
           "full_name": "deckset"
         }
@@ -160,7 +160,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.16",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c676b1f45479af58fbcc84e9efcb6be84cea5f42",
+        "Homebrew/homebrew-core": "5326934c8388b0eee5ee9dc4807e79c156d19534",
         "CLT": "11.4.1.0.1.1586360307",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"
