@@ -13,6 +13,6 @@
     initAuthorEmail = "me@myname.com";
     initAuthorUrl = "https://mywebsite.com";
     initVersion = "0.1.0";
-    initLicense = "BSD-3";
+    initLicense = "BSD-3-Clause";
   };
 }
