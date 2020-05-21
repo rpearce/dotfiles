@@ -34,6 +34,7 @@ in {
     # CLI
     bash
     bash-completion
+    bashcards
     bat
     cachix
     coreutils

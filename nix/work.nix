@@ -27,6 +27,7 @@ in {
     awscli
     bash
     bash-completion
+    bashcards
     bat
     coreutils
     ctop
