@@ -29,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "6405edf2dca7f6faaa29266136dfa7f8f969b511",
-        "sha256": "069skn0ayxmhdlw1xcj92cij7wydkk2bndkcyk4vvhms16p9wj46",
+        "rev": "571212eb839d482992adb05479b86eeb6a9c7b2f",
+        "sha256": "0ncsh5rkjbcdaksngmn7apiq1qhm5z1z6xa1x70svxq91znibp4f",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/6405edf2dca7f6faaa29266136dfa7f8f969b511.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/571212eb839d482992adb05479b86eeb6a9c7b2f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "onedark-vim": {
@@ -53,10 +53,10 @@
         "homepage": "https://github.com/rpearce/timetrack-cli",
         "owner": "rpearce",
         "repo": "timetrack-cli",
-        "rev": "ea711f6c36fbf81c0313f729e5d095ba93be77f9",
-        "sha256": "1fpk8a40109mk7ym2l7wxgzpqn50zzs2ch1qyil5k39cr62szs6k",
+        "rev": "7de7c3fe8c262b89295ceb756e88cd6790c75612",
+        "sha256": "1qnpfnbmvpf1nf449h1lg5py0cmxljaa7s67z15fbyyj8rldsv9q",
         "type": "tarball",
-        "url": "https://github.com/rpearce/timetrack-cli/archive/ea711f6c36fbf81c0313f729e5d095ba93be77f9.tar.gz",
+        "url": "https://github.com/rpearce/timetrack-cli/archive/7de7c3fe8c262b89295ceb756e88cd6790c75612.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-ripgrep": {
