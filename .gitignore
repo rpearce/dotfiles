@@ -26,4 +26,5 @@ heroku
 nix/nix.conf
 nix/user.nix
 nixpkgs
+oni2
 result

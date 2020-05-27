@@ -1,6 +1,6 @@
-tap "caskroom/cask"
-tap "caskroom/versions"
+tap "homebrew/cask"
 tap "heroku/brew"
+cask_args appdir: "/Applications"
 brew "clamav"
 brew "postgres"
 cask "deckset"

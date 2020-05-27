@@ -9,6 +9,9 @@
       },
       "heroku/brew": {
         "revision": "f7fa3b71a7fd3b93dacd9c3b31d2e5f856ba8e3a"
+      },
+      "homebrew/cask": {
+        "revision": "ff0c3165e6548b557271074874dc83c29f10afe3"
       }
     },
     "brew": {
@@ -39,19 +42,28 @@
       "deckset": {
         "version": "2.0.16,2578",
         "options": {
-          "full_name": "deckset"
+          "full_name": "deckset",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "docker": {
         "version": "2.0.0.3-ce-mac81,31259",
         "options": {
-          "full_name": "docker"
+          "full_name": "docker",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "dropbox": {
         "version": "latest",
         "options": {
-          "full_name": "dropbox"
+          "full_name": "dropbox",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "firefox": {
@@ -60,79 +72,118 @@
       "firefox-developer-edition": {
         "version": "latest",
         "options": {
-          "full_name": "firefox-developer-edition"
+          "full_name": "firefox-developer-edition",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "flux": {
         "version": "39.987",
         "options": {
-          "full_name": "flux"
+          "full_name": "flux",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "google-chrome": {
         "version": "75.0.3770.100",
         "options": {
-          "full_name": "google-chrome"
+          "full_name": "google-chrome",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "iterm2": {
         "version": "3.2.9",
         "options": {
-          "full_name": "iterm2"
+          "full_name": "iterm2",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "muzzle": {
         "version": "1.5,304",
         "options": {
-          "full_name": "muzzle"
+          "full_name": "muzzle",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "oversight": {
         "version": "1.2.0",
         "options": {
-          "full_name": "oversight"
+          "full_name": "oversight",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "postico": {
         "version": "1.5.13",
         "options": {
-          "full_name": "postico"
+          "full_name": "postico",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "psequel": {
         "version": "1.5.3",
         "options": {
-          "full_name": "psequel"
+          "full_name": "psequel",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "sketch": {
         "version": "55.2-78181",
         "options": {
-          "full_name": "sketch"
+          "full_name": "sketch",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "slack": {
         "version": "3.4.2",
         "options": {
-          "full_name": "slack"
+          "full_name": "slack",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "spotify": {
         "version": "latest",
         "options": {
-          "full_name": "spotify"
+          "full_name": "spotify",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "vlc": {
         "version": "3.0.7.1",
         "options": {
-          "full_name": "vlc"
+          "full_name": "vlc",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "vscodium": {
         "version": "1.43.2",
         "options": {
-          "full_name": "vscodium"
+          "full_name": "vscodium",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "zoom": {
@@ -144,13 +195,19 @@
       "screen": {
         "version": "1.0.18",
         "options": {
-          "full_name": "screen"
+          "full_name": "screen",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "zoomus": {
         "version": "4.6.19273.0402",
         "options": {
-          "full_name": "zoomus"
+          "full_name": "zoomus",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       }
     }
@@ -160,7 +217,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.2.17",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "ab65a1eaed9229404e83bd4a65b7672c3863f1ce",
+        "Homebrew/homebrew-core": "df926375a4d72d20a37f75368d7f25ad841e4914",
         "CLT": "11.5.0.0.1.1588476445",
         "Xcode": "11.5",
         "macOS": "10.15.4"
