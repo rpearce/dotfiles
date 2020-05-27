@@ -2,10 +2,10 @@
   "entries": {
     "tap": {
       "caskroom/cask": {
-        "revision": "7f340b97d60907da225e9f5c10e81f9285ef2edb"
+        "revision": "ff0c3165e6548b557271074874dc83c29f10afe3"
       },
       "caskroom/versions": {
-        "revision": "3a137686c8051d604f0732b11aabc959167c6ae8"
+        "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       }
     },
     "brew": {
@@ -13,7 +13,7 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.13,2551",
+        "version": "2.0.16,2578",
         "options": {
           "full_name": "deckset"
         }
@@ -106,13 +106,13 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.6,137129",
+        "version": "6.1.8,137981",
         "options": {
           "full_name": "virtualbox"
         }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.6",
+        "version": "6.1.8",
         "options": {
           "full_name": "virtualbox-extension-pack"
         }
@@ -152,9 +152,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.15",
+        "HOMEBREW_VERSION": "2.2.17",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "653056efe2e599c1658759e15cd2605f1e63f71e",
+        "Homebrew/homebrew-core": "64009453ce0127573ee8bb75168a06debe56d344",
         "CLT": "",
         "Xcode": "11.4.1",
         "macOS": "10.15.4"
