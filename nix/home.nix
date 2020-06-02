@@ -62,7 +62,6 @@ in {
 
     # haskell
     haskellPackages.ghcid
-    haskellPackages.hakyll
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.pandoc
