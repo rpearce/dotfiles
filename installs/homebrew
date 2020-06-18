@@ -8,6 +8,7 @@ fi
 
 # Install from Brewfile
 
+brew bundle cleanup -f --file="$XDG_CONFIG_HOME/installs/$1/Brewfile"
 brew bundle -v --file="$XDG_CONFIG_HOME/installs/$1/Brewfile"
 
 # Cleanup
