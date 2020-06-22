@@ -84,5 +84,9 @@
     help = {
       autocorrect = 1;
     };
+
+    pull = {
+      rebase = true;
+    };
   };
 }
