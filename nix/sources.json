@@ -17,10 +17,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "dd17834c49aa765c222d77b6d22f8de7af03a3c1",
-        "sha256": "1g2z8mq4lid1vy61rhyib9z2xhy096z28jbjxpx6xf3cf0kvjjc1",
+        "rev": "c27f5a6c57de4495045450b6587d4a2c489851c8",
+        "sha256": "064lyr1661pk7hh7npgxsmk4cni9bc34hb2d6r76qp4cs2hcazim",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/dd17834c49aa765c222d77b6d22f8de7af03a3c1.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/c27f5a6c57de4495045450b6587d4a2c489851c8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "joshdick",
         "repo": "onedark.vim",
-        "rev": "4bd965e29811e29e1c1b0819f3a63671d3e6ef28",
-        "sha256": "168zim0ifkg441iwwpxdb93fq4ap2ps0rnrad5lqycpgwr0v0bg2",
+        "rev": "78d4b029b63bbb302842451b1810acfdda13851d",
+        "sha256": "1s1rx26d986mmfv40rzqp2vkrhhbwsjia68b4bfjjpbzd9060jbq",
         "type": "tarball",
-        "url": "https://github.com/joshdick/onedark.vim/archive/4bd965e29811e29e1c1b0819f3a63671d3e6ef28.tar.gz",
+        "url": "https://github.com/joshdick/onedark.vim/archive/78d4b029b63bbb302842451b1810acfdda13851d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
