@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "89517ec4c8b53f87e15ac056bfd141389c901ade"
+        "revision": "fce087431afe75b99e872fd21b2214f9e38b65af"
       }
     },
     "brew": {
@@ -218,6 +218,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "tableplus": {
+        "version": "3.6.2,322",
+        "options": {
+          "full_name": "tableplus",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -226,7 +235,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.4.4",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "62ef5ecef604759bef859c1c152a0a2e47242f1f",
+        "Homebrew/homebrew-core": "9783dede8d1f5fde0366d045f62c5a3bf4ce6aa3",
         "CLT": "",
         "Xcode": "11.5",
         "macOS": "10.15.5"
