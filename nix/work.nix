@@ -5,13 +5,23 @@
 let
   sources = import ./sources.nix;
 
-  nixpkgsConfig = import ./nixpkgs/config.nix;
+  nixpkgsConfig = import ./config.nix;
   pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
 
   user = import ./user.nix;
-  xdg = import ./xdg.nix;
 
-in {
+in rec {
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = builtins.getEnv "HOME";
+  home.stateVersion = "20.09";
+
+  xdg = {
+    enable = true;
+    configHome = "${builtins.getEnv "HOME"}/.config";
+    dataHome = "${builtins.getEnv "HOME"}/.data";
+    cacheHome = "${builtins.getEnv "HOME"}/.cache";
+  };
+
   nixpkgs = {
     config = {
       _module.args = {
@@ -19,8 +29,6 @@ in {
       };
     };
   };
-
-  xdg = xdg;
 
   home.packages = with pkgs; [
     # CLI
@@ -61,10 +69,22 @@ in {
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
-  programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
-  programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
-  programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; sources = sources; });
-  #programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; sources = sources; });
+  programs.zsh = (import ./programs/zsh/default.nix {
+    xdg = xdg;
+    hostname = user.hostname;
+  });
+  programs.git = (import ./programs/git.nix {
+    gitConfig = user.git;
+    pkgs = pkgs;
+  });
+  programs.neovim = (import ./programs/neovim/default.nix {
+    pkgs = pkgs;
+    sources = sources;
+  });
+  #programs.vim = (import ./programs/vim/default.nix {
+  #  pkgs = pkgs;
+  #  sources = sources;
+  #});
 
   home.file.".gemrc".source = ../conf/.gemrc;
   home.file.".gitignore".source = ../conf/.gitignore;

@@ -6,3 +6,6 @@
 
 # Session
 Session.vim
+
+# System
+.DS_Store

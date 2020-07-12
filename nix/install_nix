@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Check or nix and install if we don't have it
+
+if ! type "nix" &> /dev/null; then
+  curl https://nixos.org/nix/install | sh
+fi
+
+# Source nix
+
+. ~/.nix-profile/etc/profile.d/nix.sh
+
+## home-manager
+
+#if [[ $(uname -s) == 'Darwin' ]]; then
+#  mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+#fi
+
+#nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+#nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+#nix-channel --update
+
+#export NIX_PATH=$HOME/.nix-defexpr/channels/${NIX_PATH:+:}$NIX_PATH
+
+#if ! type "home-manager" &> /dev/null; then
+#  nix-shell '<home-manager>' -A install
+#fi
+
+#home-manager -f $(pwd)/nix/$1.nix switch
+
+exit 0

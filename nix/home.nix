@@ -5,7 +5,7 @@
 let
   sources = import ./sources.nix;
 
-  nixpkgsConfig = import ./nixpkgs/config.nix // {
+  nixpkgsConfig = import ./config.nix // {
     packageOverrides = pkgz: rec {
       timetrack-cli = pkgz.haskell.packages.ghc882.callPackage
         "${sources.timetrack-cli.outPath}/default.nix"
@@ -17,9 +17,19 @@ let
   all-hies = import sources.all-hies { };
 
   user = import ./user.nix;
-  xdg = import ./xdg.nix;
 
-in {
+in rec {
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = builtins.getEnv "HOME";
+  home.stateVersion = "20.09";
+
+  xdg = {
+    enable = true;
+    configHome = "${builtins.getEnv "HOME"}/.config";
+    dataHome = "${builtins.getEnv "HOME"}/.data";
+    cacheHome = "${builtins.getEnv "HOME"}/.cache";
+  };
+
   nixpkgs = {
     config = {
       _module.args = {
@@ -27,8 +37,6 @@ in {
       };
     };
   };
-
-  xdg = xdg;
 
   home.packages = with pkgs; [
     # CLI
@@ -46,7 +54,6 @@ in {
     heroku
     jq
     ncdu
-    niv
     rename
     ripgrep
     ruby_2_6
@@ -82,10 +89,22 @@ in {
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
-  programs.zsh = (import ./programs/zsh/default.nix { xdg = xdg; hostname = user.hostname; });
-  programs.git = (import ./programs/git.nix { gitConfig = user.git; pkgs = pkgs; });
-  programs.neovim = (import ./programs/neovim/default.nix { pkgs = pkgs; sources = sources; });
-  #programs.vim = (import ./programs/vim/default.nix { pkgs = pkgs; sources = sources; });
+  programs.zsh = (import ./programs/zsh/default.nix {
+    xdg = xdg;
+    hostname = user.hostname;
+  });
+  programs.git = (import ./programs/git.nix {
+    gitConfig = user.git;
+    pkgs = pkgs;
+  });
+  programs.neovim = (import ./programs/neovim/default.nix {
+    pkgs = pkgs;
+    sources = sources;
+  });
+  #programs.vim = (import ./programs/vim/default.nix {
+  #  pkgs = pkgs;
+  #  sources = sources;
+  #});
 
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;
