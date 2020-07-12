@@ -27,14 +27,16 @@ function setup {
 
   ./nix/install_nix
 
+  # Source generated ~/.profile or ~/.zprofile
+
+  [[ -f ~/.profile ]] && source ~/.profile
+  [[ -f ~/.zprofile ]] && source ~/.zprofile
+
+  # @TODO: switch here
+
   # macOS
 
   if [[ $(uname -s) == 'Darwin' ]]; then
-    # Source generated ~/.profile or ~/.zprofile
-
-    [[ -f ~/.profile ]] && source ~/.profile
-    [[ -f ~/.zprofile ]] && source ~/.zprofile
-
     # Homebrew
 
     ./homebrew/install_homebrew
