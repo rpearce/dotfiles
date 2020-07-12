@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [[ ! -f ~/.ssh/id_rsa.pub ]]; then
   echo "Setting up ssh key..."
