@@ -27,12 +27,15 @@ function setup {
 
   ./nix/install_nix
 
+  # @TODO: switch here
+
   # Source generated ~/.profile or ~/.zprofile
 
+  # shellcheck source=/dev/null
   [[ -f ~/.profile ]] && source ~/.profile
-  [[ -f ~/.zprofile ]] && source ~/.zprofile
 
-  # @TODO: switch here
+  # shellcheck source=/dev/null
+  [[ -f ~/.zprofile ]] && source ~/.zprofile
 
   # macOS
 
@@ -55,15 +58,15 @@ function setup {
 
   # Reload current shell
 
-  exec $SHELL -l
+  exec "$SHELL" -l
 }
 
 function switch {
   [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
 
-  nix-shell --run "home-manager switch $@"
+  nix-shell --run "home-manager switch $*"
 
-  exec $SHELL -l
+  exec "$SHELL" -l
 }
 
 function unknown-cmd() {

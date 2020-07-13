@@ -209,6 +209,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "pgadmin4": {
+        "version": "4.23",
+        "options": {
+          "full_name": "pgadmin4",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "tableplus": {
+        "version": "3.6.2,322",
+        "options": {
+          "full_name": "tableplus",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },

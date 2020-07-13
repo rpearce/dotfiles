@@ -57,6 +57,7 @@ in rec {
     rename
     ripgrep
     ruby_2_6
+    shellcheck
     speedtest-cli
     tldr
     #timetrack-cli
