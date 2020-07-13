@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "fce087431afe75b99e872fd21b2214f9e38b65af"
+        "revision": "2b47d0abde07762909cf6aadda9cd4b0bbf2f9e4"
       }
     },
     "brew": {
@@ -25,9 +25,12 @@
         }
       },
       "docker": {
-        "version": "2.0.0.3-ce-mac81,31259",
+        "version": "2.3.0.3,45519",
         "options": {
-          "full_name": "docker"
+          "full_name": "docker",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "dropbox": {
@@ -233,9 +236,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.4",
+        "HOMEBREW_VERSION": "2.4.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "9783dede8d1f5fde0366d045f62c5a3bf4ce6aa3",
+        "Homebrew/homebrew-core": "41c206ff8bd92b3f1cb043526a5ca000eebccc99",
         "CLT": "",
         "Xcode": "11.5",
         "macOS": "10.15.5"

@@ -110,12 +110,12 @@ in rec {
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;
   home.file.".ghci".source = ../conf/.ghci;
-  home.file.".gitignore".source = ../conf/.gitignore;
   home.file.".inputrc".source = ../conf/.inputrc;
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
   home.file.".stack/config.yaml".source = ../conf/stack.yaml;
   home.file.".tmux.conf".source = ../conf/.tmux.conf;
+  home.file."${xdg.configHome}/git/ignore".source = ../conf/.gitignore;
 
   home.activation.setVimDirs =
     config.lib.dag.entryAfter ["writeBoundary"] ''
