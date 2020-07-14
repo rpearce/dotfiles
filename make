@@ -29,7 +29,7 @@ function brewup {
 }
 
 function hm {
-  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+  kaffe
 
   nix-shell --run "home-manager $*"
 
@@ -43,7 +43,7 @@ function setup {
 
   # Keep the computer awake for the duration of this script
 
-  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+  kaffe
 
   # Ask for the administrator password
 
@@ -81,8 +81,14 @@ function setup {
   exec "$SHELL" -l
 }
 
+function kaffe {
+  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+}
+
 function switch {
   local hm_cfg_path="$HOME_MANAGER_CONFIG"
+
+  kaffe
 
   if [ -n "$hm_cfg_path" ]; then
     nix-shell --run "home-manager switch -f '$hm_cfg_path'"
