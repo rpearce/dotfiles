@@ -94,13 +94,6 @@ in rec {
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
   home.file."${xdg.configHome}/git/ignore".source = ../conf/.gitignore;
 
-  home.activation.setVimDirs =
-    config.lib.dag.entryAfter ["writeBoundary"] ''
-      mkdir -p ${xdg.dataHome}/vim/backup//
-      mkdir -p ${xdg.dataHome}/vim/swap//
-      mkdir -p ${xdg.dataHome}/vim/undo//
-    '';
-
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
@@ -113,4 +106,21 @@ in rec {
         ${npmSet} init.license "${user.npm.initLicense}"
         ${npmSet} init.version "${user.npm.initVersion}"
       '';
+
+  home.activation.setSSH =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      if [[ ! -f ~/.ssh/id_rsa.pub ]]; then
+        echo "Setting up ssh key..."
+        ssh-keygen -t rsa -C "${user.ssh.email}"
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_rsa
+      fi
+    '';
+
+  home.activation.setVimDirs =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p ${xdg.dataHome}/vim/backup//
+      mkdir -p ${xdg.dataHome}/vim/swap//
+      mkdir -p ${xdg.dataHome}/vim/undo//
+    '';
 }

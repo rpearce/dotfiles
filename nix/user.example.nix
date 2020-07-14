@@ -15,4 +15,8 @@
     initVersion = "0.1.0";
     initLicense = "BSD-3-Clause";
   };
+
+  ssh = {
+    email = "me@myname.com";
+  };
 }

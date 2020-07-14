@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [[ ! -f ~/.ssh/id_rsa.pub ]]; then
-  echo "Setting up ssh key..."
-
-  ssh-keygen -t rsa -C "me@robertwpearce.com"
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_rsa
-fi

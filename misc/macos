@@ -14,10 +14,11 @@ sudo -v
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $CONFIG_HOSTNAME
-sudo scutil --set HostName $CONFIG_HOSTNAME
-sudo scutil --set LocalHostName $CONFIG_HOSTNAME
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $CONFIG_HOSTNAME
+sudo scutil --set ComputerName "$CONFIG_HOSTNAME"
+sudo scutil --set HostName "$CONFIG_HOSTNAME"
+sudo scutil --set LocalHostName "$CONFIG_HOSTNAME"
+sudo defaults write
+/Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$CONFIG_HOSTNAME"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -540,23 +541,19 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 for app in "Activity Monitor" \
 	"Address Book" \
 	"Calendar" \
-	"cfprefsd" \
 	"Contacts" \
 	"Dock" \
 	"Finder" \
-	"Google Chrome Canary" \
+	"Firefox Developer Edition" \
 	"Google Chrome" \
 	"Mail" \
 	"Messages" \
-	"Opera" \
 	"Photos" \
 	"Safari" \
-	"SizeUp" \
-	"Spectacle" \
 	"SystemUIServer" \
 	"Terminal" \
 	"Transmission" \
-	"Twitter" \
+	"cfprefsd" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done

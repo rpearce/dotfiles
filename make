@@ -29,9 +29,15 @@ function brewup {
 }
 
 function hm {
+  # Keep the computer awake for the duration of this script
+
   kaffe
 
+  # Run home-manager with whatever options were sent
+
   nix-shell --run "home-manager $*"
+
+  # Reload current shell
 
   exec "$SHELL" -l
 }
