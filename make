@@ -10,6 +10,32 @@ function clean {
   nix optimise-store
 }
 
+function brewup {
+  local brew_path="$BREWFILE_PATH"
+
+  if [ -n "$brew_path" ]; then
+    brew bundle cleanup -f --file="$brew_path"
+    brew bundle -v --file="$brew_path"
+    brew update
+    brew upgrade
+    brew cleanup
+    brew doctor
+    brew cask upgrade
+  else
+    echo "INFO: No BREWFILE_PATH specified. brewup was not ran."
+  fi
+
+  return 0
+}
+
+function hm {
+  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+
+  nix-shell --run "home-manager $*"
+
+  exec "$SHELL" -l
+}
+
 function setup {
   # Check if ./nix/user.nix exists before we get started
 
@@ -21,13 +47,13 @@ function setup {
 
   # Ask for the administrator password
 
+  echo "Getting sudo permission up-front for any tools that require it..."
   sudo -v
 
-  # Install Nix
+  # Nix
 
   ./nix/install_nix
-
-  # @TODO: switch here
+  switch
 
   # Source generated ~/.profile or ~/.zprofile
 
@@ -43,13 +69,7 @@ function setup {
     # Homebrew
 
     ./homebrew/install_homebrew
-    brew bundle cleanup -f --file="./homebrew/$1/Brewfile"
-    brew bundle -v --file="./homebrew/$1/Brewfile"
-    brew update
-    brew upgrade
-    brew cleanup
-    brew doctor
-    brew cask upgrade
+    brewup
 
     # macOS-specific options
 
@@ -62,11 +82,16 @@ function setup {
 }
 
 function switch {
-  [[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+  local hm_cfg_path="$HOME_MANAGER_CONFIG"
 
-  nix-shell --run "home-manager switch $*"
+  if [ -n "$hm_cfg_path" ]; then
+    nix-shell --run "home-manager switch -f '$hm_cfg_path'"
+  else
+    echo "INFO: No HOME_MANAGER_CONFIG specified. Using $PWD/nix/home.nix, instead."
+    nix-shell --run "home-manager switch"
+  fi
 
-  exec "$SHELL" -l
+  return 0
 }
 
 function unknown-cmd() {
@@ -83,16 +108,21 @@ function unknown-user() {
 
 function update {
   nix-shell --run "niv update"
+  switch
+  brewup
 }
 
 function usage() {
   cat <<EOF
-Usage: $0 <COMMAND>
-  clean     (-d)
-  help      (-h|--help)
-  setup     <home|work>
-  switch
-  update
+Usage: ./make <COMMAND>
+  clean     (-d)           Collect nix garbage and optimise the store
+  brewup                   Run brew commands using BREWFILE_PATH
+  help      (-h|--help)    Read this usage
+  hm                       Run home-manager with commands
+  setup                    Install nix, run home-manager, install homebrew, load
+                           your Brewfile, load macOS-specific options
+  switch                   Run home-manager switch HOME_MANAGER_CONFIG
+  update                   Update dependencies
 EOF
   return 0
 }
@@ -100,6 +130,11 @@ EOF
 # Check if no command is provided
 
 [[ $# -lt 1 ]] && unknown-cmd
+
+# Load ENV vars
+
+# shellcheck source=./env
+[[ -f "$PWD/env" ]] && . "$PWD/env"
 
 # Determine command
 

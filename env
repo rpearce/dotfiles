@@ -1,0 +1,2 @@
+export BREWFILE_PATH="$PWD/homebrew/HomeBrewfile"
+export HOME_MANAGER_CONFIG="$PWD/nix/home.nix"

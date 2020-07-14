@@ -1,11 +1,11 @@
 let
-  sources = import ./nix/sources.nix;
+sources = import ./nix/sources.nix;
 
-  nixpkgs = sources."nixpkgs";
+nixpkgs = sources."nixpkgs";
 
-  pkgs = import nixpkgs { };
+pkgs = import nixpkgs { };
 
-  hm = (import sources.home-manager { inherit pkgs; });
+hm = (import sources.home-manager { inherit pkgs; });
 
 in pkgs.mkShell rec {
   name = "home-manager-shell";
