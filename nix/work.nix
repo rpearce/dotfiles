@@ -65,6 +65,7 @@ in rec {
 
     # git
     git-lfs
+    gitAndTools.delta
     gitAndTools.diff-so-fancy
     nix-prefetch-git
   ];

@@ -149,9 +149,11 @@ shift
 
 case "$cmd" in
         clean|-d) clean;;
+          brewup) brewup;;
   help|-h|--help) usage;;
-           setup) setup "${1:-home}";;
-          switch) switch "$@";;
+              hm) hm "$@";;
+           setup) setup;;
+          switch) switch;;
           update) update;;
                *) unknown-cmd;;
 esac

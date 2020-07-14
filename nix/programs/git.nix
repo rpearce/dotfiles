@@ -46,31 +46,56 @@
       ui = true;
     };
 
-    "color \"diff\"" = {
-      meta = "yellow";
-      frag = "magenta bold";
-      commit = "yellow bold";
-      old = "red bold";
-      new = "green bold";
-      whitespace = "red reverse";
-    };
+    #"color \"diff\"" = {
+    #  meta = "yellow";
+    #  frag = "magenta bold";
+    #  commit = "yellow bold";
+    #  old = "red bold";
+    #  new = "green bold";
+    #  whitespace = "red reverse";
+    #};
 
-    "color \"diff-highlight\"" = {
-      oldNormal = "red bold";
-      oldHighlight = "red bold 52";
-      newNormal = "green bold";
-      newHighlight = "green bold 22";
-    };
+    #"color \"diff-highlight\"" = {
+    #  oldNormal = "red bold";
+    #  oldHighlight = "red bold 52";
+    #  newNormal = "green bold";
+    #  newHighlight = "green bold 22";
+    #};
 
     core = {
       editor = "vim";
-      excludesfile = "~/.gitignore";
-      #hooksPath = "~/.githooks";
-      pager = "diff-so-fancy | less --tabs=4 -RFX";
+      excludesfile = "~/.config/git/ignore";
+      #hooksPath = "~/.config/git/hooks";
+      #pager = "diff-so-fancy | less --tabs=4 -RFX";
+      pager = "delta";
     };
 
     credential = {
       helper = gitConfig.credentialHelper;
+    };
+
+    delta = {
+      features = "unobtrusive-line-numbers decorations";
+      whitespace-error-style = "22 reverse";
+      syntax-theme = "Monokai Extended Bright";
+    };
+
+    "delta \"unobtrusive-line-numbers\"" = {
+      line-numbers = true;
+      line-numbers-minus-style = "#444444";
+      line-numbers-zero-style = "#444444";
+      line-numbers-plus-style = "#444444";
+      line-numbers-left-format = "{nm:>4}┊";
+      line-numbers-right-format = "{np:>4}│";
+      line-numbers-left-style = "#444444";
+      line-numbers-right-style = "#444444";
+    };
+
+    "delta \"decorations\"" = {
+      commit-decoration-style = "bold yellow box ul";
+      file-style = "bold yellow ul";
+      file-decoration-style = "none";
+      hunk-header-decoration-style = "yellow box";
     };
 
     fetch = {
@@ -83,6 +108,10 @@
 
     help = {
       autocorrect = 1;
+    };
+
+    interactive = {
+      diffFilter = "delta --dark --color-only";
     };
 
     pull = {

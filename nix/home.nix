@@ -85,6 +85,7 @@ in rec {
     elixir
 
     # git
+    gitAndTools.delta
     gitAndTools.diff-so-fancy
     nix-prefetch-git
   ];
