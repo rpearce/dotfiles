@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "57050bc6aceb38ffdf8960cc2b8aeabb52c2db07"
+        "revision": "f1a36ff2af3ecb61eac37d05ae13611adffe81d9"
       }
     },
     "brew": {
@@ -236,9 +236,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.5",
+        "HOMEBREW_VERSION": "2.4.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e45b39aa677fc344226abc22ce85b28fcc54a6b3",
+        "Homebrew/homebrew-core": "af74615dae5a98a8210a6f75f877fe7defb08239",
         "CLT": "",
         "Xcode": "11.5",
         "macOS": "10.15.5"
