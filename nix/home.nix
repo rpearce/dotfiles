@@ -88,6 +88,11 @@ in rec {
     gitAndTools.delta
     gitAndTools.diff-so-fancy
     nix-prefetch-git
+
+    # rust
+    cargo
+    rustc
+    rustfmt
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
