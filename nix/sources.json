@@ -17,10 +17,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "a49ce0e9edcd717ce6e66041aabd656c02903904",
-        "sha256": "1h9rmyg62ksn127fg0k4yzyifjy4ffvanhs18ibvhsfr9biadi0j",
+        "rev": "5c639ff68abf0f16f2e63fb3f8aca016d54c7d10",
+        "sha256": "1p4sxg6v59cl723x97dfq474hj855x5i8ifk4r43hh4fn9dl6vms",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/a49ce0e9edcd717ce6e66041aabd656c02903904.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/5c639ff68abf0f16f2e63fb3f8aca016d54c7d10.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "joshdick",
         "repo": "onedark.vim",
-        "rev": "78d4b029b63bbb302842451b1810acfdda13851d",
-        "sha256": "1s1rx26d986mmfv40rzqp2vkrhhbwsjia68b4bfjjpbzd9060jbq",
+        "rev": "c0f22072c8780494afce1bc0c5ea4de252c4516f",
+        "sha256": "05wbkxwmbb546k647ylsy33xl3pv5giz1v47qw9lpspx4mknx1ay",
         "type": "tarball",
-        "url": "https://github.com/joshdick/onedark.vim/archive/78d4b029b63bbb302842451b1810acfdda13851d.tar.gz",
+        "url": "https://github.com/joshdick/onedark.vim/archive/c0f22072c8780494afce1bc0c5ea4de252c4516f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
