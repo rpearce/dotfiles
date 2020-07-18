@@ -56,7 +56,7 @@ in rec {
     ncdu
     rename
     ripgrep
-    ruby_2_6
+    ruby
     shellcheck
     speedtest-cli
     tldr

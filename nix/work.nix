@@ -48,7 +48,7 @@ in rec {
     openvpn
     rename
     ripgrep
-    ruby_2_6
+    ruby
     shellcheck
     speedtest-cli
     tldr
