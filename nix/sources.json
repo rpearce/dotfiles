@@ -41,10 +41,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "6148f6360310366708dff42055a0ba0afa963101",
-        "sha256": "1j91hxfak1kark776klszakvg0a9yv77p7lnrvj7g32v6g20qdsk",
+        "rev": "d7e20ee25ed8aa1f0f24a9ca77026c6ef217f6ba",
+        "sha256": "1ar7prnrmmlqj17g57nqp82hgy5283dxb94akaqrwpbaz7qfwi4y",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/6148f6360310366708dff42055a0ba0afa963101.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/d7e20ee25ed8aa1f0f24a9ca77026c6ef217f6ba.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "onedark-vim": {
