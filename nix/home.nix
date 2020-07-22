@@ -47,6 +47,7 @@ in rec {
     cachix
     coreutils
     ctop
+    #dijo
     exercism
     findutils
     fswatch
