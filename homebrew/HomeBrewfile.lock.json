@@ -11,27 +11,27 @@
         "revision": "d9a7cd1116ae7c7f44875cc1b1e3f18ce5aac1c8"
       },
       "homebrew/cask": {
-        "revision": "808993fe8c242ca3b9a0fbf895e677162df730d7"
+        "revision": "a78de6ed1892e8585baf903370f858f0c4ae5769"
       }
     },
     "brew": {
       "clamav": {
-        "version": "0.102.3_1",
+        "version": "0.102.4",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3_1.catalina.bottle.tar.gz",
-              "sha256": "2bb5ea7de66e798672e5f9a6bb49bb2d0f3f723a655fe365a5f12322567c6ef3"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4.catalina.bottle.tar.gz",
+              "sha256": "6ca687f707713bf0d5bd4898add75c98ba5b7b53067856e368373b309554ae2b"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3_1.mojave.bottle.tar.gz",
-              "sha256": "c5dc15e28ffab603fea38b1e22fda3023384ae654544554f40d75038b7cb4318"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4.mojave.bottle.tar.gz",
+              "sha256": "9f63cb3bbee311cc564fb913ed458210910ebc48c1ef848e8872bc72626c59cb"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.3_1.high_sierra.bottle.tar.gz",
-              "sha256": "fd1d05cd3c62e0af9ee1a7b9b875d0f8ce776d4a4022c0fb3b184a806669abb0"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4.high_sierra.bottle.tar.gz",
+              "sha256": "845de365f44b2e892fbf14536f3ee496fd527bfdee7be7055dd4234a964e7ca3"
             }
           }
         }
@@ -235,7 +235,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.4.8",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e4fa10dd1a1ab1a88cdc79db2500306769c1dc09",
+        "Homebrew/homebrew-core": "dfc0e9f82b865cea415174d5be7cac36aae5537b",
         "CLT": "1103.0.32.62",
         "Xcode": "11.6",
         "macOS": "10.15.5"
