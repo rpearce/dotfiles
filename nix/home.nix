@@ -14,8 +14,6 @@ let
   };
   pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
 
-  all-hies = import sources.all-hies { };
-
   user = import ./user.nix;
 
 in rec {
@@ -76,7 +74,6 @@ in rec {
     haskellPackages.pandoc
     haskellPackages.stylish-haskell
     stack
-    (all-hies.selection { selector = p: { inherit (p) ghc882; }; })
 
     # elm
     elmPackages.elm
@@ -94,6 +91,7 @@ in rec {
     cargo
     rustc
     rustfmt
+    rust-analyzer
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
