@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "75acd5416cf9ec5b79a6881b5e071c147a29f702"
+        "revision": "01236a803ce4bb273969866a64fae4c59c055541"
       }
     },
     "brew": {
@@ -100,7 +100,7 @@
         }
       },
       "postico": {
-        "version": "1.5.13",
+        "version": "1.5.14",
         "options": {
           "full_name": "postico",
           "args": {
@@ -236,9 +236,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.7",
+        "HOMEBREW_VERSION": "2.4.8",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e469c0eaedc6f66a5927c75fc7eda27c28a7b369",
+        "Homebrew/homebrew-core": "7d53991a1af4cddd78f4ec0ad5eda90faf447006",
         "CLT": "",
         "Xcode": "11.6",
         "macOS": "10.15.6"
