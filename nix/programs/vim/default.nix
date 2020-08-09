@@ -20,7 +20,7 @@ in {
     vim-ripgrep
 
     # Tools
-    coc-nvim
+    #coc-nvim
     nerdcommenter
     nerdtree
     supertab
