@@ -6,7 +6,7 @@ set -o nounset
 set -eou pipefail
 
 function clean {
-  nix-collect-garbage --delete-older-than 7d
+  nix-collect-garbage -d
   nix optimise-store
 }
 
