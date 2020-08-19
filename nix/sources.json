@@ -1,26 +1,14 @@
 {
-    "all-hies": {
-        "branch": "master",
-        "description": "Cached Haskell IDE Engine Nix builds for all GHC versions",
-        "homepage": "",
-        "owner": "Infinisil",
-        "repo": "all-hies",
-        "rev": "534ac517b386821b787d1edbd855b9966d0c0775",
-        "sha256": "0bw1llpwxbh1dnrnbxkj2l0j58s523hjivszf827c3az5i4py1i2",
-        "type": "tarball",
-        "url": "https://github.com/Infinisil/all-hies/archive/534ac517b386821b787d1edbd855b9966d0c0775.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix",
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "f4f9f1a618eb7c19b765b02c235e13657b5aa150",
-        "sha256": "0bja41nbps39y25r673yy8k2dywajzamp1nh2idyfn8sqc0scrk5",
+        "rev": "9854342b9f088712ca3c5b67059fff5ec4f59182",
+        "sha256": "1zy443ihvdaifx5ckb2akkvrqlbnym6k63rl00zhy5ik9fdyqxla",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/f4f9f1a618eb7c19b765b02c235e13657b5aa150.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/9854342b9f088712ca3c5b67059fff5ec4f59182.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -41,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs-channels",
-        "rev": "f9eba87bf03318587df8356a933f20cfbc81c6ee",
-        "sha256": "15cfqd3hargafkhfq5p9hw75dibnbajh06ha69k18scg9l1p1hnl",
+        "rev": "b78e08e981a9ad31036fc6c6fb880c1315b4ebea",
+        "sha256": "11gayn93qh5zj41i5cvx20fab3snj0s2mwd0d6z2hjkkiq7b98g3",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/f9eba87bf03318587df8356a933f20cfbc81c6ee.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/b78e08e981a9ad31036fc6c6fb880c1315b4ebea.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "onedark-vim": {

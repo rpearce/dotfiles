@@ -8,10 +8,10 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "73895eaeed3fb0b3cd90d3dfddb8cfe4178084b1"
+        "revision": "43de466d82a7ae152fa2f6fc3b0ae6598129ad38"
       },
       "homebrew/cask": {
-        "revision": "40abdfa7e8fc0b5b5187ab8e7142a6649be23960"
+        "revision": "c5765ae8835b04acd562155b5608a80d2dc6e0df"
       }
     },
     "brew": {
@@ -233,9 +233,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.11",
+        "HOMEBREW_VERSION": "2.4.12",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "adb9bd96fc1ea3a739f2f7b4a3c34f655d566e5d",
+        "Homebrew/homebrew-core": "d0e555d61deea80800e81d70f8714f5a2373f09e",
         "CLT": "1103.0.32.62",
         "Xcode": "11.6",
         "macOS": "10.15.5"
