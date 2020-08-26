@@ -1,9 +1,11 @@
 { config
+, stdenv
 , ...
 }:
 
 let
   sources = import ./sources.nix;
+  rust = import ./rust.nix { inherit sources; };
 
   nixpkgsConfig = import ./config.nix // {
     packageOverrides = pkgz: rec {
@@ -12,6 +14,7 @@ let
         { };
     };
   };
+
   pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
 
   user = import ./user.nix;
@@ -88,10 +91,7 @@ in rec {
     nix-prefetch-git
 
     # rust
-    cargo
-    rustc
-    rustfmt
-    rust-analyzer
+    rust
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });

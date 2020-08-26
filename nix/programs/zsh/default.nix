@@ -55,7 +55,7 @@
     tt = "timetrack-cli";
 
     # AntiVirus Scan: ClamAV
-    vscan = "freshclam && clamscan -ri --bell \${1}";
+    vscan = "[[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &; freshclam && clamscan -ri --bell \${1}";
   };
 
   envExtra = builtins.readFile ./.zshenv;
