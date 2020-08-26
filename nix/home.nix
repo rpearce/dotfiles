@@ -49,6 +49,7 @@ in rec {
     coreutils
     ctop
     dijo
+    exa
     exercism
     findutils
     fswatch

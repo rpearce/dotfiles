@@ -6,6 +6,7 @@ let
   sources = import ./sources.nix;
 
   nixpkgsConfig = import ./config.nix;
+
   pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
 
   user = import ./user.nix;
@@ -39,6 +40,7 @@ in rec {
     bat
     coreutils
     ctop
+    exa
     findutils
     fswatch
     gnupg

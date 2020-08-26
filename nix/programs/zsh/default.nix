@@ -40,7 +40,9 @@
     ipl = "ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
 
     # long listing
-    ll = "ls --color=auto -laG";
+    #ll = "ls --color=auto -laG";
+    ls = "exa -G  --color auto --icons -a -s type";
+    ll = "Exa -l --color always --icons -a -s type";
 
     # Run previous command with sudo
     please = "sudo \"$BASH\" -c \"$(history -p !!)\"";
