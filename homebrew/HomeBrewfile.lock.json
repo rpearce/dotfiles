@@ -8,10 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "43de466d82a7ae152fa2f6fc3b0ae6598129ad38"
+        "revision": "eab845687b0a1bee3db2880f0628d09f45b2ae57"
       },
       "homebrew/cask": {
-        "revision": "eac2567c9b5a72585479a0a6a0bd503672395d58"
+        "revision": "c7d123aa52eb3784331fae46e12005b95222db6c"
+      },
+      "homebrew/cask-fonts": {
+        "revision": "7900f58da1f74289cb8f0ef44fb059175a49870b"
       }
     },
     "brew": {
@@ -227,6 +230,15 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "font-hack-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-hack-nerd-font",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -235,7 +247,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.4.13",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b4ccaa9f4d25d33406204c5075eae5de5a3f52e0",
+        "Homebrew/homebrew-core": "ef3b24bfe75185157bb0f9e02c59b61b7313fefb",
         "CLT": "1103.0.32.62",
         "Xcode": "11.6",
         "macOS": "10.15.5"
