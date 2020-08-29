@@ -42,7 +42,7 @@
     # long listing
     #ll = "ls --color=auto -laG";
     ls = "exa -G  --color auto --icons -a -s type";
-    ll = "Exa -l --color always --icons -a -s type";
+    ll = "exa -l --color always --icons -a -s type";
 
     # Run previous command with sudo
     please = "sudo \"$BASH\" -c \"$(history -p !!)\"";
