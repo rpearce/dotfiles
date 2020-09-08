@@ -106,7 +106,7 @@ export MANPAGER="sh -c 'col -b | bat -l man -p'"
 # direnv
 ####################################################
 
-#eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 ####################################################
 # misc functions
