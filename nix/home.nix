@@ -56,6 +56,7 @@ in rec {
     gnupg
     heroku
     jq
+    lorri
     ncdu
     rename
     ripgrep
