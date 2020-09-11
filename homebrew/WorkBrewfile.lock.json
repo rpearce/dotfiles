@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "ba8be24b69ae9cc50318030dedb57322e0f1d20f"
+        "revision": "c1916f93e6a24343d429c29fa9896254633a0d1b"
       },
       "homebrew/cask-fonts": {
-        "revision": "1f1d346222497f3700aefbbbd1bba33c11f4be61"
+        "revision": "4414bae677c4787198fa5ab49ab5d35b9f398cac"
       }
     },
     "brew": {
@@ -157,7 +157,7 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.12,139181",
+        "version": "6.1.14,140239",
         "options": {
           "full_name": "virtualbox",
           "args": {
@@ -166,7 +166,7 @@
         }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.12",
+        "version": "6.1.14",
         "options": {
           "full_name": "virtualbox-extension-pack",
           "args": {
@@ -257,11 +257,11 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.14",
+        "HOMEBREW_VERSION": "2.5.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "33088496b3f033bce8d5553651098f3ce87f3bbf",
+        "Homebrew/homebrew-core": "d035479b7903eb92badd85d9098846a2c06b3e5b",
         "CLT": "",
-        "Xcode": "11.6",
+        "Xcode": "11.7",
         "macOS": "10.15.6"
       }
     }
