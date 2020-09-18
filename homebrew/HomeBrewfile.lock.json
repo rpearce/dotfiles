@@ -8,33 +8,33 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "6799ed0b4abcd57b9de2ca1a60305d2868d7c66c"
+        "revision": "16e0cc260a2cff6727fdf3f0f2c1763737942374"
       },
       "homebrew/cask": {
-        "revision": "aba3a3b6df9b60b89c4ef72b00661bcbb7130992"
+        "revision": "91e9f7fb0a7c991fc70479dc3b3a4ac58b17b69d"
       },
       "homebrew/cask-fonts": {
-        "revision": "5572d21d04b4e48eee6f5af62b97c0cccd7b5ee8"
+        "revision": "05ca9a1455a06a2eda4627c80df6c399899af024"
       }
     },
     "brew": {
       "clamav": {
-        "version": "0.102.4_1",
+        "version": "0.103.0",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4_1.catalina.bottle.tar.gz",
-              "sha256": "13d069ee3878c43b869ab6771037db93442fc6ed6c676640770b4923543bcbea"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.catalina.bottle.tar.gz",
+              "sha256": "223f07db86b0ed0e4e51db8d634111bb842dcc49c01df6dbe5dedcf46e786e44"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4_1.mojave.bottle.tar.gz",
-              "sha256": "a9822db4e330faf6aeec34eba16f55f0253eb411b6eb7efbc0ce02e5c02d8d21"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.mojave.bottle.tar.gz",
+              "sha256": "8155acb6f0bf2f1fd110612e8eda7ade7845f3fc3310332af6ae182660ab7692"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.102.4_1.high_sierra.bottle.tar.gz",
-              "sha256": "12f3d120164f7a4e3405b3fd19e31faf9a69f9283f38ba6184d715488c19517f"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.high_sierra.bottle.tar.gz",
+              "sha256": "458d060d70d37beb01b924ada3be7474b25f4a4c8a2bfb33f6bfb0251ab19024"
             }
           }
         }
@@ -214,7 +214,7 @@
         }
       },
       "pgadmin4": {
-        "version": "4.25",
+        "version": "4.26",
         "options": {
           "full_name": "pgadmin4",
           "args": {
@@ -245,11 +245,11 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.0",
+        "HOMEBREW_VERSION": "2.5.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "9e37832bc8781df9f944dd735649e441286893d1",
+        "Homebrew/homebrew-core": "987ff7e890a4fc5af1b7f78838715964a7194854",
         "CLT": "1103.0.32.62",
-        "Xcode": "11.7",
+        "Xcode": "12.0",
         "macOS": "10.15.6"
       }
     }
