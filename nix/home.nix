@@ -76,6 +76,7 @@ in rec {
     haskellPackages.ghcid
     haskellPackages.hlint
     haskellPackages.hoogle
+    haskellPackages.ormolu
     haskellPackages.pandoc
     haskellPackages.stylish-haskell
     stack
