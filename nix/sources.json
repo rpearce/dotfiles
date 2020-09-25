@@ -5,10 +5,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "8a160f01abe97e86a89f0312ef4046ca7656f207",
-        "sha256": "046az1fl2nsb4c1sllfrjf0kml5j7jyilz3i2w8rvn5g17jhcv10",
+        "rev": "abfb4cde51856dbee909f373b59cd941f51c2170",
+        "sha256": "0vm304vcvp5p0bcqj9rapzkchvdbs2alssg5m8a590vz41r2bp33",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/8a160f01abe97e86a89f0312ef4046ca7656f207.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/abfb4cde51856dbee909f373b59cd941f51c2170.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -69,6 +69,18 @@
         "sha256": "1qnpfnbmvpf1nf449h1lg5py0cmxljaa7s67z15fbyyj8rldsv9q",
         "type": "tarball",
         "url": "https://github.com/rpearce/timetrack-cli/archive/7de7c3fe8c262b89295ceb756e88cd6790c75612.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-ormolu": {
+        "branch": "master",
+        "description": "Ormolu vim plugin for formatting Haskell source code",
+        "homepage": null,
+        "owner": "sdiehl",
+        "repo": "vim-ormolu",
+        "rev": "0376ced83569994066c61827ad2160449033c509",
+        "sha256": "1ga5r24yymqcgjizqyaz6fxl2b8vp66ggzqa63pwl5qdp0rm97b8",
+        "type": "tarball",
+        "url": "https://github.com/sdiehl/vim-ormolu/archive/0376ced83569994066c61827ad2160449033c509.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-ripgrep": {

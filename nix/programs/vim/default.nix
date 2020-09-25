@@ -30,6 +30,7 @@ in {
     vim-gitgutter
     vim-localvimrc
     vim-multiple-cursors
+    vim-ormolu
     vim-surround
     vim-trailing-whitespace
 
