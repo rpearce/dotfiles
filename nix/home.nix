@@ -66,6 +66,7 @@ in rec {
     tldr
     #timetrack-cli
     tree
+    youtube-dl
     zsh-completions
 
     # node
