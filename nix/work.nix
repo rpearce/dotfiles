@@ -46,7 +46,6 @@ in rec {
     gnupg
     jq
     ncdu
-    niv
     openvpn
     rename
     ripgrep

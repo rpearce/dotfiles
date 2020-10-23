@@ -39,13 +39,16 @@
     ip = "dig +short myip.opendns.com @resolver1.opendns.com";
     ipl = "ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
 
+    # caffeinate
+    kaffe = "caffeinate -dusw $$";
+
     # long listing
     #ll = "ls --color=auto -laG";
     ls = "exa -G  --color auto --icons -a -s type";
     ll = "exa -l --color always --icons -a -s type";
 
     # Run previous command with sudo
-    please = "sudo \"$BASH\" -c \"$(history -p !!)\"";
+    please = "sudo $(fc -ln -1)";
 
     # Reload profile
     rel = "exec $SHELL -l";
@@ -57,7 +60,7 @@
     tt = "timetrack-cli";
 
     # AntiVirus Scan: ClamAV
-    vscan = "[[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &; freshclam && clamscan -ri --bell \${1}";
+    vscan = "freshclam && clamscan -ri --bell \${1}";
   };
 
   envExtra = builtins.readFile ./.zshenv;
