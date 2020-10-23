@@ -11,7 +11,7 @@
         "revision": "5b6f3972da0c681c4ca919cc8c02925ed7f1f6ec"
       },
       "homebrew/cask": {
-        "revision": "2d203c5bb51c6671af93b17fffcbf3d0161b07ca"
+        "revision": "e3266412dabae9106b40a91e1343e7152a8299d3"
       },
       "homebrew/cask-fonts": {
         "revision": "1161b7343587c7cd5df7a4ca136d47dd8cc77369"
@@ -239,6 +239,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "virtualbox": {
+        "version": "6.1.16,140961",
+        "options": {
+          "full_name": "virtualbox",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "virtualbox-extension-pack": {
+        "version": "6.1.16",
+        "options": {
+          "full_name": "virtualbox-extension-pack",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
@@ -247,7 +265,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "03386c0452aababdeafc62deb482393767d2ab7d",
+        "Homebrew/homebrew-core": "6153da22fb5c99656da7de6f5520bf5f0cfa627c",
         "CLT": "1103.0.32.62",
         "Xcode": "12.1",
         "macOS": "10.15.7"
