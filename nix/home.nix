@@ -60,7 +60,6 @@ in rec {
     ncdu
     rename
     ripgrep
-    ruby
     shellcheck
     speedtest-cli
     tldr
@@ -70,8 +69,8 @@ in rec {
     zsh-completions
 
     # node
-    nodejs-14_x
-    (yarn.override { nodejs = nodejs-14_x; })
+    nodejs-15_x
+    (yarn.override { nodejs = nodejs-15_x; })
 
     # haskell
     haskellPackages.ghcid
@@ -94,6 +93,9 @@ in rec {
     gitAndTools.diff-so-fancy
     gitAndTools.gh
     nix-prefetch-git
+
+    # ruby
+    ruby
 
     # rust
     rust
