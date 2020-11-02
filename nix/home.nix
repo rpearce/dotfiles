@@ -73,12 +73,12 @@ in rec {
     (yarn.override { nodejs = nodejs-15_x; })
 
     # haskell
-    haskellPackages.ghcid
-    haskellPackages.hlint
-    haskellPackages.hoogle
-    haskellPackages.ormolu
+    #haskellPackages.ghcid
+    #haskellPackages.hlint
+    #haskellPackages.hoogle
+    #haskellPackages.ormolu
     haskellPackages.pandoc
-    haskellPackages.stylish-haskell
+    #haskellPackages.stylish-haskell
     stack
 
     # elm

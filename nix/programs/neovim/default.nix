@@ -35,7 +35,7 @@ in {
     vim-trailing-whitespace
 
     # Languages
-    vim-stylish-haskell
+    #vim-stylish-haskell
     vim-polyglot
   ];
 
