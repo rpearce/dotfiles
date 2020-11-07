@@ -5,10 +5,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "a98ec6ec158686387d66654ea96153ec06be33d7",
-        "sha256": "05yvpywhpnnsr55asp6m1chrfd6yf0njy49j3wc9d6qm3dipgwmc",
+        "rev": "4cc1b77c3fc4f4b3bc61921dda72663eea962fa3",
+        "sha256": "02y6bjakcbfc0wvf9b5qky792y9abyf1kgnk8r30f1advn3x69nc",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/a98ec6ec158686387d66654ea96153ec06be33d7.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/4cc1b77c3fc4f4b3bc61921dda72663eea962fa3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -17,10 +17,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "9d35b9e4837ab88517210b1701127612c260eccf",
-        "sha256": "0q50xhnm8g2yfyakrh0nly4swyygxpi0a8cb9gp65wcakcgvzvdh",
+        "rev": "ba57d5a29b4e0f2085917010380ef3ddc3cf380f",
+        "sha256": "1kpsvc53x821cmjg1khvp1nz7906gczq8mp83664cr15h94sh8i4",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/9d35b9e4837ab88517210b1701127612c260eccf.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/ba57d5a29b4e0f2085917010380ef3ddc3cf380f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -77,10 +77,10 @@
         "homepage": null,
         "owner": "sdiehl",
         "repo": "vim-ormolu",
-        "rev": "0376ced83569994066c61827ad2160449033c509",
-        "sha256": "1ga5r24yymqcgjizqyaz6fxl2b8vp66ggzqa63pwl5qdp0rm97b8",
+        "rev": "90c6316fc59e2e3b08c6d4d1dbcf49d5112347b2",
+        "sha256": "0vya8wqmy33iz737j3vf8k2g9ydy1qb8lf467c2yygwd8rv1kw3x",
         "type": "tarball",
-        "url": "https://github.com/sdiehl/vim-ormolu/archive/0376ced83569994066c61827ad2160449033c509.tar.gz",
+        "url": "https://github.com/sdiehl/vim-ormolu/archive/90c6316fc59e2e3b08c6d4d1dbcf49d5112347b2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-ripgrep": {
