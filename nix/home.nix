@@ -41,6 +41,7 @@ in rec {
 
   home.packages = with pkgs; [
     # CLI
+    bandwhich
     bash
     bash-completion
     bashcards
@@ -49,6 +50,7 @@ in rec {
     coreutils
     ctop
     dijo
+    diskonaut
     exa
     exercism
     findutils
@@ -61,9 +63,12 @@ in rec {
     rename
     ripgrep
     shellcheck
+    silicon
     speedtest-cli
+    spotify-tui
     tldr
     #timetrack-cli
+    tokei
     tree
     youtube-dl
     zsh-completions
