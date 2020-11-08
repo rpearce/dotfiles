@@ -60,6 +60,7 @@ in rec {
     jq
     lorri
     ncdu
+    procs
     rename
     ripgrep
     shellcheck
