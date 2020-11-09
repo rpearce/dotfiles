@@ -66,7 +66,8 @@ in rec {
     shellcheck
     silicon
     speedtest-cli
-    spotify-tui
+    #spotify-tui
+    #spotifyd
     tldr
     #timetrack-cli
     tokei
