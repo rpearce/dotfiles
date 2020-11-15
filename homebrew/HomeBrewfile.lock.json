@@ -8,13 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "8a16304dddd835811e964fc60967136045bef97b"
+        "revision": "b0f530c74bbc1b227a6b6d4ad6cb01775a9baa82"
       },
       "homebrew/cask": {
-        "revision": "66f3b6d60ec30864cd23096133de5f0996212153"
+        "revision": "9d23ddf728399864afa9a7b87121eb8c8cc56236"
       },
       "homebrew/cask-fonts": {
-        "revision": "77e6259591da7689a654a0276c574c730c9e44eb"
+        "revision": "324a1b9acf31ffb4190666c3f32f8ac10a0aa2c4"
       }
     },
     "brew": {
@@ -46,6 +46,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.big_sur.bottle.1.tar.gz",
+              "sha256": "5b5f8cae3d600eb6aee6ac3ac9ccdd036d37308820e2ac11b9b49bcd2ae41983"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.catalina.bottle.1.tar.gz",
               "sha256": "e86e0a3ece83eccdfecfd584b4a6dea2682c857b766945821dfbf792370540de"
@@ -67,6 +71,10 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.big_sur.bottle.tar.gz",
+              "sha256": "9d316a5047e3b4f5b398fb76ae05dc8bcc227976712127a5bdb7172086022217"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.catalina.bottle.tar.gz",
               "sha256": "5fb0e8a727a268fab75e58a8be2643867cfc7a5e3af72003b94c64bd6caa2074"
@@ -256,7 +264,7 @@
         }
       },
       "pgadmin4": {
-        "version": "4.27",
+        "version": "4.28",
         "options": {
           "full_name": "pgadmin4",
           "args": {
@@ -314,9 +322,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.9",
+        "HOMEBREW_VERSION": "2.5.10",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "eb8583b026d11a89ed114bb7d13313a813618c0c",
+        "Homebrew/homebrew-core": "a703b18783ee793327cd47709bcc13cd8d81c838",
         "CLT": "1103.0.32.62",
         "Xcode": "12.1",
         "macOS": "10.15.7"
