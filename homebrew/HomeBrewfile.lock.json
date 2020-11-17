@@ -11,10 +11,10 @@
         "revision": "b0f530c74bbc1b227a6b6d4ad6cb01775a9baa82"
       },
       "homebrew/cask": {
-        "revision": "9d23ddf728399864afa9a7b87121eb8c8cc56236"
+        "revision": "86fbde6831a26e4c1463c2e5141ea2b206846454"
       },
       "homebrew/cask-fonts": {
-        "revision": "324a1b9acf31ffb4190666c3f32f8ac10a0aa2c4"
+        "revision": "711d1405b999107d0ccd57f1d37ec28adc3ea5b4"
       }
     },
     "brew": {
@@ -24,6 +24,10 @@
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.big_sur.bottle.tar.gz",
+              "sha256": "2d28fcabebc27f3c72a366c8ebce2ed82a86ac56ae4eafd152c251681666752b"
+            },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.catalina.bottle.tar.gz",
               "sha256": "223f07db86b0ed0e4e51db8d634111bb842dcc49c01df6dbe5dedcf46e786e44"
@@ -322,11 +326,11 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.10",
+        "HOMEBREW_VERSION": "2.5.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "a703b18783ee793327cd47709bcc13cd8d81c838",
+        "Homebrew/homebrew-core": "db3eaf14c85394ecdfbfee526151264f5554f996",
         "CLT": "1103.0.32.62",
-        "Xcode": "12.1",
+        "Xcode": "12.2",
         "macOS": "10.15.7"
       }
     }
