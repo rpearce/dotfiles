@@ -5,10 +5,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "6dc68b1d16c47031cf897eb0b0aa2fcce4178baf",
-        "sha256": "010z78bfgz8hm0k1x1z4hci6cgbwqxcij2axh90h6ra3042v3qhp",
+        "rev": "06543644266edcf845ac912002868246b58d19e6",
+        "sha256": "199cw1z1n12bnb9x6db83lmxkzni6xl9hnxkrdjcqm73c95fswv3",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/6dc68b1d16c47031cf897eb0b0aa2fcce4178baf.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/06543644266edcf845ac912002868246b58d19e6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -29,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2deeb58f49480f468adca6b08291322de4dbce6b",
-        "sha256": "0fx2car6dcd1yz6jjkifcan0amwzhs3170h0r69k0wfwiaadpvjv",
+        "rev": "24eb3f87fc610f18de7076aee7c5a84ac5591e3e",
+        "sha256": "1ca14hhbinnz1ylbqnhwinjdbm6nn859j4gmyamg2kr7jl6611s0",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs/archive/2deeb58f49480f468adca6b08291322de4dbce6b.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs/archive/24eb3f87fc610f18de7076aee7c5a84ac5591e3e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-mozilla": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "joshdick",
         "repo": "onedark.vim",
-        "rev": "7f9b1802b0d76f4f8fe7ad5bbef472c96e1c104f",
-        "sha256": "11fk496xk0564fcfmc77b2m98l6dmvb4ph50vyq73a1mlcs1438c",
+        "rev": "935016df2693590cb4fd2264c7ca9b129fae200c",
+        "sha256": "0h7682ky6925sk50synk8yhbhbkvc3vka84vjz0nv0vwr1kd9qz6",
         "type": "tarball",
-        "url": "https://github.com/joshdick/onedark.vim/archive/7f9b1802b0d76f4f8fe7ad5bbef472c96e1c104f.tar.gz",
+        "url": "https://github.com/joshdick/onedark.vim/archive/935016df2693590cb4fd2264c7ca9b129fae200c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
@@ -77,10 +77,10 @@
         "homepage": null,
         "owner": "sdiehl",
         "repo": "vim-ormolu",
-        "rev": "90c6316fc59e2e3b08c6d4d1dbcf49d5112347b2",
-        "sha256": "0vya8wqmy33iz737j3vf8k2g9ydy1qb8lf467c2yygwd8rv1kw3x",
+        "rev": "edbeb0135692345b088182963e9b229fe2235ac0",
+        "sha256": "03srdix06dhz4b8g9akx448dw2rjbwj840xg7p9c5bq8kbmsjy8x",
         "type": "tarball",
-        "url": "https://github.com/sdiehl/vim-ormolu/archive/90c6316fc59e2e3b08c6d4d1dbcf49d5112347b2.tar.gz",
+        "url": "https://github.com/sdiehl/vim-ormolu/archive/edbeb0135692345b088182963e9b229fe2235ac0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-ripgrep": {
