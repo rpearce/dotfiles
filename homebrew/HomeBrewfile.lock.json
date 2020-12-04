@@ -11,7 +11,7 @@
         "revision": "900025a22e102527d8049b56624fd7c388d3f0b1"
       },
       "homebrew/cask": {
-        "revision": "63b35b3070a395fc41c8b19fe2f2082d40f5bbd8"
+        "revision": "b5506197f6ac41d3155ea058b6b9085cde617ad5"
       },
       "homebrew/cask-fonts": {
         "revision": "4232b261cb924794b61eeb175aee57d2bddcb90f"
@@ -97,7 +97,7 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.18,2582",
+        "version": "2.0.19,2589",
         "options": {
           "full_name": "deckset",
           "args": {
@@ -259,7 +259,7 @@
         }
       },
       "zoomus": {
-        "version": "4.6.19273.0402",
+        "version": "5.4.58903.1122,alias",
         "options": {
           "full_name": "zoomus",
           "args": {
@@ -328,7 +328,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.6.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e24f5681e7e2a9667361686f2f4896f0c480af06",
+        "Homebrew/homebrew-core": "cc60bcab602e7fdceb87e5d4118f7b7364cdf64d",
         "CLT": "1103.0.32.62",
         "Xcode": "12.2",
         "macOS": "10.15.7"

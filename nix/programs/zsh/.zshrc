@@ -16,8 +16,12 @@ function __git_repo_initialized() {
   git ls-files >& /dev/null
 }
 
+function __git_can_parse_rev() {
+  git rev-parse @ >& /dev/null
+}
+
 function __git_arrows() {
-  if $(__git_repo_initialized); then
+  if $(__git_repo_initialized && __git_can_parse_rev); then
     local arrows left right
     local -a counts
 
