@@ -268,6 +268,15 @@ imap <C-9> <Esc>9gt
 " After whitespace, insert the current directory into a command-line path
 cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
 
+" coc-nvim mappings
+" https://github.com/neoclide/coc.nvim/issues/2521#issuecomment-717460648
+nnoremap <silent><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1, 1) : "\<C-d>"
+nnoremap <silent><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0, 1) : "\<C-u>"
+inoremap <silent><expr> <C-d> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1, 1)\<cr>" : "\<C-d>"
+inoremap <silent><expr> <C-u> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0, 1)\<cr>" : "\<C-u>"
+vnoremap <silent><expr> <C-d> coc#float#has_scroll() ? coc#util#float_scroll_i( 1) : "\<C-d>"
+vnoremap <silent><expr> <C-u> coc#float#has_scroll() ? coc#util#float_scroll_i(-1) : "\<C-u>"
+
 
 ""
 "" NERD Tree
