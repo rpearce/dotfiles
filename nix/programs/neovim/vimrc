@@ -270,12 +270,12 @@ cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\
 
 " coc-nvim mappings
 " https://github.com/neoclide/coc.nvim/issues/2521#issuecomment-717460648
-nnoremap <silent><expr> <C-d> coc#float#has_scroll() ? coc#float#scroll(1, 1) : "\<C-d>"
-nnoremap <silent><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(0, 1) : "\<C-u>"
-inoremap <silent><expr> <C-d> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1, 1)\<cr>" : "\<C-d>"
-inoremap <silent><expr> <C-u> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0, 1)\<cr>" : "\<C-u>"
-vnoremap <silent><expr> <C-d> coc#float#has_scroll() ? coc#util#float_scroll_i( 1) : "\<C-d>"
-vnoremap <silent><expr> <C-u> coc#float#has_scroll() ? coc#util#float_scroll_i(-1) : "\<C-u>"
+nnoremap <silent><expr> <C-d> coc#float#scroll(1, 1)
+nnoremap <silent><expr> <C-u> coc#float#scroll(0, 1)
+inoremap <silent><expr> <C-d> "\<c-r>=coc#float#scroll(1, 1)\<cr>"
+inoremap <silent><expr> <C-u> "\<c-r>=coc#float#scroll(0, 1)\<cr>"
+vnoremap <silent><expr> <C-d> coc#util#float_scroll_i( 1)
+vnoremap <silent><expr> <C-u> coc#util#float_scroll_i(-1)
 
 
 ""

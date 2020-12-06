@@ -11,10 +11,10 @@
         "revision": "900025a22e102527d8049b56624fd7c388d3f0b1"
       },
       "homebrew/cask": {
-        "revision": "b5506197f6ac41d3155ea058b6b9085cde617ad5"
+        "revision": "137a34fb8fa4da61958efaa375bff671650b875c"
       },
       "homebrew/cask-fonts": {
-        "revision": "4232b261cb924794b61eeb175aee57d2bddcb90f"
+        "revision": "b038f997b898afea25a6b93a7d7aee79d777366c"
       }
     },
     "brew": {
@@ -235,7 +235,7 @@
         }
       },
       "vscodium": {
-        "version": "1.43.2",
+        "version": "1.51.1",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -328,7 +328,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.6.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "cc60bcab602e7fdceb87e5d4118f7b7364cdf64d",
+        "Homebrew/homebrew-core": "5a6803c2f4694d4649128ee87cb5bc0ad7ee440d",
         "CLT": "1103.0.32.62",
         "Xcode": "12.2",
         "macOS": "10.15.7"
