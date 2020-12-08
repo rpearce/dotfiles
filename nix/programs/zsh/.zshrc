@@ -17,7 +17,7 @@ function __git_repo_initialized() {
 }
 
 function __git_can_parse_rev() {
-  git rev-parse @ >& /dev/null
+  (git rev-parse @ && git rev-parse @'{u}') >& /dev/null
 }
 
 function __git_arrows() {
