@@ -11,10 +11,10 @@
         "revision": "900025a22e102527d8049b56624fd7c388d3f0b1"
       },
       "homebrew/cask": {
-        "revision": "b06ebdf84e0ab3f16dc3e225b87ab912b13fb9de"
+        "revision": "a4154b0d5fdf3bcf209ca9baf2f15ca974b88535"
       },
       "homebrew/cask-fonts": {
-        "revision": "b10f075b36f3f6146d1f32824f2dc7cba82c9694"
+        "revision": "814148d00728d521bb76b0eb9854280a5a57202e"
       }
     },
     "brew": {
@@ -217,7 +217,7 @@
         }
       },
       "spotify": {
-        "version": "latest",
+        "version": "1.1.47.684.g136419d9",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -326,9 +326,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.6.0",
+        "HOMEBREW_VERSION": "2.6.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "280d33744b4d831ef8e6357c515b5eaaf55a5c62",
+        "Homebrew/homebrew-core": "fa1431bae0bc3dc6e5b996f74f1ebc351f818209",
         "CLT": "1103.0.32.62",
         "Xcode": "12.2",
         "macOS": "10.15.7"
