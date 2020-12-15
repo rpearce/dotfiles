@@ -8,13 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "900025a22e102527d8049b56624fd7c388d3f0b1"
+        "revision": "2837c83addbfc07239b31500324f88782eef1f90"
       },
       "homebrew/cask": {
-        "revision": "a4154b0d5fdf3bcf209ca9baf2f15ca974b88535"
+        "revision": "3a8c1aba9de1c601d30bc75f80fd8306d54788cf"
       },
       "homebrew/cask-fonts": {
-        "revision": "814148d00728d521bb76b0eb9854280a5a57202e"
+        "revision": "b7996a538346749c6de089aec5df795de82254a1"
       }
     },
     "brew": {
@@ -268,7 +268,7 @@
         }
       },
       "pgadmin4": {
-        "version": "4.28",
+        "version": "4.29",
         "options": {
           "full_name": "pgadmin4",
           "args": {
@@ -326,9 +326,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.6.1",
+        "HOMEBREW_VERSION": "2.6.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "fa1431bae0bc3dc6e5b996f74f1ebc351f818209",
+        "Homebrew/homebrew-core": "07f04f0b1f149129a902eff1f02aca9c0a68ab9c",
         "CLT": "1103.0.32.62",
         "Xcode": "12.2",
         "macOS": "10.15.7"
