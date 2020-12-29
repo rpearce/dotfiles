@@ -18,9 +18,9 @@ function brewup {
     brew bundle -v --file="$brew_path"
     brew update
     brew upgrade
+    brew upgrade --cask
     brew cleanup
     brew doctor
-    brew cask upgrade
   else
     echo "INFO: No BREWFILE_PATH specified. brewup was not ran."
   fi
