@@ -11,10 +11,10 @@
         "revision": "36ce89907d2cba2e83a6473a76989dd560479e8e"
       },
       "homebrew/cask": {
-        "revision": "36b6750b90e872e18819a880f2fa929ca9fa8cb7"
+        "revision": "9848a0618e4fa7123a93a665e8d427b07c50ab7e"
       },
       "homebrew/cask-fonts": {
-        "revision": "8b000c538e73338ffc97cad1a72ccf0394964b0d"
+        "revision": "0d42ad8900f04ccc96bafb24f4f061f65ff54585"
       }
     },
     "brew": {
@@ -74,30 +74,26 @@
         }
       },
       "spotify-tui": {
-        "version": "0.22.0",
+        "version": "0.23.0",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.big_sur.bottle.tar.gz",
-              "sha256": "9d316a5047e3b4f5b398fb76ae05dc8bcc227976712127a5bdb7172086022217"
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.big_sur.bottle.tar.gz",
+              "sha256": "781396790a6006952bb22f17aa6b03f057c41ec6ecbb7c18156ad392c394bdb2"
             },
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "73b04f1272c318a17d60cd686e8bd40a911a929321cb0ba0d46277b98af4f3c4"
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "c970396f66b149b3c1d58f3bdf2cdf6d4f7b974473399c9be53b1f0f4258267f"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.catalina.bottle.tar.gz",
-              "sha256": "5fb0e8a727a268fab75e58a8be2643867cfc7a5e3af72003b94c64bd6caa2074"
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.catalina.bottle.tar.gz",
+              "sha256": "70ae2722b6dd2bb21d574117a74ecb7812899e418b2cfe9ab2fd23de2014cde5"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.mojave.bottle.tar.gz",
-              "sha256": "b4872366c45c70ef9104b2f5c07905615cf5726a1aa634fd9c80d4f05d8409e8"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.22.0.high_sierra.bottle.tar.gz",
-              "sha256": "17e97d214e6e9220531cf22b2e8595bcfc0639cd373470a39077c79922d7ea2a"
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.mojave.bottle.tar.gz",
+              "sha256": "544761e6ad0758c70e7e24e4b89b319776c973d2aac0bbdbedaa4fd677a2ed59"
             }
           }
         }
@@ -339,7 +335,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.7.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "ab89e775f02684a3a245462dc84d30f1949d3a97",
+        "Homebrew/homebrew-core": "76f26ca671eba890d5e57f9376ad9a4933b2e7a2",
         "CLT": "1103.0.32.62",
         "Xcode": "12.3",
         "macOS": "10.15.7"
