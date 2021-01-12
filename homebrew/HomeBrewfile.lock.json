@@ -11,7 +11,7 @@
         "revision": "36ce89907d2cba2e83a6473a76989dd560479e8e"
       },
       "homebrew/cask": {
-        "revision": "c9e1c8fbbacaa9785e23890e892cbdc55785119d"
+        "revision": "2768221279ece90309a2fdc32548d0fe4ac3b1c4"
       },
       "homebrew/cask-fonts": {
         "revision": "49d3f9868dce335d8ac0606f7aff864bbc5eb2ca"
@@ -248,7 +248,7 @@
         }
       },
       "zoom": {
-        "version": "5.4.59780.1220",
+        "version": "5.4.59931.0110",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -335,7 +335,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.7.3",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4465bb1720ee1c1dfe7c7585fc8d32b9f045d822",
+        "Homebrew/homebrew-core": "1af4730b3541232bf8a1ce727c9bf0f2222d13a1",
         "CLT": "1103.0.32.62",
         "Xcode": "12.3",
         "macOS": "10.15.7"
