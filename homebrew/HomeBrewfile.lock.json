@@ -11,10 +11,10 @@
         "revision": "36ce89907d2cba2e83a6473a76989dd560479e8e"
       },
       "homebrew/cask": {
-        "revision": "2768221279ece90309a2fdc32548d0fe4ac3b1c4"
+        "revision": "4744d374a1de3b6f897f371c9ebd26ccd5a424bd"
       },
       "homebrew/cask-fonts": {
-        "revision": "49d3f9868dce335d8ac0606f7aff864bbc5eb2ca"
+        "revision": "368aadf59ee1f193eb18f43b2e33ba022dac25fd"
       }
     },
     "brew": {
@@ -49,26 +49,22 @@
       },
       "postgres": null,
       "spotifyd": {
-        "version": "0.2.24",
+        "version": "0.3.0",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.big_sur.bottle.1.tar.gz",
-              "sha256": "5b5f8cae3d600eb6aee6ac3ac9ccdd036d37308820e2ac11b9b49bcd2ae41983"
+              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.3.0.big_sur.bottle.tar.gz",
+              "sha256": "fdc3e5aeee7705fad20e9c5278d21a2e0590d622ec929494ecc2eaed7220a6f9"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.catalina.bottle.1.tar.gz",
-              "sha256": "e86e0a3ece83eccdfecfd584b4a6dea2682c857b766945821dfbf792370540de"
+              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.3.0.catalina.bottle.tar.gz",
+              "sha256": "ce40421f0813e1652b241385eabffe4c06f1fce26de182f36907a739e38b14b3"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.mojave.bottle.1.tar.gz",
-              "sha256": "d7e0da5e772657ce9cbdb3a6f48aa47cc55a87b563913f957cf35ba678814991"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.2.24.high_sierra.bottle.1.tar.gz",
-              "sha256": "d745753724407c3b7e1d88743c4abfac7c1c945a9f03608dc7be4d90f1878bd0"
+              "url": "https://homebrew.bintray.com/bottles/spotifyd-0.3.0.mojave.bottle.tar.gz",
+              "sha256": "4c0ad2cabb7962b0f798c74fc0d6246c4b430b2350e5672b1a23a89efc981cd9"
             }
           }
         }
@@ -333,9 +329,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.7.3",
+        "HOMEBREW_VERSION": "2.7.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1af4730b3541232bf8a1ce727c9bf0f2222d13a1",
+        "Homebrew/homebrew-core": "f06237ef1d9a3e9ef3d135e3cf419561f37b5a3d",
         "CLT": "1103.0.32.62",
         "Xcode": "12.3",
         "macOS": "10.15.7"
