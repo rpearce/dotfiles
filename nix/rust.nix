@@ -8,7 +8,7 @@ let
   };
 
   chan = (pkgs.rustChannelOf {
-    date = "2020-12-15";
+    date = "2021-01-15";
     channel = "nightly";
   }).rust.override {
     targets = [ ];
