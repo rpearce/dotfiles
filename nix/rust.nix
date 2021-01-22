@@ -3,7 +3,7 @@
 let
   pkgs = import sources.nixpkgs {
     overlays = [
-      (import sources.nixpkgs-mozilla)
+      (import sources.rust-overlay)
     ];
   };
 
