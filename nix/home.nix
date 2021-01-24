@@ -106,6 +106,7 @@ in rec {
 
     # rust
     rust
+    mdbook
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
