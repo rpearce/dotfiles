@@ -5,10 +5,10 @@
         "homepage": "https://rycee.gitlab.io/home-manager/",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "4e86d65aee028d5bca9a56fdcd1ef8c703e68c32",
-        "sha256": "1lak5l11mcx41mhyyhy1s4amkqsnj874l8dyjbnnllc8svyaagzi",
+        "rev": "c137866bd7d2a9c2010b618252694f395453cf59",
+        "sha256": "1k21fwls9p22xf5qbdhd4jlkq487vlr1g3j90vv7mz4hkddsaz79",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/4e86d65aee028d5bca9a56fdcd1ef8c703e68c32.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/c137866bd7d2a9c2010b618252694f395453cf59.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -53,10 +53,10 @@
         "homepage": null,
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "42f12ecafbd66f8813767dbf77f56ffe8addf4a2",
-        "sha256": "074q5r8wnh0gp90jhw8bxagdgxyqwcyygnkn8n6aqnwnz174yddf",
+        "rev": "4c6a814f4b6ae89a9767bfcae4cbe2e49ca7c19e",
+        "sha256": "1kngkvgfnhw7w4i8523ikcp2idxndlg5ybgicc8ilfix994gkshz",
         "type": "tarball",
-        "url": "https://github.com/oxalica/rust-overlay/archive/42f12ecafbd66f8813767dbf77f56ffe8addf4a2.tar.gz",
+        "url": "https://github.com/oxalica/rust-overlay/archive/4c6a814f4b6ae89a9767bfcae4cbe2e49ca7c19e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
