@@ -8,41 +8,37 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "7461ceff48431bd7f8f09c7819d2aa7dd379dc5b"
+        "revision": "5d3de717acec768524d2ef75da62a1ff942a65c6"
       },
       "homebrew/cask": {
-        "revision": "5dbd047edb336d925bdf3d8e4b0531c15747c66d"
+        "revision": "0f7d58a3544b0eed8a4b51bf924f61d6e001db89"
       },
       "homebrew/cask-fonts": {
-        "revision": "d00b618dfb403148b8fcb0346c8f2e09f678266b"
+        "revision": "11814fb759a167c85ce1d505b4a8d5ecc56beebf"
       }
     },
     "brew": {
       "clamav": {
-        "version": "0.103.0",
+        "version": "0.103.1",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
-            "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.big_sur.bottle.tar.gz",
-              "sha256": "2d28fcabebc27f3c72a366c8ebce2ed82a86ac56ae4eafd152c251681666752b"
-            },
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "f2620d623d65ebe6c2a10e6b6148b517e7424f4190393b0f8257ac3aeaf77d8d"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "819a822b63f106657c8e0374eddad592eda5aebaa608a16111578b8e5dac390c"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.1.big_sur.bottle.tar.gz",
+              "sha256": "ef79742b675d0b07d1cef974996a4647848ba2d2508c3f7a011d93090ae52e3a"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.catalina.bottle.tar.gz",
-              "sha256": "223f07db86b0ed0e4e51db8d634111bb842dcc49c01df6dbe5dedcf46e786e44"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.1.catalina.bottle.tar.gz",
+              "sha256": "aeb895673034b67934ec56ab7bc91c49e6034c80c54c699966f2ed6064b0aba8"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.mojave.bottle.tar.gz",
-              "sha256": "8155acb6f0bf2f1fd110612e8eda7ade7845f3fc3310332af6ae182660ab7692"
-            },
-            "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.0.high_sierra.bottle.tar.gz",
-              "sha256": "458d060d70d37beb01b924ada3be7474b25f4a4c8a2bfb33f6bfb0251ab19024"
+              "url": "https://homebrew.bintray.com/bottles/clamav-0.103.1.mojave.bottle.tar.gz",
+              "sha256": "d5e992c19a4104eea8a8cf17cd13f71e18a0484a35939a30f2aec534603bb5ac"
             }
           }
         }
@@ -75,13 +71,13 @@
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
-            "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.big_sur.bottle.tar.gz",
-              "sha256": "781396790a6006952bb22f17aa6b03f057c41ec6ecbb7c18156ad392c394bdb2"
-            },
             "arm64_big_sur": {
               "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.arm64_big_sur.bottle.tar.gz",
               "sha256": "c970396f66b149b3c1d58f3bdf2cdf6d4f7b974473399c9be53b1f0f4258267f"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.big_sur.bottle.tar.gz",
+              "sha256": "781396790a6006952bb22f17aa6b03f057c41ec6ecbb7c18156ad392c394bdb2"
             },
             "catalina": {
               "url": "https://homebrew.bintray.com/bottles/spotify-tui-0.23.0.catalina.bottle.tar.gz",
@@ -106,7 +102,7 @@
         }
       },
       "docker": {
-        "version": "2.0.0.3-ce-mac81,31259",
+        "version": "3.1.0,51484",
         "options": {
           "full_name": "docker",
           "args": {
@@ -115,7 +111,7 @@
         }
       },
       "dropbox": {
-        "version": "latest",
+        "version": "115.4.601",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -136,7 +132,7 @@
         }
       },
       "flux": {
-        "version": "39.987",
+        "version": "41.1",
         "options": {
           "full_name": "flux",
           "args": {
@@ -145,7 +141,7 @@
         }
       },
       "google-chrome": {
-        "version": "75.0.3770.100",
+        "version": "88.0.4324.150,4324.150",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -154,7 +150,7 @@
         }
       },
       "iterm2": {
-        "version": "3.2.9",
+        "version": "3.4.3",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -163,7 +159,7 @@
         }
       },
       "muzzle": {
-        "version": "1.5,304",
+        "version": "1.7,405",
         "options": {
           "full_name": "muzzle",
           "args": {
@@ -199,7 +195,7 @@
         }
       },
       "sketch": {
-        "version": "55.2-78181",
+        "version": "70.4,109185",
         "options": {
           "full_name": "sketch",
           "args": {
@@ -208,7 +204,7 @@
         }
       },
       "slack": {
-        "version": "3.4.2",
+        "version": "4.12.2",
         "options": {
           "full_name": "slack",
           "args": {
@@ -217,7 +213,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.47.684.g136419d9",
+        "version": "1.1.51.380.ga06fdc8d,1.1.51.380.ga06fdc8d-46",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -226,7 +222,7 @@
         }
       },
       "vlc": {
-        "version": "3.0.7.1",
+        "version": "3.0.12",
         "options": {
           "full_name": "vlc",
           "args": {
@@ -235,7 +231,7 @@
         }
       },
       "vscodium": {
-        "version": "1.51.1",
+        "version": "1.52.1",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -244,7 +240,7 @@
         }
       },
       "zoom": {
-        "version": "5.5.12467.0131",
+        "version": "5.5.12484.0202",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -253,7 +249,7 @@
         }
       },
       "screen": {
-        "version": "1.0.18",
+        "version": "4.0.2",
         "options": {
           "full_name": "screen",
           "args": {
@@ -280,7 +276,7 @@
         }
       },
       "tableplus": {
-        "version": "3.6.2,322",
+        "version": "3.12.2,358",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -323,17 +319,26 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "calibre": {
+        "version": "5.10.1",
+        "options": {
+          "full_name": "calibre",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.7.7",
+        "HOMEBREW_VERSION": "3.0.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "73ab31ad643744c0cb27c6cdddf05c3ea6c6d084",
+        "Homebrew/homebrew-core": "27634e67a95e6dabd0e7c732b9acd4fae867b258",
         "CLT": "1103.0.32.62",
-        "Xcode": "12.3",
+        "Xcode": "12.4",
         "macOS": "10.15.7"
       }
     }
