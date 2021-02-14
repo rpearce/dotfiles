@@ -11,10 +11,10 @@
         "revision": "5d3de717acec768524d2ef75da62a1ff942a65c6"
       },
       "homebrew/cask": {
-        "revision": "59dc96dc2c3b0767f55a6027285dd30b4180cea5"
+        "revision": "4204156d331d49265cb87a9ea1e69c1c50b66885"
       },
       "homebrew/cask-fonts": {
-        "revision": "140d052d80199aec5afd7682aca5a19b8cce33ac"
+        "revision": "980543d4ddc37202ad6508d8c34f033f7806cb11"
       }
     },
     "brew": {
@@ -368,7 +368,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3b4d7a9387fadc6a0a4f7906e1600756fbb2bb91",
+        "Homebrew/homebrew-core": "996372fa8a8f8c54d5ceeb03d151e694d788b174",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
