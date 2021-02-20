@@ -8,13 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "5d3de717acec768524d2ef75da62a1ff942a65c6"
+        "revision": "e1f1c87cb27090765bf2ccabbdb23cf7b5425f9b"
       },
       "homebrew/cask": {
-        "revision": "4204156d331d49265cb87a9ea1e69c1c50b66885"
+        "revision": "c8f42ff00a421a14c5aa32bbf5a1f028cc9cb71a"
       },
       "homebrew/cask-fonts": {
-        "revision": "980543d4ddc37202ad6508d8c34f033f7806cb11"
+        "revision": "13f260153cb2595c8a5a9e62668593cafacf1f19"
       }
     },
     "brew": {
@@ -143,7 +143,7 @@
         }
       },
       "dropbox": {
-        "version": "115.4.601",
+        "version": "116.4.368",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -173,7 +173,7 @@
         }
       },
       "google-chrome": {
-        "version": "88.0.4324.150,4324.150",
+        "version": "88.0.4324.182,4324.182",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -227,7 +227,7 @@
         }
       },
       "sketch": {
-        "version": "70.4,109185",
+        "version": "70.5,109233",
         "options": {
           "full_name": "sketch",
           "args": {
@@ -236,7 +236,7 @@
         }
       },
       "slack": {
-        "version": "4.12.2",
+        "version": "4.13.0",
         "options": {
           "full_name": "slack",
           "args": {
@@ -368,7 +368,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "996372fa8a8f8c54d5ceeb03d151e694d788b174",
+        "Homebrew/homebrew-core": "7da1fbfa577d952a93538f622a91fafeb6115832",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
