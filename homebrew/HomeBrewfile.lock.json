@@ -8,13 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "e1f1c87cb27090765bf2ccabbdb23cf7b5425f9b"
+        "revision": "61b61dd07faac7d4abc8f2bcf944870993e53adf"
       },
       "homebrew/cask": {
-        "revision": "c8f42ff00a421a14c5aa32bbf5a1f028cc9cb71a"
+        "revision": "bdc8e246941fbd83c42592fbf9401869f5f2113b"
       },
       "homebrew/cask-fonts": {
-        "revision": "13f260153cb2595c8a5a9e62668593cafacf1f19"
+        "revision": "568b3a271cb2a34388c2919a65b69a0cbd28efa2"
       }
     },
     "brew": {
@@ -173,7 +173,7 @@
         }
       },
       "google-chrome": {
-        "version": "88.0.4324.182,4324.182",
+        "version": "88.0.4324.192,4324.192",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -308,7 +308,7 @@
         }
       },
       "tableplus": {
-        "version": "3.12.2,358",
+        "version": "3.12.4,360",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -360,15 +360,24 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "libreoffice": {
+        "version": "7.1.0",
+        "options": {
+          "full_name": "libreoffice",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "3.0.1",
+        "HOMEBREW_VERSION": "3.0.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "7da1fbfa577d952a93538f622a91fafeb6115832",
+        "Homebrew/homebrew-core": "0b35273df43117c3497449f88e1b16086926fe99",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
