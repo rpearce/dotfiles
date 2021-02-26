@@ -7,7 +7,7 @@ set -eou pipefail
 
 function clean {
   nix-collect-garbage -d
-  nix optimise-store
+  nix store optimise
 }
 
 function brewup {

@@ -29,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c7d0dbe094c988209edac801eb2a0cc21aa498d8",
-        "sha256": "1rwjfjwwaic56n778fvrmv1s1vzw565gqywrpqv72zrrzmavhyrx",
+        "rev": "f6b5bfdb470d60a876992749d0d708ed7b6b56ca",
+        "sha256": "1rfsyz5axf2f7sc14wdm8dmb164xanbw7rcw6w127s0n6la17kq2",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs/archive/c7d0dbe094c988209edac801eb2a0cc21aa498d8.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs/archive/f6b5bfdb470d60a876992749d0d708ed7b6b56ca.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "onedark-vim": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "joshdick",
         "repo": "onedark.vim",
-        "rev": "94ff495eac89cea2532d8e0022f67c79a24d9649",
-        "sha256": "0x4wdmk28r85g14xv1acc0fimh4bsvm30mrgsws7dm8lqx3ws8g3",
+        "rev": "b70ed293f3c3adaea23f9fcd84ef942015664756",
+        "sha256": "0wz4kmbgc9rlvbxj8s8xg1sx53w0v94r6qicq3ggs9raca51ywfg",
         "type": "tarball",
-        "url": "https://github.com/joshdick/onedark.vim/archive/94ff495eac89cea2532d8e0022f67c79a24d9649.tar.gz",
+        "url": "https://github.com/joshdick/onedark.vim/archive/b70ed293f3c3adaea23f9fcd84ef942015664756.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "rust-overlay": {
@@ -53,10 +53,10 @@
         "homepage": null,
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "941d9b8da48fcb66eb460527e6dba3f0a7e46010",
-        "sha256": "09dgyggkipdalfx3ri8davdrrn3jq3j37j7wm3965x6g9mdasi48",
+        "rev": "99971de6167f9f87756b274243ea90e42b79d5cf",
+        "sha256": "1sxqlw1m04dxmkz5w7r7qbc62k61jdlvlnpiywjwrrf9wq6f7cyl",
         "type": "tarball",
-        "url": "https://github.com/oxalica/rust-overlay/archive/941d9b8da48fcb66eb460527e6dba3f0a7e46010.tar.gz",
+        "url": "https://github.com/oxalica/rust-overlay/archive/99971de6167f9f87756b274243ea90e42b79d5cf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
