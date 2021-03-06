@@ -11,7 +11,7 @@
         "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
       },
       "homebrew/cask": {
-        "revision": "2b4adfc67cfa13ffbaf6370ef3f774c9654a6ce5"
+        "revision": "20333033edc95a72deca65fb6cbff8e8e9149b3e"
       },
       "homebrew/cask-fonts": {
         "revision": "4231da8701b04ac276b7f8569d7476a64dad331f"
@@ -134,7 +134,7 @@
         }
       },
       "docker": {
-        "version": "3.2.0,61504",
+        "version": "3.2.1,61626",
         "options": {
           "full_name": "docker",
           "args": {
@@ -377,7 +377,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.4",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b85dc3c10d3193c6577c0f209bb01a47e8dd73c8",
+        "Homebrew/homebrew-core": "3cc6a063d22d8e3c12ed013b71be394881bb56aa",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"

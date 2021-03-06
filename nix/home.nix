@@ -9,9 +9,9 @@ let
 
   nixpkgsConfig = import ./config.nix // {
     packageOverrides = pkgz: rec {
-      timetrack-cli = pkgz.haskell.packages.ghc882.callPackage
-        "${sources.timetrack-cli.outPath}/default.nix"
-        { };
+      #timetrack-cli = pkgz.haskell.packages.ghc882.callPackage
+      #  "${sources.timetrack-cli.outPath}/default.nix"
+      #  { };
     };
   };
 
@@ -58,7 +58,7 @@ in rec {
     gnupg
     heroku
     jq
-    lorri
+    #lorri
     ncdu
     procs
     rename
@@ -84,13 +84,13 @@ in rec {
     #haskellPackages.hlint
     #haskellPackages.hoogle
     #haskellPackages.ormolu
-    haskellPackages.pandoc
+    #haskellPackages.pandoc
     #haskellPackages.stylish-haskell
-    stack
+    #stack
 
     # elm
-    elmPackages.elm
-    elmPackages.elm-format
+    #elmPackages.elm
+    #elmPackages.elm-format
 
     # elixir
     elixir
@@ -139,7 +139,7 @@ in rec {
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
-      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-14_x}/bin/npm set";
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-15_x}/bin/npm set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
         ${npmSet} init.author.name "${user.npm.initAuthorName}"
