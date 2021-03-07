@@ -11,10 +11,10 @@
         "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
       },
       "homebrew/cask": {
-        "revision": "20333033edc95a72deca65fb6cbff8e8e9149b3e"
+        "revision": "a6ca750cf382366dfd0b6e61c10113002d2ba308"
       },
       "homebrew/cask-fonts": {
-        "revision": "4231da8701b04ac276b7f8569d7476a64dad331f"
+        "revision": "5960b423cce7ad5395a2171640e0d72e9e1a3738"
       }
     },
     "brew": {
@@ -173,7 +173,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.72,4389.72",
+        "version": "89.0.4389.82,4389.82",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -245,7 +245,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.53.608.g7ed9c03a,1.1.53.608.g7ed9c03a-19",
+        "version": "1.1.54.592.gc0b20638,1.1.54.592.gc0b20638-31",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -377,7 +377,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.4",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3cc6a063d22d8e3c12ed013b71be394881bb56aa",
+        "Homebrew/homebrew-core": "c828841c2f993c6c974ec1b354354896251040da",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
