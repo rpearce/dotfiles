@@ -8,18 +8,44 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "c6573943a18903ecb21db5859a4efbf5c16ef24a"
+        "revision": "021048dd3515481b9f0f4b5b18dc551a58b7ccd8"
       },
       "homebrew/cask-fonts": {
-        "revision": "f9c3571564962b7764fa652e1a9142d5f3e38e8f"
+        "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
       }
     },
     "brew": {
-      "postgres": null
+      "postgres": {
+        "version": "13.2_1",
+        "bottle": {
+          "rebuild": 0,
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "root_url": "https://homebrew.bintray.com/bottles",
+          "files": {
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "299babccbbf29b9769ab402aca01c4a0c4bc173a19a928e09fe1edabe7461c88"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.big_sur.bottle.tar.gz",
+              "sha256": "67a547842ae49911d301d490e70b5fff1ee27a65cea403abeff3a25d1806e8d6"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.catalina.bottle.tar.gz",
+              "sha256": "02af915cc2b5291c5a15b59a74dff255e918e7a6af34dbef53cf6ad264627628"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.mojave.bottle.tar.gz",
+              "sha256": "37f0b76c0f034d8a6837805eb27da3787c39cf895516a193ad298ea96f68e98a"
+            }
+          }
+        }
+      }
     },
     "cask": {
       "deckset": {
-        "version": "2.0.18,2582",
+        "version": "2.0.19,2589",
         "options": {
           "full_name": "deckset",
           "args": {
@@ -28,7 +54,7 @@
         }
       },
       "docker": {
-        "version": "2.3.0.4,46911",
+        "version": "3.2.1,61626",
         "options": {
           "full_name": "docker",
           "args": {
@@ -37,7 +63,7 @@
         }
       },
       "dropbox": {
-        "version": "latest",
+        "version": "117.4.378",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -58,7 +84,7 @@
         }
       },
       "flux": {
-        "version": "39.987",
+        "version": "41.4",
         "options": {
           "full_name": "flux",
           "args": {
@@ -67,7 +93,7 @@
         }
       },
       "google-chrome": {
-        "version": "75.0.3770.100",
+        "version": "89.0.4389.82,4389.82",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -76,7 +102,7 @@
         }
       },
       "iterm2": {
-        "version": "3.2.9",
+        "version": "3.4.4",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -85,7 +111,7 @@
         }
       },
       "muzzle": {
-        "version": "1.5,304",
+        "version": "1.7,405",
         "options": {
           "full_name": "muzzle",
           "args": {
@@ -103,7 +129,7 @@
         }
       },
       "postico": {
-        "version": "1.5.14",
+        "version": "1.5.17",
         "options": {
           "full_name": "postico",
           "args": {
@@ -112,7 +138,7 @@
         }
       },
       "pgadmin4": {
-        "version": "4.26",
+        "version": "5.0",
         "options": {
           "full_name": "pgadmin4",
           "args": {
@@ -130,7 +156,7 @@
         }
       },
       "sketch": {
-        "version": "55.2-78181",
+        "version": "70.6,109241",
         "options": {
           "full_name": "sketch",
           "args": {
@@ -139,7 +165,7 @@
         }
       },
       "slack": {
-        "version": "3.4.2",
+        "version": "4.13.0",
         "options": {
           "full_name": "slack",
           "args": {
@@ -148,7 +174,7 @@
         }
       },
       "spotify": {
-        "version": "latest",
+        "version": "1.1.54.592.gc0b20638,1.1.54.592.gc0b20638-31",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -157,7 +183,7 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.14,140239",
+        "version": "6.1.18,142142",
         "options": {
           "full_name": "virtualbox",
           "args": {
@@ -166,7 +192,7 @@
         }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.14",
+        "version": "6.1.18",
         "options": {
           "full_name": "virtualbox-extension-pack",
           "args": {
@@ -175,7 +201,7 @@
         }
       },
       "vlc": {
-        "version": "3.0.7.1",
+        "version": "3.0.12",
         "options": {
           "full_name": "vlc",
           "args": {
@@ -184,7 +210,7 @@
         }
       },
       "zeplin": {
-        "version": "2.8,786",
+        "version": "3.15,1063",
         "options": {
           "full_name": "zeplin",
           "args": {
@@ -193,13 +219,16 @@
         }
       },
       "zoom": {
-        "version": "1.1.5",
+        "version": "5.5.13148.0305",
         "options": {
-          "full_name": "zoom"
+          "full_name": "zoom",
+          "args": {
+            "appdir": "/Applications"
+          }
         }
       },
       "screen": {
-        "version": "1.0.18",
+        "version": "4.0.2",
         "options": {
           "full_name": "screen",
           "args": {
@@ -217,7 +246,7 @@
         }
       },
       "vscodium": {
-        "version": "1.36.1",
+        "version": "1.53.2",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -226,7 +255,7 @@
         }
       },
       "tableplus": {
-        "version": "3.6.2,322",
+        "version": "3.12.4,360",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -263,6 +292,14 @@
         "CLT": "",
         "Xcode": "12.0.1",
         "macOS": "10.15.7"
+      },
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.0.5",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "f9c968b2cfbbca307530b8aed297ed7d82b576af",
+        "CLT": "",
+        "Xcode": "12.4",
+        "macOS": "11.2.3"
       }
     }
   }

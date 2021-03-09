@@ -69,7 +69,7 @@ in rec {
     gitAndTools.delta
     gitAndTools.diff-so-fancy
     gitAndTools.gh
-    nix-prefetch-git
+    #nix-prefetch-git
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });
