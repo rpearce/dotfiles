@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "021048dd3515481b9f0f4b5b18dc551a58b7ccd8"
+        "revision": "e7250c0d71ef474e9a932a39bc4595c2796a0138"
       },
       "homebrew/cask-fonts": {
         "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
@@ -210,7 +210,7 @@
         }
       },
       "zeplin": {
-        "version": "3.15,1063",
+        "version": "3.16,1134",
         "options": {
           "full_name": "zeplin",
           "args": {
@@ -296,7 +296,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.0.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "f9c968b2cfbbca307530b8aed297ed7d82b576af",
+        "Homebrew/homebrew-core": "2cd36f369831493f58e77240bfc259c2a1f79947",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
