@@ -75,9 +75,15 @@ in rec {
     youtube-dl
     zsh-completions
 
-    # node
+    elixir
+    ruby
+    rust
     nodejs-15_x
     (yarn.override { nodejs = nodejs-15_x; })
+
+    # elm
+    #elmPackages.elm
+    #elmPackages.elm-format
 
     # haskell
     #haskellPackages.ghcid
@@ -86,26 +92,13 @@ in rec {
     #haskellPackages.ormolu
     #haskellPackages.pandoc
     #haskellPackages.stylish-haskell
-    stack
-
-    # elm
-    #elmPackages.elm
-    #elmPackages.elm-format
-
-    # elixir
-    elixir
+    #stack
 
     # git
     gitAndTools.delta
     gitAndTools.diff-so-fancy
     gitAndTools.gh
     #nix-prefetch-git
-
-    # ruby
-    ruby
-
-    # rust
-    rust
   ];
 
   programs.home-manager = (import ./programs/home-manager.nix { });

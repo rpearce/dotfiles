@@ -57,12 +57,9 @@ in rec {
     watchman
     zsh-completions
 
-    # node
+    elixir
     nodejs-15_x
     (yarn.override { nodejs = nodejs-15_x; })
-
-    # elixir
-    elixir
 
     # git
     git-lfs
