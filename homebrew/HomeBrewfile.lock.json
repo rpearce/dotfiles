@@ -15,6 +15,9 @@
       },
       "homebrew/cask-fonts": {
         "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
+      },
+      "unisonweb/unison": {
+        "revision": "53dbd6ade15d119e7cfb7491e4103931f531e7bf"
       }
     },
     "brew": {
@@ -121,6 +124,10 @@
             }
           }
         }
+      },
+      "unison-language": {
+        "version": "1.0.M1m",
+        "bottle": false
       }
     },
     "cask": {
@@ -377,7 +384,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "e1e0b2565853033e3b327fcf812502363408f73a",
+        "Homebrew/homebrew-core": "d90b07e432ee5265eb71c4053b9863e564cea1a9",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
