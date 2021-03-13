@@ -11,7 +11,7 @@
         "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
       },
       "homebrew/cask": {
-        "revision": "ae24dcefc18823ea141636e9755978b0a4fce160"
+        "revision": "fe5157aeacdac22e5f37f976ebdb9e7ef3ee7999"
       },
       "homebrew/cask-fonts": {
         "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
@@ -353,7 +353,7 @@
         }
       },
       "calibre": {
-        "version": "5.12.0",
+        "version": "5.13.0",
         "options": {
           "full_name": "calibre",
           "args": {
@@ -375,9 +375,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "3.0.4",
+        "HOMEBREW_VERSION": "3.0.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "3875aa7518c6f06ad980999eccb5cf2036817d6e",
+        "Homebrew/homebrew-core": "e1e0b2565853033e3b327fcf812502363408f73a",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"

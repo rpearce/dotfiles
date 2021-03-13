@@ -86,7 +86,7 @@ in rec {
     #haskellPackages.ormolu
     #haskellPackages.pandoc
     #haskellPackages.stylish-haskell
-    #stack
+    stack
 
     # elm
     #elmPackages.elm
