@@ -11,10 +11,10 @@
         "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
       },
       "homebrew/cask": {
-        "revision": "fe5157aeacdac22e5f37f976ebdb9e7ef3ee7999"
+        "revision": "86545bc466f941b0ba81ac7e22b870484059747a"
       },
       "homebrew/cask-fonts": {
-        "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
+        "revision": "a04e40d614e5804292b456abb84a6083fdd73e90"
       },
       "unisonweb/unison": {
         "revision": "53dbd6ade15d119e7cfb7491e4103931f531e7bf"
@@ -141,7 +141,7 @@
         }
       },
       "docker": {
-        "version": "3.2.1,61626",
+        "version": "3.2.2,61853",
         "options": {
           "full_name": "docker",
           "args": {
@@ -180,7 +180,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.82,4389.82",
+        "version": "89.0.4389.90,4389.90",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -270,7 +270,7 @@
         }
       },
       "vscodium": {
-        "version": "1.53.2",
+        "version": "1.54.2",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -384,7 +384,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "3.0.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "d90b07e432ee5265eb71c4053b9863e564cea1a9",
+        "Homebrew/homebrew-core": "82aedb2d9511296657daa381871ccce1e0ec9e83",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"
