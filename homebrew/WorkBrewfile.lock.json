@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "e7250c0d71ef474e9a932a39bc4595c2796a0138"
+        "revision": "a177b0ffb11741116f7fceaff9c6b225721fa2bc"
       },
       "homebrew/cask-fonts": {
-        "revision": "9899ab349852a15fbc634721356bec10e05d5f11"
+        "revision": "18730174d9a8c419d2cfb3b398b62112587e95bb"
       }
     },
     "brew": {
@@ -54,7 +54,7 @@
         }
       },
       "docker": {
-        "version": "3.2.1,61626",
+        "version": "3.2.2,61853",
         "options": {
           "full_name": "docker",
           "args": {
@@ -93,7 +93,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.82,4389.82",
+        "version": "89.0.4389.90,4389.90",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -246,7 +246,7 @@
         }
       },
       "vscodium": {
-        "version": "1.53.2",
+        "version": "1.54.2",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -294,9 +294,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.5",
+        "HOMEBREW_VERSION": "3.0.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "2cd36f369831493f58e77240bfc259c2a1f79947",
+        "Homebrew/homebrew-core": "b7da23ee25129c3de3c55ae08d388078160db0e7",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
