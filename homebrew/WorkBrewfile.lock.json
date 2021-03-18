@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "a177b0ffb11741116f7fceaff9c6b225721fa2bc"
+        "revision": "2220b5983344fb3a7d103283dd7a94269304e1dd"
       },
       "homebrew/cask-fonts": {
-        "revision": "18730174d9a8c419d2cfb3b398b62112587e95bb"
+        "revision": "8a7c54470abf94e9cecade3854404a5ba68329ca"
       }
     },
     "brew": {
@@ -210,7 +210,7 @@
         }
       },
       "zeplin": {
-        "version": "3.16,1134",
+        "version": "3.17,1144",
         "options": {
           "full_name": "zeplin",
           "args": {
@@ -246,7 +246,7 @@
         }
       },
       "vscodium": {
-        "version": "1.54.2",
+        "version": "1.54.3",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -294,9 +294,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.6",
+        "HOMEBREW_VERSION": "3.0.7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b7da23ee25129c3de3c55ae08d388078160db0e7",
+        "Homebrew/homebrew-core": "1ef12fd6680f3610ef6c395803c0a59eae6d196e",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
