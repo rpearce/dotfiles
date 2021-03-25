@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "2220b5983344fb3a7d103283dd7a94269304e1dd"
+        "revision": "fa6e5d5c92df1bd666b65ac98444282bf3e7665d"
       },
       "homebrew/cask-fonts": {
-        "revision": "8a7c54470abf94e9cecade3854404a5ba68329ca"
+        "revision": "679d31659dd122931da13e9e3379f5780d4e250d"
       }
     },
     "brew": {
@@ -63,7 +63,7 @@
         }
       },
       "dropbox": {
-        "version": "117.4.378",
+        "version": "118.4.460",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -165,7 +165,7 @@
         }
       },
       "slack": {
-        "version": "4.13.0",
+        "version": "4.14.0",
         "options": {
           "full_name": "slack",
           "args": {
@@ -219,7 +219,7 @@
         }
       },
       "zoom": {
-        "version": "5.5.13148.0305",
+        "version": "5.6.0.536",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -255,7 +255,7 @@
         }
       },
       "tableplus": {
-        "version": "3.12.4,360",
+        "version": "3.12.5,364",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -294,9 +294,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.7",
+        "HOMEBREW_VERSION": "3.0.9",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1ef12fd6680f3610ef6c395803c0a59eae6d196e",
+        "Homebrew/homebrew-core": "c64b3ba8d52cb65f9607aa9bbaed1bd92382afd9",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
