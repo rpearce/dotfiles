@@ -4,6 +4,7 @@ tap "heroku/brew"
 tap "unisonweb/unison"
 cask_args appdir: "/Applications"
 brew "clamav"
+brew "mas"
 brew "postgres"
 brew "spotify-tui"
 brew "spotifyd"
@@ -33,3 +34,8 @@ cask "virtualbox-extension-pack"
 cask "vlc"
 cask "vscodium"
 cask "zoom"
+mas 'Hush', id: 1544743900
+mas 'Just Focus', id: 1142151959
+mas 'Keynote', id: 409183694
+mas 'Medis', id: 1063631769
+mas 'Xcode', id: 497799835

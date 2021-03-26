@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "fa6e5d5c92df1bd666b65ac98444282bf3e7665d"
+        "revision": "a472cd27eeac814f4cab4154aa5d7c05d817a6c3"
       },
       "homebrew/cask-fonts": {
         "revision": "679d31659dd122931da13e9e3379f5780d4e250d"
@@ -38,6 +38,29 @@
             "mojave": {
               "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.mojave.bottle.tar.gz",
               "sha256": "37f0b76c0f034d8a6837805eb27da3787c39cf895516a193ad298ea96f68e98a"
+            }
+          }
+        }
+      },
+      "mas": {
+        "version": "1.8.1",
+        "bottle": {
+          "rebuild": 0,
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "root_url": "https://homebrew.bintray.com/bottles",
+          "files": {
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "f5ef4f44057f43ecc14f970687d832bd152bc6142c0ad848977f0a6527aa934f"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.big_sur.bottle.tar.gz",
+              "sha256": "d92cfc734e730fde87b29c6bf4a50ce63a78b9e505f464dc557eee128aa06d05"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.catalina.bottle.tar.gz",
+              "sha256": "163eb9cfdfed3d8fbda133b4079d104ad687f1ddb71d70d5661d02b22f562e76"
             }
           }
         }
@@ -138,7 +161,7 @@
         }
       },
       "pgadmin4": {
-        "version": "5.0",
+        "version": "5.1",
         "options": {
           "full_name": "pgadmin4",
           "args": {
@@ -156,7 +179,7 @@
         }
       },
       "sketch": {
-        "version": "70.6,109241",
+        "version": "71.1,115193",
         "options": {
           "full_name": "sketch",
           "args": {
@@ -281,6 +304,32 @@
           }
         }
       }
+    },
+    "mas": {
+      "Hush": {
+        "id": "1544743900",
+        "version": "1.0.3"
+      },
+      "Just Focus": {
+        "id": "1142151959",
+        "version": "2.0.2"
+      },
+      "Keynote": {
+        "id": "409183694",
+        "version": "11.0"
+      },
+      "Medis": {
+        "id": "1063631769",
+        "version": "1.0.3"
+      },
+      "Peek 360": {
+        "id": "1164486237",
+        "version": "1.2.4"
+      },
+      "Xcode": {
+        "id": "497799835",
+        "version": "12.4"
+      }
     }
   },
   "system": {
@@ -296,7 +345,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "3.0.9",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c64b3ba8d52cb65f9607aa9bbaed1bd92382afd9",
+        "Homebrew/homebrew-core": "f32424ab8f78ca4551cd914095d0fcc8f0becae6",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
