@@ -40,8 +40,10 @@ let g:ale_linters = {}
 "let g:ale_linters.rust = ['analyzer', 'cargo', 'rustc']
 
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
-let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.c = ['clangd']
+let g:ale_fixers.cpp = ['clangd']
 let g:ale_fixers.css = ['eslint']
+let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.rust = ['rustfmt']
 
 " Ctrl-k and Ctrl-j for jumping to prev/next errors

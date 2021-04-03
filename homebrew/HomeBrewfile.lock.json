@@ -8,13 +8,13 @@
         "revision": "86ceb303983f15cc7e49944570e100a7068c355b"
       },
       "heroku/brew": {
-        "revision": "0f92fff7f48c413255263f757aab4dab9a4717da"
+        "revision": "8c8d03268d6d9017c260b95b65a2bcc4aceeec29"
       },
       "homebrew/cask": {
-        "revision": "86545bc466f941b0ba81ac7e22b870484059747a"
+        "revision": "b5f31bae09153e6112916a52ed32bd35e201f608"
       },
       "homebrew/cask-fonts": {
-        "revision": "a04e40d614e5804292b456abb84a6083fdd73e90"
+        "revision": "679d31659dd122931da13e9e3379f5780d4e250d"
       },
       "unisonweb/unison": {
         "revision": "53dbd6ade15d119e7cfb7491e4103931f531e7bf"
@@ -150,7 +150,7 @@
         }
       },
       "dropbox": {
-        "version": "117.4.378",
+        "version": "118.4.460",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -243,7 +243,7 @@
         }
       },
       "slack": {
-        "version": "4.13.0",
+        "version": "4.14.0",
         "options": {
           "full_name": "slack",
           "args": {
@@ -270,7 +270,7 @@
         }
       },
       "vscodium": {
-        "version": "1.54.2",
+        "version": "1.54.3",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -279,7 +279,7 @@
         }
       },
       "zoom": {
-        "version": "5.5.13148.0305",
+        "version": "5.6.0.536",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -315,7 +315,7 @@
         }
       },
       "tableplus": {
-        "version": "3.12.4,360",
+        "version": "3.12.5,364",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -382,9 +382,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "3.0.5",
+        "HOMEBREW_VERSION": "3.0.8",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "82aedb2d9511296657daa381871ccce1e0ec9e83",
+        "Homebrew/homebrew-core": "c0466acdd400fe2e5775400ea9d033980884a003",
         "CLT": "1103.0.32.62",
         "Xcode": "12.4",
         "macOS": "10.15.7"

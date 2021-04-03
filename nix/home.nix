@@ -49,7 +49,7 @@ in rec {
     cachix
     coreutils
     ctop
-    dijo
+    #dijo
     diskonaut
     exa
     exercism
@@ -60,17 +60,17 @@ in rec {
     jq
     #lorri
     ncdu
-    procs
+    procs # https://github.com/dalance/procs
     rename
     ripgrep
     shellcheck
-    silicon
+    #silicon # https://github.com/Aloxaf/silicon
     speedtest-cli
     #spotify-tui
     #spotifyd
     tldr
     #timetrack-cli
-    tokei
+    tokei # https://github.com/XAMPPRocky/tokei
     tree
     youtube-dl
     zsh-completions
