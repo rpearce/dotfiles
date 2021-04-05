@@ -53,10 +53,10 @@
         "homepage": null,
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b2a679780df7bfe25aa4b07a224424a2467bb437",
-        "sha256": "1z9fl3h4b8kg1whdphpc3hbqaafivnk6v2i93lzslkcz0h60f5dv",
+        "rev": "8fe59894a20fcddeabfe5e08e85cadc147c21c48",
+        "sha256": "1np6wlm92j0qj40464ixihlw2v84v8hd909n51qcasdk2gxwhvvk",
         "type": "tarball",
-        "url": "https://github.com/oxalica/rust-overlay/archive/b2a679780df7bfe25aa4b07a224424a2467bb437.tar.gz",
+        "url": "https://github.com/oxalica/rust-overlay/archive/8fe59894a20fcddeabfe5e08e85cadc147c21c48.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
