@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "a472cd27eeac814f4cab4154aa5d7c05d817a6c3"
+        "revision": "0acd1aedc39e667cb401be5e0c9c17a23b1ad2ad"
       },
       "homebrew/cask-fonts": {
-        "revision": "679d31659dd122931da13e9e3379f5780d4e250d"
+        "revision": "1d5b5e5e3a45e4c5c038dc660b202fb6239bffd2"
       }
     },
     "brew": {
@@ -68,7 +68,7 @@
     },
     "cask": {
       "deckset": {
-        "version": "2.0.19,2589",
+        "version": "2.0.20,2595",
         "options": {
           "full_name": "deckset",
           "args": {
@@ -86,7 +86,7 @@
         }
       },
       "dropbox": {
-        "version": "118.4.460",
+        "version": "119.4.1772",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -116,7 +116,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.90,4389.90",
+        "version": "89.0.4389.114,4389.114",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -197,7 +197,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.54.592.gc0b20638,1.1.54.592.gc0b20638-31",
+        "version": "1.1.56.595.g2d2da0de,1.1.56.595.g2d2da0de-24",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -233,7 +233,7 @@
         }
       },
       "zeplin": {
-        "version": "3.17,1144",
+        "version": "3.18,1160",
         "options": {
           "full_name": "zeplin",
           "args": {
@@ -242,7 +242,7 @@
         }
       },
       "zoom": {
-        "version": "5.6.0.536",
+        "version": "5.6.1.560",
         "options": {
           "full_name": "zoom",
           "args": {
@@ -269,7 +269,7 @@
         }
       },
       "vscodium": {
-        "version": "1.54.3",
+        "version": "1.55.0",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -312,11 +312,11 @@
       },
       "Just Focus": {
         "id": "1142151959",
-        "version": "2.0.2"
+        "version": "2.0.7"
       },
       "Keynote": {
         "id": "409183694",
-        "version": "11.0"
+        "version": "11.0.1"
       },
       "Medis": {
         "id": "1063631769",
@@ -343,9 +343,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.9",
+        "HOMEBREW_VERSION": "3.0.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "f32424ab8f78ca4551cd914095d0fcc8f0becae6",
+        "Homebrew/homebrew-core": "8251d6e9cbb23fbccca9bcd6aa3cfa4b20f04363",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
