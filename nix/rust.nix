@@ -7,10 +7,8 @@ let
     ];
   };
 
-  chan = (pkgs.rustChannelOf {
-    date = "2021-03-15";
-    channel = "nightly";
-  }).rust.override {
+in
+  pkgs.rust-bin.stable.latest.default.override {
     targets = [ ];
     extensions = [
       "clippy-preview"
@@ -18,6 +16,4 @@ let
       "rustc-dev"
       "rustfmt-preview"
     ];
-  };
-
-in chan
+  }
