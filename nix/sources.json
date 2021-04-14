@@ -29,10 +29,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a73020b2a150322c9832b50baeb0296ba3b13dd7",
-        "sha256": "1s0ckc2qscrflr7bssd0s32zddp48dg5jk22w1dip2q2q7ks6cj0",
+        "rev": "311ceed827f531f88f46222920cd1ebb2c101f73",
+        "sha256": "1790vn4wdldgjfjgcx10pnq9hvz7ymr52xmbrkimjld1knibp0gw",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs/archive/a73020b2a150322c9832b50baeb0296ba3b13dd7.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs/archive/311ceed827f531f88f46222920cd1ebb2c101f73.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "onedark-vim": {
@@ -53,10 +53,10 @@
         "homepage": null,
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "48188145eccbdaa9d533b93eb40b313001d6504a",
-        "sha256": "0whxffx24fgs6yr17fpgsx5g5bgjljm5qf24s9lxdj719m9rvvp8",
+        "rev": "ac544844ae6b295c710d628dd2cb2e03be7d7bca",
+        "sha256": "0rpydr9dgkvz5bsqnz9p9b7c01yddx7ya1724ynkjlvin47l3naz",
         "type": "tarball",
-        "url": "https://github.com/oxalica/rust-overlay/archive/48188145eccbdaa9d533b93eb40b313001d6504a.tar.gz",
+        "url": "https://github.com/oxalica/rust-overlay/archive/ac544844ae6b295c710d628dd2cb2e03be7d7bca.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "timetrack-cli": {
