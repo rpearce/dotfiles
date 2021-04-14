@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "d4efef07f56c249273db68f70d1de3c72ebe39e9"
+        "revision": "82bc28edce5b09ec23172a24bea1125602cbfc40"
       },
       "homebrew/cask-fonts": {
-        "revision": "e733feb5f81c6e43e9f805d7687c01f5cf5aa050"
+        "revision": "d3d0c80bd76a6fb8c3d37638174584dfe9248b08"
       }
     },
     "brew": {
@@ -19,24 +19,26 @@
         "version": "13.2_1",
         "bottle": {
           "rebuild": 0,
-          "cellar": "/usr/local/Cellar",
-          "prefix": "/usr/local",
-          "root_url": "https://homebrew.bintray.com/bottles",
+          "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.arm64_big_sur.bottle.tar.gz",
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/postgresql/blobs/sha256:299babccbbf29b9769ab402aca01c4a0c4bc173a19a928e09fe1edabe7461c88",
               "sha256": "299babccbbf29b9769ab402aca01c4a0c4bc173a19a928e09fe1edabe7461c88"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.big_sur.bottle.tar.gz",
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/postgresql/blobs/sha256:67a547842ae49911d301d490e70b5fff1ee27a65cea403abeff3a25d1806e8d6",
               "sha256": "67a547842ae49911d301d490e70b5fff1ee27a65cea403abeff3a25d1806e8d6"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.catalina.bottle.tar.gz",
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/postgresql/blobs/sha256:02af915cc2b5291c5a15b59a74dff255e918e7a6af34dbef53cf6ad264627628",
               "sha256": "02af915cc2b5291c5a15b59a74dff255e918e7a6af34dbef53cf6ad264627628"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/postgresql-13.2_1.mojave.bottle.tar.gz",
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/postgresql/blobs/sha256:37f0b76c0f034d8a6837805eb27da3787c39cf895516a193ad298ea96f68e98a",
               "sha256": "37f0b76c0f034d8a6837805eb27da3787c39cf895516a193ad298ea96f68e98a"
             }
           }
@@ -46,20 +48,21 @@
         "version": "1.8.1",
         "bottle": {
           "rebuild": 0,
-          "cellar": ":any",
-          "prefix": "/usr/local",
-          "root_url": "https://homebrew.bintray.com/bottles",
+          "root_url": "https://ghcr.io/v2/homebrew/core",
           "files": {
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.arm64_big_sur.bottle.tar.gz",
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/mas/blobs/sha256:f5ef4f44057f43ecc14f970687d832bd152bc6142c0ad848977f0a6527aa934f",
               "sha256": "f5ef4f44057f43ecc14f970687d832bd152bc6142c0ad848977f0a6527aa934f"
             },
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.big_sur.bottle.tar.gz",
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/mas/blobs/sha256:d92cfc734e730fde87b29c6bf4a50ce63a78b9e505f464dc557eee128aa06d05",
               "sha256": "d92cfc734e730fde87b29c6bf4a50ce63a78b9e505f464dc557eee128aa06d05"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/mas-1.8.1.catalina.bottle.tar.gz",
+              "cellar": ":any",
+              "url": "https://ghcr.io/v2/homebrew/core/mas/blobs/sha256:163eb9cfdfed3d8fbda133b4079d104ad687f1ddb71d70d5661d02b22f562e76",
               "sha256": "163eb9cfdfed3d8fbda133b4079d104ad687f1ddb71d70d5661d02b22f562e76"
             }
           }
@@ -77,7 +80,7 @@
         }
       },
       "docker": {
-        "version": "3.2.2,61853",
+        "version": "3.3.0,62916",
         "options": {
           "full_name": "docker",
           "args": {
@@ -86,7 +89,7 @@
         }
       },
       "dropbox": {
-        "version": "119.4.1772",
+        "version": "120.4.4598",
         "options": {
           "full_name": "dropbox",
           "args": {
@@ -116,7 +119,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.114,4389.114",
+        "version": "89.0.4389.128",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -179,7 +182,7 @@
         }
       },
       "sketch": {
-        "version": "71.1,115193",
+        "version": "71.2,115329",
         "options": {
           "full_name": "sketch",
           "args": {
@@ -188,7 +191,7 @@
         }
       },
       "slack": {
-        "version": "4.14.0",
+        "version": "4.15.0",
         "options": {
           "full_name": "slack",
           "args": {
@@ -251,7 +254,7 @@
         }
       },
       "screen": {
-        "version": "4.0.2",
+        "version": "1.0.18",
         "options": {
           "full_name": "screen",
           "args": {
@@ -269,7 +272,7 @@
         }
       },
       "vscodium": {
-        "version": "1.55.0",
+        "version": "1.55.2",
         "options": {
           "full_name": "vscodium",
           "args": {
@@ -278,7 +281,7 @@
         }
       },
       "tableplus": {
-        "version": "3.12.5,364",
+        "version": "3.12.6,366",
         "options": {
           "full_name": "tableplus",
           "args": {
@@ -343,9 +346,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.0.11",
+        "HOMEBREW_VERSION": "3.1.1",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "f282f3154166bf961a723b346443b9bc52a8efda",
+        "Homebrew/homebrew-core": "d7d84be3451c109b2b4e8dbb089acadcb5d70e1f",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
