@@ -128,6 +128,7 @@ in rec {
   home.file.".stack/config.yaml".source = ../conf/stack.yaml;
   home.file.".tmux.conf".source = ../conf/.tmux.conf;
   home.file."${xdg.configHome}/git/ignore".source = ../conf/.gitignore;
+  home.file."${xdg.configHome}/nix/nix.conf".source = ../conf/nix.conf;
 
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =

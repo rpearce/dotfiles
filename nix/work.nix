@@ -92,6 +92,7 @@ in rec {
   home.file.".psqlrc".source = ../conf/.psqlrc;
   home.file.".ripgreprc".source = ../conf/.ripgreprc;
   home.file."${xdg.configHome}/git/ignore".source = ../conf/.gitignore;
+  home.file."${xdg.configHome}/nix/nix.conf".source = ../conf/nix.conf;
 
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
