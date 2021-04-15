@@ -8,7 +8,7 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "82bc28edce5b09ec23172a24bea1125602cbfc40"
+        "revision": "49a94dc578472976f04498166d2a0c1f9178ddfc"
       },
       "homebrew/cask-fonts": {
         "revision": "d3d0c80bd76a6fb8c3d37638174584dfe9248b08"
@@ -119,7 +119,7 @@
         }
       },
       "google-chrome": {
-        "version": "89.0.4389.128",
+        "version": "90.0.4430.72",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -346,9 +346,9 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.1",
+        "HOMEBREW_VERSION": "3.1.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "d7d84be3451c109b2b4e8dbb089acadcb5d70e1f",
+        "Homebrew/homebrew-core": "d9803523cc5cfae711b6fa94c523d0de36ca63e5",
         "CLT": "",
         "Xcode": "12.4",
         "macOS": "11.2.3"
