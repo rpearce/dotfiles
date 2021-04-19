@@ -5,7 +5,7 @@
 
 let
   sources = import ./sources.nix;
-  rust = import ./rust.nix { inherit sources; };
+  #rust = import ./rust.nix { inherit sources; };
 
   nixpkgsConfig = import ./config.nix // {
     packageOverrides = pkgz: rec {
@@ -77,7 +77,7 @@ in rec {
 
     elixir
     ruby
-    rust
+    #rust
     nodejs-15_x
     (yarn.override { nodejs = nodejs-15_x; })
 
