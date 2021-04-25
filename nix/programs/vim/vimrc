@@ -62,9 +62,9 @@ let g:rustfmt_autosave = 1
 "" Backup and swap files
 ""
 
-set backupdir=$XDG_DATA_HOME/vim/backup//    " where to put backup files
-set directory=$XDG_DATA_HOME/vim/swap//      " where to put swap files
-set undodir=$XDG_DATA_HOME/vim/undo//        " where to put undo files
+set backupdir=~/.data/vim/backup    " where to put backup files
+set directory=~/.data/vim/swap      " where to put swap files
+set undodir=~/.data/vim/undo        " where to put undo files
 
 ""
 "" CTRLP
