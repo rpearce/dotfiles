@@ -37,6 +37,7 @@ cask "vlc"
 cask "vscodium"
 cask "zoom"
 
+mas '1Password 7', id: 1333542190
 mas 'Hush', id: 1544743900
 mas 'Just Focus', id: 1142151959
 mas 'Keynote', id: 409183694
