@@ -1,8 +1,11 @@
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+
 cask_args appdir: "/Applications"
+
 brew "mas"
 brew "postgres"
+
 cask "deckset"
 cask "docker"
 cask "dropbox"
@@ -26,6 +29,7 @@ cask "vlc"
 cask "vscodium"
 cask "zeplin"
 cask "zoom"
+
 mas 'Hush', id: 1544743900
 mas 'Just Focus', id: 1142151959
 mas 'Keynote', id: 409183694
