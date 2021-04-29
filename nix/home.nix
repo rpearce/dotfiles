@@ -78,8 +78,8 @@ in rec {
     elixir
     ruby
     #rust
-    nodejs-15_x
-    (yarn.override { nodejs = nodejs-15_x; })
+    nodejs-16_x
+    (yarn.override { nodejs = nodejs-16_x; })
 
     # elm
     #elmPackages.elm
@@ -133,7 +133,7 @@ in rec {
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
-      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-15_x}/bin/npm set";
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-16_x}/bin/npm set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
         ${npmSet} init.author.name "${user.npm.initAuthorName}"
