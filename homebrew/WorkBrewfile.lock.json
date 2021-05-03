@@ -8,10 +8,10 @@
         "revision": "bb60bb04990be8c23ef4c0a01c2e13ffc2445ece"
       },
       "homebrew/cask": {
-        "revision": "34ece309baf40d1e37a492ad17cbc083694e1073"
+        "revision": "56b2fad620da6526d4476b81a714c01937c27d9e"
       },
       "homebrew/cask-fonts": {
-        "revision": "84535dd6d8ce8bedd2922c8688e608bb4c9d7b5c"
+        "revision": "14697d2b97f043d049d373eb662836f7187072ee"
       }
     },
     "brew": {
@@ -80,7 +80,7 @@
         }
       },
       "docker": {
-        "version": "3.3.1,63152",
+        "version": "3.3.2,63878",
         "options": {
           "full_name": "docker",
           "args": {
@@ -200,7 +200,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.57.443.ga029a6c4,1.1.57.443.ga029a6c4-46",
+        "version": "1.1.58.820.g2ae50076,1.1.58.820.g2ae50076-37",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -209,7 +209,7 @@
         }
       },
       "virtualbox": {
-        "version": "6.1.20,143896",
+        "version": "6.1.22,144080",
         "options": {
           "full_name": "virtualbox",
           "args": {
@@ -218,7 +218,7 @@
         }
       },
       "virtualbox-extension-pack": {
-        "version": "6.1.20",
+        "version": "6.1.22",
         "options": {
           "full_name": "virtualbox-extension-pack",
           "args": {
@@ -346,12 +346,12 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.1.4",
+        "HOMEBREW_VERSION": "3.1.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b07fede922dd23bced742c04ef6b45be88d98c52",
+        "Homebrew/homebrew-core": "6f18b33db9ac0a67a66d1f684cf22d6cd54c2ae4",
         "CLT": "",
         "Xcode": "12.5",
-        "macOS": "11.2.3"
+        "macOS": "11.3"
       }
     }
   }
