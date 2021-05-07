@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check or nix and install if we don't have it
+# Check on nix and install if we don't have it
 
 if ! type "nix" &> /dev/null; then
   if [[ $(uname -s) == 'Darwin' ]]; then

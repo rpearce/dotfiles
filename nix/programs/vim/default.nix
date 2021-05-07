@@ -1,7 +1,7 @@
-{ pkgs, sources }:
+{ pkgs }:
 
 let
-  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix { sources = sources; };
+  plugins = pkgs.vimPlugins;# // pkgs.callPackage ./custom-plugins.nix { sources = sources; };
 
 in {
   enable = true;

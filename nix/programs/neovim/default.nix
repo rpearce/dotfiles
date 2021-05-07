@@ -1,7 +1,7 @@
-{ pkgs, sources }:
+{ pkgs }:
 
 let
-  plugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix { sources = sources; };
+  plugins = pkgs.vimPlugins;
 
 in {
   enable = true;
@@ -17,7 +17,8 @@ in {
 
     # Search
     ctrlp-vim
-    vim-ripgrep
+    fzf-vim
+    #vim-ripgrep
 
     # Tools
     coc-nvim
@@ -30,7 +31,7 @@ in {
     vim-gitgutter
     vim-localvimrc
     vim-multiple-cursors
-    vim-ormolu
+    #vim-ormolu
     vim-surround
     vim-trailing-whitespace
 

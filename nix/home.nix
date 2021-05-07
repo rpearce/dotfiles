@@ -1,24 +1,11 @@
 { config
+, pkgs
 , stdenv
 , ...
 }:
 
 let
-  sources = import ./sources.nix;
-  #rust = import ./rust.nix { inherit sources; };
-
-  nixpkgsConfig = import ./config.nix // {
-    packageOverrides = pkgz: rec {
-      #timetrack-cli = pkgz.haskell.packages.ghc882.callPackage
-      #  "${sources.timetrack-cli.outPath}/default.nix"
-      #  { };
-    };
-  };
-
-  pkgs = import sources.nixpkgs { config = { inherit nixpkgsConfig; }; };
-
   user = import ./user.nix;
-
 in rec {
   home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
@@ -111,14 +98,8 @@ in rec {
     gitConfig = user.git;
     pkgs = pkgs;
   });
-  programs.neovim = (import ./programs/neovim/default.nix {
-    pkgs = pkgs;
-    sources = sources;
-  });
-  #programs.vim = (import ./programs/vim/default.nix {
-  #  pkgs = pkgs;
-  #  sources = sources;
-  #});
+  programs.neovim = (import ./programs/neovim/default.nix { inherit pkgs; });
+  #programs.vim = (import ./programs/vim/default.nix { inherit pkgs; });
 
   home.file.".cabal/config".source = ../conf/cabal.cabal;
   home.file.".gemrc".source = ../conf/.gemrc;
