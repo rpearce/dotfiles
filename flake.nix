@@ -1,8 +1,13 @@
 {
-  description = "Robert W. Pearce's nixified dotfiles";
+  description = "Robert W. Pearce's system config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -10,27 +15,52 @@
     };
 
     home-manager = {
-      url = "github:rycee/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { flake-utils, home-manager, nixpkgs, self }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        overlays = [];
-        pkgs = import nixpkgs { inherit system overlays; };
-        hm = (import home-manager { inherit pkgs; }).home-manager;
-      in rec {
-        defaultPackage = hm;
-
-        apps.switch = flake-utils.lib.mkApp {
-          drv = pkgs.writeShellScriptBin "switch" ''
-            export NIX_PATH="nixpkgs=${nixpkgs}:home-manager=${home-manager}"
-            export HOME_MANAGER_CONFIG="$PWD/nix/home.nix"
-            home-manager switch
-          '';
+  outputs = inputs@{ self, darwin, flake-utils, home-manager, nixpkgs }:
+    let
+      nixpkgsConfig = with inputs; {
+        config = {
+          allowUnfree = true;
         };
-      }
-    );
+        overlays = [];
+      };
+
+      mkDarwinConfig =
+        { host
+        , user
+        }: [
+          (./. + "/hosts/${host}/default.nix")
+          home-manager.darwinModules.home-manager
+          {
+            nixpkgs = nixpkgsConfig;
+            users.users.${user}.home = "/Users/${user}";
+            home-manager.useUserPackages = true;
+            home-manager.users.${user} = with self.homeManagerModules; {
+              imports = [ (./. + "/hosts/${host}/users/${user}/default.nix") ];
+            };
+          }
+        ];
+    in {
+      darwinConfigurations = {
+        blueberry = darwin.lib.darwinSystem {
+          inputs = inputs;
+          modules = mkDarwinConfig {
+            host = "blueberry";
+            user = "rpearce";
+          };
+        };
+
+        trabajo = darwin.lib.darwinSystem {
+          inputs = inputs;
+          modules = mkDarwinConfig {
+            host = "trabajo";
+            user = "rpearce";
+          };
+        };
+      };
+    };
 }

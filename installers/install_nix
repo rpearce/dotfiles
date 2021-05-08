@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check on nix and install if we don't have it
+
+if ! type "nix" &> /dev/null; then
+  if [[ $(uname -s) == 'Darwin' ]]; then
+    sh <(curl https://abathur-nix-install-tests.cachix.org/serve/yihf8zbs0jwph2rs9qfh80dnilijxdi2/install) --tarball-url-prefix https://abathur-nix-install-tests.cachix.org/serve
+    #sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  else
+    curl -L https://nixos.org/nix/install | sh
+  fi
+fi
+
+exit 0
