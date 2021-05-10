@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 cask_args appdir: "/Applications"
 
 brew "mas"
+brew "openvpn"
 brew "postgres"
 
 cask "deckset"
