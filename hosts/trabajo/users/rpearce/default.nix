@@ -19,7 +19,6 @@ in rec {
     ".inputrc".source = common_dir + "/conf/.inputrc";
     ".psqlrc".source = common_dir + "/conf/.psqlrc";
     ".ripgreprc".source = common_dir + "/conf/.ripgreprc";
-    ".tmux.conf".source = common_dir + "/conf/.tmux.conf";
     "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";
     "${xdg.configHome}/bat/config".source = common_dir + "/conf/bat";
   };
@@ -31,19 +30,14 @@ in rec {
     dataHome = "${home_dir}/.data";
   };
 
-  #programs.ssh.enable = true;
-
   home.packages = with pkgs; [
     bashcards
-    #dijo
     elixir
-    exercism
     git-lfs
     #haskellPackages.pandoc
     #haskellPackages.patat
     nodejs-14_x
     ruby
-    #stack
     (yarn.override { nodejs = nodejs-14_x; })
   ];
 
@@ -60,15 +54,15 @@ in rec {
         ${npmSet} init.version "0.1.0"
       '';
 
-  #home.activation.setSSH =
-  #  config.lib.dag.entryAfter ["writeBoundary"] ''
-  #    if [[ ! -f "$HOME/.ssh/id_rsa.pub" ]]; then
-  #      echo "Setting up ssh key..."
-  #      ssh-keygen -t rsa -C "${user.ssh.email}"
-  #      eval "$(ssh-agent -s)"
-  #      ssh-add ~/.ssh/id_rsa
-  #    fi
-  #  '';
+  home.activation.setSSH =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      if [[ ! -f "$HOME/.ssh/id_ed25519" ]]; then
+        echo "Setting up ssh key..."
+        ssh-keygen -t ed25519 -C "me@robertwpearce.com"
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+      fi
+    '';
 
   home.activation.setVimDirs =
     config.lib.dag.entryAfter ["writeBoundary"] ''

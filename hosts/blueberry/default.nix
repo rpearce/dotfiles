@@ -4,6 +4,7 @@ rec {
   imports = [
     ../_common/darwin/defaults.nix
     ../_common/darwin/nix-apps.nix
+    ../_common/darwin/tmux.nix
     ./aliases.nix
     ./fonts.nix
     ./homebrew.nix
