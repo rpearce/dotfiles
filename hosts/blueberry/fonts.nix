@@ -2,11 +2,11 @@
 
 {
   fonts = {
-    enableFontDir = true;
-    fonts = [
-      pkgs.hack-font
-      pkgs.nerdfonts
-      pkgs.source-code-pro
-    ];
+    #enableFontDir = true;
+    #fonts = [
+    #  pkgs.hack-font
+    #  pkgs.nerdfonts
+    #  pkgs.source-code-pro
+    #];
   };
 }
