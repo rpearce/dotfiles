@@ -85,3 +85,10 @@ _Note: If you already have `experimental-features` set in a `nix.conf` file with
 λ nix build ".#darwinConfigurations.blueberry.system" --show-trace --experimental-features "nix-command flakes"
 λ ./result/sw/bin/darwin-rebuild switch --flake ".#blueberry"
 ```
+
+If you have macOS system changes, you may need to restart for them to take
+effect, or you need to kill the affected application (like "Dock"):
+
+```sh
+λ killall "Dock" &> /dev/null
+```
