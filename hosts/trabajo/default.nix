@@ -5,11 +5,11 @@ rec {
     ../_common/darwin/defaults.nix
     ../_common/darwin/nix-apps.nix
     ../_common/darwin/tmux.nix
-    ../_common/darwin/zsh.nix
     ./aliases.nix
     ./fonts.nix
     ./homebrew.nix
     ./networking.nix
+    ./zsh.nix
   ];
 
   system.stateVersion = 4;
@@ -40,7 +40,7 @@ rec {
   environment.variables = {
     EDITOR = "nvim";
     MANPAGER = "sh -c 'col -b | bat -l man -p'";
-    #NPM_TOKEN = "`cat ~/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
+    NPM_TOKEN = "`cat $HOME/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
     PATH = builtins.concatStringsSep ":" [
       "/usr/local/sbin"
       "$HOME/.local/bin"

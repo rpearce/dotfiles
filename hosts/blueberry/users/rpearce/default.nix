@@ -63,10 +63,22 @@ in rec {
   home.activation.setSSH =
     config.lib.dag.entryAfter ["writeBoundary"] ''
       if [[ ! -f "$HOME/.ssh/id_ed25519" ]]; then
-        echo "Setting up ssh key..."
+        echo "ssh: Setting up key..."
         ssh-keygen -t ed25519 -C "me@robertwpearce.com"
+
+        echo "ssh: Starting ssh-agent in the background"
         eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/id_ed25519
+
+        echo "ssh: writing config to store passphrases in keychain"
+        cat <<EOF > $HOME/.ssh/config
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile "$HOME/.ssh/id_ed25519"
+EOF
+
+        echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
+        ssh-add -K "$HOME/.ssh/id_ed25519"
       fi
     '';
 

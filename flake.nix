@@ -58,7 +58,7 @@
           inputs = inputs;
           modules = mkDarwinConfig {
             host = "trabajo";
-            user = "rpearce";
+            user = "bobert";
           };
         };
       };
