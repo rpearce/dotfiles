@@ -26,8 +26,9 @@ in rec {
     ".inputrc".source = common_dir + "/conf/.inputrc";
     ".psqlrc".source = common_dir + "/conf/.psqlrc";
     ".ripgreprc".source = common_dir + "/conf/.ripgreprc";
-    "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";
+    "${xdg.configHome}/alacritty/alacritty.yml".source = common_dir + "/conf/alacritty.yml";
     "${xdg.configHome}/bat/config".source = common_dir + "/conf/bat";
+    "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";
   };
 
   programs.git.signing.key = "696FAC60B36CA0D3";
