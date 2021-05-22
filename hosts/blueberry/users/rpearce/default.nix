@@ -12,6 +12,13 @@ in rec {
     (common_dir + "/home/neovim")
   ];
 
+  xdg = {
+    enable = true;
+    cacheHome = "${home_dir}/.cache";
+    configHome = "${home_dir}/.config";
+    dataHome = "${home_dir}/.data";
+  };
+
   home.stateVersion = "21.05";
 
   home.file = {
@@ -26,12 +33,7 @@ in rec {
     "${xdg.configHome}/bat/config".source = common_dir + "/conf/bat";
   };
 
-  xdg = {
-    enable = true;
-    cacheHome = "${home_dir}/.cache";
-    configHome = "${home_dir}/.config";
-    dataHome = "${home_dir}/.data";
-  };
+  programs.git.signing.key = "07A0E482E5616C9B";
 
   home.packages = with pkgs; [
     bashcards
@@ -70,7 +72,7 @@ in rec {
         eval "$(ssh-agent -s)"
 
         echo "ssh: writing config to store passphrases in keychain"
-        cat <<EOF > $HOME/.ssh/config
+        cat <<EOF > "$HOME/.ssh/config"
 Host *
   AddKeysToAgent yes
   UseKeychain yes

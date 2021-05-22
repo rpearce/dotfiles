@@ -25,10 +25,10 @@ repository hackage.haskell.org
 -- ignore-expiry: False
 -- http-transport:
 nix: True
-remote-repo-cache: /Users/rpearce/.cabal/packages
+remote-repo-cache: ~/.cabal/packages
 -- local-repo:
--- logs-dir: /Users/rpearce/.cabal/logs
-world-file: /Users/rpearce/.cabal/world
+-- logs-dir: ~/.cabal/logs
+world-file: ~/.cabal/world
 -- store-dir:
 -- verbose: 1
 -- compiler: ghc
@@ -62,7 +62,7 @@ world-file: /Users/rpearce/.cabal/world
 -- cid:
 -- extra-lib-dirs:
 -- extra-framework-dirs:
-extra-prog-path: /Users/rpearce/.cabal/bin
+extra-prog-path: ~/.cabal/bin
 -- instantiate-with:
 -- tests: False
 -- coverage: False
@@ -94,8 +94,8 @@ extra-prog-path: /Users/rpearce/.cabal/bin
 -- upgrade-dependencies: False
 -- index-state:
 -- root-cmd:
-symlink-bindir: /Users/rpearce/.cabal/bin
-build-summary: /Users/rpearce/.cabal/logs/build.log
+symlink-bindir: ~/.cabal/bin
+build-summary: ~/.cabal/logs/build.log
 -- build-log:
 remote-build-reporting: anonymous
 -- report-planning-failure: False
@@ -129,7 +129,7 @@ haddock
   -- contents-location:
 
 install-dirs user
-  -- prefix: /Users/rpearce/.cabal
+  -- prefix: ~/.cabal
   -- bindir: $prefix/bin
   -- libdir: $prefix/lib
   -- libsubdir: $abi/$libname

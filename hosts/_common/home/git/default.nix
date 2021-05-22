@@ -10,7 +10,7 @@
     userEmail = "me@robertwpearce.com";
 
     signing = {
-      key = "07A0E482E5616C9B";
+      # NOTE: `key` is set by user home files
       signByDefault = true;
       gpgPath = "gpg";
     };
