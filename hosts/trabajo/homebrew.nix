@@ -12,29 +12,33 @@
   ];
 
   homebrew.brews = [
+    "awscli"
     "mas"
+    "openvpn"
     "postgres"
   ];
 
   homebrew.casks = [
     #"deckset"
-    #"docker"
+    "alacritty"
+    "docker"
     "firefox-developer-edition"
     "flux"
     "font-hack-nerd-font"
     "font-lilex"
     "google-chrome"
     "iterm2"
-    "netnewswire"
-    "oversight"
+    #"oversight"
     #"pgadmin4"
     "postico"
     #"psequel"
+    "postman"
     "slack"
     "spotify"
     #"tableplus"
     #"virtualbox"
     #"virtualbox-extension-pack"
+    #"visual-studio-code"
     "zoom"
   ];
 

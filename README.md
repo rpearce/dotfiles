@@ -2,8 +2,6 @@
 
 ## macOS Usage
 
-### Installers
-
 Run the installers to install Nix and Homebrew. If they are already installed
 the installer won't run again.
 
@@ -33,6 +31,45 @@ Next, you need to give `/nix` permissions:
 
 ```sh
 λ sudo chown -R my-user:staff /nix
+```
+
+### gpg
+
+To sign your commits, you'll need a gpg key for your computer. You can check by
+
+```sh
+λ gpg -K --keyid-format LONG
+```
+
+If nothing shows up,
+
+```sh
+λ gpg --generate-key
+```
+
+Then take the key (the second part of the `rsa3072/<key>` line) and set that as
+your signing key in your git config. If using `home-manager` in here, set it
+like so:
+
+```nix
+programs.git.signing.key = "my-key-here";
+```
+
+### `zsh-completions`
+
+If using `zsh-completions`, you may run into this warning:
+
+```sh
+zsh compinit: insecure directories, run compaudit for list.
+```
+
+The solution to this comes from https://github.com/zsh-users/zsh-completions/issues/433#issuecomment-619321054.
+
+Run `compaudit`, and if it's only `zsh`-related things, it should be safe to run
+the following:
+
+```sh
+compaudit | xargs chmod g-w
 ```
 
 ### Building and running a flake
