@@ -7,7 +7,7 @@
 
   homebrew.taps = [
     "homebrew/cask"
-    "homebrew/cask-fonts"
+    #"homebrew/cask-fonts"
     "homebrew/cask-versions"
   ];
 
@@ -24,8 +24,8 @@
     "docker"
     "firefox-developer-edition"
     "flux"
-    "font-hack-nerd-font"
-    "font-lilex"
+    #"font-hack-nerd-font"
+    #"font-lilex"
     "google-chrome"
     "iterm2"
     #"oversight"

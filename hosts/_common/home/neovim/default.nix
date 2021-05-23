@@ -2,14 +2,18 @@
 , ...
 }:
 
-{
+let
+  vimPlugins = pkgs.vimPlugins // pkgs.callPackage ./custom-plugins.nix {};
+in {
   programs.neovim = {
     enable = true;
 
     extraConfig = builtins.readFile ./vimrc;
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with vimPlugins; [
       # Themes
+      moonlight-nvim
+      nord-nvim
       onedark-vim
 
       # Linting

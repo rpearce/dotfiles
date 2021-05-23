@@ -113,27 +113,20 @@ font:
     #   - (Windows) Consolas
     #family: monospace
   normal:
-    family: Lilex
+    family: FiraMono Nerd Font
     style: Regular
 
   bold:
-    family: Lilex
+    family: FiraMono Nerd Font
     style: Bold
 
-  italic:
-    family: Lilex
-    style: Italic
+  #italic:
+  #  family: FiraMono Nerd Font
+  #  style: Italic
 
-  # Bold italic font face
   #bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+  #  family: Fira Code
+  #  style: Bold Italic
 
   # Point size
   #size: 11.0
@@ -393,7 +386,7 @@ font:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
