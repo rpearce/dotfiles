@@ -5,12 +5,10 @@
   programs.tmux.enableFzf = true;
   programs.tmux.enableVim = true;
   programs.tmux.extraConfig = ''
-    # https://rudra.dev/posts/a-mininal-tmux-configuration-from-scratch/
-
-    # Rebind prefix key from C-b to C-a
-    set -g prefix C-a
+    # Rebind prefix key from C-b to C-Space
+    set -g prefix C-Space
     unbind-key C-b
-    bind-key C-a send-prefix
+    bind-key C-Space send-prefix
 
     # Hot-reload tmux when configuration changes
     bind r source-file /etc/tmux.conf\; display "Reloaded."
@@ -41,6 +39,7 @@
     ##########
     # Status #
     ##########
+    # https://rudra.dev/posts/a-mininal-tmux-configuration-from-scratch/
 
     # Set status bar on
     set -g status on

@@ -7,7 +7,7 @@
 
   homebrew.taps = [
     "homebrew/cask"
-    "homebrew/cask-fonts"
+    #"homebrew/cask-fonts"
     "homebrew/cask-versions"
     "unisonweb/unison"
   ];
@@ -16,8 +16,8 @@
     "clamav"
     "mas"
     "postgres"
-    "spotify-tui"
-    "spotifyd"
+    #"spotify-tui"
+    #"spotifyd"
     "unison-language"
   ];
 
@@ -29,8 +29,8 @@
     "dropbox"
     "firefox-developer-edition"
     "flux"
-    "font-hack-nerd-font"
-    "font-lilex"
+    #"font-hack-nerd-font"
+    #"font-lilex"
     "google-chrome"
     "iterm2"
     #"libreoffice"
