@@ -12,6 +12,8 @@ set termguicolors                 " Use full colors
 set clipboard=unnamed             " Allow for x-app pasting
 
 packadd! onedark-vim              " https://github.com/joshdick/onedark.vim#installation
+packadd! moonlight-nvim
+packadd! nord-nvim
 colorscheme onedark               " Set the color scheme
 
 

@@ -18,15 +18,29 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, darwin, flake-utils, home-manager, nixpkgs }:
+  outputs = inputs @
+  { self
+  , darwin
+  , flake-utils
+  , home-manager
+  , neovim-nightly-overlay
+  , nixpkgs
+  }:
     let
       nixpkgsConfig = with inputs; {
         config = {
           allowUnfree = true;
         };
-        overlays = [];
+        overlays = [
+          neovim-nightly-overlay.overlay
+        ];
       };
 
       mkDarwinConfig =
@@ -41,6 +55,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${user} = with self.homeManagerModules; {
               imports = [ (./. + "/hosts/${host}/users/${user}/default.nix") ];
+              nixpkgs.overlays = nixpkgsConfig.overlays;
             };
           }
         ];

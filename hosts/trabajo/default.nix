@@ -23,6 +23,7 @@ rec {
 
   nix.trustedBinaryCaches = [
     https://cache.nixos.org
+    https://nix-community.cachix.org
     https://rpearce.cachix.org
   ];
 
@@ -30,6 +31,7 @@ rec {
 
   nix.binaryCachePublicKeys = [
     cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+    nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
     rpearce.cachix.org-1:JfcsbYqjrn4Hb3nbBnlprokdSEE5xYdxZ39ikK7nOCM=
   ];
 
@@ -72,6 +74,7 @@ rec {
     htop
     jq
     ncdu
+    nix-prefetch-git
     procs # https://github.com/dalance/procs
     rename
     ripgrep

@@ -25,6 +25,7 @@ rec {
     https://cache.nixos.org
     https://dear-dia11y.cachix.org
     https://hakyll-nix-template.cachix.org
+    https://nix-community.cachix.org
     https://ramda-guide.cachix.org
     https://robertwpearce-com.cachix.org
     https://rpearce.cachix.org
@@ -36,6 +37,7 @@ rec {
     cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
     dear-dia11y.cachix.org-1:VJJN/ErCmfMrzRVHVIoHNFHPlHXwVYtKWGScFbK1JQc=
     hakyll-nix-template.cachix.org-1:CxnQmOKlNgl0CkF16YLWk7VGQ1xHWjEVkhuTtU+Op3w=
+    nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
     ramda-guide.cachix.org-1:crnO8ZnBhpJZ3OdCZYF2j1DLg1PeqLqTVEaWYRyxxDQ=
     robertwpearce-com.cachix.org-1:4UCteIm3LBgNsMuLSWMioqLWGHrYd4gKa7k6O9lIqUo=
     rpearce.cachix.org-1:JfcsbYqjrn4Hb3nbBnlprokdSEE5xYdxZ39ikK7nOCM=
@@ -83,6 +85,7 @@ rec {
     htop
     jq
     ncdu
+    nix-prefetch-git
     procs # https://github.com/dalance/procs
     rename
     ripgrep
