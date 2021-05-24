@@ -14,7 +14,7 @@ rec {
 
   system.stateVersion = 4;
 
-  nix.useSandbox = true;
+  nix.useSandbox = false;
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
   nix.package = pkgs.nixUnstable;
