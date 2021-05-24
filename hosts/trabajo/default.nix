@@ -16,7 +16,7 @@ rec {
 
   nix.useSandbox = false;
   nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
+  nix.gc.options = "--delete-older-than 7d";
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = "experimental-features = nix-command flakes ca-references";
   nix.trustedUsers = [ "root" "@admin" ];

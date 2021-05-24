@@ -47,14 +47,14 @@
         { host
         , user
         }: [
-          (./. + "/hosts/${host}/default.nix")
+          (./. + "/hosts/${host}")
           home-manager.darwinModules.home-manager
           {
             nixpkgs = nixpkgsConfig;
             users.users.${user}.home = "/Users/${user}";
             home-manager.useUserPackages = true;
             home-manager.users.${user} = with self.homeManagerModules; {
-              imports = [ (./. + "/hosts/${host}/users/${user}/default.nix") ];
+              imports = [ (./. + "/hosts/${host}/users/${user}") ];
               nixpkgs.overlays = nixpkgsConfig.overlays;
             };
           }
