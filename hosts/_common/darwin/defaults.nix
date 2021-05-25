@@ -302,6 +302,10 @@
     defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
     defaults write com.apple.ActivityMonitor SortDirection -int 0
 
+    # Handoff - Turn off handing off between devices and this host
+    defaults write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool no
+    defaults write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool no
+
     # TextEdit - Use plain text mode for new documents
     defaults write com.apple.TextEdit RichText -int 0
 
@@ -350,7 +354,7 @@
     defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
     # Photos - Prevent Photos from opening automatically when devices are plugged in
-    defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+    defaults write com.apple.ImageCapture disableHotPlug -bool true
 
     # Game Center - Disable Game Center.
     defaults write com.apple.gamed Disabled -bool true
