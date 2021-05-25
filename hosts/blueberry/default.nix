@@ -5,6 +5,7 @@ rec {
     ../_common/darwin/defaults.nix
     ../_common/darwin/nix-apps.nix
     ../_common/darwin/tmux.nix
+    ../_common/env-variables.nix
     ./aliases.nix
     ./fonts.nix
     ./homebrew.nix
@@ -46,25 +47,6 @@ rec {
   services.nix-daemon.enable = true;
 
   users.nix.configureBuildUsers = true;
-
-  environment.variables = {
-    EDITOR = "nvim";
-    MANPAGER = "sh -c 'col -b | bat -l man -p'";
-    #NPM_TOKEN = "`cat ~/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
-    PATH = builtins.concatStringsSep ":" [
-      "/usr/local/sbin"
-      "$HOME/.local/bin"
-      "$HOME/.cabal/bin"
-      "$HOME/.cargo/bin"
-      "$HOME/.yarn/bin"
-      "$XDG_CONFIG_HOME/yarn/global/node_modules/.bin"
-      "/usr/local/opt/python/libexec/bin"
-      "$PATH"
-    ];
-    RIPGREP_CONFIG_PATH = "$HOME/.ripgreprc";
-    SHELL = "${pkgs.zsh}/bin/zsh";
-    TERM = "xterm-256color";
-  };
 
   environment.systemPackages = with pkgs; [
     #bandwhich
