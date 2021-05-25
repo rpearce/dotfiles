@@ -35,21 +35,19 @@ Next, you need to give `/nix` permissions:
 
 ### gpg
 
-To sign your commits, you'll need a gpg key for your computer. You can check by
+To sign your commits (which you should absolutely be doing), you'll need a gpg
+key for your computer. You can check by:
 
 ```sh
 λ gpg -K --keyid-format LONG
 ```
 
-If nothing shows up,
+If nothing shows up, follow the steps here:
 
-```sh
-λ gpg --generate-key
-```
+https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key
 
-Then take the key (the second part of the `rsa3072/<key>` line) and set that as
-your signing key in your git config. If using `home-manager` in here, set it
-like so:
+Then take the key and set that as your signing key in your git config. Set it
+like so in your `home-manager` `home.nix` (or equivalent) file:
 
 ```nix
 programs.git.signing.key = "my-key-here";
