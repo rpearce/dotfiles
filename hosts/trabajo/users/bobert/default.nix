@@ -6,18 +6,14 @@
 let
   home_dir = "${config.home.homeDirectory}";
   common_dir = ../../../_common;
+  xdg = import (common_dir + "/home/xdg");
 in rec {
+  inherit xdg;
+
   imports = [
     (common_dir + "/home/git")
     (common_dir + "/home/neovim")
   ];
-
-  xdg = {
-    enable = true;
-    cacheHome = "${home_dir}/.cache";
-    configHome = "${home_dir}/.config";
-    dataHome = "${home_dir}/.data";
-  };
 
   home.stateVersion = "21.05";
 
