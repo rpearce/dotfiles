@@ -6,7 +6,7 @@
 let
   home_dir = "${config.home.homeDirectory}";
   common_dir = ../../../_common;
-  xdg = import (common_dir + "/home/xdg");
+  xdg = import (common_dir + "/home/xdg") { inherit home_dir; };
 in rec {
   inherit xdg;
 
