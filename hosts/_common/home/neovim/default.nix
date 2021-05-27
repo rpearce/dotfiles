@@ -12,6 +12,7 @@ in {
 
     plugins = with vimPlugins; [
       # Themes
+      dracula-vim
       moonlight-nvim
       nord-nvim
       onedark-vim
