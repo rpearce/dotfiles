@@ -13,6 +13,6 @@
       source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       ${builtins.readFile ./.zshrc}
     '';
-    promptInit = builtins.readFile ../_common/.zshprompt;
+    promptInit = builtins.readFile ./.zshprompt;
   };
 }

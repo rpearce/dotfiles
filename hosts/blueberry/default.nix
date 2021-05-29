@@ -2,15 +2,16 @@
 
 rec {
   imports = [
+    ../_common/aliases.nix
     ../_common/darwin/defaults.nix
     ../_common/darwin/nix-apps.nix
     ../_common/darwin/tmux.nix
     ../_common/env-variables.nix
+    ../_common/fonts.nix
+    ../_common/zsh
     ./aliases.nix
-    ./fonts.nix
     ./homebrew.nix
     ./networking.nix
-    ./zsh.nix
   ];
 
   system.stateVersion = 4;
