@@ -4,16 +4,17 @@
 
 syntax on
 syntax enable                     " Turn on syntax highlighting allowing local overrides
-set guifont=Monaco\ Regular:h12   " Font stuff
+"set guifont=Monaco\ Regular:h12   " Font stuff
 set hidden                        " hide buffers instead of removing them
 set number                        " Show line numbers
 set ruler                         " Show line and column number
 set termguicolors                 " Use full colors
 set clipboard=unnamed             " Allow for x-app pasting
 
-packadd! onedark-vim              " https://github.com/joshdick/onedark.vim#installation
 packadd! moonlight-nvim
 packadd! nord-nvim
+packadd! onedark-vim
+
 colorscheme dracula               " Set the color scheme
 
 
