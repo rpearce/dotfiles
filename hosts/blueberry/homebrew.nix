@@ -23,7 +23,7 @@
 
   homebrew.casks = [
     "alacritty"
-    #"calibre"
+    "calibre"
     "deckset"
     "docker"
     "dropbox"
