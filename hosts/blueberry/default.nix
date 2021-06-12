@@ -17,7 +17,8 @@ rec {
   system.stateVersion = 4;
 
   nix.useSandbox = false;
-  nix.gc.automatic = true;
+  nix.gc.automatic = false;
+  nix.gc.interval = { Weekday = 5; Hour = 3; Minute = 15; }; # Thu 03:15
   nix.gc.options = "--delete-older-than 30d";
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = "experimental-features = nix-command flakes ca-derivations ca-references";
