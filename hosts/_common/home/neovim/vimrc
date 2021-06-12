@@ -8,14 +8,23 @@ syntax enable                     " Turn on syntax highlighting allowing local o
 set hidden                        " hide buffers instead of removing them
 set number                        " Show line numbers
 set ruler                         " Show line and column number
-set termguicolors                 " Use full colors
 set clipboard=unnamed             " Allow for x-app pasting
+
+""
+"" colors
+""
+
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 packadd! moonlight-nvim
 packadd! nord-nvim
 packadd! onedark-vim
 
-colorscheme dracula               " Set the color scheme
+colorscheme dracula
 
 
 ""

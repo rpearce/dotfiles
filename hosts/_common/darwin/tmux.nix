@@ -5,6 +5,9 @@
   programs.tmux.enableFzf = true;
   programs.tmux.enableVim = true;
   programs.tmux.extraConfig = ''
+    # Colors
+    set -ga terminal-overrides ',*256col*:Tc'
+
     # Rebind prefix key from C-b to C-Space
     set -g prefix C-Space
     unbind-key C-b
