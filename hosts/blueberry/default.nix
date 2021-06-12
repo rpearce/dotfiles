@@ -20,10 +20,11 @@ rec {
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
   nix.package = pkgs.nixUnstable;
-  nix.extraOptions = "experimental-features = nix-command flakes ca-references";
+  nix.extraOptions = "experimental-features = nix-command flakes ca-derivations ca-references";
   nix.trustedUsers = [ "root" "@admin" ];
 
   nix.trustedBinaryCaches = [
+    https://cache.ngi0.nixos.org
     https://cache.nixos.org
     https://dear-dia11y.cachix.org
     https://hakyll-nix-template.cachix.org
@@ -37,6 +38,7 @@ rec {
   nix.binaryCaches = nix.trustedBinaryCaches;
 
   nix.binaryCachePublicKeys = [
+    cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA=
     cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
     dear-dia11y.cachix.org-1:VJJN/ErCmfMrzRVHVIoHNFHPlHXwVYtKWGScFbK1JQc=
     hakyll-nix-template.cachix.org-1:CxnQmOKlNgl0CkF16YLWk7VGQ1xHWjEVkhuTtU+Op3w=
