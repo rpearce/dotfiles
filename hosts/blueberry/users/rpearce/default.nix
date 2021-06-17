@@ -20,7 +20,7 @@ in rec {
   home.file = {
     ".cabal/config".source = common_dir + "/conf/cabal.cabal";
     ".gemrc".source = common_dir + "/conf/.gemrc";
-    ".ghci".source = common_dir + "/conf/.ghci";
+    #".ghci".source = common_dir + "/conf/.ghci";
     ".inputrc".source = common_dir + "/conf/.inputrc";
     ".psqlrc".source = common_dir + "/conf/.psqlrc";
     ".ripgreprc".source = common_dir + "/conf/.ripgreprc";
