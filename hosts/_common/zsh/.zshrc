@@ -24,7 +24,7 @@ function hostname2ip {
 # mkdir and cd into it
 
 function mk {
-  mkdir -p \"$@\" && cd $_;
+  mkdir -p $@ && cd $_;
 }
 
 # Instagram movie function
