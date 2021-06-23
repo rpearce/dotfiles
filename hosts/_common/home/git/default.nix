@@ -92,6 +92,10 @@
         autocorrect = 1;
       };
 
+      init = {
+        defaultBranch = "main";
+      };
+
       interactive = {
         diffFilter = "delta --dark --color-only";
       };
