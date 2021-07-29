@@ -30,6 +30,7 @@ in {
       nerdcommenter
       nerdtree
       supertab
+      tabular
       vim-buffergator
       vim-css-color
       vim-fugitive
