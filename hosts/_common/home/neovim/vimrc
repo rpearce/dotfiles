@@ -407,6 +407,15 @@ set listchars+=precedes:<         " The character to show in the last column whe
                                   " off and the line continues beyond the left of the screen
 
 
+" Tabular plugin
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a=> :Tabularize /=><CR>
+vmap <Leader>a=> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
+
 ""
 "" Wild Ignore
 ""
