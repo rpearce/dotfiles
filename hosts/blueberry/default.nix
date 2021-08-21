@@ -45,7 +45,7 @@ rec {
     hakyll-nix-template.cachix.org-1:CxnQmOKlNgl0CkF16YLWk7VGQ1xHWjEVkhuTtU+Op3w=
     hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=
     nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
-    ramda-guide.cachix.org-1:crnO8ZnBhpJZ3OdCZYF2j1DLg1PeqLqTVEaWYRyxxDQ=
+    ramda-guide.cachix.org-1:/5dVw0awIXHGPFOtNIXdSey3BDFMS7USLM/URwtqq5U=
     robertwpearce-com.cachix.org-1:4UCteIm3LBgNsMuLSWMioqLWGHrYd4gKa7k6O9lIqUo=
     rpearce.cachix.org-1:JfcsbYqjrn4Hb3nbBnlprokdSEE5xYdxZ39ikK7nOCM=
   ];
