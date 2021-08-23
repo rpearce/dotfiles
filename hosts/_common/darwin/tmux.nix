@@ -5,6 +5,10 @@
   programs.tmux.enableFzf = true;
   programs.tmux.enableVim = true;
   programs.tmux.extraConfig = ''
+    ############################################################################
+    # Misc                                                                     #
+    ############################################################################
+
     # Colors
     set -ga terminal-overrides ',*256col*:Tc'
 
@@ -32,79 +36,87 @@
     # macOS Command+K (Clear scrollback buffer)
     bind -n C-k clear-history
 
-    # A quiter setup
-    #set -g visual-activity off
-    #set -g visual-bell off
-    #set -g visual-silence off
-    #setw -g monitor-activity off
-    #set -g bell-action none
+    # Pane Border
+    set -g pane-border-style fg='#bd93f9'
+    set -g pane-active-border-style fg='#ff79c6'
 
-    ##########
-    # Status #
-    ##########
-    # https://rudra.dev/posts/a-mininal-tmux-configuration-from-scratch/
+    # Message text
+    set -g message-style bg='#44475a',fg='#8be9fd'
 
-    # Set status bar on
+    # Clock
+    set-window-option -g clock-mode-colour '#50fa7b'
+
+    ############################################################################
+    # Status                                                                   #
+    ############################################################################
+
+    # Enable/Disable status [on | off]
     set -g status on
 
     # Update the status line every second
     set -g status-interval 1
 
-    # Set the position of window lists.
-    set -g status-justify centre # [left | centre | right]
+    # Set the position of window lists [left | centre | right]
+    set -g status-justify left
 
     # Set Vi style keybinding in the status line
     set -g status-keys vi
 
-    # Set the status bar position
-    set -g status-position top # [top, bottom]
+    # Set the status bar position [top, bottom]
+    set -g status-position bottom
 
     # Set status bar background and foreground color.
-    set -g status-style fg=colour136,bg="#002b36"
+    set -g status-style bg='#44475a',fg='#bd93f9'
 
-    # Set left side status bar length and style
-    set -g status-left-length 60
-    set -g status-left-style default
+    ############################################################################
+    # Status Left                                                              #
+    ############################################################################
 
-    # Display the session name
-    set -g status-left "#[fg=green] ❐ #S #[default]"
+    # Set max-length of status left area
+    set -g status-left-length 30
 
-    # Display the os version (Mac Os)
-    set -ag status-left " #[fg=black] #[fg=green,bright]  #(sw_vers -productVersion) #[default]"
+    # When controlling tmux
+    set -g status-left '#[bg=#f8f8f2]#[fg=#282a36]#{?client_prefix,#[bg=#ff79c6],} #S '
 
-    # Display the battery percentage (Mac OS)
-    set -ag status-left "#[fg=green,bg=default,bright] 🔋 #(pmset -g batt | tail -1 | awk '{print $3}' | tr -d ';') #[default]"
+    # When controlling a pane
+    set -ga status-left '#[bg=#44475a]#[fg=#ff79c6] #{?window_zoomed_flag, ↕  ,   }'
 
-    # Set right side status bar length and style
-    set -g status-right-length 140
-    set -g status-right-style default
+    ############################################################################
+    # Window Status                                                            #
+    ############################################################################
 
-    # Display the cpu load (Mac OS)
-    set -g status-right "#[fg=green,bg=default,bright]  #(top -l 1 | grep -E "^CPU" | sed 's/.*://') #[default]"
+    set-window-option -g window-status-style fg='#bd93f9',bg=default
+    set-window-option -g window-status-current-style fg='#ff79c6',bg='#282a36'
+    set-window-option -g window-status-activity-style fg='#44475a',bg='#8be9fd'
+    set -g window-status-current-format "#[fg=#44475a]#[bg=#bd93f9]#[fg=#f8f8f2]#[bg=#bd93f9] #I #W #[fg=#bd93f9]#[bg=#44475a]"
+    set -g window-status-format "#[fg=#f8f8f2]#[bg=#44475a]#I #W #[fg=#44475a] "
 
-    # Display the date
-    set -ag status-right "#[fg=white,bg=default]  %a %d #[default]"
+    ############################################################################
+    # Status Right                                                             #
+    ############################################################################
 
-    # Display the time
-    set -ag status-right "#[fg=colour172,bright,bg=default] ⌚︎%l:%M %p #[default]"
+    # Set max-length of status right area
+    set -g status-right-length 150
 
-    # Display the hostname
-    set -ag status-right "#[fg=cyan,bg=default] ☠ #H #[default]"
+    set -g status-right '#[fg=#8be9fd,bg=#44475a]#[fg=#44475a,bg=#8be9fd] #(tmux-mem-cpu-load --interval 2 --graph-lines 5) '
+    set -ga status-right '#[fg=#ff79c6,bg=#8be9fd]#[fg=#44475a,bg=#ff79c6] #H '
+    set -ga status-right '#[fg=#bd93f9,bg=#ff79c6]#[fg=#f8f8f2,bg=#bd93f9] %a %d %b %H:%M '
 
-    # Set the inactive window color and style
-    set -g window-status-style fg=colour244,bg=default
-    set -g window-status-format ' #I #W '
 
-    # Set the active window color and style
-    set -g window-status-current-style fg=black,bg=colour136
-    set -g window-status-current-format ' #I #W '
 
-    # Colors for pane borders(default)
-    setw -g pane-border-style fg=green,bg=black
-    setw -g pane-active-border-style fg=white,bg=black
+
 
     # Active pane normal, other shaded out
-    setw -g window-style fg=colour240,bg=colour235
-    setw -g window-active-style fg=white,bg=black
+    #setw -g window-style fg=colour240,bg=colour235
+    #setw -g window-active-style fg=white,bg=black
+
+    # Display the os version (Mac Os)
+    #set -ag status-left " #[fg=black] #[fg=green,bright]  #(sw_vers -productVersion) #[default]"
+
+    # Display the battery percentage (Mac OS)
+    #set -ag status-left "#[fg=green,bg=default,bright] 🔋 #(pmset -g batt | tail -1 | awk '{print $3}' | tr -d ';') #[default]"
+
+    # Display the cpu load (Mac OS)
+    #set -g status-right "#[fg=green,bg=default,bright]  #(top -l 1 | grep -E "^CPU" | sed 's/.*://') #[default]"
   '';
 }

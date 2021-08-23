@@ -71,6 +71,7 @@ rec {
     shellcheck
     speedtest-cli
     tokei # https://github.com/XAMPPRocky/tokei
+    tmux-mem-cpu-load
     tree
     zsh-autosuggestions
     zsh-completions
