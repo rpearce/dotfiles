@@ -27,22 +27,20 @@ in {
 
       # Tools
       coc-nvim
-      nerdcommenter
       nerdtree
-      supertab
       tabular
       vim-buffergator
       vim-css-color
       vim-fugitive
       vim-gitgutter
       vim-localvimrc
-      vim-multiple-cursors
-      #vim-ormolu
       vim-surround
-      vim-trailing-whitespace
+      #nerdcommenter
+      #supertab
+      #vim-multiple-cursors
+      #vim-trailing-whitespace
 
       # Languages
-      #vim-stylish-haskell
       vim-polyglot
     ];
 
