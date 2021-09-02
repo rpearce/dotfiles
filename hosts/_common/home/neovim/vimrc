@@ -293,6 +293,8 @@ inoremap <silent><expr> <C-u> "\<c-r>=coc#float#scroll(0, 1)\<cr>"
 vnoremap <silent><expr> <C-d> coc#util#float_scroll_i( 1)
 vnoremap <silent><expr> <C-u> coc#util#float_scroll_i(-1)
 
+nmap <silent> gd <Plug>(coc-definition)
+
 
 ""
 "" NERD Tree
