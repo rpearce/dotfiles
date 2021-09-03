@@ -27,6 +27,7 @@ in {
 
       # Tools
       coc-nvim
+      nerdcommenter
       nerdtree
       tabular
       vim-buffergator
@@ -35,7 +36,6 @@ in {
       vim-gitgutter
       vim-localvimrc
       vim-surround
-      #nerdcommenter
       #supertab
       #vim-multiple-cursors
       #vim-trailing-whitespace
