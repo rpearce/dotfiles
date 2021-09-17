@@ -67,6 +67,7 @@
             host = "blueberry";
             user = "rpearce";
           };
+          system = "x86_64-darwin";
         };
 
         trabajo = darwin.lib.darwinSystem {
@@ -75,6 +76,7 @@
             host = "trabajo";
             user = "bobert";
           };
+          system = "x86_64-darwin";
         };
       };
     };
