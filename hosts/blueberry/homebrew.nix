@@ -27,6 +27,7 @@
     "deckset"
     "docker"
     "dropbox"
+    "element"
     "firefox-developer-edition"
     "flux"
     #"font-hack-nerd-font"
