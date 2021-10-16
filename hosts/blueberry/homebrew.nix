@@ -9,11 +9,13 @@
     "homebrew/cask"
     #"homebrew/cask-fonts"
     "homebrew/cask-versions"
+    "hashicorp/tap"
     "unisonweb/unison"
   ];
 
   homebrew.brews = [
     "clamav"
+    "hashicorp/tap/nomad"
     "mas"
     "postgres"
     #"spotify-tui"
