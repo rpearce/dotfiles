@@ -33,6 +33,7 @@
     "postico"
     #"psequel"
     "postman"
+    "openvpn-connect"
     "slack"
     "spotify"
     #"tableplus"
