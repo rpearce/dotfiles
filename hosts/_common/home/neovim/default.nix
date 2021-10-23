@@ -27,6 +27,7 @@ in {
 
       # Tools
       coc-nvim
+      coq-vim
       nerdcommenter
       nerdtree
       tabular
