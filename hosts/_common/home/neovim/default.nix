@@ -26,6 +26,7 @@ in {
       #vim-ripgrep
 
       # Tools
+      Coqtail
       coc-nvim
       coq-vim
       nerdcommenter
