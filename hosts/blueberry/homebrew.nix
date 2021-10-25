@@ -62,8 +62,7 @@
   };
 
   homebrew.extraConfig = ''
-    cask_args appdir: "~/Applications", require_sha: true
-
     cask "firefox-developer-edition", args: { language: "es" }
+    cask_args appdir: "~/Applications", require_sha: true
   '';
 }
