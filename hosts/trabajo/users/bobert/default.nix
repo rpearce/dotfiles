@@ -33,17 +33,15 @@ in rec {
     bashcards
     elixir
     git-lfs
-    #haskellPackages.pandoc
-    #haskellPackages.patat
-    nodejs-14_x
+    nodejs-16_x
     ruby
-    (yarn.override { nodejs = nodejs-14_x; })
+    (yarn.override { nodejs = nodejs-16_x; })
   ];
 
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
-      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-14_x}/bin/npm set";
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-16_x}/bin/npm set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
         ${npmSet} init.author.name "Robert Pearce"
