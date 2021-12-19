@@ -10,10 +10,10 @@ function gz {
 
 # macOS: Reset not being able to find camera
 
-function fix-camera {
-  sudo killall AppleCameraAssistant
-  sudo killall VDCAssistant
-}
+#function fix-camera {
+#  sudo killall AppleCameraAssistant
+#  sudo killall VDCAssistant
+#}
 
 # Get IP from hostname
 

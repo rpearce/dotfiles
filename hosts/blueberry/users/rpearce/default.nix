@@ -20,11 +20,11 @@ in rec {
   home.file = {
     ".cabal/config".source = common_dir + "/conf/cabal.cabal";
     ".gemrc".source = common_dir + "/conf/.gemrc";
-    #".ghci".source = common_dir + "/conf/.ghci";
     ".inputrc".source = common_dir + "/conf/.inputrc";
     ".psqlrc".source = common_dir + "/conf/.psqlrc";
     ".ripgreprc".source = common_dir + "/conf/.ripgreprc";
     ".stack/config.yaml".source = common_dir + "/conf/stack.yaml";
+    ".zshrc".source = common_dir + "/conf/.empty_zshrc";
     "${xdg.configHome}/alacritty/alacritty.yml".source = common_dir + "/conf/alacritty.yml";
     "${xdg.configHome}/bat/config".source = common_dir + "/conf/bat";
     "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";

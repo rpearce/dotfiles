@@ -22,6 +22,7 @@ in rec {
     ".inputrc".source = common_dir + "/conf/.inputrc";
     ".psqlrc".source = common_dir + "/conf/.psqlrc";
     ".ripgreprc".source = common_dir + "/conf/.ripgreprc";
+    ".zshrc".source = common_dir + "/conf/.empty_zshrc";
     "${xdg.configHome}/alacritty/alacritty.yml".source = common_dir + "/conf/alacritty.yml";
     "${xdg.configHome}/bat/config".source = common_dir + "/conf/bat";
     "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";
