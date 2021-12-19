@@ -5,6 +5,7 @@
     EDITOR = "nvim";
     MANPAGER = "sh -c 'col -b | bat -l man -p'";
     PATH = builtins.concatStringsSep ":" [
+      "/opt/homebrew/bin"
       "/usr/local/sbin"
       "$HOME/.local/bin"
       "$HOME/.yarn/bin"

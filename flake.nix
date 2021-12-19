@@ -70,6 +70,15 @@
           system = "x86_64-darwin";
         };
 
+        sietch = darwin.lib.darwinSystem {
+          inputs = inputs;
+          modules = mkDarwinConfig {
+            host = "sietch";
+            user = "bobert";
+          };
+          system = "aarch64-darwin";
+        };
+
         trabajo = darwin.lib.darwinSystem {
           inputs = inputs;
           modules = mkDarwinConfig {
