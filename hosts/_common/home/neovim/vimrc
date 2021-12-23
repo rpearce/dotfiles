@@ -62,6 +62,30 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
 ""
+"" coc-nvim
+""
+
+" https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
+let g:coc_global_extensions = []
+let g:coc_global_extensions += ['coc-clangd']
+let g:coc_global_extensions += ['coc-css']
+let g:coc_global_extensions += ['coc-elixir']
+let g:coc_global_extensions += ['coc-eslint']
+let g:coc_global_extensions += ['coc-go']
+let g:coc_global_extensions += ['coc-highlight']
+let g:coc_global_extensions += ['coc-html']
+let g:coc_global_extensions += ['coc-json']
+let g:coc_global_extensions += ['coc-markdownlint']
+let g:coc_global_extensions += ['coc-rls']
+let g:coc_global_extensions += ['coc-rust-analyzer']
+let g:coc_global_extensions += ['coc-sh']
+let g:coc_global_extensions += ['coc-sql']
+let g:coc_global_extensions += ['coc-svg']
+let g:coc_global_extensions += ['coc-tsserver']
+let g:coc_global_extensions += ['coc-yaml']
+
+
+""
 "" rustfmt
 ""
 
