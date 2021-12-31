@@ -25,6 +25,7 @@
 
   homebrew.casks = [
     "alacritty"
+    "brave-browser"
     "calibre"
     "deckset"
     "docker"
