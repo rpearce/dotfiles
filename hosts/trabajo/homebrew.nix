@@ -12,7 +12,7 @@
   ];
 
   homebrew.brews = [
-    "awscli"
+    #"awscli"
     "mas"
     "openvpn"
     "postgres"
