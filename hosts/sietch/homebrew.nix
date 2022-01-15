@@ -28,6 +28,7 @@
     "brave-browser"
     "calibre"
     "deckset"
+    "discord"
     "docker"
     "dropbox"
     #"element"
