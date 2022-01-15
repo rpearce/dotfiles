@@ -6,6 +6,7 @@
     MANPAGER = "sh -c 'col -b | bat -l man -p'";
     PATH = builtins.concatStringsSep ":" [
       "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
       "/usr/local/sbin"
       "$HOME/.local/bin"
       "$HOME/.yarn/bin"
