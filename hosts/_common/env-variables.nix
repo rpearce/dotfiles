@@ -8,6 +8,7 @@
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
       "/usr/local/sbin"
+      "$HOME/.cargo/bin"
       "$HOME/.local/bin"
       "$HOME/.yarn/bin"
       "$PATH"
