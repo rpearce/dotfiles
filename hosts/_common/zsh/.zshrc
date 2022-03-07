@@ -1,3 +1,6 @@
+SAVEHIST=10000
+HISTSIZE=10000
+
 # Get gzipped file size
 
 function gz {

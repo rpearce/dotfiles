@@ -15,7 +15,7 @@
 
   homebrew.brews = [
     "clamav"
-    "hashicorp/tap/nomad"
+    #"hashicorp/tap/nomad"
     "mas"
     "postgres"
     #"spotify-tui"
@@ -25,7 +25,7 @@
 
   homebrew.casks = [
     "alacritty"
-    "calibre"
+    #"calibre"
     "deckset"
     "docker"
     "dropbox"

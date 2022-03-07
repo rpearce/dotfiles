@@ -21,7 +21,7 @@
     bind r source-file /etc/tmux.conf\; display "Reloaded."
 
     # Set history length
-    set -g history-limit 10000
+    set -g history-limit 50000
 
     # Enable clipboard interactivity
     set -g set-clipboard on
