@@ -12,7 +12,7 @@ let
   };
 in {
   fonts = {
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = [
       nerdfonts
     ];

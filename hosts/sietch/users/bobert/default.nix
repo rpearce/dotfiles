@@ -41,7 +41,7 @@ in rec {
     #haskellPackages.patat
     heroku
     nodejs-16_x
-    ruby
+    ruby_3_1
     (yarn.override { nodejs = nodejs-16_x; })
     youtube-dl
   ];
