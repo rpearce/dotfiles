@@ -40,9 +40,9 @@ in rec {
     #haskellPackages.pandoc
     #haskellPackages.patat
     heroku
-    nodejs-16_x
+    nodejs-18_x
     ruby_3_1
-    (yarn.override { nodejs = nodejs-16_x; })
+    (yarn.override { nodejs = nodejs-18_x; })
     youtube-dl
   ];
 
