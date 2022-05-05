@@ -40,6 +40,7 @@
     "oversight"
     #"pgadmin4"
     #"postico"
+    "postman"
     "proxyman"
     #"psequel"
     "sketch"
