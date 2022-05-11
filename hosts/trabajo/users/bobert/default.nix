@@ -45,11 +45,11 @@ in rec {
       npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-16_x}/bin/npm set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
-        ${npmSet} init.author.name "Robert Pearce"
-        ${npmSet} init.author.email "me@robertwpearce.com"
-        ${npmSet} init.author.url "https://robertwpearce.com"
-        ${npmSet} init.license "BSD-3"
-        ${npmSet} init.version "0.1.0"
+        ${npmSet} init-author-name "Robert Pearce"
+        ${npmSet} init-author-email "me@robertwpearce.com"
+        ${npmSet} init-author-url "https://robertwpearce.com"
+        ${npmSet} init-license "BSD-3"
+        ${npmSet} init-version "0.1.0"
       '';
 
   home.activation.setSSH =
