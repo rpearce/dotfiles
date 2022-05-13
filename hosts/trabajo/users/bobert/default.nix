@@ -42,7 +42,7 @@ in rec {
   # NPM config options in lieu of no easy static config file
   home.activation.setNpmOptions =
     let
-      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-16_x}/bin/npm set";
+      npmSet = "$DRY_RUN_CMD ${pkgs.nodejs-16_x}/bin/npm config set";
     in
       config.lib.dag.entryAfter ["writeBoundary"] ''
         ${npmSet} init-author-name "Robert Pearce"
