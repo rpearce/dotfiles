@@ -37,6 +37,7 @@ in rec {
     #dijo
     elixir
     exercism
+    go
     #haskellPackages.pandoc
     #haskellPackages.patat
     heroku
