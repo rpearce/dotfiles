@@ -43,6 +43,7 @@ in rec {
     heroku
     nodejs-18_x
     ruby_3_1
+    tldr
     (yarn.override { nodejs = nodejs-18_x; })
     youtube-dl
   ];
