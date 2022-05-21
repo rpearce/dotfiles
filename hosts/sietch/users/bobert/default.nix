@@ -37,6 +37,7 @@ in rec {
     #dijo
     elixir
     exercism
+    flyctl
     go
     #haskellPackages.pandoc
     #haskellPackages.patat
