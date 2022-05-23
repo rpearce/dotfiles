@@ -46,6 +46,7 @@
 
   homebrew.masApps = {
     "1Password" = 1333542190;
+    "Balance Lock" = 1019371109;
     Hush = 1544743900;
     "Just Focus" = 1142151959;
     Keynote = 409183694;

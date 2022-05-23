@@ -44,10 +44,6 @@ rec {
 
   environment.variables.NPM_TOKEN = "`cat $HOME/.npmrc 2>/dev/null | grep authToken | tr \"=\" \"\\n\" | tail -n 1`";
 
-  # use old docker-compose instead of docker compose
-  environment.shellAliases.dc = "docker-compose";
-  environment.shellAliases.dcr = "docker-compose run --rm \${1}";
-
   environment.systemPackages = with pkgs; [
     #bandwhich
     bash
