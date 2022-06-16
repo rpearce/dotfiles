@@ -64,7 +64,7 @@ rec {
     jq
     ncdu
     nix-prefetch-git
-    procs # https://github.com/dalance/procs
+    #procs # https://github.com/dalance/procs
     rename
     ripgrep
     shellcheck
