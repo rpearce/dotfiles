@@ -37,7 +37,6 @@ in {
       vim-fugitive
       vim-gitgutter
       vim-localvimrc
-      vim-rhubarb
       vim-surround
       #supertab
       #vim-multiple-cursors
