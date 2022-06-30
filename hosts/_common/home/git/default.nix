@@ -48,8 +48,10 @@
       core = {
         editor = "vim";
         excludesfile = "$HOME/.config/git/ignore";
+        fsmonitor = true;
         #hooksPath = "$HOME/.config/git/hooks";
         pager = "delta";
+        untrackedcache = true;
       };
 
       credential = {
