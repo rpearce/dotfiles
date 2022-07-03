@@ -30,7 +30,7 @@
     "docker"
     "dropbox"
     "element"
-    "flux"
+    #"flux"
     #"font-hack-nerd-font"
     #"font-lilex"
     "google-chrome"

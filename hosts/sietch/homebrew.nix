@@ -32,7 +32,7 @@
     "docker"
     "dropbox"
     #"element"
-    "flux"
+    #"flux"
     "google-chrome"
     #"iterm2"
     #"libreoffice"

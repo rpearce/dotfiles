@@ -23,7 +23,7 @@
     "alacritty"
     "docker"
     "firefox-developer-edition"
-    "flux"
+    #"flux"
     #"font-hack-nerd-font"
     #"font-lilex"
     "google-chrome"
