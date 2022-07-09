@@ -65,6 +65,10 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "" coc-nvim
 ""
 
+
+set cmdheight=2    " Give more space for displaying messages.
+set updatetime=300 " Less delay
+
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
 let g:coc_global_extensions = []
 let g:coc_global_extensions += ['coc-clangd']
@@ -83,6 +87,48 @@ let g:coc_global_extensions += ['coc-sql']
 let g:coc_global_extensions += ['coc-svg']
 let g:coc_global_extensions += ['coc-tsserver']
 let g:coc_global_extensions += ['coc-yaml']
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" https://github.com/neoclide/coc.nvim/issues/2521#issuecomment-717460648
+nnoremap <silent><expr> <C-d> coc#float#scroll(1, 1)
+nnoremap <silent><expr> <C-u> coc#float#scroll(0, 1)
+inoremap <silent><expr> <C-d> "\<c-r>=coc#float#scroll(1, 1)\<cr>"
+inoremap <silent><expr> <C-u> "\<c-r>=coc#float#scroll(0, 1)\<cr>"
+vnoremap <silent><expr> <C-d> coc#util#float_scroll_i( 1)
+vnoremap <silent><expr> <C-u> coc#util#float_scroll_i(-1)
 
 
 ""
@@ -303,17 +349,6 @@ imap <C-9> <Esc>9gt
 
 " After whitespace, insert the current directory into a command-line path
 cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
-
-" coc-nvim mappings
-" https://github.com/neoclide/coc.nvim/issues/2521#issuecomment-717460648
-nnoremap <silent><expr> <C-d> coc#float#scroll(1, 1)
-nnoremap <silent><expr> <C-u> coc#float#scroll(0, 1)
-inoremap <silent><expr> <C-d> "\<c-r>=coc#float#scroll(1, 1)\<cr>"
-inoremap <silent><expr> <C-u> "\<c-r>=coc#float#scroll(0, 1)\<cr>"
-vnoremap <silent><expr> <C-d> coc#util#float_scroll_i( 1)
-vnoremap <silent><expr> <C-u> coc#util#float_scroll_i(-1)
-
-nmap <silent> gd <Plug>(coc-definition)
 
 
 ""
