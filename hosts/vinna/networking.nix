@@ -5,9 +5,9 @@
       "1.0.0.1"
       "8.8.8.8"
     ];
-    computerName = "trabajo";
-    hostName = "trabajo";
-    localHostName = "trabajo";
+    computerName = "rpea-vinna";
+    hostName = "rpea-vinna";
+    localHostName = "rpea-vinna";
     knownNetworkServices = [
       "Bluetooth PAN"
       "Thunderbolt Bridge"

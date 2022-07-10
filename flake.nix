@@ -87,6 +87,15 @@
           };
           system = "x86_64-darwin";
         };
+
+        vinna = darwin.lib.darwinSystem {
+          inputs = inputs;
+          modules = mkDarwinConfig {
+            host = "vinna";
+            user = "bobert";
+          };
+          system = "aarch64-darwin";
+        };
       };
     };
 }
