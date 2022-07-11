@@ -15,7 +15,7 @@ in rec {
     (common_dir + "/home/neovim")
   ];
 
-  home.stateVersion = "21.05";
+  home.stateVersion = "22.05";
 
   home.file = {
     ".gemrc".source = common_dir + "/conf/.gemrc";

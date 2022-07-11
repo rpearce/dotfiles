@@ -12,12 +12,12 @@ help you 🙇.
 ```sh
 ./installers/install_nix
 ./installers/install_homebrew
-DOTFILE_CFG=blueberry ./build
+CFG=blueberry ./build
 ```
 
 For this last line, if we have a `darwinConfigurations.blueberry` config (see
 [`flake.nix`](./flake.nix)), then that is the config we are looking to use, and
-we specify it via `DOTFILE_CFG` for our simple `./build` script.
+we specify it via `CFG` for our simple `./build` script.
 
 If we have macOS system changes, we may need to restart for them to take
 effect, or we'll need to kill the affected application (like "Dock"):
