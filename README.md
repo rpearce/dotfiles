@@ -1,69 +1,46 @@
 # dotfiles
 
-## macOS Usage
+This macOS-centric dotfiles repo uses
+[nix-darwin](https://github.com/LnL7/nix-darwin/) to manage all the system
+settings, CLI tools, applications, etc, across different machines.
 
-Run the installers to install Nix and Homebrew. If they are already installed
-the installer won't run again.
+Feel free to use — and improve on — any code you find in this repo that might
+help you 🙇.
+
+## Setup & Run
 
 ```sh
-λ ./installers/install_nix
-λ ./installers/install_homebrew
+./installers/install_nix
+./installers/install_homebrew
+DOTFILE_CFG=blueberry ./build
 ```
 
-### gpg
+For this last line, if we have a `darwinConfigurations.blueberry` config (see
+[`flake.nix`](./flake.nix)), then that is the config we are looking to use, and
+we specify it via `DOTFILE_CFG` for our simple `./build` script.
 
-To sign your commits (which you should absolutely be doing), you'll need a gpg
-key for your computer. You can check by:
+If we have macOS system changes, we may need to restart for them to take
+effect, or we'll need to kill the affected application (like "Dock"):
 
 ```sh
-λ gpg -K --keyid-format LONG
+killall "Dock" &> /dev/null
+```
+
+## gpg
+
+To sign commits, we'll need a gpg key for your computer. We can check by:
+
+```sh
+gpg --list-secret-keys --keyid-format=long
 ```
 
 If nothing shows up, follow the steps here:
 
 https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key
 
-Then take the key and set that as your signing key in your git config. Set it
-like so in your `home-manager` `home.nix` (or equivalent) file:
+Then take the key and set that as our signing key in our git config. Set it
+like so in our `home-manager` `home.nix` (or equivalent) file:
 
 ```nix
 programs.git.signing.key = "my-key-here";
-```
-
-### `zsh-completions`
-
-If using `zsh-completions`, you may run into this warning:
-
-```sh
-zsh compinit: insecure directories, run compaudit for list.
-```
-
-The solution to this comes from https://github.com/zsh-users/zsh-completions/issues/433#issuecomment-619321054.
-
-Run `compaudit`, and if it's only `zsh`-related things, it should be safe to run
-the following:
-
-```sh
-compaudit | xargs chmod g-w
-```
-
-### Building and running a flake
-
-If we have a `darwinConfigurations.blueberry` flake (see `flake.nix`), then we
-can build that and run `switch`.
-
-_Note: If you already have `experimental-features` set in a `nix.conf` file with
-`nix-command` and `flakes` as the value, then you don't need the
-`--experimental-features` flag passed `nix build` below._
-
-```sh
-λ nix build ".#darwinConfigurations.blueberry.system" --experimental-features "nix-command flakes"
-λ ./result/sw/bin/darwin-rebuild switch --flake ".#blueberry"
-```
-
-If you have macOS system changes, you may need to restart for them to take
-effect, or you need to kill the affected application (like "Dock"):
-
-```sh
-λ killall "Dock" &> /dev/null
 ```
