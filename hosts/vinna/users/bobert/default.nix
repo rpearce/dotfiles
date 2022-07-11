@@ -28,7 +28,7 @@ in rec {
     "${xdg.configHome}/git/ignore".source = common_dir + "/conf/.gitignore";
   };
 
-  programs.git.signing.key = "696FAC60B36CA0D3";
+  programs.git.signing.key = "2A58F8D37F18F982";
 
   home.packages = with pkgs; [
     bashcards
