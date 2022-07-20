@@ -40,7 +40,7 @@
     #"tableplus"
     #"virtualbox"
     #"virtualbox-extension-pack"
-    #"visual-studio-code"
+    "visual-studio-code"
     "zoom"
   ];
 

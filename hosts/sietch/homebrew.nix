@@ -50,6 +50,7 @@
     #"virtualbox"
     #"virtualbox-extension-pack"
     "vlc"
+    "visual-studio-code"
     "zoom"
   ];
 
