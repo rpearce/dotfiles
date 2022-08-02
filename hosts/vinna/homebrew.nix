@@ -38,6 +38,7 @@
     "slack"
     "spotify"
     #"tableplus"
+    "tuple"
     #"virtualbox"
     #"virtualbox-extension-pack"
     "visual-studio-code"
