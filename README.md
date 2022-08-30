@@ -12,10 +12,10 @@ help you 🙇.
 ```sh
 ./installers/install_nix
 ./installers/install_homebrew
-CFG=blueberry ./build
+CFG=sietch ./build
 ```
 
-For this last line, if we have a `darwinConfigurations.blueberry` config (see
+For this last line, if we have a `darwinConfigurations.sietch` config (see
 [`flake.nix`](./flake.nix)), then that is the config we are looking to use, and
 we specify it via `CFG` for our simple `./build` script.
 

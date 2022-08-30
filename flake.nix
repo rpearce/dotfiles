@@ -61,15 +61,6 @@
         ];
     in {
       darwinConfigurations = {
-        blueberry = darwin.lib.darwinSystem {
-          inputs = inputs;
-          modules = mkDarwinConfig {
-            host = "blueberry";
-            user = "rpearce";
-          };
-          system = "x86_64-darwin";
-        };
-
         sietch = darwin.lib.darwinSystem {
           inputs = inputs;
           modules = mkDarwinConfig {
@@ -77,15 +68,6 @@
             user = "bobert";
           };
           system = "aarch64-darwin";
-        };
-
-        trabajo = darwin.lib.darwinSystem {
-          inputs = inputs;
-          modules = mkDarwinConfig {
-            host = "trabajo";
-            user = "bobert";
-          };
-          system = "x86_64-darwin";
         };
 
         vinna = darwin.lib.darwinSystem {
