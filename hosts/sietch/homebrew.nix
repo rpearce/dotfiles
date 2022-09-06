@@ -27,6 +27,7 @@
     "alacritty"
     "brave-browser"
     #"calibre"
+    "colour-contrast-analyser"
     "deckset"
     "discord"
     "docker"

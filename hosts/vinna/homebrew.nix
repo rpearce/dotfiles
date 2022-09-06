@@ -21,6 +21,7 @@
   homebrew.casks = [
     #"deckset"
     "alacritty"
+    "colour-contrast-analyser"
     "docker"
     "firefox-developer-edition"
     #"flux"
