@@ -9,18 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -30,7 +22,6 @@
   , darwin
   , flake-utils
   , home-manager
-  , neovim-nightly-overlay
   , nixpkgs
   }:
     let
@@ -38,9 +29,7 @@
         config = {
           allowUnfree = true;
         };
-        overlays = [
-          neovim-nightly-overlay.overlay
-        ];
+        overlays = [];
       };
 
       mkDarwinConfig =

@@ -1,10 +1,10 @@
 {
   homebrew.enable = true;
-  homebrew.autoUpdate = true;
   homebrew.brewPrefix = "/opt/homebrew/bin";
-  homebrew.cleanup = "zap";
   homebrew.global.brewfile = true;
-  homebrew.global.noLock = true;
+  homebrew.onActivation.autoUpdate = true;
+  homebrew.onActivation.cleanup = "zap";
+  homebrew.onActivation.upgrade = true;
 
   homebrew.taps = [
     "homebrew/cask"

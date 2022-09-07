@@ -15,15 +15,15 @@ rec {
 
   system.stateVersion = 4;
 
-  nix.useSandbox = false;
+  nix.settings.sandbox = false;
   nix.gc.automatic = false;
   nix.gc.interval = { Weekday = 5; Hour = 3; Minute = 15; }; # Thu 03:15
   nix.gc.options = "--delete-older-than 30d";
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = "experimental-features = nix-command flakes";
-  nix.trustedUsers = [ "root" "@admin" ];
+  nix.settings.trusted-users = [ "root" "@admin" ];
 
-  nix.trustedBinaryCaches = [
+  nix.settings.trusted-substituters = [
     #https://cache.ngi0.nixos.org
     https://cache.nixos.org
     https://dear-dia11y.cachix.org
@@ -35,9 +35,9 @@ rec {
     https://rpearce.cachix.org
   ];
 
-  nix.binaryCaches = nix.trustedBinaryCaches;
+  nix.settings.substituters = nix.settings.trusted-substituters;
 
-  nix.binaryCachePublicKeys = [
+  nix.settings.trusted-public-keys = [
     #cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA=
     cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
     dear-dia11y.cachix.org-1:VJJN/ErCmfMrzRVHVIoHNFHPlHXwVYtKWGScFbK1JQc=
@@ -51,7 +51,7 @@ rec {
 
   services.nix-daemon.enable = true;
 
-  users.nix.configureBuildUsers = true;
+  nix.configureBuildUsers = true;
 
   environment.systemPackages = with pkgs; [
     #bandwhich
