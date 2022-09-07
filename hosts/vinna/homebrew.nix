@@ -16,7 +16,7 @@
     #"awscli"
     "mas"
     "openvpn"
-    "postgres"
+    "postgresql@14"
   ];
 
   homebrew.casks = [

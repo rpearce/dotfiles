@@ -17,7 +17,7 @@
     "clamav"
     #"hashicorp/tap/nomad"
     "mas"
-    #"postgres"
+    "postgresql@14"
     #"spotify-tui"
     #"spotifyd"
     #"unison-language"
