@@ -20,14 +20,12 @@
   ];
 
   homebrew.casks = [
-    #"deckset"
     "alacritty"
     "colour-contrast-analyser"
+    #"deckset"
     "docker"
     "firefox-developer-edition"
     #"flux"
-    #"font-hack-nerd-font"
-    #"font-lilex"
     "google-chrome"
     "iterm2"
     "openvpn-connect"

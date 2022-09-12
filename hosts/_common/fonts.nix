@@ -6,8 +6,9 @@ let
       "FiraCode"
       "Hack"
       "Hasklig"
-      #"Lilex"
+      "Lilex"
       "SpaceMono"
+      "SourceCodePro"
     ];
   };
 in {

@@ -32,7 +32,6 @@
     "discord"
     "docker"
     "dropbox"
-    #"element"
     #"flux"
     "google-chrome"
     #"iterm2"
