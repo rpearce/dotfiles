@@ -11,6 +11,7 @@
       "$HOME/.cargo/bin"
       "$HOME/.local/bin"
       "$HOME/.yarn/bin"
+      "$HOME/go/bin"
       "$PATH"
     ];
     RIPGREP_CONFIG_PATH = "$HOME/.ripgreprc";
