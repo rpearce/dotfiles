@@ -33,6 +33,7 @@ in rec {
   programs.git.signing.key = "8EE70FB52D805C55";
 
   home.packages = with pkgs; [
+    #asdf-vm
     bashcards
     #dijo
     elixir

@@ -12,6 +12,7 @@
       "$HOME/.local/bin"
       "$HOME/.yarn/bin"
       "$HOME/go/bin"
+      #"$HOME/.asdf/installs/nodejs/16.3.0/bin"
       "$PATH"
     ];
     RIPGREP_CONFIG_PATH = "$HOME/.ripgreprc";
