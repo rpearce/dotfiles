@@ -9,7 +9,8 @@
   homebrew.taps = [
     "homebrew/cask"
     "homebrew/cask-versions"
-    "hashicorp/tap"
+    "homebrew/services"
+    #"hashicorp/tap"
     #"unisonweb/unison"
   ];
 

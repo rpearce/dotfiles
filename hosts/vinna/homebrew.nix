@@ -8,8 +8,8 @@
 
   homebrew.taps = [
     "homebrew/cask"
-    #"homebrew/cask-fonts"
     "homebrew/cask-versions"
+    "homebrew/services"
   ];
 
   homebrew.brews = [
