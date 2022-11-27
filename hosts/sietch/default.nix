@@ -61,6 +61,7 @@ rec {
     cachix
     coreutils
     ctop
+    devenv
     diskonaut
     exa
     findutils

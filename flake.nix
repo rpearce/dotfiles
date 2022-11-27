@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    devenv.url = "github:cachix/devenv/v0.4";
+
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -20,52 +22,65 @@
   outputs = inputs @
   { self
   , darwin
+  , devenv
   , flake-utils
   , home-manager
   , nixpkgs
   }:
     let
-      nixpkgsConfig = with inputs; {
-        config = {
-          allowUnfree = true;
+      mkNixpkgsConfig =
+        { system
+        }: {
+          config = {
+            allowUnfree = true;
+          };
+          overlays = [
+            (final: prev: {
+              devenv = devenv.packages.${system}.devenv;
+            })
+          ];
         };
-        overlays = [];
-      };
 
       mkDarwinConfig =
-        { host
+        { system
+        , host
         , user
-        }: [
-          (./. + "/hosts/${host}")
-          home-manager.darwinModules.home-manager
-          {
-            nixpkgs = nixpkgsConfig;
-            users.users.${user}.home = "/Users/${user}";
-            home-manager.useUserPackages = true;
-            home-manager.users.${user} = with self.homeManagerModules; {
-              imports = [ (./. + "/hosts/${host}/users/${user}") ];
-              nixpkgs.overlays = nixpkgsConfig.overlays;
+        }:
+          let
+            nixpkgsConfig = mkNixpkgsConfig { inherit system; };
+          in
+            darwin.lib.darwinSystem {
+              inherit system;
+
+              modules = [
+                (./. + "/hosts/${host}")
+                home-manager.darwinModules.home-manager
+                {
+                  nixpkgs = nixpkgsConfig;
+                  users.users.${user}.home = "/Users/${user}";
+                  home-manager.useUserPackages = true;
+                  home-manager.users.${user} = with self.homeManagerModules; {
+                    imports = [ (./. + "/hosts/${host}/users/${user}") ];
+                    nixpkgs.overlays = nixpkgsConfig.overlays;
+                  };
+                }
+              ];
+
+              specialArgs = { inherit self inputs nixpkgs; };
             };
-          }
-        ];
+
     in {
       darwinConfigurations = {
-        sietch = darwin.lib.darwinSystem {
-          inputs = inputs;
-          modules = mkDarwinConfig {
-            host = "sietch";
-            user = "bobert";
-          };
+        sietch = mkDarwinConfig {
           system = "aarch64-darwin";
+          host = "sietch";
+          user = "bobert";
         };
 
-        vinna = darwin.lib.darwinSystem {
-          inputs = inputs;
-          modules = mkDarwinConfig {
-            host = "vinna";
-            user = "bobert";
-          };
+        vinna = mkDarwinConfig {
           system = "aarch64-darwin";
+          host = "vinna";
+          user = "bobert";
         };
       };
     };

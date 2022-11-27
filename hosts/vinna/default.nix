@@ -62,7 +62,7 @@ rec {
     gnupg
     htop
     jq
-    ncdu
+    #ncdu
     nix-prefetch-git
     #procs # https://github.com/dalance/procs
     rename
