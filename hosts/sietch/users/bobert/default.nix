@@ -47,7 +47,7 @@ in rec {
     ruby_3_1
     tldr
     (yarn.override { nodejs = nodejs-18_x; })
-    youtube-dl
+    yt-dlp # improved youtube-dl
   ];
 
   # NPM config options in lieu of no easy static config file
