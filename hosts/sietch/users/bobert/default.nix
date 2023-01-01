@@ -91,4 +91,10 @@ EOF
       mkdir -p ${xdg.dataHome}/vim/swap/
       mkdir -p ${xdg.dataHome}/vim/undo/
     '';
+
+  home.activation.cpGitCfg =
+    config.lib.dag.entryAfter ["writeBoundary"] ''
+      cp ${xdg.configHome}/git/config ${home_dir}/.COPY_gitconfig
+      cp ${xdg.configHome}/git/ignore ${home_dir}/.COPY_gitignore
+    '';
 }
