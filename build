@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-[[ ! -v CFG ]] && echo "Error: DOTFILE_CFG is not set" && exit 1
-
-nix build ".#darwinConfigurations.${CFG}.system" --experimental-features "nix-command flakes" && \
-  ./result/sw/bin/darwin-rebuild switch --flake ".#${CFG}"

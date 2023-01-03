@@ -1,0 +1,376 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+# Keep the computer awake for the duration of this script.
+[[ $(command -v caffeinate) ]] && caffeinate -dusw $$ &
+
+# ==============================================================================
+
+VERSION="0.1.0"
+AUTHOR="Robert W. Pearce <me@robertwpearce.com> (https://robertwpearce.com)"
+
+SCRIPT_NAME="$(basename "$0")"
+VERSION_SHORT="${SCRIPT_NAME} version ${VERSION}"
+VERSION_LONG="\
+${VERSION_SHORT}
+Author: ${AUTHOR}"
+
+HELP="\
+Setup dotfiles
+
+USAGE
+  ${SCRIPT_NAME} [flags] <command>
+
+FLAGS
+  -h, -?, --help
+    Print the help menu
+  -v, --version
+    Print version information
+  --asdf
+    Setup asdf
+  --homebrew
+    Setup Homebrew
+  --nix
+    Setup Nix
+  --npm
+    Setup NPM config
+  --ssh
+    Setup SSH
+EXAMPLES
+  $ ${SCRIPT_NAME} -h
+  $ ${SCRIPT_NAME} --version
+  $ ${SCRIPT_NAME} --times 5 some-cmd-that-may-fail --flag1 --flag2
+"
+
+# ==============================================================================
+
+# Flags
+DO_ASDF=false
+DO_HOMEBREW=false
+DO_NIX=false
+DO_NPM=false
+DO_SSH=false
+
+function parse_args {
+  #if [[ -z "$*" ]]; then
+  #  echo "error: no arguments provided"
+  #  exit 1
+  #fi
+
+  while :; do
+    local flag="${1:-}"
+
+    case "${flag}" in
+      # Help menu
+      -h|-\?|--help)
+        print_help
+        return 0
+        ;;
+      # Version
+      -v|--version)
+        print_version
+        return 0
+        ;;
+      # asdf
+      --asdf)
+        DO_ASDF=true
+        shift # past arg
+        ;;
+      # Homebrew
+      --homebrew)
+        DO_HOMEBREW=true
+        shift # past arg
+        ;;
+      # Nix
+      --nix)
+        DO_NIX=true
+        shift # past arg
+        ;;
+      # NPM
+      --npm)
+        DO_NPM=true
+        shift # past arg
+        ;;
+      # SSH
+      --ssh)
+        DO_SSH=true
+        shift # past arg
+        ;;
+      # End of all flags
+      --)
+        shift # past arg
+        shift # past val
+        break
+        ;;
+      # Unknown flag
+      -?*)
+        print_error "warn: unknown flag (ignored): ${flag}"
+        shift # past arg
+        ;;
+      # Default case, no more options
+      *)
+        break
+        ;;
+    esac
+  done
+
+  return 0
+}
+
+function print_help {
+  echo "${HELP}"
+}
+
+function print_version {
+  echo "${VERSION_LONG}"
+}
+
+function print_error {
+  echo "$1" >&2
+}
+
+# ==============================================================================
+
+function has_cmd {
+  hash "${1}" 2> /dev/null
+}
+
+function is_mac {
+  [[ "$OSTYPE" =~ "darwin" ]] || return 1
+}
+
+# ==============================================================================
+
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_LIB_HOME="${XDG_DATA_HOME:-$HOME/.local/lib}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+
+function setup_xdg {
+  mkdir -p \
+    "${XDG_CACHE_HOME}" \
+    "${XDG_CONFIG_HOME}" \
+    "${XDG_DATA_HOME}" \
+    "${XDG_LIB_HOME}" \
+    "${XDG_STATE_HOME}"
+
+  return 0
+}
+
+# ==============================================================================
+
+function install_homebrew {
+  if has_cmd brew; then
+    brew update
+  else
+    export PATH="/opt/homebrew/bin:$PATH"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  brew bundle --file="./conf/Brewfile" --cleanup --zap
+
+  return 0
+}
+
+function install_nix {
+  if ! has_cmd nix; then
+    echo "install: setting up nix..."
+
+    if is_mac; then
+      sh <(curl -L https://nixos.org/nix/install)
+    else
+      sh <(curl -L https://nixos.org/nix/install) --daemon
+    fi
+
+    # Set current user as trusted user
+    echo "trusted-users = root ${USER}" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
+  fi
+
+  if ! has_cmd cachix; then
+    echo "install: setting up cachix..."
+    nix-env -iA cachix -f https://cachix.org/api/v1/install
+  fi
+
+  return 0
+}
+
+# ==============================================================================
+
+# SSH
+SSH_EMAIL="me@robertwpearce.com"
+
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+function setup_ssh {
+  if [[ ! -f "${HOME}/.ssh/id_ed25519" ]]; then
+    echo "install: setting up ssh..."
+
+    echo "ssh: Setting up key..."
+    ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+
+    echo "ssh: Starting ssh-agent in the background"
+    eval "$(ssh-agent -s)"
+
+    if is_mac; then
+      echo "ssh: writing config to store passphrases in keychain"
+      cat <<EOF > "${HOME}/.ssh/config"
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile "${HOME}/.ssh/id_ed25519"
+EOF
+
+      echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
+      ssh-add --apple-use-keychain "${HOME}/.ssh/id_ed25519"
+    fi
+  fi
+
+  return 0
+}
+
+# ==============================================================================
+
+function setup_asdf {
+  echo "install: setting up asdf..."
+  ./conf/.asdf || return 1
+
+  return 0
+}
+
+# ==============================================================================
+
+# NPM vars
+NPM_AUTHOR_URL="https://robertwpearce.com"
+NPM_EMAIL="me@robertwpearce.com"
+NPM_LICENSE="BSD-3"
+NPM_NAME="Robert Pearce"
+
+function setup_npm {
+  npm config set init-author-name "${NPM_NAME}"
+  npm config set init-author-email "${NPM_EMAIL}"
+  npm config set init-author-url "${NPM_AUTHOR_URL}"
+  npm config set init-license "${NPM_LICENSE}"
+  npm config set init-version "0.1.0"
+
+  return 0
+}
+
+# ==============================================================================
+
+function set_system_preferences {
+  if is_mac; then
+    echo "install: setting system preferences..."
+    sudo ./conf/.macos || return 1
+  fi
+
+  return 0
+}
+
+# ==============================================================================
+
+# Set our working base directory
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+function link_dotfiles {
+  echo "install: linking dotfiles..."
+
+  mkdir -p "${XDG_CONFIG_HOME}"
+
+  # Top-level
+  ln -sf "${BASEDIR}/conf/.gemrc" "${XDG_CONFIG_HOME}/gemrc"
+  ln -sf "${BASEDIR}/conf/.ghci" "${XDG_CONFIG_HOME}/ghci"
+
+  # Alacritty
+  mkdir -p "${XDG_CONFIG_HOME}/alacritty"
+  ln -sf "${BASEDIR}/conf/.alacritty.yml" "${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
+
+  # Bat
+  mkdir -p "${XDG_CONFIG_HOME}/bat"
+  ln -sf "${BASEDIR}/conf/.bat" "${XDG_CONFIG_HOME}/bat/config"
+
+  # Git
+  mkdir -p "${XDG_CONFIG_HOME}/git"
+  ln -sf "${BASEDIR}/conf/.gitconfig" "${XDG_CONFIG_HOME}/git/config"
+  ln -sf "${BASEDIR}/conf/.gitignore" "${XDG_CONFIG_HOME}/git/ignore"
+
+  # GPG
+  mkdir -p "${HOME}/.gnupg"
+  ln -sf "${BASEDIR}/conf/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
+
+  # Neovim
+  mkdir -p "${XDG_CONFIG_HOME}/nvim"
+  ln -sf "${BASEDIR}/conf/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
+  ln -sf "${BASEDIR}/conf/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
+
+  # Vim
+  #mkdir -p "${XDG_CONFIG_HOME}/vim"
+  #ln -sf "${BASEDIR}/conf/.vim-plugins.vim" "${XDG_CONFIG_HOME}/vim/vim-plugins.vim"
+  #ln -sf "${BASEDIR}/conf/.vimrc" "${XDG_CONFIG_HOME}/vim/vimrc"
+
+  # PostgreSQL
+  mkdir -p "${XDG_CONFIG_HOME}/pg"
+  ln -sf "${BASEDIR}/conf/.psqlrc" "${XDG_CONFIG_HOME}/pg/psqlrc"
+
+  # Readline
+  mkdir -p "${XDG_CONFIG_HOME}/readline"
+  ln -sf "${BASEDIR}/conf/.inputrc" "${XDG_CONFIG_HOME}/readline/inputrc"
+
+  # Ripgrep
+  mkdir -p "${XDG_CONFIG_HOME}/ripgrep"
+  ln -sf "${BASEDIR}/conf/.ripgreprc" "${XDG_CONFIG_HOME}/ripgrep/config"
+
+  # Stack
+  mkdir -p "${XDG_CONFIG_HOME}/.stack"
+  ln -sf "${BASEDIR}/conf/.stack.yaml" "${XDG_CONFIG_HOME}/.stack/config.yaml"
+
+  # Tmux
+  mkdir -p "${XDG_CONFIG_HOME}/tmux"
+  ln -sf "${BASEDIR}/conf/.tmux.conf" "${XDG_CONFIG_HOME}/tmux/tmux.conf"
+
+  # Utils
+  mkdir -p "${XDG_CONFIG_HOME}/utils"
+  ln -sf "${BASEDIR}/utils/retry" "${XDG_CONFIG_HOME}/utils/retry"
+
+  # Zsh
+  mkdir -p "${XDG_CONFIG_HOME}/zsh"
+  ln -sf "${BASEDIR}/zsh/.zprofile" "${XDG_CONFIG_HOME}/zsh/.zprofile"
+  ln -sf "${BASEDIR}/zsh/.zshenv" "${XDG_CONFIG_HOME}/zsh/.zshenv"
+  ln -sf "${BASEDIR}/zsh/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"
+  ln -sf "${BASEDIR}/zsh/aliases.zsh" "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
+  ln -sf "${BASEDIR}/zsh/history.zsh" "${XDG_CONFIG_HOME}/zsh/history.zsh"
+  ln -sf "${BASEDIR}/zsh/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
+  ln -sf "${BASEDIR}/zsh/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
+  ln -sf "${XDG_CONFIG_HOME}/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
+}
+
+function apply_extras {
+  echo "install: applying extra settings..."
+
+  if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
+    sudo chsh -s $(which zsh) $USER
+  fi
+}
+
+# ==============================================================================
+
+function main() {
+  parse_args "$@"
+  sudo -v
+  setup_xdg
+  $DO_HOMEBREW && install_homebrew
+  $DO_NIX && install_nix
+  set_system_preferences
+  link_dotfiles
+  $DO_SSH && setup_ssh
+  $DO_ASDF && setup_asdf
+  $DO_NPM && setup_npm
+  apply_extras
+
+  return 0
+}
+
+main "$@"

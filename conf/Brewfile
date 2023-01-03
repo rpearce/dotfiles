@@ -1,0 +1,93 @@
+# TODO: /opt/homebrew/bin as installation location?
+
+# Taps
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+tap "heroku/brew"
+
+# Brews
+# brew "bashcards"
+brew "asdf"
+brew "bat"
+brew "clamav"
+brew "coreutils"
+brew "ctop"
+brew "diff-so-fancy"
+brew "diskonaut"
+brew "dive"
+brew "exa"
+brew "exercism"
+brew "findutils"
+brew "flyctl"
+brew "fzf"
+brew "gh"
+brew "git-delta"
+brew "ghcup"
+brew "gnupg"
+brew "heroku"
+brew "htop"
+brew "jq"
+brew "mas"
+brew "neovim"
+brew "pinentry-mac"
+brew "postgresql@14"
+brew "rename"
+brew "ripgrep"
+brew "rust-analyzer"
+brew "speedtest-cli"
+brew "spotify-tui"
+brew "spotifyd"
+brew "tldr"
+brew "tmux"
+brew "tmux-mem-cpu-load"
+brew "tokei"
+brew "tree"
+brew "yt-dlp"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
+# Casks
+cask "alacritty"
+cask "brave-browser"
+# cask "calibre"
+cask "colour-contrast-analyser"
+cask "deckset"
+cask "discord"
+cask "docker"
+cask "dropbox"
+# cask "flux"
+cask "google-chrome"
+# cask "iterm2"
+# cask "libreoffice"
+cask "netnewswire"
+cask "oversight"
+# cask "pgadmin4"
+# cask "postico"
+cask "postman"
+cask "proxyman"
+# cask "psequel"
+# cask "sketch"
+cask "slack"
+cask "spotify"
+# cask "tableplus"
+# cask "virtualbox"
+# cask "virtualbox-extension-pack"
+cask "vlc"
+cask "visual-studio-code"
+cask "zoom"
+
+# Mac App Store apps
+mas "1Password", id: 1333542190
+mas "Hush", id: 1544743900
+mas "Just Focus", id: 1142151959
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+# mas Medis = 1063631769;
+mas "Xcode", id: 497799835
+
+# Extra config
+cask "firefox-developer-edition", args: { language: "es" }
+cask_args appdir: "~/Applications", require_sha: true

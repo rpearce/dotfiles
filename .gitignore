@@ -1,4 +1,1 @@
-*.profraw
 .DS_Store
-env
-result
