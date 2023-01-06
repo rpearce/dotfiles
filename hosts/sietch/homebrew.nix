@@ -31,6 +31,7 @@
     "colour-contrast-analyser"
     "deckset"
     "discord"
+    "dive"
     "docker"
     "dropbox"
     #"flux"

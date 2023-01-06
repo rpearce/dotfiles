@@ -23,6 +23,7 @@
     "alacritty"
     "colour-contrast-analyser"
     #"deckset"
+    "dive"
     "docker"
     "firefox-developer-edition"
     #"flux"
