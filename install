@@ -196,6 +196,11 @@ function install_nix {
     nix-env -iA cachix -f https://cachix.org/api/v1/install
   fi
 
+  if ! has_cmd devenv; then
+    cachix use devenv
+    nix-env -if https://github.com/cachix/devenv/tarball/latest
+  fi
+
   return 0
 }
 
