@@ -26,6 +26,7 @@ specific preferences.
 ## TODO
 
 - [ ] Uninstall script
+- [ ] More bash function safety (`can-fail || return 1`, e.g.)
 
 ## Historical
 
