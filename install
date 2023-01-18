@@ -349,7 +349,7 @@ function link_dotfiles {
   ln -sf "${BASEDIR}/conf/zsh/history.zsh" "${XDG_CONFIG_HOME}/zsh/history.zsh"
   ln -sf "${BASEDIR}/conf/zsh/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
   ln -sf "${BASEDIR}/conf/zsh/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
-  ln -sf "${XDG_CONFIG_HOME}/conf/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
+  ln -sf "${XDG_CONFIG_HOME}/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
 
   return 0
 }
