@@ -37,7 +37,7 @@ alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -E
 alias kaffe='caffeinate -dusw $$'
 
 # Long listing
-alias ll="ls -lAFh"
+alias ll="ls -lAFGh"
 
 if has_cmd exa; then
   alias ll="exa -l --color always --icons -a -s type"
