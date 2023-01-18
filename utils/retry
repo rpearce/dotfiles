@@ -1,0 +1,194 @@
+#!/usr/bin/env bash
+
+set -o errexit
+#set -o errtrace
+set -o nounset
+#set -eou pipefail
+
+# ==============================================================================
+
+VERSION="0.1.0"
+AUTHOR="Robert W. Pearce <me@robertwpearce.com> (https://robertwpearce.com)"
+
+SCRIPT_NAME="$(basename "$0")"
+VERSION_SHORT="${SCRIPT_NAME} version ${VERSION}"
+VERSION_LONG="\
+${VERSION_SHORT}
+Author: ${AUTHOR}"
+
+HELP="\
+Retry a given command a specified number of times.
+
+USAGE
+  ${SCRIPT_NAME} [flags] <command>
+
+FLAGS
+  -h, -?, --help
+    Print the help menu
+  -v, --version
+    Print version information
+  -s <arg>, --sleep <arg>
+    Specify time to wait before retrying command (default: 2)
+  -t <arg>, --times <arg>
+    Specify number of times to retry command (default: 3)
+
+EXAMPLES
+  $ ${SCRIPT_NAME} -h
+  $ ${SCRIPT_NAME} --version
+  $ ${SCRIPT_NAME} some-cmd-that-may-fail --flag1 --flag2
+  $ ${SCRIPT_NAME} --sleep 1 --times 5 some-cmd-that-may-fail --flag1 --flag2
+"
+
+# ==============================================================================
+
+function print_help {
+  echo "${HELP}"
+}
+
+function print_version {
+  echo "${VERSION_LONG}"
+}
+
+function print_error {
+  echo "$1" >&2
+}
+
+# ==============================================================================
+
+FLAG_ERR_MSG_TIMES="error: --times requires a number argument > 0"
+FLAG_ERR_MSG_SLEEP="error: --sleep requires a number argument >= 0"
+
+function parse_args {
+  if [ -z "$*" ]; then
+    echo "error: no arguments provided"
+    exit 1
+  fi
+
+  while :; do
+    local flag="${1:-}"
+    local flag_val="${2:-}"
+
+    case "$flag" in
+      # Help menu
+      -h|-\?|--help)
+        print_help
+        return 0
+        ;;
+      # Version
+      -v|--version)
+        print_version
+        return 0
+        ;;
+      # Sleep amount flag
+      -s|--sleep)
+        if [[ "$flag_val" =~ ^[0-9]+$ ]]; then
+          FLAG_SLEEP_NUM=${flag_val}
+          shift # past arg
+          shift # past val
+        else
+          print_error "${FLAG_ERR_MSG_SLEEP}"
+          return 1
+        fi
+        ;;
+      # Sleep: handle equals syntax
+      --sleep=?*)
+        flag_val=${1#*=} # Delete everything up to "=" and assign the remainder
+        if [[ "$flag_val" =~ ^[0-9]+$ ]]; then
+          FLAG_SLEEP_NUM=${flag_val}
+          shift # past arg
+        else
+          print_error "${FLAG_ERR_MSG_SLEEP}"
+          return 1
+        fi
+        ;;
+      # Sleep: handle equals syntax wih no value
+      --sleep=)
+        print_error "${FLAG_ERR_MSG_SLEEP}"
+        return 1
+        ;;
+      # Times to retry flag
+      -t|--times)
+        if [[ "${flag_val}" =~ ^[0-9]+$ ]]; then
+          FLAG_TIMES_NUM=${flag_val}
+          shift # past arg
+          shift # past val
+        else
+          print_error "${FLAG_ERR_MSG_TIMES}"
+          return 1
+        fi
+        ;;
+      # Times: handle equals syntax
+      --times=?*)
+        flag_val=${1#*=} # Delete everything up to "=" and assign the remainder
+        if [[ "${flag_val}" =~ ^[0-9]+$ ]]; then
+          FLAG_TIMES_NUM=${flag_val}
+          shift # past arg
+        else
+          print_error "${FLAG_ERR_MSG_TIMES}"
+          return 1
+        fi
+        ;;
+      # Times: handle equals syntax wih no value
+      --times=)
+        print_error "${FLAG_ERR_MSG_TIMES}"
+        return 1
+        ;;
+      # End of all flags
+      --)
+        shift # past arg
+        shift # past val
+        break
+        ;;
+      # Unknown flag
+      -?*)
+        print_error "warn: unknown flag (ignored): ${flag}"
+        shift # past arg
+        ;;
+      # Default case, no more options
+      *)
+        break
+        ;;
+    esac
+  done
+
+  # Set remaining command after parsing flags
+  CMD=("$@")
+
+  return 0
+}
+
+# ==============================================================================
+
+function run_cmd {
+  if [ "${FLAG_TIMES_NUM}" -gt 0 ]; then
+    for i in $(seq 1 "${FLAG_TIMES_NUM}"); do
+      if "$@"; then
+        return 0
+      fi
+
+      echo "retry count: ${i}"
+      sleep "${FLAG_SLEEP_NUM}"
+    done
+
+    echo "retries failed for: $*"
+    return 1
+  else
+    echo "error: --times must be greater than 0"
+    return 1
+  fi
+
+}
+
+# ==============================================================================
+
+CMD=()
+FLAG_TIMES_NUM=3
+FLAG_SLEEP_NUM=2
+
+function main {
+  parse_args "$@" && \
+    run_cmd "${CMD[@]}" && \
+    return 0
+}
+
+main "$@"

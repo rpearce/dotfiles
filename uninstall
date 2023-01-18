@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+# https://iohk.zendesk.com/hc/en-us/articles/4415830650265-Uninstall-nix-on-MacOS
+# function uninstall_nix {
+#   rm -rf ~/{.nix-channels,.nix-defexpr,.nix-profile,.config/nixpkgs}
+#   sudo rm -rf /nix
+
+#   return 0
+# }
+
+function main {
+  # sudo -v
+  echo "todo"
+}
+
+main
