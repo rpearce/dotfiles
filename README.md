@@ -3,7 +3,7 @@
 Welcome! I use this repository as my automated way to setup machines with my
 specific preferences.
 
-## Current features
+## Current setup
 
 * Mostly opt-in `./install` script: e.g.,
     ```
@@ -33,3 +33,12 @@ In the past I've used these tools to manage my machines:
 
 * [nix-darwin](https://github.com/LnL7/nix-darwin/)
 * [home-manager](https://github.com/nix-community/home-manager)
+
+Curiously, this dotfile garden is back in a state that resembles its [first
+commit](https://github.com/rpearce/dotfiles/commit/5f5d46a2d2d0155011a77a12076677fd769120d5).
+
+## Disclaimer
+
+This is not intended to be used as a template, but it may provide inspiration
+for those looking to craft their own dotfiles and learn a few things along the
+way.
