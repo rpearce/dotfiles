@@ -356,7 +356,7 @@ function apply_extras {
   echo "install: applying extra settings..."
 
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
-    sudo chsh -s $(which zsh) $USER
+    sudo chsh -s "$(which zsh)" "$USER"
   fi
 }
 
