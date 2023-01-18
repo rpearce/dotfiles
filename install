@@ -342,14 +342,14 @@ function link_dotfiles {
 
   # Zsh
   mkdir -p "${XDG_CONFIG_HOME}/zsh"
-  ln -sf "${BASEDIR}/zsh/.zprofile" "${XDG_CONFIG_HOME}/zsh/.zprofile"
-  ln -sf "${BASEDIR}/zsh/.zshenv" "${XDG_CONFIG_HOME}/zsh/.zshenv"
-  ln -sf "${BASEDIR}/zsh/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"
-  ln -sf "${BASEDIR}/zsh/aliases.zsh" "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
-  ln -sf "${BASEDIR}/zsh/history.zsh" "${XDG_CONFIG_HOME}/zsh/history.zsh"
-  ln -sf "${BASEDIR}/zsh/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
-  ln -sf "${BASEDIR}/zsh/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
-  ln -sf "${XDG_CONFIG_HOME}/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
+  ln -sf "${BASEDIR}/conf/zsh/.zprofile" "${XDG_CONFIG_HOME}/zsh/.zprofile"
+  ln -sf "${BASEDIR}/conf/zsh/.zshenv" "${XDG_CONFIG_HOME}/zsh/.zshenv"
+  ln -sf "${BASEDIR}/conf/zsh/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"
+  ln -sf "${BASEDIR}/conf/zsh/aliases.zsh" "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
+  ln -sf "${BASEDIR}/conf/zsh/history.zsh" "${XDG_CONFIG_HOME}/zsh/history.zsh"
+  ln -sf "${BASEDIR}/conf/zsh/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
+  ln -sf "${BASEDIR}/conf/zsh/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
+  ln -sf "${XDG_CONFIG_HOME}/conf/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
 }
 
 function apply_extras {
