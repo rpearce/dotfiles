@@ -160,8 +160,10 @@ function parse_args {
 # ==============================================================================
 
 function run_cmd {
-  if [ "${FLAG_TIMES_NUM}" -gt 0 ]; then
-    for i in $(seq 1 "${FLAG_TIMES_NUM}"); do
+  if (( "${FLAG_TIMES_NUM}" > 0 )); then
+    local i
+
+    for ((i = 1; i <= "${FLAG_TIMES_NUM}"; i++)); do
       if "$@"; then
         return 0
       fi
