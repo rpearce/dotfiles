@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Create home for zsh history if it doesn't exist
-[ -d "${XDG_STATE_HOME}/zsh" ] || mkdir -p "${XDG_STATE_HOME}/zsh"
+[[ -d "${XDG_STATE_HOME}/zsh" ]] || mkdir -p "${XDG_STATE_HOME}/zsh"
 
 HISTFILE="${XDG_STATE_HOME}/zsh/history"
 HISTSIZE=500000

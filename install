@@ -350,6 +350,8 @@ function link_dotfiles {
   ln -sf "${BASEDIR}/conf/zsh/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
   ln -sf "${BASEDIR}/conf/zsh/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
   ln -sf "${XDG_CONFIG_HOME}/conf/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
+
+  return 0
 }
 
 function apply_extras {
@@ -358,6 +360,8 @@ function apply_extras {
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
     sudo chsh -s "$(which zsh)" "$USER"
   fi
+
+  return 0
 }
 
 # ==============================================================================

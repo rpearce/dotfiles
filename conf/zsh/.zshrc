@@ -5,7 +5,7 @@ function has_cmd {
 }
 
 # Source our zsh configs
-if [ -d "$ZDOTDIR" ]; then
+if [[ -d "$ZDOTDIR" ]]; then
   source "${ZDOTDIR}/aliases.zsh"
   source "${ZDOTDIR}/history.zsh"
   source "${ZDOTDIR}/key-bindings.zsh"
@@ -13,15 +13,15 @@ if [ -d "$ZDOTDIR" ]; then
 fi
 
 # Add bin paths to PATH
-[ -d "/usr/local/sbin" ] && export PATH="/usr/local/sbin:${PATH}"
-[ -d "${HOME}/.local/bin" ] && export PATH="${HOME}/.local/bin:${PATH}"
-[ -d "${HOME}/go/bin" ] && export PATH="${HOME}/go/bin:${PATH}"
-[ -d "${XDG_DATA_HOME}/cargo/bin" ] && export PATH="${XDG_DATA_HOME}/cargo/bin:${PATH}"
-[ -d "${XDG_DATA_HOME}/yarn/bin" ] && export PATH="${XDG_DATA_HOME}/yarn/bin:${PATH}"
-[ -d "${XDG_CONFIG_HOME}/utils" ] && export PATH="${XDG_CONFIG_HOME}/utils:${PATH}"
+[[ -d "/usr/local/sbin" ]] && export PATH="/usr/local/sbin:${PATH}"
+[[ -d "${HOME}/.local/bin" ]] && export PATH="${HOME}/.local/bin:${PATH}"
+[[ -d "${HOME}/go/bin" ]] && export PATH="${HOME}/go/bin:${PATH}"
+[[ -d "${XDG_DATA_HOME}/cargo/bin" ]] && export PATH="${XDG_DATA_HOME}/cargo/bin:${PATH}"
+[[ -d "${XDG_DATA_HOME}/yarn/bin" ]] && export PATH="${XDG_DATA_HOME}/yarn/bin:${PATH}"
+[[ -d "${XDG_CONFIG_HOME}/utils" ]] && export PATH="${XDG_CONFIG_HOME}/utils:${PATH}"
 
 # Homebrew
-if [ -d "/opt/homebrew" ]; then
+if [[ -d "/opt/homebrew" ]]; then
   export HOMEBREW_PREFIX="/opt/homebrew"
   export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
   export HOMEBREW_REPOSITORY="/opt/homebrew"
@@ -31,14 +31,14 @@ if [ -d "/opt/homebrew" ]; then
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  [ -f "$zsh_autosuggestions_path" ] && source "$zsh_autosuggestions_path"
+  [[ -f "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
 
   zsh_syntax_highlighting_path="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  [ -f "$zsh_syntax_highlighting_path" ] && source "$zsh_syntax_highlighting_path"
+  [[ -f "$zsh_syntax_highlighting_path" ]] && source "$zsh_syntax_highlighting_path"
 
   # Source asdf tools
   asdf_script_path="/opt/homebrew/opt/asdf/libexec/asdf.sh"
-  [ -f "$asdf_script_path" ] && source "$asdf_script_path"
+  [[ -f "$asdf_script_path" ]] && source "$asdf_script_path"
 fi
 
 # https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
