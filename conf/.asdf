@@ -10,6 +10,12 @@ asdf plugin update nodejs
 asdf install nodejs latest
 asdf global nodejs latest
 
+# Yarn
+asdf plugin add yarn
+asdf plugin update yarn
+asdf install yarn latest
+asdf global yarn latest
+
 # Erlang
 asdf plugin add erlang
 asdf plugin update erlang
