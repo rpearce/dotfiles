@@ -32,6 +32,8 @@ FLAGS
     Print version information
   --asdf
     Setup asdf
+  --at-work
+    Assume we're doing things at work
   --homebrew
     Setup Homebrew
   --nix
@@ -50,6 +52,7 @@ EXAMPLES
 
 # Flags
 DO_ASDF=false
+DO_AT_WORK=false
 DO_HOMEBREW=false
 DO_NIX=false
 DO_NPM=false
@@ -78,6 +81,10 @@ function parse_args {
       # asdf
       --asdf)
         DO_ASDF=true
+        shift # past arg
+        ;;
+      --at-work)
+        DO_AT_WORK=true
         shift # past arg
         ;;
       # Homebrew
@@ -172,7 +179,11 @@ function install_homebrew {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  brew bundle --file="./conf/Brewfile" --cleanup --zap
+  if $DO_AT_WORK; then
+    brew bundle --file="./conf/BrewfileWork" --cleanup --zap
+  else
+    brew bundle --file="./conf/Brewfile" --cleanup --zap
+  fi
 
   return 0
 }
@@ -211,11 +222,24 @@ SSH_EMAIL="me@robertwpearce.com"
 
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function setup_ssh {
-  if [[ ! -f "${HOME}/.ssh/id_ed25519" ]]; then
+  local ssh_type
+
+  if $DO_AT_WORK; then
+    ssh_type="rsa"
+  else
+    ssh_type="ed25519"
+  fi
+
+
+  if [[ ! -f "${HOME}/.ssh/id_${ssh_type}" ]]; then
     echo "install: setting up ssh..."
 
     echo "ssh: Setting up key..."
-    ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+    if [[ "${ssh_type}" == "rsa"  ]]; then
+      ssh-keygen -t rsa -b 4096 -C "${SSH_EMAIL}"
+    else
+      ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+    fi
 
     echo "ssh: Starting ssh-agent in the background"
     eval "$(ssh-agent -s)"
@@ -226,11 +250,11 @@ function setup_ssh {
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile "${HOME}/.ssh/id_ed25519"
+  IdentityFile "${HOME}/.ssh/id_${ssh_type}"
 EOF
 
       echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
-      ssh-add --apple-use-keychain "${HOME}/.ssh/id_ed25519"
+      ssh-add --apple-use-keychain "${HOME}/.ssh/id_${ssh_type}"
     fi
   fi
 
@@ -269,7 +293,26 @@ function setup_npm {
 function set_system_preferences {
   if is_mac; then
     echo "install: setting system preferences..."
-    sudo ./conf/.macos || return 1
+
+    local host_id
+
+    if $DO_AT_WORK; then
+      host_id="rpea-vinna"
+    else
+      host_id="sietch"
+    fi
+
+    # Set user-friendly system name
+    sudo scutil --set ComputerName "${host_id}"
+
+    # Set hostname; visible from command line
+    sudo scutil --set HostName "${host_id}"
+
+    # Set local network name; identifies to Bonjour-compatible serices
+    sudo scutil --set LocalHostName "${host_id}"
+
+    # Set rest of macOS options
+    ./conf/.macos || return 1
   fi
 
   return 0
