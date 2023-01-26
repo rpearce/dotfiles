@@ -62,8 +62,6 @@ if is_mac; then
   }
 fi
 
-# "${DOTFILES_DIR:-$HOME/Documents/config/dotfiles}/install.sh"
-
 # mkdir and cd into it
 function mkcd {
   mkdir -p "$@" && cd "$_"

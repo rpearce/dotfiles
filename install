@@ -189,6 +189,7 @@ function install_homebrew {
 }
 
 function install_nix {
+  # Install nix
   if ! has_cmd nix; then
     echo "install: setting up nix..."
 
@@ -202,11 +203,13 @@ function install_nix {
     echo "trusted-users = root ${USER}" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
   fi
 
+  # Install cachix
   if ! has_cmd cachix; then
     echo "install: setting up cachix..."
     nix-env -iA cachix -f https://cachix.org/api/v1/install
   fi
 
+  # Install devenv
   if ! has_cmd devenv; then
     cachix use devenv
     nix-env -if https://github.com/cachix/devenv/tarball/latest
@@ -381,6 +384,7 @@ function link_dotfiles {
 
   # Utils
   mkdir -p "${XDG_CONFIG_HOME}/utils"
+  ln -sf "${BASEDIR}/utils/repo-sync" "${XDG_CONFIG_HOME}/utils/repo-sync"
   ln -sf "${BASEDIR}/utils/retry" "${XDG_CONFIG_HOME}/utils/retry"
 
   # Zsh
