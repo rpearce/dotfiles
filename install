@@ -342,6 +342,10 @@ function link_dotfiles {
   mkdir -p "${XDG_CONFIG_HOME}/bat"
   ln -sf "${BASEDIR}/conf/.bat" "${XDG_CONFIG_HOME}/bat/config"
 
+  # Cabal
+  mkdir -p "${XDG_CONFIG_HOME}/cabal"
+  ln -sf "${BASEDIR}/conf/.cabal.conf" "${XDG_CONFIG_HOME}/cabal/config"
+
   # Git
   mkdir -p "${XDG_CONFIG_HOME}/git"
   ln -sf "${BASEDIR}/conf/.gitconfig" "${XDG_CONFIG_HOME}/git/config"
