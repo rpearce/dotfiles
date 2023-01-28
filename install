@@ -175,11 +175,11 @@ function install_homebrew {
   if has_cmd brew; then
     brew update
   else
-    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/bin:${PATH}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  if $DO_AT_WORK; then
+  if ${DO_AT_WORK}; then
     brew bundle --file="./conf/BrewfileWork" --cleanup --zap
   else
     brew bundle --file="./conf/Brewfile" --cleanup --zap
@@ -201,7 +201,13 @@ function install_nix {
 
     # Set current user as trusted user
     echo "trusted-users = root ${USER}" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
+
+    source ~/.zshrc
+
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   fi
+
+  nix-channel --update
 
   # Install cachix
   if ! has_cmd cachix; then
@@ -226,7 +232,7 @@ SSH_EMAIL="me@robertwpearce.com"
 function setup_ssh {
   local ssh_type
 
-  if $DO_AT_WORK; then
+  if ${DO_AT_WORK}; then
     ssh_type="rsa"
   else
     ssh_type="ed25519"
@@ -298,7 +304,7 @@ function set_system_preferences {
 
     local host_id
 
-    if $DO_AT_WORK; then
+    if ${DO_AT_WORK}; then
       host_id="rpea-vinna"
     else
       host_id="sietch"
@@ -411,6 +417,12 @@ function link_dotfiles {
 function apply_extras {
   echo "install: applying extra settings..."
 
+  if ${DO_AT_WORK}; then
+    git config --global user.signingkey 2A58F8D37F18F982
+  else
+    git config --global user.signingkey 8EE70FB52D805C55
+  fi
+
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
     sudo chsh -s "$(which zsh)" "$USER"
   fi
@@ -426,11 +438,11 @@ function main() {
   setup_xdg
   set_system_preferences
   link_dotfiles
-  $DO_HOMEBREW && install_homebrew
-  $DO_NIX && install_nix
-  $DO_SSH && setup_ssh
-  $DO_ASDF && setup_asdf
-  $DO_NPM && setup_npm
+  ${DO_HOMEBREW} && install_homebrew
+  ${DO_NIX} && install_nix
+  ${DO_SSH} && setup_ssh
+  ${DO_ASDF} && setup_asdf
+  ${DO_NPM} && setup_npm
   apply_extras
 
   return 0
