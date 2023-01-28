@@ -211,7 +211,6 @@ function install_nix {
 
   # Install devenv
   if ! has_cmd devenv; then
-    cachix use devenv
     nix-env -if https://github.com/cachix/devenv/tarball/latest
   fi
 
@@ -352,6 +351,10 @@ function link_dotfiles {
   mkdir -p "${HOME}/.gnupg"
   ln -sf "${BASEDIR}/conf/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 
+  # Nix
+  mkdir -p "${XDG_CONFIG_HOME}/nix"
+  ln -sf "${BASEDIR}/conf/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
+
   # Neovim
   mkdir -p "${XDG_CONFIG_HOME}/nvim"
   ln -sf "${BASEDIR}/conf/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
@@ -417,10 +420,10 @@ function main() {
   parse_args "$@"
   sudo -v
   setup_xdg
-  $DO_HOMEBREW && install_homebrew
-  $DO_NIX && install_nix
   set_system_preferences
   link_dotfiles
+  $DO_HOMEBREW && install_homebrew
+  $DO_NIX && install_nix
   $DO_SSH && setup_ssh
   $DO_ASDF && setup_asdf
   $DO_NPM && setup_npm
