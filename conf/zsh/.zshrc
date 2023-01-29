@@ -13,8 +13,6 @@ if [[ -d "$ZDOTDIR" ]]; then
 fi
 
 # Add bin paths to PATH
-[[ -d "/usr/sbin" ]] && export PATH="/usr/sbin:${PATH}"
-[[ -d "/usr/local/bin" ]] && export PATH="/usr/local/bin:${PATH}"
 [[ -d "/usr/local/sbin" ]] && export PATH="/usr/local/sbin:${PATH}"
 [[ -d "${HOME}/.local/bin" ]] && export PATH="${HOME}/.local/bin:${PATH}"
 [[ -d "${HOME}/go/bin" ]] && export PATH="${HOME}/go/bin:${PATH}"
