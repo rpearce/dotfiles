@@ -43,6 +43,48 @@ if has_cmd exa; then
   alias ll="exa -l --color always --icons -a -s type"
 fi
 
+# md5sum-files-combined
+#   Description:
+#     Get md5 hashes of all files provided or within directories
+#   Usage:
+#     $ md5sum-files file1 file2 dir1 file3 dir2
+#     30e75f2aa6088d7c821537236e7e5227
+#     195c52359ef1fb0b1f08a29cd29a18c5
+#     ece4a27751110898fc655576cbea7153
+#   ...
+function md5sum-files {
+  local entries=("${@}")
+  local sums=""
+
+  for entry in ${entries}; do
+    if [[ -f "${entry}" ]]; then
+      sums+="$(md5sum "${entry}" | awk '{print $1}')\n"
+    elif [[ -d "${entry}" ]]; then
+      sums+="$(find "${entry}" -type f -exec md5sum '{}' \; | awk '{print $1}')\n"
+    else
+      echo "error: ${entry} is neither file nor directory; exiting..."
+      return 1
+    fi
+  done
+
+  echo -n "$sums"
+}
+
+# md5sum-files-combined
+#   Description:
+#     Get a combined md5 hash of all files provided or within directories
+#   Usage:
+#     $ md5sum-files-combined file1 file2 dir1 file3 dir2
+#     4de262a8e7fab310c38cc19a51c01b1d
+function md5sum-files-combined {
+  local entries=("${@}")
+
+  md5sum-files ${entries} | \
+    sort | \
+    md5sum | \
+    awk '{print $1}'
+}
+
 # Get gzipped file size
 function gz {
   local origsize, gzipsize, ratio, saved
