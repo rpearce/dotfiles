@@ -2,7 +2,6 @@
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
-tap "heroku/brew"
 
 # Brews
 # brew "bashcards"
@@ -15,19 +14,17 @@ brew "diff-so-fancy"
 brew "diskonaut"
 brew "dive"
 brew "exa"
-brew "exercism"
 brew "findutils"
-brew "flyctl"
 brew "fzf"
 brew "gh"
 brew "git-delta"
 brew "ghcup"
 brew "gnupg"
-brew "heroku"
 brew "htop"
 brew "jq"
 brew "mas"
 brew "neovim"
+brew "openvpn"
 brew "pinentry-mac"
 brew "postgresql@14"
 brew "ripgrep"
@@ -40,7 +37,6 @@ brew "tmux"
 brew "tmux-mem-cpu-load"
 brew "tokei"
 brew "tree"
-brew "yt-dlp"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
@@ -52,31 +48,30 @@ cask "brave-browser"
 # cask "calibre"
 cask "colour-contrast-analyser"
 cask "deckset"
-cask "discord"
 cask "docker"
-cask "dropbox"
 # cask "flux"
 cask "google-chrome"
 # cask "iterm2"
 # cask "libreoffice"
-cask "netnewswire"
+cask "openvpn-connect"
 cask "oversight"
 # cask "pgadmin4"
-# cask "postico"
+cask "postico"
 cask "postman"
 cask "proxyman"
 # cask "psequel"
 cask "slack"
 cask "spotify"
 # cask "tableplus"
+cask "tuple"
 # cask "virtualbox"
 # cask "virtualbox-extension-pack"
-cask "vlc"
 cask "visual-studio-code"
 cask "zoom"
 
 # Mac App Store apps
 mas "1Password", id: 1333542190
+mas "Balance Lock", id: 1019371109
 mas "Hush", id: 1544743900
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
@@ -85,5 +80,5 @@ mas "Kindle", id: 405399194
 mas "Xcode", id: 497799835
 
 # Extra config
-cask "firefox-developer-edition", args: { language: "es" }
+cask "firefox-developer-edition"
 cask_args appdir: "~/Applications", require_sha: true

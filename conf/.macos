@@ -4,18 +4,6 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-# Ask for the administrator password upfront
-#sudo -v
-
-# Set user-friendly system name
-sudo scutil --set ComputerName 'sietch'
-
-# Set hostname; visible from command line
-sudo scutil --set HostName 'sietch'
-
-# Set local network name; identifies to Bonjour-compatible serices
-sudo scutil --set LocalHostName 'sietch'
-
 # Set WiFi DNS Servers
 networksetup -setdnsservers Wi-Fi "1.1.1.1" "1.0.0.1" "8.8.8.8"
 
@@ -367,4 +355,4 @@ defaults write com.apple.gamed Disabled -bool true
 
 # Keyboard - Remap Caps Lock key to Control
 # https://developer.apple.com/library/archive/technotes/tn2450/_index.html
-hidutil property --set '{"UserKeyMapping":{"HIDKeyboardModifierMappingSrc": 0x700000039, "HIDKeyboardModifierMappingDst": 0x7000000E0}}' > /dev/null
+hidutil property --set '{ "UserKeyMapping":[{ "HIDKeyboardModifierMappingSrc": 0x700000039, "HIDKeyboardModifierMappingDst": 0x7000000e0 }] }' > /dev/null

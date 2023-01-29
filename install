@@ -32,6 +32,8 @@ FLAGS
     Print version information
   --asdf
     Setup asdf
+  --at-work
+    Assume we're doing things at work
   --homebrew
     Setup Homebrew
   --nix
@@ -50,6 +52,7 @@ EXAMPLES
 
 # Flags
 DO_ASDF=false
+DO_AT_WORK=false
 DO_HOMEBREW=false
 DO_NIX=false
 DO_NPM=false
@@ -78,6 +81,10 @@ function parse_args {
       # asdf
       --asdf)
         DO_ASDF=true
+        shift # past arg
+        ;;
+      --at-work)
+        DO_AT_WORK=true
         shift # past arg
         ;;
       # Homebrew
@@ -168,16 +175,21 @@ function install_homebrew {
   if has_cmd brew; then
     brew update
   else
-    export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/opt/homebrew/bin:${PATH}"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  brew bundle --file="./conf/Brewfile" --cleanup --zap
+  if ${DO_AT_WORK}; then
+    brew bundle --file="./conf/BrewfileWork" --cleanup --zap
+  else
+    brew bundle --file="./conf/Brewfile" --cleanup --zap
+  fi
 
   return 0
 }
 
 function install_nix {
+  # Install nix
   if ! has_cmd nix; then
     echo "install: setting up nix..."
 
@@ -189,15 +201,22 @@ function install_nix {
 
     # Set current user as trusted user
     echo "trusted-users = root ${USER}" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
+
+    source ~/.zshrc
+
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   fi
 
+  nix-channel --update
+
+  # Install cachix
   if ! has_cmd cachix; then
     echo "install: setting up cachix..."
     nix-env -iA cachix -f https://cachix.org/api/v1/install
   fi
 
+  # Install devenv
   if ! has_cmd devenv; then
-    cachix use devenv
     nix-env -if https://github.com/cachix/devenv/tarball/latest
   fi
 
@@ -211,11 +230,24 @@ SSH_EMAIL="me@robertwpearce.com"
 
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function setup_ssh {
-  if [[ ! -f "${HOME}/.ssh/id_ed25519" ]]; then
+  local ssh_type
+
+  if ${DO_AT_WORK}; then
+    ssh_type="rsa"
+  else
+    ssh_type="ed25519"
+  fi
+
+
+  if [[ ! -f "${HOME}/.ssh/id_${ssh_type}" ]]; then
     echo "install: setting up ssh..."
 
     echo "ssh: Setting up key..."
-    ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+    if [[ "${ssh_type}" == "rsa"  ]]; then
+      ssh-keygen -t rsa -b 4096 -C "${SSH_EMAIL}"
+    else
+      ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+    fi
 
     echo "ssh: Starting ssh-agent in the background"
     eval "$(ssh-agent -s)"
@@ -226,11 +258,11 @@ function setup_ssh {
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile "${HOME}/.ssh/id_ed25519"
+  IdentityFile "${HOME}/.ssh/id_${ssh_type}"
 EOF
 
       echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
-      ssh-add --apple-use-keychain "${HOME}/.ssh/id_ed25519"
+      ssh-add --apple-use-keychain "${HOME}/.ssh/id_${ssh_type}"
     fi
   fi
 
@@ -269,7 +301,26 @@ function setup_npm {
 function set_system_preferences {
   if is_mac; then
     echo "install: setting system preferences..."
-    sudo ./conf/.macos || return 1
+
+    local host_id
+
+    if ${DO_AT_WORK}; then
+      host_id="rpea-vinna"
+    else
+      host_id="sietch"
+    fi
+
+    # Set user-friendly system name
+    sudo scutil --set ComputerName "${host_id}"
+
+    # Set hostname; visible from command line
+    sudo scutil --set HostName "${host_id}"
+
+    # Set local network name; identifies to Bonjour-compatible serices
+    sudo scutil --set LocalHostName "${host_id}"
+
+    # Set rest of macOS options
+    ./conf/.macos || return 1
   fi
 
   return 0
@@ -297,6 +348,10 @@ function link_dotfiles {
   mkdir -p "${XDG_CONFIG_HOME}/bat"
   ln -sf "${BASEDIR}/conf/.bat" "${XDG_CONFIG_HOME}/bat/config"
 
+  # Cabal
+  mkdir -p "${XDG_CONFIG_HOME}/cabal"
+  ln -sf "${BASEDIR}/conf/.cabal.conf" "${XDG_CONFIG_HOME}/cabal/config"
+
   # Git
   mkdir -p "${XDG_CONFIG_HOME}/git"
   ln -sf "${BASEDIR}/conf/.gitconfig" "${XDG_CONFIG_HOME}/git/config"
@@ -305,6 +360,10 @@ function link_dotfiles {
   # GPG
   mkdir -p "${HOME}/.gnupg"
   ln -sf "${BASEDIR}/conf/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
+
+  # Nix
+  mkdir -p "${XDG_CONFIG_HOME}/nix"
+  ln -sf "${BASEDIR}/conf/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
 
   # Neovim
   mkdir -p "${XDG_CONFIG_HOME}/nvim"
@@ -338,6 +397,7 @@ function link_dotfiles {
 
   # Utils
   mkdir -p "${XDG_CONFIG_HOME}/utils"
+  ln -sf "${BASEDIR}/utils/repo-sync" "${XDG_CONFIG_HOME}/utils/repo-sync"
   ln -sf "${BASEDIR}/utils/retry" "${XDG_CONFIG_HOME}/utils/retry"
 
   # Zsh
@@ -357,6 +417,12 @@ function link_dotfiles {
 function apply_extras {
   echo "install: applying extra settings..."
 
+  if ${DO_AT_WORK}; then
+    git config --global user.signingkey 2A58F8D37F18F982
+  else
+    git config --global user.signingkey 8EE70FB52D805C55
+  fi
+
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
     sudo chsh -s "$(which zsh)" "$USER"
   fi
@@ -370,13 +436,13 @@ function main() {
   parse_args "$@"
   sudo -v
   setup_xdg
-  $DO_HOMEBREW && install_homebrew
-  $DO_NIX && install_nix
   set_system_preferences
   link_dotfiles
-  $DO_SSH && setup_ssh
-  $DO_ASDF && setup_asdf
-  $DO_NPM && setup_npm
+  ${DO_HOMEBREW} && install_homebrew
+  ${DO_NIX} && install_nix
+  ${DO_SSH} && setup_ssh
+  ${DO_ASDF} && setup_asdf
+  ${DO_NPM} && setup_npm
   apply_extras
 
   return 0
