@@ -354,8 +354,13 @@ function link_dotfiles {
 
   # Git
   mkdir -p "${XDG_CONFIG_HOME}/git"
-  ln -sf "${BASEDIR}/conf/.gitconfig" "${XDG_CONFIG_HOME}/git/config"
   ln -sf "${BASEDIR}/conf/.gitignore" "${XDG_CONFIG_HOME}/git/ignore"
+
+  if $DO_AT_WORK; then
+    ln -sf "${BASEDIR}/conf/.gitconfig-work" "${XDG_CONFIG_HOME}/git/config"
+  else
+    ln -sf "${BASEDIR}/conf/.gitconfig-personal" "${XDG_CONFIG_HOME}/git/config"
+  fi
 
   # GPG
   mkdir -p "${HOME}/.gnupg"
@@ -416,12 +421,6 @@ function link_dotfiles {
 
 function apply_extras {
   echo "install: applying extra settings..."
-
-  if ${DO_AT_WORK}; then
-    git config --global user.signingkey 2A58F8D37F18F982
-  else
-    git config --global user.signingkey 8EE70FB52D805C55
-  fi
 
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
     sudo chsh -s "$(which zsh)" "$USER"
