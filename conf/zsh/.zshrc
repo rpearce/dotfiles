@@ -58,3 +58,8 @@ fi
 if has_cmd fzf && has_cmd rg; then
   export FZF_DEFAULT_COMMAND='rg --color=never --files --no-ignore --hidden --follow --glob "!.git/*"'
 fi
+
+# Set an NPM_TOKEN
+if [[ -f "${HOME}/.npmrc" ]]; then
+  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep authToken | cut -d "=" -f 2)
+fi
