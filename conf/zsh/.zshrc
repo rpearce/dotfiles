@@ -63,3 +63,7 @@ fi
 if [[ -f "${HOME}/.npmrc" ]]; then
   export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep authToken | cut -d "=" -f 2)
 fi
+
+# Run the nix-daemon script
+nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+[[ -f "$nix_daemon_script_path" ]] && source "$nix_daemon_script_path"
