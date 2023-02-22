@@ -1,5 +1,6 @@
 # Taps
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 
@@ -51,6 +52,11 @@ cask "colour-contrast-analyser"
 cask "deckset"
 cask "docker"
 # cask "flux"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-lilex-nerd-font"
+cask "font-roboto-mono-nerd-font"
+cask "font-space-mono-nerd-font"
 cask "google-chrome"
 # cask "iterm2"
 # cask "libreoffice"
