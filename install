@@ -195,7 +195,7 @@ function install_nix {
     # Set current user as trusted user
     echo "trusted-users = root ${USER}" | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
 
-    source ~/.zshrc
+    source "${HOME}/.zshrc"
 
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   fi
