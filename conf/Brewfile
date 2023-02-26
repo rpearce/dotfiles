@@ -26,8 +26,9 @@ brew "gnu-sed"
 brew "gnupg"
 brew "heroku"
 brew "htop"
+brew "icu4c" # for ghcup
 brew "jq"
-brew "llvm" # for ghcup
+brew "llvm@13" # for ghcup
 brew "mas"
 brew "neovim"
 brew "pinentry-mac"

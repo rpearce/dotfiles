@@ -29,6 +29,11 @@ if [[ -d "/opt/homebrew" ]]; then
   # Fix the correct sed not being used
   export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 
+  # LLVM
+  export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"
+
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   [[ -f "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
