@@ -22,17 +22,18 @@ fi
 
 # Homebrew
 if [[ -d "/opt/homebrew" ]]; then
-  export HOMEBREW_PREFIX="/opt/homebrew"
-  export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-  export HOMEBREW_REPOSITORY="/opt/homebrew"
-  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
-  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
-  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+  # Include exports for PATH, for example.
+  # https://docs.brew.sh/Manpage#shellenv
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  # Fix the correct sed not being used
+  export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   [[ -f "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
 
+  # Source zsh syntax highlighting
   zsh_syntax_highlighting_path="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   [[ -f "$zsh_syntax_highlighting_path" ]] && source "$zsh_syntax_highlighting_path"
 
@@ -66,4 +67,8 @@ fi
 
 # Run the nix-daemon script
 nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
-[[ -f "$nix_daemon_script_path" ]] && source "$nix_daemon_script_path"
+[[ -f "${nix_daemon_script_path}" ]] && source "${nix_daemon_script_path}"
+
+# ghcup
+ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
+[[ -f "${ghcup_script_path}" ]] && source "${ghcup_script_path}"
