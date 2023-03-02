@@ -22,7 +22,9 @@ brew "git-delta"
 brew "gnu-sed"
 brew "gnupg"
 brew "htop"
+brew "icu4c" # for ghcup
 brew "jq"
+brew "llvm@13" # for ghcup
 brew "mas"
 brew "neovim"
 brew "openvpn"
