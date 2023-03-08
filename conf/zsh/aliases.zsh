@@ -87,14 +87,12 @@ function md5sum-files-combined {
 
 # Get gzipped file size
 function gz {
-  local origsize, gzipsize, ratio, saved
+  local origsize=$(wc -c < "$1")
+  local gzipsize=$(gzip -c "$1" | wc -c)
+  local ratio=$(echo "$gzipsize * 100/ $origsize" | bc -l)
+  local saved=$(echo "($origsize - $gzipsize) * 100/ $origsize" | bc -l)
 
-  origsize=$(wc -c < "${1}")
-  gzipsize=$(gzip -c "${1}" | wc -c)
-  ratio=$(echo "${gzipsize} * 100/ ${origsize}" | bc -l)
-  saved=$(echo "(${origsize} - ${gzipsize}) * 100 / ${origsize}" | bc -l)
-
-  printf "orig: %d bytes\ngzip: %d bytes\nsave: %2.0f%% (%2.0f%%)\n" "${origsize}" "${gzipsize}" "${saved}" "${ratio}"
+  printf "orig: %d bytes\ngzip: %d bytes\nsave: %2.0f%% (%2.0f%%)\n" "$origsize" "$gzipsize" "$saved" "$ratio"
 }
 
 if is_mac; then
