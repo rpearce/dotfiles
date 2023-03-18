@@ -51,7 +51,7 @@ fi
 #     30e75f2aa6088d7c821537236e7e5227
 #     195c52359ef1fb0b1f08a29cd29a18c5
 #     ece4a27751110898fc655576cbea7153
-#   ...
+#     ...
 function md5sum-files {
   local entries=("${@}")
   local sums=""
