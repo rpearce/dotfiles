@@ -198,10 +198,18 @@ let g:haskell_indent_disable = 1          " to disable haskell-vim indentation
 
 " Whitespace
 
-autocmd FileType haskell set tabstop=8
-autocmd FileType haskell set softtabstop=4
-autocmd FileType haskell set shiftwidth=4
+autocmd FileType haskell set tabstop=4
+autocmd FileType haskell set softtabstop=2
+autocmd FileType haskell set shiftwidth=2
 autocmd FileType haskell set shiftround
+
+
+""
+"" HTML
+""
+
+autocmd FileType html set tabstop=2
+autocmd FileType html set shiftwidth=2
 
 
 ""
