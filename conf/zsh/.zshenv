@@ -26,3 +26,10 @@ export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/ripgrep/config"
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZLIB="${ZDOTDIR}/lib"
+
+# Disable telemetry for common tools
+export ASTRO_TELEMETRY_DISABLED=1
+export GATSBY_TELEMETRY_DISABLED=1
+export NEXT_TELEMETRY_DISABLED=1
+export STORYBOOK_DISABLE_TELEMETRY=1
+export TELEMETRY_DISABLED=1
