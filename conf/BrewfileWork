@@ -21,6 +21,7 @@ brew "gh"
 brew "git-delta"
 brew "gnu-sed"
 brew "gnupg"
+brew "helix"
 brew "htop"
 brew "icu4c" # for ghcup
 brew "jq"
