@@ -418,7 +418,6 @@ function link_dotfiles {
 
   # Zsh
   mkdir -p "${XDG_CONFIG_HOME}/zsh"
-  [[ -f "${BASEDIR}/conf/zsh/.secrets" ]] && ln -sf "${BASEDIR}/conf/zsh/.secrets" "${XDG_CONFIG_HOME}/zsh/.secrets"
   ln -sf "${BASEDIR}/conf/zsh/.zprofile" "${XDG_CONFIG_HOME}/zsh/.zprofile"
   ln -sf "${BASEDIR}/conf/zsh/.zshenv" "${XDG_CONFIG_HOME}/zsh/.zshenv"
   ln -sf "${BASEDIR}/conf/zsh/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"

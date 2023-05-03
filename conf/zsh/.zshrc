@@ -66,9 +66,9 @@ if has_cmd fzf && has_cmd rg; then
 fi
 
 # Set an NPM_TOKEN
-if [[ -f "${HOME}/.npmrc" ]]; then
-  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
-fi
+#if [[ -f "${HOME}/.npmrc" ]]; then
+#  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
+#fi
 
 # Run the nix-daemon script
 nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
@@ -77,7 +77,3 @@ nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.s
 # ghcup
 ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
 [[ -f "${ghcup_script_path}" ]] && source "${ghcup_script_path}"
-
-# Source any secret ENV vars
-env_secrets_path="${XDG_CONFIG_HOME}/zsh/.secrets"
-[[ -f "${env_secrets_path}" ]] && source "${env_secrets_path}"
