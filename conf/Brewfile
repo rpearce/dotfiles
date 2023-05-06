@@ -53,6 +53,7 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
 # Casks
+cask "1password"
 cask "alacritty"
 cask "brave-browser"
 # cask "calibre"
@@ -87,7 +88,6 @@ cask "visual-studio-code"
 cask "zoom"
 
 # Mac App Store apps
-mas "1Password", id: 1333542190
 mas "Hush", id: 1544743900
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694

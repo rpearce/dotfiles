@@ -5,7 +5,7 @@
         "revision": "575064b7880af525a713c4a4f9d8390ccc692967"
       },
       "homebrew/cask-versions": {
-        "revision": "cd74b847ed817e1fc92b55fd3128f091e36eb7d4"
+        "revision": "9291f8c191e3512cc59b9cc69ee6202f71dbe130"
       },
       "homebrew/services": {
         "revision": "507510e783fe37293220253caff0d76f72c5daed"
@@ -1787,13 +1787,13 @@
         }
       },
       "brave-browser": {
-        "version": "1.50.121.0,150.121",
+        "version": "1.51.110.0,151.110",
         "options": {
           "full_name": "brave-browser"
         }
       },
       "colour-contrast-analyser": {
-        "version": "3.2.1",
+        "version": "3.3.0",
         "options": {
           "full_name": "colour-contrast-analyser"
         }
@@ -1865,13 +1865,13 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.77.3",
+        "version": "1.78.0",
         "options": {
           "full_name": "visual-studio-code"
         }
       },
       "zoom": {
-        "version": "5.14.6.17822",
+        "version": "5.14.7.18149",
         "options": {
           "full_name": "zoom"
         }
@@ -1910,6 +1910,12 @@
         "version": "3.0.0",
         "options": {
           "full_name": "font-space-mono-nerd-font"
+        }
+      },
+      "1password": {
+        "version": "8.10.4",
+        "options": {
+          "full_name": "1password"
         }
       }
     },
