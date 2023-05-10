@@ -50,6 +50,7 @@ brew "zsh-syntax-highlighting"
 
 # Casks
 cask "1password"
+cask "1password/tap/1password-cli"
 cask "alacritty"
 cask "brave-browser"
 # cask "calibre"
