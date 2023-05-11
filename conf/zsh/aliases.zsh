@@ -24,6 +24,14 @@ if has_cmd docker; then
   alias dcrp="dcr postgres psql postgresql://postgres@postgres:5432"
 fi
 
+# 1Password
+if has_cmd op; then
+  alias op-art="op run --no-masking -- art"
+  alias op-npm="op run -- npm"
+  alias op-terraform="op run -- terraform"
+  alias op-yarn="op run -- yarn"
+fi
+
 # gpg
 if has_cmd gpg; then
   alias gpgkill="gpgconf --kill gpg-agent"
