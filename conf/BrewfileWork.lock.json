@@ -5,13 +5,16 @@
         "revision": "575064b7880af525a713c4a4f9d8390ccc692967"
       },
       "homebrew/cask-versions": {
-        "revision": "09417e3dae232d2a115d9b299c4c9e58180a21e9"
+        "revision": "64a91d5fc44f75d91b89cb2f3f4f5cc5935503a8"
       },
       "homebrew/services": {
         "revision": "507510e783fe37293220253caff0d76f72c5daed"
       },
       "homebrew/cask-fonts": {
         "revision": "05f1237ea49f7bea85cce74fe3a66c97755585f8"
+      },
+      "1password/tap": {
+        "revision": "ca9309642383f0a06e5bd14d9952bddf02f918df"
       }
     },
     "brew": {
@@ -1794,7 +1797,7 @@
         }
       },
       "deckset": {
-        "version": "2.0.24,2634",
+        "version": "2.0.25,2636",
         "options": {
           "full_name": "deckset"
         }
@@ -1824,7 +1827,7 @@
         }
       },
       "postico": {
-        "version": "2.0.1,9593",
+        "version": "2.0.2,9622",
         "options": {
           "full_name": "postico"
         }
@@ -1914,7 +1917,7 @@
         }
       },
       "1password-cli": {
-        "version": "2.17.0",
+        "version": "2.18.0",
         "options": {
           "full_name": "1password/tap/1password-cli"
         }
