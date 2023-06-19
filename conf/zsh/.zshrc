@@ -31,8 +31,13 @@ if [[ -d "/opt/homebrew" ]]; then
 
   # LLVM
   export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"
+  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/llvm@13/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/llvm@13/include"
+
+  # PostgreSQL
+  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@15/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@15/include"
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
