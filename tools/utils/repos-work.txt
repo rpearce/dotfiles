@@ -1,0 +1,8 @@
+github.com/articulate/conveyor
+github.com/articulate/rise-360-gateway
+github.com/articulate/rise-api
+github.com/articulate/rise-com-gateway
+github.com/articulate/rise-frontend
+github.com/articulate/rise-packages
+github.com/articulate/rise-platform-frontend
+github.com/articulate/rise-runtime

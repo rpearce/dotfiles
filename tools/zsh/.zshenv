@@ -23,6 +23,7 @@ export GHCUP_USE_XDG_DIRS="true"
 export PSQLRC="${XDG_CONFIG_HOME}/pg/psqlrc"
 export PSQL_HISTORY="${XDG_STATE_HOME}/psql_history"
 export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}/ripgrep/config"
+export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_DATA_HOME}/tmux/plugins"
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZLIB="${ZDOTDIR}/lib"

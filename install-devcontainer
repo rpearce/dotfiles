@@ -5,11 +5,10 @@ set -o errtrace
 set -o nounset
 set -eou pipefail
 
-## ==============================================================================
-
 function main {
-  # TODO
-  return 0
+  ./bin/tool install xdg
+  ./bin/tool install zsh
+  ./bin/tool install conf
 }
 
 main

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+function install {
+  local tool="${1}"
+  echo "🚀 Installing tool: ${tool}"
+  (cd "${BASEDIR}/tools/${tool}" && ./install)
+  echo ""
+}
+
+function uninstall {
+  local tool="${1}"
+  echo "💣 Uninstalling tool: ${tool}"
+  (cd "${BASEDIR}/tools/${tool}" && ./uninstall)
+  echo ""
+}
+
+# Set our working base directory
+BASEDIR="$(cd -- "$(dirname "$(dirname -- "${BASH_SOURCE[0]}")")" &> /dev/null && pwd)"
+
+cmd="${1:-}"
+
+case "${cmd}" in
+  "install")
+    shift # past arg
+    install "${1:-}"
+    ;;
+  "uninstall")
+    shift # past arg
+    uninstall "${1:-}"
+    ;;
+  *)
+    echo "$0: command not found: ${cmd}"
+    exit 1
+    ;;
+esac

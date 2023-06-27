@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+CURRENT_DIR="$(dirname "$(realpath "$0")")"
+
+function main {
+  mkdir -p "${XDG_CONFIG_HOME}/zsh"
+  ln -sf "${CURRENT_DIR}/.zprofile" "${XDG_CONFIG_HOME}/zsh/.zprofile"
+  ln -sf "${CURRENT_DIR}/.zshenv" "${XDG_CONFIG_HOME}/zsh/.zshenv"
+  ln -sf "${CURRENT_DIR}/.zshrc" "${XDG_CONFIG_HOME}/zsh/.zshrc"
+  ln -sf "${CURRENT_DIR}/aliases.zsh" "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
+  ln -sf "${CURRENT_DIR}/history.zsh" "${XDG_CONFIG_HOME}/zsh/history.zsh"
+  ln -sf "${CURRENT_DIR}/key-bindings.zsh" "${XDG_CONFIG_HOME}/zsh/key-bindings.zsh"
+  ln -sf "${CURRENT_DIR}/prompt.zsh" "${XDG_CONFIG_HOME}/zsh/prompt.zsh"
+  ln -sf "${XDG_CONFIG_HOME}/zsh/.zshenv" "${HOME}/.zshenv" # required for the zsh bootstrapping problem
+}
+
+main
