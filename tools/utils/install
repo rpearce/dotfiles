@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+CURRENT_DIR="$(dirname "$(realpath "$0")")"
+
+function main {
+  mkdir -p "${XDG_CONFIG_HOME}/utils"
+  ln -sf "${CURRENT_DIR}/repo-sync" "${XDG_CONFIG_HOME}/utils/repo-sync"
+  ln -sf "${CURRENT_DIR}/retry" "${XDG_CONFIG_HOME}/utils/retry"
+}
+
+main

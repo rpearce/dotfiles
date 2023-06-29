@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+
+declare -r SSH_EMAIL="me@robertwpearce.com"
+declare -r SSH_TYPE="ed25519"
+
+function is_mac {
+  [[ "$OSTYPE" =~ "darwin" ]] || return 1
+}
+
+function setup_ssh_key {
+  echo "ssh install: Setting up key..."
+  ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+}
+
+function start_ssh_agent {
+  echo "ssh install: Starting ssh-agent in the background"
+  eval "$(ssh-agent -s)"
+}
+
+function store_in_apple_keychain {
+  echo "ssh install: writing config to store passphrases in keychain"
+  cat <<EOF > "${HOME}/.ssh/config"
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile "${HOME}/.ssh/id_${SSH_TYPE}"
+EOF
+
+  echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
+  ssh-add --apple-use-keychain "${HOME}/.ssh/id_${SSH_TYPE}"
+}
+
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+function main {
+  if [[ ! -f "${HOME}/.ssh/id_${SSH_TYPE}" ]]; then
+    setup_ssh_key
+    start_ssh_agent
+
+    if is_mac; then
+      store_in_apple_keychain
+    fi
+  fi
+}
+
+main

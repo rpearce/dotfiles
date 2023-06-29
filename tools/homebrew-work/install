@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+function has_cmd {
+  hash "${1}" 2> /dev/null
+}
+
+function is_mac {
+  [[ "$OSTYPE" =~ "darwin" ]] || return 1
+}
+
+function install_or_update {
+  if has_cmd brew; then
+    brew update
+  else
+    export PATH="/opt/homebrew/bin:${PATH}"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+}
+
+function run_bundle {
+  brew bundle --file="./Brewfile" --cleanup --zap
+}
+
+function switch_to_homebrew_zsh {
+  if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
+    sudo chsh -s "$(which zsh)" "$USER"
+  fi
+}
+
+function main {
+  install_or_update
+  run_bundle
+  switch_to_homebrew_zsh
+}
+
+main

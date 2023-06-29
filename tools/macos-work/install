@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+function main {
+  if ! is_mac; then
+    return
+  fi
+
+  echo "macos install: Setting system preferences..."
+
+  local host_id="rpea-vinna"
+
+  # Set user-friendly system name
+  sudo scutil --set ComputerName "${host_id}"
+
+  # Set hostname; visible from command line
+  sudo scutil --set HostName "${host_id}"
+
+  # Set local network name; identifies to Bonjour-compatible serices
+  sudo scutil --set LocalHostName "${host_id}"
+
+  # Set rest of macOS options
+  ../macos-home/.macos || return 1
+}
+
+main

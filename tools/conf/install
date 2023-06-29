@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o errtrace
+set -o nounset
+set -eou pipefail
+
+CURRENT_DIR="$(dirname "$(realpath "$0")")"
+
+function main {
+  mkdir -p "${XDG_CONFIG_HOME}"
+
+  # Top-level
+  ln -sf "${CURRENT_DIR}/.gemrc" "${XDG_CONFIG_HOME}/gemrc"
+  ln -sf "${CURRENT_DIR}/.ghci" "${XDG_CONFIG_HOME}/ghci"
+
+  # Alacritty
+  mkdir -p "${XDG_CONFIG_HOME}/alacritty"
+  ln -sf "${CURRENT_DIR}/.alacritty.yml" "${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
+
+  # Bat
+  mkdir -p "${XDG_CONFIG_HOME}/bat"
+  ln -sf "${CURRENT_DIR}/.bat" "${XDG_CONFIG_HOME}/bat/config"
+
+  # Cabal
+  mkdir -p "${XDG_CONFIG_HOME}/cabal"
+  ln -sf "${CURRENT_DIR}/.cabal.conf" "${XDG_CONFIG_HOME}/cabal/config"
+
+  # Git
+  mkdir -p "${XDG_CONFIG_HOME}/git"
+  ln -sf "${CURRENT_DIR}/.gitignore" "${XDG_CONFIG_HOME}/git/ignore"
+
+  if [[ "$0" == "./install-work" ]]; then
+    ln -sf "${CURRENT_DIR}/.gitconfig-work" "${XDG_CONFIG_HOME}/git/config"
+  else
+    ln -sf "${CURRENT_DIR}/.gitconfig-personal" "${XDG_CONFIG_HOME}/git/config"
+  fi
+
+  # GPG
+  mkdir -p "${HOME}/.gnupg"
+  ln -sf "${CURRENT_DIR}/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
+
+  # Nix
+  mkdir -p "${XDG_CONFIG_HOME}/nix"
+  ln -sf "${CURRENT_DIR}/nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
+
+  # Neovim
+  mkdir -p "${XDG_CONFIG_HOME}/nvim"
+  ln -sf "${CURRENT_DIR}/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
+  ln -sf "${CURRENT_DIR}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
+
+  # Vim
+  #mkdir -p "${XDG_CONFIG_HOME}/vim"
+  #ln -sf "${BASEDIR}/conf/.vim-plugins.vim" "${XDG_CONFIG_HOME}/vim/vim-plugins.vim"
+  #ln -sf "${BASEDIR}/conf/.vimrc" "${XDG_CONFIG_HOME}/vim/vimrc"
+
+  # PostgreSQL
+  mkdir -p "${XDG_CONFIG_HOME}/pg"
+  ln -sf "${CURRENT_DIR}/.psqlrc" "${XDG_CONFIG_HOME}/pg/psqlrc"
+
+  # Readline
+  mkdir -p "${XDG_CONFIG_HOME}/readline"
+  ln -sf "${CURRENT_DIR}/.inputrc" "${XDG_CONFIG_HOME}/readline/inputrc"
+
+  # Ripgrep
+  mkdir -p "${XDG_CONFIG_HOME}/ripgrep"
+  ln -sf "${CURRENT_DIR}/.ripgreprc" "${XDG_CONFIG_HOME}/ripgrep/config"
+
+  # Stack
+  mkdir -p "${XDG_CONFIG_HOME}/.stack"
+  ln -sf "${CURRENT_DIR}/.stack.yaml" "${XDG_CONFIG_HOME}/.stack/config.yaml"
+
+  # Tmux
+  mkdir -p "${XDG_CONFIG_HOME}/tmux"
+  ln -sf "${CURRENT_DIR}/.tmux.conf" "${XDG_CONFIG_HOME}/tmux/tmux.conf"
+}
+
+main
