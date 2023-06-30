@@ -5,13 +5,15 @@ set -o errtrace
 set -o nounset
 set -eou pipefail
 
+CURRENT_DIR="$(dirname "$(realpath "$0")")"
+
 function main {
-  ./bin/tool install xdg
-  ./bin/tool install zsh
-  ./bin/tool install conf
-  ./bin/tool install ssh
-  ./bin/tool install homebrew-work
-  ./bin/tool install utils
+  "${CURRENT_DIR}"/bin/tool install xdg
+  "${CURRENT_DIR}"/bin/tool install zsh
+  "${CURRENT_DIR}"/bin/tool install conf
+  "${CURRENT_DIR}"/bin/tool install ssh
+  "${CURRENT_DIR}"/bin/tool install homebrew-work
+  "${CURRENT_DIR}"/bin/tool install utils
 }
 
 main

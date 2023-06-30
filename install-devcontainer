@@ -5,10 +5,12 @@ set -o errtrace
 set -o nounset
 set -eou pipefail
 
+CURRENT_DIR="$(dirname "$(realpath "$0")")"
+
 function main {
-  ./bin/tool install xdg
-  ./bin/tool install zsh
-  ./bin/tool install conf
+  ${CURRENT_DIR}/bin/tool install xdg
+  ${CURRENT_DIR}/bin/tool install zsh
+  ${CURRENT_DIR}/bin/tool install conf
 }
 
 main
