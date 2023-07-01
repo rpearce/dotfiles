@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# has_cmd
+#   Description:
+#     Easily determine if a command exists
+#   Usage:
+#     if has_cmd docker; then
+#       alias dc="docker-compose"
+#       alias dcr="docker-compose run --rm"
+#     fi
 function has_cmd {
   hash "${1}" 2> /dev/null
 }
@@ -9,10 +17,10 @@ function is_mac {
 }
 
 # Get YYYY-MM-DD date
-alias date_ymd="date +%Y-%m-%d"
+alias date-ymd="date +%Y-%m-%d"
 
 # Get YYYY-MM-DDTHH:MM:SSZ timestamp
-alias timestamp="date +%Y-%m-%dT%H:%M:%SZ"
+alias date-utc="date -u +%Y-%m-%dT%H:%M:%SZ"
 
 # List all file sizes
 alias duf="du -sh *"
@@ -51,7 +59,7 @@ if has_cmd exa; then
   alias ll="exa -l --color always --icons -a -s type"
 fi
 
-# md5sum-files-combined
+# md5sum-files
 #   Description:
 #     Get md5 hashes of all files provided or within directories
 #   Usage:
