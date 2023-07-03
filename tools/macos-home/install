@@ -5,6 +5,10 @@ set -o errtrace
 set -o nounset
 set -eou pipefail
 
+function is_mac {
+  [[ "$OSTYPE" =~ "darwin" ]] || return 1
+}
+
 function main {
   if ! is_mac; then
     return
