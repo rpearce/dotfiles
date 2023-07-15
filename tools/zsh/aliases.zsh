@@ -42,7 +42,7 @@ fi
 
 # gpg
 if has_cmd gpg; then
-  alias gpgkill="gpgconf --kill gpg-agent"
+  alias gpg-fix="gpgconf --kill gpg-agent && gpg-agent --pinentry-program=$(which pinentry-mac) --daemon"
 fi
 
 # Network
