@@ -42,7 +42,7 @@ function main {
 
   # Nix
   mkdir -p "${XDG_CONFIG_HOME}/nix"
-  ln -sf "${CURRENT_DIR}/nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
+  ln -sf "${CURRENT_DIR}/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
 
   # Neovim
   mkdir -p "${XDG_CONFIG_HOME}/nvim"
