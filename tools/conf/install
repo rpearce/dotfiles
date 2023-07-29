@@ -30,7 +30,7 @@ function main {
   mkdir -p "${XDG_CONFIG_HOME}/git"
   ln -sf "${CURRENT_DIR}/.gitignore" "${XDG_CONFIG_HOME}/git/ignore"
 
-  if [[ "$0" == "./install-work" ]]; then
+  if [[ -n ${IS_WORK+x} ]]; then
     ln -sf "${CURRENT_DIR}/.gitconfig-work" "${XDG_CONFIG_HOME}/git/config"
   else
     ln -sf "${CURRENT_DIR}/.gitconfig-personal" "${XDG_CONFIG_HOME}/git/config"
