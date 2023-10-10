@@ -39,6 +39,9 @@ if [[ -d "/opt/homebrew" ]]; then
   export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@15/lib"
   export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@15/include"
 
+  # Ruby
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
   [[ -f "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
