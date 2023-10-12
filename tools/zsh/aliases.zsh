@@ -55,8 +55,8 @@ alias kaffe='caffeinate -dusw $$'
 # Long listing
 alias ll="ls -lAFGh"
 
-if has_cmd exa; then
-  alias ll="exa -l --color always --icons -a -s type"
+if has_cmd eza; then
+  alias ll="eza -l --color always --icons -a -s type"
 fi
 
 # md5sum-files
