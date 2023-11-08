@@ -12,6 +12,13 @@ function has_cmd {
   hash "${1}" 2> /dev/null
 }
 
+# is_mac
+#   Description:
+#     Determine if OSTYPE matches "darwin"
+#   Usage:
+#     if is_mac; then
+#       # do something on macOS
+#     fi
 function is_mac {
   [[ "$OSTYPE" =~ "darwin" ]]
 }
