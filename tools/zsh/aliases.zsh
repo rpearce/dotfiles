@@ -28,8 +28,23 @@ alias duf="du -sh *"
 # Docker
 if has_cmd docker; then
   alias dc="docker compose"
-  alias dcr="docker compose run --rm"
-  alias dcrp="dcr postgres psql postgresql://postgres@postgres:5432"
+  alias dcr="dc run --rm"
+
+  function dpg {
+    let service_name="${1:-postgres}"
+
+    docker compose exec -u postgres ${service_name} psql
+
+    # ALTERNATIVE WAY
+    #
+    #let query
+    #let pg_container_name
+    #
+    #query="${1:-postgres}"
+    #container_name=$(docker ps --all --no-trunc --latest --filter "name=${query}" --format "{{.Names}}")
+    #
+    #docker exec -it "${container_name}" psql -U postgres
+  }
 fi
 
 # 1Password
