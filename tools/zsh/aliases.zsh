@@ -38,9 +38,9 @@ if has_cmd docker; then
   alias dcr="dc run --rm"
 
   function dpg {
-    let service_name="${1:-postgres}"
+    local service="${1:-postgres}"
 
-    docker compose exec -u postgres ${service_name} psql
+    docker compose exec -u postgres ${service} psql
 
     # ALTERNATIVE WAY
     #
