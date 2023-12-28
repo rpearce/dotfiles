@@ -16,7 +16,7 @@ function main {
 
   # Alacritty
   mkdir -p "${XDG_CONFIG_HOME}/alacritty"
-  ln -sf "${CURRENT_DIR}/.alacritty.yml" "${XDG_CONFIG_HOME}/alacritty/alacritty.yml"
+  ln -sf "${CURRENT_DIR}/alacritty.toml" "${XDG_CONFIG_HOME}/alacritty/alacritty.toml"
 
   # Bat
   mkdir -p "${XDG_CONFIG_HOME}/bat"
