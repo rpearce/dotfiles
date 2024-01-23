@@ -31,7 +31,7 @@ Plug 'ap/vim-css-color'                           " Preview colours in source co
 Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' } " Language pack. Something is wrong with v4.17.1
 
 " Git
-Plug 'airblade/vim-gitgutter' " Show git diff markers in columns
+Plug 'airblade/vim-gitgutter', {'branch': 'main'} " Show git diff markers in columns
 " Plug 'tpope/vim-fugitive' " Git inside vim
 
 " Misc
