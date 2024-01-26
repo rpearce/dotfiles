@@ -70,7 +70,7 @@ fi
 
 # FZF and Ripgrep VIM integration
 if has_cmd fzf && has_cmd rg; then
-  export FZF_DEFAULT_COMMAND='rg --color=never --files --no-ignore --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_COMMAND='rg --files --follow --hidden --no-ignore'
 fi
 
 # Set an NPM_TOKEN
