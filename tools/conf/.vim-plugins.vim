@@ -37,7 +37,7 @@ Plug 'airblade/vim-gitgutter', {'branch': 'main'} " Show git diff markers in col
 " Misc
 Plug 'dense-analysis/ale'                       " Lint runner
 Plug 'godlygeek/tabular'                        " Text filtering and alignment
-"Plug 'ctrlpvim/ctrlp.vim'                       " Fuzzy file finding
+Plug 'ctrlpvim/ctrlp.vim'                       " Fuzzy file finding
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Extension host for language servers
 Plug 'preservim/nerdcommenter'                  " Commenting++
 Plug 'junegunn/fzf'                             " Honestly, to get :Rg for ripgrep to search files
