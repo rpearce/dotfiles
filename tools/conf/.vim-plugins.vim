@@ -28,23 +28,24 @@ Plug 'shaunsingh/nord.nvim'
 
 " Syntax highlighting
 Plug 'ap/vim-css-color'                           " Preview colours in source code while editing
-Plug 'sheerun/vim-polyglot', { 'tag': 'v4.17.0' } " Language pack. Something is wrong with v4.17.1
+Plug 'sheerun/vim-polyglot', {'tag': 'v4.17.0'}   " Language pack. Something is wrong with v4.17.1
 
 " Git
 Plug 'airblade/vim-gitgutter', {'branch': 'main'} " Show git diff markers in columns
 " Plug 'tpope/vim-fugitive' " Git inside vim
 
 " Misc
-Plug 'dense-analysis/ale'                       " Lint runner
-Plug 'godlygeek/tabular'                        " Text filtering and alignment
-Plug 'ctrlpvim/ctrlp.vim'                       " Fuzzy file finding
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Extension host for language servers
-Plug 'preservim/nerdcommenter'                  " Commenting++
-Plug 'junegunn/fzf'                             " Honestly, to get :Rg for ripgrep to search files
-Plug 'junegunn/fzf.vim'                         " ^
-Plug 'preservim/nerdtree'                       " Tree explorer
-Plug 'tpope/vim-surround'                       " Wrap code with other code
-Plug 'ryanoasis/vim-devicons'                   " File type icons
-" Plug 'jeetsukumaran/vim-buffergator' " List, select and switch between buffers
+Plug 'dense-analysis/ale'                         " Lint runner
+Plug 'godlygeek/tabular'                          " Text filtering and alignment
+Plug 'ctrlpvim/ctrlp.vim'                         " Fuzzy file finding
+Plug 'neoclide/coc.nvim', {'branch': 'release'}   " Extension host for language servers
+Plug 'preservim/nerdcommenter'                    " Commenting++
+Plug 'junegunn/fzf'                               " Honestly, to get :Rg for ripgrep to search files
+Plug 'junegunn/fzf.vim'                           " ^
+Plug 'preservim/nerdtree'                         " Tree explorer
+Plug 'tpope/vim-surround'                         " Wrap code with other code
+Plug 'ryanoasis/vim-devicons'                     " File type icons
+" Plug 'folke/zen-mode.nvim'                        " Zen mode
+" Plug 'jeetsukumaran/vim-buffergator'              " List, select and switch between buffers
 
 call plug#end()
