@@ -5,7 +5,7 @@ specific preferences.
 
 ## Current setup
 
-* Install scripts are broken into 3 environments:
+* Install scripts are broken into 2 environments:
   1. `./install` for my personal machine
   1. `./install-work` for my work machine
 * Uses the [XDG spec](https://wiki.archlinux.org/title/XDG_Base_Directory) to
