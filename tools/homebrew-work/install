@@ -32,10 +32,17 @@ function switch_to_homebrew_zsh {
   fi
 }
 
+function upgrade_and_cleanup {
+  if has_cmd brew; then
+    brew update && brew upgrade && brew cleanup
+  fi
+}
+
 function main {
   install_or_update
   run_bundle
   switch_to_homebrew_zsh
+  upgrade_and_cleanup
 }
 
 main
