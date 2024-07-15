@@ -1,6 +1,4 @@
 # Taps
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "1password/tap"
 tap "homebrew/services"
 
