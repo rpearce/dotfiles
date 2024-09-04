@@ -35,9 +35,9 @@ if [[ -d "/opt/homebrew" ]]; then
   export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/llvm@13/include"
 
   # PostgreSQL
-  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@15/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@15/include"
+  export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@16/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@16/include"
 
   # Ruby
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
