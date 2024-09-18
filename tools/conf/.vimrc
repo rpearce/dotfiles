@@ -75,6 +75,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 set cmdheight=2    " Give more space for displaying messages.
 set updatetime=300 " Less delay
+set signcolumn=yes " Always show signcolumn to prevent text shifting
+
+let g:coc_config_home = '~/.config/coc/'
 
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
 let g:coc_global_extensions = []
@@ -106,6 +109,10 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

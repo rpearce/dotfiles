@@ -26,6 +26,10 @@ function main {
   mkdir -p "${XDG_CONFIG_HOME}/cabal"
   ln -sf "${CURRENT_DIR}/.cabal.conf" "${XDG_CONFIG_HOME}/cabal/config"
 
+  # coc-nvim
+  mkdir -p "${XDG_CONFIG_HOME}/coc"
+  ln -sf "${CURRENT_DIR}/coc-settings.json" "${XDG_CONFIG_HOME}/coc/coc-settings.json"
+
   # Git
   mkdir -p "${XDG_CONFIG_HOME}/git"
   ln -sf "${CURRENT_DIR}/.gitignore" "${XDG_CONFIG_HOME}/git/ignore"
