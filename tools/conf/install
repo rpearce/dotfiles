@@ -27,8 +27,8 @@ function main {
   ln -sf "${CURRENT_DIR}/.cabal.conf" "${XDG_CONFIG_HOME}/cabal/config"
 
   # coc-nvim
-  mkdir -p "${XDG_CONFIG_HOME}/coc"
-  ln -sf "${CURRENT_DIR}/coc-settings.json" "${XDG_CONFIG_HOME}/coc/coc-settings.json"
+  # mkdir -p "${XDG_CONFIG_HOME}/coc"
+  # ln -sf "${CURRENT_DIR}/coc-settings.json" "${XDG_CONFIG_HOME}/coc/coc-settings.json"
 
   # Git
   mkdir -p "${XDG_CONFIG_HOME}/git"
@@ -49,9 +49,10 @@ function main {
   ln -sf "${CURRENT_DIR}/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
 
   # Neovim
-  mkdir -p "${XDG_CONFIG_HOME}/nvim"
-  ln -sf "${CURRENT_DIR}/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
-  ln -sf "${CURRENT_DIR}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
+  #mkdir -p "${XDG_CONFIG_HOME}/nvim"
+  #ln -sf "${CURRENT_DIR}/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
+  #ln -sf "${CURRENT_DIR}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
+  ln -sf "${CURRENT_DIR}/nvim" "${XDG_CONFIG_HOME}"
 
   # Vim
   #mkdir -p "${XDG_CONFIG_HOME}/vim"
