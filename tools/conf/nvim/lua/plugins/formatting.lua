@@ -9,7 +9,7 @@ return {
       function()
         require("conform").format({
           async = false,
-          lsp_format = "fallback",
+          -- lsp_format = "fallback",
         })
       end,
       mode = "",
@@ -24,7 +24,7 @@ return {
     },
     format_on_save = {
       timeout_ms = 500,
-      lsp_format = "fallback",
+      -- lsp_format = "fallback",
     },
   },
 }
