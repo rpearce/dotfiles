@@ -32,6 +32,11 @@ alias date-utc="date -u +%Y-%m-%dT%H:%M:%SZ"
 # List all file sizes
 alias duf="du -sh *"
 
+# neovim
+if has_cmd nvim; then
+  alias n="nvim"
+fi
+
 # Docker
 if has_cmd docker; then
   alias dc="docker compose"
