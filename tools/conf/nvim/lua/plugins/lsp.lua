@@ -57,6 +57,11 @@ return {
       "hrsh7th/nvim-cmp",
     },
 
+    keys = {
+      { "[g", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Go to previous diagnostic" } },
+      { "]g", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Go to next diagnostic" } },
+    },
+
     config = function()
       local lspconfig = require("lspconfig")
       local mason_lspconfig = require("mason-lspconfig")
