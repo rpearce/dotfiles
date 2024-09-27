@@ -36,6 +36,7 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "eslint_d",
+          "gofumpt",
           "markdownlint",
           "shellcheck",
           "shfmt",
@@ -96,13 +97,6 @@ return {
         eslint = function()
           lspconfig.eslint.setup({
             capabilities = capabilities,
-            -- root_dir = lspconfig.util.root_pattern(
-            -- 	".eslintrc",
-            -- 	".eslintrc.cjs",
-            -- 	".eslintrc.js",
-            -- 	".eslintrc.json",
-            -- 	"eslint.config.js"
-            -- ),
           })
         end,
 

@@ -19,7 +19,9 @@ return {
     linters_by_ft = {
       bash = { "shellcheck" },
       css = { "stylelint" },
+      elixir = { "mix" },
       eruby = { "erb_lint" },
+      go = { "golangci-lint" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       lua = { "luacheck" },
