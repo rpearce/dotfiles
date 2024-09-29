@@ -59,8 +59,33 @@ return {
     },
 
     keys = {
-      { "[g", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Go to previous diagnostic" } },
-      { "]g", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Go to next diagnostic" } },
+      { "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Goto previous diagnostic" } },
+      { "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Goto next diagnostic" } },
+      {
+        "[e",
+        "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity['ERROR'] })<cr>",
+        { desc = "Goto previous error" },
+      },
+      {
+        "]e",
+        "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity['ERROR'] })<cr>",
+        { desc = "Goto next error" },
+      },
+      {
+        "[w",
+        "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity['WARN'] })<cr>",
+        { desc = "Goto previous warning" },
+      },
+      {
+        "]w",
+        "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity['WARN'] })<cr>",
+        { desc = "Goto next warning" },
+      },
+      { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto declaration" } },
+      { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto definition" } },
+      { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Goto implementation" } },
+      { "lr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "List all references" } },
+      { "lc", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "List code actions" } },
     },
 
     config = function()
