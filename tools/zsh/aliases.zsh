@@ -61,7 +61,7 @@ fi
 
 # 1Password
 if has_cmd op; then
-  alias art="op run --no-masking -- art"
+  alias op-art="op run --no-masking -- art"
   alias op-npm="op run -- npm"
   alias op-terraform="op run -- terraform"
   alias op-yarn="op run -- yarn"

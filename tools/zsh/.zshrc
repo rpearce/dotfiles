@@ -74,9 +74,14 @@ if has_cmd fzf && has_cmd rg; then
 fi
 
 # Set an NPM_TOKEN
-#if [[ -f "${HOME}/.npmrc" ]]; then
-#  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
-#fi
+if [[ -f "${HOME}/.npmrc" ]]; then
+ export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
+fi
+
+# Set a FONT_AWESOME_NPM_AUTH_TOKEN
+if [[ -f "${HOME}/.farc" ]]; then
+ export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.farc")
+fi
 
 # Run the nix-daemon script
 nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
@@ -87,7 +92,7 @@ ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
 [[ -f "${ghcup_script_path}" ]] && source "${ghcup_script_path}"
 
 # 1Password
-if has_cmd op; then
-  export NPM_TOKEN=op://Private/NPM/credential
-  export FONT_AWESOME_NPM_AUTH_TOKEN=op://Private/FontAwesome/credential
-fi
+# if has_cmd op; then
+#   export NPM_TOKEN=op://Private/NPM/credential
+#   export FONT_AWESOME_NPM_AUTH_TOKEN=op://Private/FontAwesome/credential
+# fi
