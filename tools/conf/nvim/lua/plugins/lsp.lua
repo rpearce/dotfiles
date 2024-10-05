@@ -82,11 +82,13 @@ return {
         "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity['WARN'] })<cr>",
         { desc = "Goto next warning" },
       },
-      { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto declaration" } },
+      { "gc", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "List code actions" } },
       { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto definition" } },
+      { "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Goto declaration" } },
       { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Goto implementation" } },
-      { "lr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "List all references" } },
-      { "lc", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "List code actions" } },
+      { "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Goto type definition" } },
+      { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "List all references" } },
+      { "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "View signature info" } },
     },
 
     config = function()
@@ -174,9 +176,6 @@ return {
           lspconfig.ts_ls.setup({
             capabilities = capabilities,
             settings = {
-              -- implicitProjectConfiguration = {
-              --   checkJs = false,
-              -- },
               typescript = {
                 inlayHints,
               },
