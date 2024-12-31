@@ -28,7 +28,8 @@ return {
           "lua_ls",
           --"nix_ls",
           "rust_analyzer",
-          --"ruby_lsp",
+          -- "rubocop", -- not friendly with neovim; prefer installation via project
+          -- "ruby_lsp", -- not friendly with neovim; prefer installation via project
           "ts_ls",
         },
       })
