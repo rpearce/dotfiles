@@ -22,6 +22,7 @@ return {
       elixir = { "mix" },
       eruby = { "erb_lint" },
       go = { "golangci-lint" },
+      haskell = { "hlint" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       lua = { "luacheck" },

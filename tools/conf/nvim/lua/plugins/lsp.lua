@@ -39,7 +39,9 @@ return {
           "bash-language-server",
           "eslint_d",
           "gofumpt",
+          "hlint",
           "markdownlint",
+          "ormolu",
           "shellcheck",
           "shfmt",
           "stylua",
@@ -131,6 +133,12 @@ return {
 
         gopls = function()
           lspconfig.gopls.setup({
+            capabilities = capabilities,
+          })
+        end,
+
+        hls = function()
+          lspconfig.hls.setup({
             capabilities = capabilities,
           })
         end,
