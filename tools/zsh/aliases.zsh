@@ -49,13 +49,13 @@ if has_cmd docker; then
 
     # ALTERNATIVE WAY
     #
-    #let query
-    #let pg_container_name
+    # local query
+    # local pg_container_name
     #
-    #query="${1:-postgres}"
-    #container_name=$(docker ps --all --no-trunc --latest --filter "name=${query}" --format "{{.Names}}")
+    # query="${1:-postgres}"
+    # container_name=$(docker ps --all --no-trunc --latest --filter "name=${query}" --format "{{.Names}}")
     #
-    #docker exec -it "${container_name}" psql -U postgres
+    # docker exec -it "${container_name}" psql -U postgres
   }
 fi
 
