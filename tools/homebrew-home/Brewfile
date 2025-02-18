@@ -98,7 +98,7 @@ cask "visual-studio-code"
 cask "zoom"
 
 # Mac App Store apps
-mas "Hush", id: 1544743900
+# mas "Hush", id: 1544743900
 mas "Just Focus", id: 1142151959
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
