@@ -107,5 +107,5 @@ mas "Kindle", id: 405399194
 mas "Xcode", id: 497799835
 
 # Extra config
-cask "firefox@developer-edition", args: { language: "es" }
+cask "firefox@developer-edition" #, args: { language: "es" }
 cask_args appdir: "~/Applications", require_sha: true
