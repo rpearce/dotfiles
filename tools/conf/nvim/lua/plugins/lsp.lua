@@ -14,6 +14,7 @@ return {
         automatic_installation = true,
 
         ensure_installed = {
+          "astro",
           "bashls",
           --"clangd",
           "cssls",
@@ -101,6 +102,12 @@ return {
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
       mason_lspconfig.setup_handlers({
+        astro = function()
+          lspconfig.astro.setup({
+            capabilities = capabilities,
+          })
+        end,
+
         bashls = function()
           lspconfig.bashls.setup({
             capabilities = capabilities,
