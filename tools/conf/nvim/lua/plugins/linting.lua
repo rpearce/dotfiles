@@ -38,6 +38,17 @@ return {
     },
   },
 
-  -- Throws error on startup if config isn't defined for this plugin
-  config = function() end,
+  config = function(_, opts)
+    local lint = require("lint")
+
+    -- Apply linters_by_ft from opts
+    lint.linters_by_ft = opts.linters_by_ft
+
+    -- Auto lint on desired events
+    vim.api.nvim_create_autocmd(opts.events, {
+      callback = function()
+        lint.try_lint()
+      end,
+    })
+  end,
 }
