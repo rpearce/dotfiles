@@ -28,7 +28,6 @@ brew "git-delta"
 brew "gnu-sed"
 brew "gnupg"
 brew "golang"
-# brew "golangci-lint" # not sure if I want/need this yet
 brew "helix"
 brew "heroku"
 brew "htop"
