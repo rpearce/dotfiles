@@ -21,7 +21,7 @@ return {
       css = { "stylelint" },
       elixir = { "mix" },
       eruby = { "erb_lint" },
-      go = { "golangci-lint" },
+      go = { "golangcilint" },
       haskell = { "hlint" },
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
@@ -43,6 +43,15 @@ return {
 
     -- Apply linters_by_ft from opts
     lint.linters_by_ft = opts.linters_by_ft
+
+    -- Setup golangci-lint
+    local golangcilint = require("lint.linters.golangcilint")
+    golangcilint.append_fname = true
+    golangcilint.args = {
+      "run",
+      "--out-format",
+      "json",
+    }
 
     -- Auto lint on desired events
     vim.api.nvim_create_autocmd(opts.events, {
