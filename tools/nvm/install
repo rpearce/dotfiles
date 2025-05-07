@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+NVM_VERSION="v0.40.3"
+NVM_REPO_URL="https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh"
+NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+
+function main {
+  if [[ ! -d "${NVM_DIR}" ]]; then
+    curl --proto '=https' --tlsv1.2 -sSf "${NVM_REPO_URL}" | bash
+
+    export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+
+    # shellcheck disable=SC1091
+    [ -s "${NVM_DIR}/nvm.sh" ] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
+
+    # shellcheck disable=SC1091
+    [ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"  # This loads nvm bash_completion
+  fi
+}
+
+main
