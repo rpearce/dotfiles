@@ -34,7 +34,7 @@ EOF
 
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function main {
-  if [[ ! -f "${HOME}/.ssh/id_${SSH_TYPE}" ]]; then
+  if [[ ! -s "${HOME}/.ssh/id_${SSH_TYPE}" ]]; then
     setup_ssh_key
     start_ssh_agent
 

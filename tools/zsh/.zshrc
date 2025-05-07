@@ -44,15 +44,15 @@ if [[ -d "/opt/homebrew" ]]; then
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  [[ -f "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
+  [[ -s "$zsh_autosuggestions_path" ]] && source "$zsh_autosuggestions_path"
 
   # Source zsh syntax highlighting
   zsh_syntax_highlighting_path="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  [[ -f "$zsh_syntax_highlighting_path" ]] && source "$zsh_syntax_highlighting_path"
+  [[ -s "$zsh_syntax_highlighting_path" ]] && source "$zsh_syntax_highlighting_path"
 
   # Source asdf tools
   asdf_script_path="/opt/homebrew/opt/asdf/libexec/asdf.sh"
-  [[ -f "$asdf_script_path" ]] && source "$asdf_script_path"
+  [[ -s "$asdf_script_path" ]] && source "$asdf_script_path"
 fi
 
 # https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
@@ -81,22 +81,22 @@ if [[ -d "${XDG_CONFIG_HOME}/nvm" ]]; then
 fi
 
 # Set an NPM_TOKEN
-if [[ -f "${HOME}/.npmrc" ]]; then
+if [[ -s "${HOME}/.npmrc" ]]; then
  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
 fi
 
 # Set a FONT_AWESOME_NPM_AUTH_TOKEN
-if [[ -f "${HOME}/.farc" ]]; then
+if [[ -s "${HOME}/.farc" ]]; then
  export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.farc")
 fi
 
 # Run the nix-daemon script
 nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
-[[ -f "${nix_daemon_script_path}" ]] && source "${nix_daemon_script_path}"
+[[ -s "${nix_daemon_script_path}" ]] && source "${nix_daemon_script_path}"
 
 # ghcup
 ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
-[[ -f "${ghcup_script_path}" ]] && source "${ghcup_script_path}"
+[[ -s "${ghcup_script_path}" ]] && source "${ghcup_script_path}"
 
 # 1Password
 # if has_cmd op; then

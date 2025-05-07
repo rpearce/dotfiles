@@ -28,7 +28,7 @@ function check_git {
 }
 
 function check_repos_file {
-  if [[ ! -f "${REPOS_FILE}" ]]; then
+  if [[ ! -s "${REPOS_FILE}" ]]; then
     echo "error: repos file \"${REPOS_FILE}\" not found"
     return 1
   fi

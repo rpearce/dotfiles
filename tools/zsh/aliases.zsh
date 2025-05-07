@@ -100,7 +100,7 @@ function md5sum-files {
   local sums=""
 
   for entry in ${entries}; do
-    if [[ -f "${entry}" ]]; then
+    if [[ -s "${entry}" ]]; then
       sums+="$(md5sum "${entry}" | awk '{print $1}')\n"
     elif [[ -d "${entry}" ]]; then
       sums+="$(find "${entry}" -type f -exec md5sum '{}' \; | awk '{print $1}')\n"
