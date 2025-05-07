@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-set -o errexit
-set -o errtrace
-set -o nounset
-set -eou pipefail
+set -Eeuo pipefail
 
 declare -r NPM_AUTHOR_URL="https://robertwpearce.com"
 declare -r NPM_EMAIL="me@robertwpearce.com"

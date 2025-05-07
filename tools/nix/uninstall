@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-set -o errexit
-set -o errtrace
-set -o nounset
-set -eou pipefail
+set -Eeuo pipefail
 
 function main {
   echo "nix uninstall: Follow the directions on https://nixos.org/manual/nix/stable/installation/uninstall.html"
