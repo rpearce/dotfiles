@@ -11,6 +11,7 @@ return {
       require("mason").setup()
 
       require("mason-lspconfig").setup({
+        automatic_enable = true,
         automatic_installation = true,
 
         ensure_installed = {
@@ -97,116 +98,73 @@ return {
 
     config = function()
       local lspconfig = require("lspconfig")
-      local mason_lspconfig = require("mason-lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
-      mason_lspconfig.setup_handlers({
-        astro = function()
-          lspconfig.astro.setup({
-            capabilities = capabilities,
+      -- Astro
+      lspconfig.astro.setup({ capabilities = capabilities })
+
+      -- Bash
+      lspconfig.bashls.setup({ capabilities = capabilities })
+
+      -- CSS
+      lspconfig.cssls.setup({ capabilities = capabilities })
+
+      -- Docker
+      lspconfig.dockerls.setup({ capabilities = capabilities })
+
+      -- Elixir
+      lspconfig.elixirls.setup({ capabilities = capabilities })
+
+      -- ESLint
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
           })
         end,
+      })
 
-        bashls = function()
-          lspconfig.bashls.setup({
-            capabilities = capabilities,
-          })
-        end,
+      -- Go
+      lspconfig.gopls.setup({ capabilities = capabilities })
 
-        cssls = function()
-          lspconfig.cssls.setup({
-            capabilities = capabilities,
-          })
-        end,
+      -- HTML
+      lspconfig.html.setup({ capabilities = capabilities })
 
-        dockerls = function()
-          lspconfig.dockerls.setup({
-            capabilities = capabilities,
-          })
-        end,
+      -- JSON
+      lspconfig.jsonls.setup({ capabilities = capabilities })
 
-        elixirls = function()
-          lspconfig.elixirls.setup({
-            capabilities = capabilities,
-          })
-        end,
-
-        eslint = function()
-          lspconfig.eslint.setup({
-            capabilities = capabilities,
-            on_attach = function(_, bufnr)
-              vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                command = "EslintFixAll",
-              })
-            end,
-          })
-        end,
-
-        gopls = function()
-          lspconfig.gopls.setup({
-            capabilities = capabilities,
-          })
-        end,
-
-        hls = function()
-          lspconfig.hls.setup({
-            capabilities = capabilities,
-          })
-        end,
-
-        html = function()
-          lspconfig.html.setup({
-            capabilities = capabilities,
-          })
-        end,
-
-        jsonls = function()
-          lspconfig.jsonls.setup({})
-        end,
-
-        lua_ls = function()
-          lspconfig.lua_ls.setup({
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = {
-                    "vim",
-                  },
-                },
-              },
+      -- Lua
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
             },
-          })
-        end,
+          },
+        },
+      })
 
-        rust_analyzer = function()
-          lspconfig.rust_analyzer.setup({
-            capabilities = capabilities,
-          })
-        end,
+      -- Rust
+      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 
-        ts_ls = function()
-          local inlayHints = {
-            includeInlayFunctionLikeReturnTypeHints = true,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includePropertyDeclarationTypeHints = true,
-          }
+      -- TypeScript
+      local inlayHints = {
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includePropertyDeclarationTypeHints = true,
+      }
 
-          lspconfig.ts_ls.setup({
-            capabilities = capabilities,
-            settings = {
-              typescript = {
-                inlayHints,
-              },
-              javascript = {
-                inlayHints,
-              },
-            },
-          })
-        end,
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+        settings = {
+          typescript = { inlayHints = inlayHints },
+          javascript = { inlayHints = inlayHints },
+        },
       })
     end,
   },
