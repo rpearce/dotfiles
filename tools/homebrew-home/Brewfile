@@ -1,6 +1,4 @@
 # Taps
-tap "homebrew/services"
-tap "1password/tap"
 tap "heroku/brew"
 
 # Brews

@@ -1,6 +1,5 @@
 # Taps
-tap "1password/tap"
-tap "homebrew/services"
+# ???
 
 # Brews
 # brew "bashcards"
@@ -82,7 +81,7 @@ cask "proxyman"
 cask "slack"
 cask "spotify"
 # cask "tableplus"
-cask "tailscale"
+cask "tailscale-app"
 # cask "tuple"
 # cask "virtualbox"
 # cask "virtualbox-extension-pack"

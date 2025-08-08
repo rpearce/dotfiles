@@ -32,7 +32,7 @@ return {
       sass = { "stylelint" },
       scss = { "stylelint" },
       sh = { "shellcheck" },
-      terraform = { "tflint" },
+      -- terraform = { "tflint" },
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
     },
