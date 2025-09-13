@@ -41,8 +41,18 @@ return {
   config = function(_, opts)
     local lint = require("lint")
 
-    -- Apply linters_by_ft from opts
-    lint.linters_by_ft = opts.linters_by_ft
+    -- Filter out unavailable linters
+    local available_linters = {}
+    for ft, linters in pairs(opts.linters_by_ft) do
+      available_linters[ft] = {}
+      for _, linter in ipairs(linters) do
+        if vim.fn.executable(linter) == 1 then
+          table.insert(available_linters[ft], linter)
+        end
+      end
+    end
+
+    lint.linters_by_ft = available_linters
 
     -- Setup golangci-lint
     local golangcilint = require("lint.linters.golangcilint")

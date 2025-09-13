@@ -39,7 +39,7 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "bash-language-server",
-          "eslint_d",
+          -- "eslint_d",
           "gofumpt",
           "hlint",
           "markdownlint",
