@@ -40,7 +40,9 @@ if [[ -d "/opt/homebrew" ]]; then
   export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@16/include"
 
   # Ruby
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+  # for r in /opt/homebrew/opt/ruby*/bin; do
+  #   [ -d "$r" ] && export PATH="$r:$PATH"
+  # done
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -102,4 +104,9 @@ ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
 # if has_cmd op; then
 #   export NPM_TOKEN=op://Private/NPM/credential
 #   export FONT_AWESOME_NPM_AUTH_TOKEN=op://Private/FontAwesome/credential
+# fi
+
+# mise
+# if has_cmd mise; then
+#   eval "$(mise activate)"
 # fi

@@ -7,7 +7,9 @@ function has_cmd {
 }
 
 function main {
-  if ! has_cmd rustc; then
+  if has_cmd rustup; then
+    rustup update
+  else
     # https://www.rust-lang.org/tools/install
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   fi

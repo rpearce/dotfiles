@@ -23,6 +23,7 @@ brew "gh"
 brew "git"
 brew "git-delta"
 #brew "git-filter-repo"
+# brew "gmp" # for ruby
 brew "gnu-sed"
 brew "gnupg"
 brew "golang"
@@ -33,12 +34,14 @@ brew "icu4c" # for ghcup
 brew "jq"
 brew "lazygit"
 brew "llvm@13" # for ghcup
+# brew "libyaml" # for ruby
 brew "luacheck"
 brew "luarocks"
 brew "mas"
-brew "mise"
+# brew "mise"
 brew "neovim"
 # brew "nodejs"
+# brew "openssl@3" # for ruby
 brew "pinentry-mac"
 # brew "pnpm"
 brew "postgresql@16"
