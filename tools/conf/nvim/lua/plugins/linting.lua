@@ -41,6 +41,10 @@ return {
   config = function(_, opts)
     local lint = require("lint")
 
+    -- Add "-x" to shellcheck flags
+    lint.linters.shellcheck.args = lint.linters.shellcheck.args or {}
+    table.insert(lint.linters.shellcheck.args, 1, "-x")
+
     -- Filter out unavailable linters
     local available_linters = {}
     for ft, linters in pairs(opts.linters_by_ft) do

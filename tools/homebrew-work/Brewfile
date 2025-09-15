@@ -24,10 +24,11 @@ brew "git-delta"
 brew "gnu-sed"
 brew "gnupg"
 brew "golang"
-brew "helix"
+# brew "helix"
 brew "htop"
 brew "icu4c" # for ghcup
 brew "jq"
+brew "lazygit"
 brew "llvm@13" # for ghcup
 brew "luacheck"
 brew "luarocks"
@@ -56,7 +57,7 @@ brew "zsh-syntax-highlighting"
 
 # Casks
 cask "1password"
-cask "1password/tap/1password-cli"
+# cask "1password/tap/1password-cli"
 cask "alacritty"
 cask "brave-browser"
 # cask "calibre"

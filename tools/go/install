@@ -8,6 +8,9 @@ function has_cmd {
 
 function main {
   if has_cmd go; then
+    CURRENT_GO=$(go version | awk '{print $3}' | sed 's/go//')
+    echo "Go version: $CURRENT_GO"
+
     # Go language server (used by editors)
     go install golang.org/x/tools/gopls@latest
 
