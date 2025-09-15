@@ -34,4 +34,3 @@ export GATSBY_TELEMETRY_DISABLED=1
 export NEXT_TELEMETRY_DISABLED=1
 export STORYBOOK_DISABLE_TELEMETRY=1
 export TELEMETRY_DISABLED=1
-. "/Users/bobert/.local/share/cargo/env"
