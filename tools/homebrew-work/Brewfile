@@ -33,6 +33,7 @@ brew "llvm@13" # for ghcup
 brew "luacheck"
 brew "luarocks"
 brew "mas"
+brew "mise"
 brew "neovim"
 # brew "nodejs"
 brew "pinentry-mac"
