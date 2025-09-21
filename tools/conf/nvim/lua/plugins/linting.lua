@@ -58,6 +58,16 @@ return {
 
     lint.linters_by_ft = available_linters
 
+    -- Setup luacheck to use the config file
+    local luacheck = require("lint.linters.luacheck")
+    luacheck.args = {
+      "--config", vim.fn.stdpath("config") .. "/.luacheckrc",
+      "--formatter", "plain",
+      "--codes",
+      "--ranges",
+      "-"
+    }
+
     -- Setup golangci-lint
     local golangcilint = require("lint.linters.golangcilint")
     golangcilint.append_fname = true
