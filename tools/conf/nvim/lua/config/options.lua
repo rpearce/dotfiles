@@ -36,3 +36,10 @@ end
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
+
+vim.filetype.add({
+  extension = {
+    ejs = "embedded_template",
+  },
+})
+

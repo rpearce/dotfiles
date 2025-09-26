@@ -19,6 +19,7 @@ return {
   opts = {
     formatters_by_ft = {
       css = { "prettier" },
+      ejs = { "prettier" },
       go = { "gofumpt", lsp_format = "fallback" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },

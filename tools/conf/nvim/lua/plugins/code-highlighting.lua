@@ -14,6 +14,7 @@ return {
         "css",
         "dockerfile",
         "elixir",
+        "embedded_template",
         "haskell",
         "heex",
         "html",

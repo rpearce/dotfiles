@@ -19,6 +19,7 @@ return {
     linters_by_ft = {
       bash = { "shellcheck" },
       css = { "stylelint" },
+      ejs = { "eslint_d" },
       elixir = { "mix" },
       eruby = { "erb_lint" },
       go = { "golangcilint" },
@@ -61,11 +62,13 @@ return {
     -- Setup luacheck to use the config file
     local luacheck = require("lint.linters.luacheck")
     luacheck.args = {
-      "--config", vim.fn.stdpath("config") .. "/.luacheckrc",
-      "--formatter", "plain",
+      "--config",
+      vim.fn.stdpath("config") .. "/.luacheckrc",
+      "--formatter",
+      "plain",
       "--codes",
       "--ranges",
-      "-"
+      "-",
     }
 
     -- Setup golangci-lint
