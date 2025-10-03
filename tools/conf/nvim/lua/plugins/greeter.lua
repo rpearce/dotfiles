@@ -33,7 +33,7 @@ return {
       dashboard.button("r", "  > Recent", ":Telescope oldfiles<cr>"),
       dashboard.button("t", "  > Todos", ":TodoTelescope<cr>"),
       dashboard.button("l", "  > Lazy", ":Lazy<cr>"),
-      dashboard.button("s", "  > Settings", ":Neotree reveal $XDG_CONFIG_HOME/nvim<cr>"),
+      dashboard.button("s", "  > Settings", ":Neotree reveal " .. vim.fn.expand("$XDG_CONFIG_HOME") .. "/nvim<cr>"),
       dashboard.button("q", "  > Quit", ":qa<cr>"),
     }
 
