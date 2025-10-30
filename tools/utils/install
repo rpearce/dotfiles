@@ -4,9 +4,19 @@ set -Eeuo pipefail
 
 CURRENT_DIR="$(dirname "$(realpath "$0")")"
 
+function has_cmd {
+  hash "${1}" 2> /dev/null
+}
+
 function main {
   mkdir -p "${XDG_CONFIG_HOME}/utils"
-  ln -sf "${CURRENT_DIR}/repo-sync" "${XDG_CONFIG_HOME}/utils/repo-sync"
+
+  if ! has_cmd repo-sync; then
+    curl -L https://github.com/rpearce/repo-sync/releases/latest/download/repo-sync-macos-aarch64.tar.gz \
+      | tar -xzf - -C "${XDG_CONFIG_HOME}/utils/"
+  fi
+
+  # ln -sf "${CURRENT_DIR}/repo-sync" "${XDG_CONFIG_HOME}/utils/repo-sync"
   ln -sf "${CURRENT_DIR}/retry" "${XDG_CONFIG_HOME}/utils/retry"
 }
 
