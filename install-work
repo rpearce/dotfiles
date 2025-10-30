@@ -16,7 +16,8 @@ function main {
   "${CURRENT_DIR}"/bin/tool install ssh
   "${CURRENT_DIR}"/bin/tool install homebrew-work
   "${CURRENT_DIR}"/bin/tool install nvm
-  "${CURRENT_DIR}"/bin/tool install go
+  # "${CURRENT_DIR}"/bin/tool install go
+  "${CURRENT_DIR}"/bin/tool install rust
   "${CURRENT_DIR}"/bin/tool install utils
 }
 
