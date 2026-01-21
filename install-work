@@ -19,6 +19,7 @@ function main {
   # "${CURRENT_DIR}"/bin/tool install go
   "${CURRENT_DIR}"/bin/tool install rust
   "${CURRENT_DIR}"/bin/tool install utils
+  "${CURRENT_DIR}"/bin/tool install claude
 }
 
 main
