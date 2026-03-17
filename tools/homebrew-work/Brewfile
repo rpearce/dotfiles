@@ -15,6 +15,7 @@ brew "elixir"
 brew "eza"
 brew "ffmpeg"
 brew "findutils"
+brew "fontconfig"
 brew "fx"
 brew "fzf"
 brew "gh"
@@ -26,10 +27,10 @@ brew "gnupg"
 brew "golang"
 # brew "helix"
 brew "htop"
-brew "icu4c" # for ghcup
+# brew "icu4c" # for ghcup
 brew "jq"
 brew "lazygit"
-brew "llvm@13" # for ghcup
+# brew "llvm@13" # for ghcup
 brew "luacheck"
 brew "luarocks"
 brew "mas"
@@ -69,6 +70,7 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-lilex-nerd-font"
 cask "font-roboto-mono-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
 cask "font-space-mono-nerd-font"
 cask "google-chrome"
 cask "loom"
@@ -90,13 +92,13 @@ cask "visual-studio-code"
 cask "zoom"
 
 # Mac App Store apps
-mas "Balance Lock", id: 1019371109
+# mas "Balance Lock", id: 1019371109
 # mas "Hush", id: 1544743900
-mas "Just Focus", id: 1142151959
-mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
+# mas "Just Focus", id: 1142151959
+# mas "Keynote", id: 409183694
+# mas "Kindle", id: 405399194
 # mas Medis = 1063631769;
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 
 # Extra config
 cask "firefox@developer-edition"

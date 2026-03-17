@@ -17,6 +17,7 @@ brew "eza"
 brew "ffmpeg"
 brew "findutils"
 brew "flyctl"
+brew "fontconfig"
 brew "fx"
 brew "fzf"
 brew "gh"
@@ -30,10 +31,10 @@ brew "golang"
 # brew "helix"
 brew "heroku"
 brew "htop"
-brew "icu4c" # for ghcup
+# brew "icu4c" # for ghcup
 brew "jq"
 brew "lazygit"
-brew "llvm@13" # for ghcup
+# brew "llvm@13" # for ghcup
 # brew "libyaml" # for ruby
 brew "luacheck"
 brew "luarocks"
@@ -83,6 +84,7 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-lilex-nerd-font"
 cask "font-roboto-mono-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
 cask "font-space-mono-nerd-font"
 cask "google-chrome"
 # cask "iterm2"

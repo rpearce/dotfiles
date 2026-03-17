@@ -13,7 +13,7 @@ function main {
 
   echo "macos install: Setting system preferences..."
 
-  local host_id="rpea-vinna"
+  local host_id="rpea-mahi"
 
   # Set user-friendly system name
   sudo scutil --set ComputerName "${host_id}"

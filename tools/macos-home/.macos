@@ -79,7 +79,7 @@ defaults write com.apple.finder QuitMenuItem -bool true
 chflags nohidden $HOME/Library
 
 # Finder - Show the /Volumes folder
-chflags nohidden /Volumes
+# chflags nohidden /Volumes
 
 # Dock - Automatically hide and show
 defaults write com.apple.dock autohide -bool true
