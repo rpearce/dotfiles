@@ -5,7 +5,7 @@
 osascript -e 'tell application "System Settings" to quit' || true
 
 # Set WiFi DNS Servers
-networksetup -setdnsservers Wi-Fi "1.1.1.1" "1.0.0.1" "8.8.8.8"
+networksetup -setdnsservers Wi-Fi "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4"
 
 # Enable subpixel font rendering on non-Apple LCDs
 # Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
