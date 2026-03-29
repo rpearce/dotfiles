@@ -25,6 +25,7 @@ function run_bundle {
 
 function switch_to_homebrew_zsh {
   if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
+    grep -qxF '/opt/homebrew/bin/zsh' /etc/shells || echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells
     sudo chsh -s "$(which zsh)" "$USER"
   fi
 }

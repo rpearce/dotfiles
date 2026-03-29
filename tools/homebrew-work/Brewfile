@@ -27,10 +27,8 @@ brew "gnupg"
 brew "golang"
 # brew "helix"
 brew "htop"
-# brew "icu4c" # for ghcup
 brew "jq"
 brew "lazygit"
-# brew "llvm@13" # for ghcup
 brew "luacheck"
 brew "luarocks"
 brew "mas"

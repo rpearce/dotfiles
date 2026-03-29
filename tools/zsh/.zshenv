@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Set XDG directories
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
@@ -8,13 +8,10 @@ export XDG_LIB_HOME="${XDG_LIB_HOME:-$HOME/.local/lib}"
 export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # Misc
-export EDITOR="vim"
+export EDITOR="nvim"
 export LANG="en_US.UTF-8"
-export TERM="screen-256color"
 
 # Set XDG for tools
-export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/asdfrc"
-export ASDF_DATA_DIR="${XDG_DATA_HOME}/asdf"
 export CABAL_CONFIG="${XDG_CONFIG_HOME}/cabal/config"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export CURL_HOME="${XDG_CONFIG_HOME}/curl"

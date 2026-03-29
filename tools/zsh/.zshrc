@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# has_cmd
+#   Description:
+#     Easily determine if a command exists
+#   Usage:
+#     if has_cmd docker; then
+#       alias dc="docker-compose"
+#       alias dcr="docker-compose run --rm"
+#     fi
 function has_cmd {
   hash "${1}" 2> /dev/null
 }
@@ -29,20 +37,10 @@ if [[ -d "/opt/homebrew" ]]; then
   # Fix the correct sed not being used
   export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 
-  # LLVM
-  export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
-  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/llvm@13/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/llvm@13/include"
-
   # PostgreSQL
   export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
   export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@16/lib"
   export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@16/include"
-
-  # Ruby
-  # for r in /opt/homebrew/opt/ruby*/bin; do
-  #   [ -d "$r" ] && export PATH="$r:$PATH"
-  # done
 
   # Source zsh tools
   zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -52,18 +50,10 @@ if [[ -d "/opt/homebrew" ]]; then
   zsh_syntax_highlighting_path="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
   [[ -s "$zsh_syntax_highlighting_path" ]] && source "$zsh_syntax_highlighting_path"
 
-  # Source asdf tools
-  asdf_script_path="/opt/homebrew/opt/asdf/libexec/asdf.sh"
-  [[ -s "$asdf_script_path" ]] && source "$asdf_script_path"
 fi
 
 # https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 export GPG_TTY=$(tty)
-
-# Set default editor to nvim if we have it
-if has_cmd nvim; then
-  export EDITOR="nvim"
-fi
 
 # Set default manpager to bat if we have it
 if has_cmd bat; then
@@ -107,6 +97,6 @@ ghcup_script_path="${XDG_DATA_HOME}/ghcup/env"
 # fi
 
 # mise
-# if has_cmd mise; then
-#   eval "$(mise activate)"
-# fi
+if has_cmd mise; then
+  eval "$(mise activate zsh)"
+fi

@@ -1,17 +1,5 @@
 #!/usr/bin/env zsh
 
-# has_cmd
-#   Description:
-#     Easily determine if a command exists
-#   Usage:
-#     if has_cmd docker; then
-#       alias dc="docker-compose"
-#       alias dcr="docker-compose run --rm"
-#     fi
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
-
 # is_mac
 #   Description:
 #     Determine if OSTYPE matches "darwin"
@@ -30,7 +18,7 @@ alias date-ymd="date +%Y-%m-%d"
 alias date-utc="date -u +%Y-%m-%dT%H:%M:%SZ"
 
 # List all file sizes
-alias duf="du -sh *"
+alias dush="du -sh *"
 
 # neovim
 if has_cmd nvim; then

@@ -38,7 +38,7 @@ function __git_arrows() {
 
 autoload -Uz vcs_info
 autoload -U colors && colors
-autoload -Uz compinit && compinit
+autoload -Uz compinit
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*'             actionformats       "%F{242}%b%f%F{cyan}|%f%a %m%u%c"

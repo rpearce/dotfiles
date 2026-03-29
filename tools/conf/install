@@ -69,8 +69,8 @@ function main {
   ln -sf "${CURRENT_DIR}/.ripgreprc" "${XDG_CONFIG_HOME}/ripgrep/config"
 
   # Stack
-  mkdir -p "${XDG_CONFIG_HOME}/.stack"
-  ln -sf "${CURRENT_DIR}/.stack.yaml" "${XDG_CONFIG_HOME}/.stack/config.yaml"
+  mkdir -p "${XDG_CONFIG_HOME}/stack"
+  ln -sf "${CURRENT_DIR}/.stack.yaml" "${XDG_CONFIG_HOME}/stack/config.yaml"
 
   # Tmux
   mkdir -p "${XDG_CONFIG_HOME}/tmux"

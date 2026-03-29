@@ -7,7 +7,7 @@
 	ci = "commit -a"
 	co = "checkout"
 	d = "diff"
-	dc = "diff --changed"
+	dc = "diff --cached"
 	ds = "diff --staged"
 	f = "fetch"
 	loll = "log --abbrev-commit --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --"
@@ -30,7 +30,7 @@
 
 [core]
 	editor = "nvim"
-	excludesfile = "$HOME/.config/git/ignore"
+	excludesfile = ~/.config/git/ignore
 	fsmonitor = true
 	pager = "delta"
 	untrackedcache = true
@@ -69,7 +69,7 @@
 	lineNumber = true
 
 [help]
-	autocorrect = 1
+	autocorrect = 10
 
 [init]
 	defaultBranch = "main"

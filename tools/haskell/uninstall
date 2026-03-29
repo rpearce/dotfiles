@@ -9,7 +9,6 @@ function has_cmd {
 function main {
   if has_cmd ghcup; then
     ghcup nuke
-    echo "haskell uninstall: consider removing icu4c and llvm@13 from Brewfile, ghcup script from .zshrc"
   fi
 }
 
