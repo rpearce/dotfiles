@@ -187,6 +187,21 @@ while :; do
 done | awk "$awkscript"
 }
 
+# yt-mp4
+#   Description:
+#     Download highest-quality QuickTime-compatible mp4 (H.264 + AAC)
+#   Usage:
+#     yt-mp4 <video-id-or-url>
+function yt-mp4 {
+  if ! has_cmd yt-dlp; then
+    echo "error: yt-dlp not installed" >&2
+    return 1
+  fi
+
+  yt-dlp -f "bv*[vcodec^=avc1]+ba[ext=m4a]/b[ext=mp4]" \
+    --merge-output-format mp4 "$@"
+}
+
 # Instagram movie function
 # function square_movie {
 #   ffmpeg -i $1 -an -vf "pad=max(iw\,ih):ow:(ow-iw)/2:(oh-ih)/2:color=white" $2

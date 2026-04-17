@@ -1,10 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-
+  branch = "main",
+  lazy = false,
   build = ":TSUpdate",
 
-  opts = {
-    ensure_installed = {
+  config = function()
+    require("nvim-treesitter").install({
       "astro",
       "bash",
       "c",
@@ -30,9 +31,12 @@ return {
       "vim",
       "vimdoc",
       "yaml",
-    },
-    highlight = { enable = true },
-    indent = { enable = true },
-    sync_install = false,
-  },
+    })
+
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function()
+        pcall(vim.treesitter.start)
+      end,
+    })
+  end,
 }
