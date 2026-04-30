@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//opt/homebrew/Cellar/tree-sitter/0.26.8/**)",
+      "Read(//opt/homebrew/Cellar/tree-sitter/**)"
+    ]
+  }
+}
