@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Read(//opt/homebrew/Cellar/tree-sitter/0.26.8/**)",
-      "Read(//opt/homebrew/Cellar/tree-sitter/**)"
+      "Read(//opt/homebrew/Cellar/tree-sitter/**)",
+      "mcp__plugin_articulate-mcp-notion-readonly_notion-litellm__notion_readonly-API-retrieve-a-page",
+      "mcp__plugin_articulate-mcp-notion-readonly_notion-litellm__notion_readonly-API-get-block-children"
     ]
   }
 }

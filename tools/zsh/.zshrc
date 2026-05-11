@@ -82,6 +82,11 @@ if [[ -s "${HOME}/.farc" ]]; then
  export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.farc")
 fi
 
+# Set a LITELLM_KEY
+if [[ -s "${HOME}/.litellm" ]]; then
+ export LITELLM_KEY=$(cat "${HOME}/.litellm")
+fi
+
 # Run the nix-daemon script
 nix_daemon_script_path="/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 [[ -s "${nix_daemon_script_path}" ]] && source "${nix_daemon_script_path}"

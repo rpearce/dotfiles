@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "articulate-cicd@articulate-tools": true,
+    "articulate-devex-sre@articulate-tools": true,
+    "articulate-sdlc@articulate-tools": true,
+    "articulate-a11y@articulate-tools": true,
+    "articulate-rise@articulate-tools": true
+  }
+}
