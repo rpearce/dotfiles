@@ -20,7 +20,7 @@ function install_or_update {
 }
 
 function run_bundle {
-  brew bundle --file="./Brewfile" --cleanup --zap
+  brew bundle --file="./Brewfile" --cleanup --force --zap
 }
 
 function switch_to_homebrew_zsh {

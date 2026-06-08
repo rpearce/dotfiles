@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# Fix fpath: homebrew zsh may have a stale Cellar path baked in after upgrades
+if [[ -d /opt/homebrew/share/zsh/functions ]]; then
+  fpath=(/opt/homebrew/share/zsh/functions $fpath)
+fi
+
 # Set XDG directories
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
