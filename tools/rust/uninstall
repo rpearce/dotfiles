@@ -3,7 +3,9 @@
 set -Eeuo pipefail
 
 function main {
-  rustup self uninstall
+  if command -v rustup >/dev/null; then
+    rustup self uninstall -y
+  fi
 }
 
 main

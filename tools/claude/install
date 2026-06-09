@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-set -eou pipefail
-
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
+set -Eeuo pipefail
 
 function main {
-  if ! has_cmd claude; then
-    curl -fsSL https://claude.ai/install.sh | bash
+  if ! command -v claude >/dev/null; then
+    curl -fsSL --proto '=https' --tlsv1.2 https://claude.ai/install.sh | bash
   fi
 }
 

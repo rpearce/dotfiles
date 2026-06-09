@@ -1,3 +1,4 @@
+**/Brewfile.lock.json
 .DS_Store
 .claude/settings.local.json
-conf/repos-*.txt
+tools/utils/repos-*.txt

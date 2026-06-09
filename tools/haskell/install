@@ -2,13 +2,16 @@
 
 set -Eeuo pipefail
 
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
-
 function main {
-  if ! has_cmd ghcup; then
-    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+  if ! command -v ghcup >/dev/null; then
+    # Non-interactive so an unattended `./install` doesn't block on prompts.
+    # The env vars must be on the `sh` side of the pipe (that's what runs the
+    # bootstrap script), not the curl side.
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org \
+      | BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
+        BOOTSTRAP_HASKELL_INSTALL_HLS=1 \
+        BOOTSTRAP_HASKELL_ADJUST_BASHRC=N \
+        sh
   fi
 }
 

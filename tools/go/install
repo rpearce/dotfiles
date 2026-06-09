@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-set -eou pipefail
-
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
+set -Eeuo pipefail
 
 function main {
-  if has_cmd go; then
+  if command -v go >/dev/null; then
     CURRENT_GO=$(go version | awk '{print $3}' | sed 's/go//')
     echo "Go version: $CURRENT_GO"
 

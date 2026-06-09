@@ -4,14 +4,12 @@ set -Eeuo pipefail
 
 declare -r SSH_EMAIL="me@robertwpearce.com"
 declare -r SSH_TYPE="ed25519"
-
-function is_mac {
-  [[ "$OSTYPE" =~ "darwin" ]] || return 1
-}
+declare -r SSH_KEY="${HOME}/.ssh/id_${SSH_TYPE}"
+declare -r SSH_CONFIG="${HOME}/.ssh/config"
 
 function setup_ssh_key {
   echo "ssh install: Setting up key..."
-  ssh-keygen -t ed25519 -C "${SSH_EMAIL}"
+  ssh-keygen -t "${SSH_TYPE}" -f "${SSH_KEY}" -C "${SSH_EMAIL}"
 }
 
 function start_ssh_agent {
@@ -21,24 +19,39 @@ function start_ssh_agent {
 
 function store_in_apple_keychain {
   echo "ssh install: writing config to store passphrases in keychain"
-  cat <<EOF > "${HOME}/.ssh/config"
+
+  # Don't clobber an existing (possibly curated) config. Back it up once, then
+  # append our block only if it isn't already present.
+  if [[ -f "${SSH_CONFIG}" ]] && ! grep -qE '^[[:space:]]*AddKeysToAgent[[:space:]]' "${SSH_CONFIG}"; then
+    cp "${SSH_CONFIG}" "${SSH_CONFIG}.pre-dotfiles"
+    echo "  backed up existing config -> ${SSH_CONFIG}.pre-dotfiles"
+  fi
+
+  if [[ ! -f "${SSH_CONFIG}" ]] || ! grep -qE '^[[:space:]]*AddKeysToAgent[[:space:]]' "${SSH_CONFIG}"; then
+    cat <<EOF >> "${SSH_CONFIG}"
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile "${HOME}/.ssh/id_${SSH_TYPE}"
+  IdentityFile ${SSH_KEY}
 EOF
+  fi
+  chmod 600 "${SSH_CONFIG}"
 
   echo "ssh: Adding private key to ssh-agent and storing passphrase in keychain"
-  ssh-add --apple-use-keychain "${HOME}/.ssh/id_${SSH_TYPE}"
+  ssh-add --apple-use-keychain "${SSH_KEY}"
 }
 
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 function main {
-  if [[ ! -s "${HOME}/.ssh/id_${SSH_TYPE}" ]]; then
+  # ~/.ssh must exist (and be 0700) before ssh-keygen / writing the config.
+  mkdir -p "${HOME}/.ssh"
+  chmod 700 "${HOME}/.ssh"
+
+  if [[ ! -s "${SSH_KEY}" ]]; then
     setup_ssh_key
     start_ssh_agent
 
-    if is_mac; then
+    if [[ "$(uname)" == "Darwin" ]]; then
       store_in_apple_keychain
     fi
   fi

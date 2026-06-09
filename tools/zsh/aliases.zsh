@@ -1,16 +1,5 @@
 #!/usr/bin/env zsh
 
-# is_mac
-#   Description:
-#     Determine if OSTYPE matches "darwin"
-#   Usage:
-#     if is_mac; then
-#       # do something on macOS
-#     fi
-function is_mac {
-  [[ "$OSTYPE" =~ "darwin" ]]
-}
-
 # Get YYYY-MM-DD date
 alias date-ymd="date +%Y-%m-%d"
 
@@ -57,7 +46,7 @@ fi
 
 # gpg
 if has_cmd gpg; then
-  alias gpg-fix="gpgconf --kill gpg-agent && gpg-agent --pinentry-program=$(which pinentry-mac) --daemon"
+  alias gpg-fix='gpgconf --kill gpg-agent && gpg-agent --pinentry-program=$(command -v pinentry-mac) --daemon'
 fi
 
 # Network
@@ -126,7 +115,7 @@ function gz {
   printf "orig: %d bytes\ngzip: %d bytes\nsave: %2.0f%% (%2.0f%%)\n" "$origsize" "$gzipsize" "$saved" "$ratio"
 }
 
-if is_mac; then
+if [[ "$(uname)" == "Darwin" ]]; then
   # Open manpage as PDF on macOS
   function manpdf {
     man -t "${1}" | open -f -a /Applications/Preview.app/

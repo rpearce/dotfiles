@@ -2,12 +2,8 @@
 
 set -Eeuo pipefail
 
-function is_mac {
-  [[ "$OSTYPE" =~ "darwin" ]] || return 1
-}
-
 function main {
-  if ! is_mac; then
+  if ! [[ "$(uname)" == "Darwin" ]]; then
     return
   fi
 

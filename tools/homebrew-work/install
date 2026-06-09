@@ -2,20 +2,12 @@
 
 set -Eeuo pipefail
 
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
-
-function is_mac {
-  [[ "$OSTYPE" =~ "darwin" ]] || return 1
-}
-
 function install_or_update {
-  if has_cmd brew; then
+  if command -v brew >/dev/null; then
     brew update
   else
     export PATH="/opt/homebrew/bin:${PATH}"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL --proto '=https' --tlsv1.2 https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 }
 
@@ -24,13 +16,19 @@ function run_bundle {
 }
 
 function switch_to_homebrew_zsh {
-  if is_mac && has_cmd zsh && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
-    sudo chsh -s "$(which zsh)" "$USER"
+  if [[ "$(uname)" == "Darwin" ]] && command -v zsh >/dev/null && [[ "$SHELL" != "/opt/homebrew/bin/zsh" ]]; then
+    # Resolve the zsh path once and use it for the /etc/shells entry AND chsh, so
+    # the registered shell always matches the one we switch to. Registering it in
+    # /etc/shells first is required or `chsh` refuses it and aborts under set -e.
+    local zsh_path
+    zsh_path="$(command -v zsh)"
+    grep -qxF "${zsh_path}" /etc/shells || echo "${zsh_path}" | sudo tee -a /etc/shells > /dev/null
+    sudo chsh -s "${zsh_path}" "$USER"
   fi
 }
 
 function upgrade_and_cleanup {
-  if has_cmd brew; then
+  if command -v brew >/dev/null; then
     brew update && brew upgrade && brew cleanup
   fi
 }

@@ -3,8 +3,8 @@
 set -Eeuo pipefail
 
 function main {
-  echo "ssh uninstall: removing \"${HOME}/.ssh\""
-  rm -rf "${HOME}/.ssh"
+  echo "ssh uninstall: removing only \"${HOME}/.ssh/config\" (keys left untouched)"
+  rm -f "${HOME}/.ssh/config"
 }
 
 main

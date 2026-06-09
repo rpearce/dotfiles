@@ -3,7 +3,27 @@
 set -Eeuo pipefail
 
 function main {
-  echo "TODO: uninstall system things!"
+  if ! [[ "$(uname)" == "Darwin" ]]; then
+    return
+  fi
+
+  echo "macos uninstall: reverting the easily-reversible system tweaks..."
+
+  # NOTE: the work install never pins Wi-Fi DNS (that is gated to personal in
+  # .macos), so this uninstall must NOT reset DNS — doing so would clobber
+  # corporate/manually-set resolvers it never touched.
+
+  # Undo the caps-lock -> control remap (current session)
+  hidutil property --set '{"UserKeyMapping":[]}' > /dev/null || true
+
+  # Remove the persistent remap LaunchAgent
+  caps_plist="${HOME}/Library/LaunchAgents/com.local.KeyRemapping.plist"
+  if [[ -f "${caps_plist}" ]]; then
+    launchctl unload "${caps_plist}" 2>/dev/null || true
+    rm -f "${caps_plist}"
+  fi
+
+  echo "note: 'defaults write' preferences and the computer hostname are NOT auto-reverted."
 }
 
 main
