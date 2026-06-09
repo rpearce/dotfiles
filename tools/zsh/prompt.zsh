@@ -13,7 +13,9 @@ function __git_branch_status() {
 }
 
 function __git_repo_initialized() {
-  git ls-files >& /dev/null
+  # Cheap "are we inside a work tree?" check. `git ls-files` would enumerate the
+  # entire index on every prompt render.
+  git rev-parse --is-inside-work-tree >& /dev/null
 }
 
 function __git_can_parse_rev() {
@@ -39,6 +41,10 @@ function __git_arrows() {
 autoload -Uz vcs_info
 autoload -U colors && colors
 autoload -Uz compinit
+
+# Ensure the completion cache dir exists, otherwise compinit can't persist its
+# dump and the whole completion system is recompiled on every shell startup.
+[[ -d "${XDG_CACHE_HOME}/zsh" ]] || mkdir -p "${XDG_CACHE_HOME}/zsh"
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*'             actionformats       "%F{242}%b%f%F{cyan}|%f%a %m%u%c"

@@ -37,24 +37,22 @@ function main {
     ln -sf "${CURRENT_DIR}/.gitconfig-personal" "${XDG_CONFIG_HOME}/git/config"
   fi
 
-  # GPG
+  # GPG (must be 0700 or gpg-agent refuses to use it)
   mkdir -p "${HOME}/.gnupg"
+  chmod 700 "${HOME}/.gnupg"
   ln -sf "${CURRENT_DIR}/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 
   # Nix
   mkdir -p "${XDG_CONFIG_HOME}/nix"
   ln -sf "${CURRENT_DIR}/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
 
-  # Neovim
-  #mkdir -p "${XDG_CONFIG_HOME}/nvim"
-  #ln -sf "${CURRENT_DIR}/.vim-plugins.vim" "${XDG_CONFIG_HOME}/nvim/vim-plugins.vim"
-  #ln -sf "${CURRENT_DIR}/.vimrc" "${XDG_CONFIG_HOME}/nvim/init.vim"
-  ln -sf "${CURRENT_DIR}/nvim" "${XDG_CONFIG_HOME}"
-
-  # Vim
-  #mkdir -p "${XDG_CONFIG_HOME}/vim"
-  #ln -sf "${BASEDIR}/conf/.vim-plugins.vim" "${XDG_CONFIG_HOME}/vim/vim-plugins.vim"
-  #ln -sf "${BASEDIR}/conf/.vimrc" "${XDG_CONFIG_HOME}/vim/vimrc"
+  # Neovim. Use an explicit destination + `ln -sfn` so re-runs replace the
+  # symlink in place rather than nesting (nvim/nvim); if a real nvim dir already
+  # exists, remove it first so `ln` doesn't abort the whole install.
+  if [[ -d "${XDG_CONFIG_HOME}/nvim" && ! -L "${XDG_CONFIG_HOME}/nvim" ]]; then
+    rm -rf "${XDG_CONFIG_HOME}/nvim"
+  fi
+  ln -sfn "${CURRENT_DIR}/nvim" "${XDG_CONFIG_HOME}/nvim"
 
   # PostgreSQL
   mkdir -p "${XDG_CONFIG_HOME}/pg"

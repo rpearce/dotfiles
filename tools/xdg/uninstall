@@ -3,11 +3,7 @@
 set -Eeuo pipefail
 
 function main {
-  rm -rf "${XDG_CACHE_HOME}"
-  rm -rf "${XDG_CONFIG_HOME}"
-  rm -rf "${XDG_DATA_HOME}"
-  rm -rf "${XDG_LIB_HOME}"
-  rm -rf "${XDG_STATE_HOME}"
+  echo "xdg uninstall: no-op (would remove configs and data)"
 }
 
 main

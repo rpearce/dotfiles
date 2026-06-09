@@ -4,15 +4,13 @@ set -Eeuo pipefail
 
 declare -r NPM_AUTHOR_URL="https://robertwpearce.com"
 declare -r NPM_EMAIL="me@robertwpearce.com"
-declare -r NPM_LICENSE="BSD-3"
+# NOTE: this script is named `setup` (not `install`) and is not wired into the
+# install orchestrator; run it by hand after a node toolchain exists.
+declare -r NPM_LICENSE="BSD-3-Clause" # valid SPDX identifier
 declare -r NPM_NAME="Robert Pearce"
 
-function has_cmd {
-  hash "${1}" 2> /dev/null
-}
-
 function main {
-  if has_cmd npm; then
+  if command -v npm >/dev/null; then
     npm config set init-author-name "${NPM_NAME}"
     npm config set init-author-email "${NPM_EMAIL}"
     npm config set init-author-url "${NPM_AUTHOR_URL}"

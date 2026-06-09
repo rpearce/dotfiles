@@ -37,7 +37,6 @@ brew "luarocks"
 brew "mas"
 brew "mise"
 brew "neovim"
-brew "tree-sitter-cli"
 # brew "nodejs"
 brew "openssl@3" # for ruby
 brew "pinentry-mac"

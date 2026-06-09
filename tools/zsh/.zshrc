@@ -9,8 +9,11 @@
 #       alias dcr="docker-compose run --rm"
 #     fi
 function has_cmd {
-  hash "${1}" 2> /dev/null
+  command -v "${1}" >/dev/null
 }
+
+# Keep PATH free of duplicates when this file is re-sourced
+typeset -U path PATH
 
 # Homebrew (must come before autoload/compinit in prompt.zsh)
 if [[ -d "/opt/homebrew" ]]; then
@@ -76,7 +79,7 @@ fi
 
 # Set an NPM_TOKEN
 if [[ -s "${HOME}/.npmrc" ]]; then
- export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2)
+  export NPM_TOKEN=$(grep -m1 '^//registry.npmjs.org/:_authToken=' "${HOME}/.npmrc" | cut -d= -f2-)
 fi
 
 # Set a FONT_AWESOME_NPM_AUTH_TOKEN
