@@ -77,19 +77,15 @@ if [[ -d "${XDG_CONFIG_HOME}/nvm" ]]; then
   [ -s "${NVM_DIR}/bash_completion" ] && source "${NVM_DIR}/bash_completion"
 fi
 
-# Set an NPM_TOKEN
+# Set an NPM_TOKEN & FONT_AWESOME_NPM_AUTH_TOKEN
 if [[ -s "${HOME}/.npmrc" ]]; then
-  export NPM_TOKEN=$(grep -m1 '^//registry.npmjs.org/:_authToken=' "${HOME}/.npmrc" | cut -d= -f2-)
-fi
-
-# Set a FONT_AWESOME_NPM_AUTH_TOKEN
-if [[ -s "${HOME}/.farc" ]]; then
- export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.farc")
+  export NPM_TOKEN=$(cat "${HOME}/.npmrc" | grep //registry.npmjs.org/:_authToken | cut -d "=" -f 2-)
+  export FONT_AWESOME_NPM_AUTH_TOKEN=$(cat "${HOME}/.npmrc" | grep //npm.fontawesome.com/:_authToken | cut -d "=" -f 2-)
 fi
 
 # Set a LITELLM_KEY
 if [[ -s "${HOME}/.litellm" ]]; then
- export LITELLM_KEY=$(cat "${HOME}/.litellm")
+  export LITELLM_KEY=$(cat "${HOME}/.litellm")
 fi
 
 # Run the nix-daemon script
