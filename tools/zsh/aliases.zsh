@@ -36,6 +36,10 @@ if has_cmd docker; then
   }
 fi
 
+if has_cmd claude; then
+  alias claude-fallback='claude --settings ~/.claude/fallback.json'
+fi
+
 # 1Password
 if has_cmd op; then
   alias op-art="op run --no-masking -- art"
