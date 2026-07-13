@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+function main {
+  rm -f "${HOME}/.local/bin/codex"
+  rm -f "${HOME}/.local/bin/codex-code-mode-host"
+  rm -rf "${HOME}/.local/share/codex"
+  rm -rf "${HOME}/.codex"
+}
+
+main

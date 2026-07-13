@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+function main {
+  if ! command -v codex >/dev/null; then
+    curl -fsSL --proto '=https' --tlsv1.2 https://chatgpt.com/codex/install.sh | bash
+  fi
+}
+
+main
