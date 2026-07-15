@@ -1,5 +1,5 @@
 # Taps
-tap "heroku/brew"
+# tap "heroku/brew"
 
 # Brews
 # brew "bashcards"
@@ -27,7 +27,7 @@ brew "gnu-sed"
 brew "gnupg"
 brew "golang"
 # brew "helix"
-brew "heroku"
+# brew "heroku"
 brew "htop"
 brew "jq"
 brew "lazygit"
@@ -47,7 +47,6 @@ brew "rust-analyzer"
 #brew "speedtest-cli"
 brew "spotify_player"
 brew "shellcheck"
-brew "supabase/tap/supabase"
 brew "tlrc"
 brew "tmux"
 brew "tmux-mem-cpu-load"
