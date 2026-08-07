@@ -41,7 +41,8 @@ family = "SauceCodePro Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "SpaceMono Nerd Font"
+# family = "SpaceMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [scrolling]
