@@ -29,15 +29,18 @@ foreground = "#f8f8f2"
 size = 13.0
 
 [font.bold]
-family = "SauceCodePro Nerd Font"
+# family = "SauceCodePro Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "SauceCodePro Nerd Font"
+# family = "SauceCodePro Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "SauceCodePro Nerd Font"
+# family = "SauceCodePro Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
