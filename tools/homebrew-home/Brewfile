@@ -30,6 +30,7 @@ brew "golang"
 brew "herdr"
 # brew "heroku"
 brew "htop"
+brew "hunk"
 brew "jq"
 brew "lazygit"
 brew "libyaml" # for ruby
