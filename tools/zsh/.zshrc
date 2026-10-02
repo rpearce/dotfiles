@@ -25,9 +25,9 @@ if [[ -d "/opt/homebrew" ]]; then
   export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 
   # PostgreSQL
-  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@17/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@17/include"
+  export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+  export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/postgresql@18/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/postgresql@18/include"
 fi
 
 # Add bin paths to PATH
