@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+MAN_DIR="${HOME}/.local/share/man"
+ZSH_FUNCTIONS_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/site-functions"
+
+function main {
+  rm -rf "/Applications/Alacritty.app"
+  rm -f "${HOME}/.local/bin/alacritty"
+  rm -f "${HOME}/.terminfo/61/alacritty"*
+  rm -f "${MAN_DIR}"/man*/alacritty*.gz
+  rm -f "${ZSH_FUNCTIONS_DIR}/_alacritty"
+}
+
+main

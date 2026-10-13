@@ -38,6 +38,9 @@ fi
 [[ -d "${XDG_DATA_HOME}/yarn/bin" ]] && export PATH="${XDG_DATA_HOME}/yarn/bin:${PATH}"
 [[ -d "${XDG_CONFIG_HOME}/utils" ]] && export PATH="${XDG_CONFIG_HOME}/utils:${PATH}"
 
+# Add user completions (e.g. _alacritty) to fpath (must come before compinit in prompt.zsh)
+[[ -d "${XDG_DATA_HOME}/zsh/site-functions" ]] && fpath=("${XDG_DATA_HOME}/zsh/site-functions" $fpath)
+
 # Source our zsh configs
 if [[ -d "$ZDOTDIR" ]]; then
   source "${ZDOTDIR}/aliases.zsh"

@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# Build Alacritty from source. Upstream's release build fails the macOS
+# Gatekeeper check, but a locally built app is never quarantined, so Gatekeeper
+# leaves it alone.
+
+REPO="https://github.com/alacritty/alacritty.git"
+APP="/Applications/Alacritty.app"
+RESOURCES="${APP}/Contents/Resources"
+BIN_DIR="${HOME}/.local/bin"
+MAN_DIR="${HOME}/.local/share/man"
+TERMINFO_DIR="${HOME}/.terminfo/61"
+ZSH_FUNCTIONS_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/site-functions"
+
+# rustup may have only just been installed by the rust tool in this same run,
+# and on a fresh machine homebrew's PATH export (for scdoc) died with its own
+# process
+export PATH="${CARGO_HOME:-${HOME}/.cargo}/bin:${PATH}:/opt/homebrew/bin"
+
+function latest_tag {
+  git ls-remote --tags --refs "${REPO}" 'v*' \
+    | awk -F/ '{print $3}' \
+    | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' \
+    | sort -V \
+    | tail -1
+}
+
+function installed_tag {
+  if [[ -x "${APP}/Contents/MacOS/alacritty" ]]; then
+    "${APP}/Contents/MacOS/alacritty" --version | awk '{print "v" $2}'
+  fi
+}
+
+function build {
+  local tag="${1}"
+
+  # Without scdoc, `make app` still succeeds but writes empty man pages
+  local dep
+  for dep in cargo scdoc; do
+    if ! command -v "${dep}" >/dev/null; then
+      echo "alacritty: ${dep} not found" >&2
+      exit 1
+    fi
+  done
+
+  BUILD_DIR="$(mktemp -d)"
+  trap 'rm -rf "${BUILD_DIR}"' EXIT
+
+  echo "Building Alacritty ${tag} from source"
+  git -c advice.detachedHead=false clone --quiet --depth 1 --branch "${tag}" "${REPO}" "${BUILD_DIR}"
+
+  # The Makefile expects cargo's output in ./target, whatever cargo is
+  # configured to do elsewhere
+  CARGO_TARGET_DIR="${BUILD_DIR}/target" make -C "${BUILD_DIR}" app
+}
+
+function install_app {
+  # Copy next to the old app first so a failed copy leaves it untouched. No
+  # .app suffix, so LaunchServices ignores the bundle until it's complete.
+  local staged="${APP}.new"
+  rm -rf "${staged}"
+  ditto "${BUILD_DIR}/target/release/osx/Alacritty.app" "${staged}"
+
+  rm -rf "${APP}"
+  mv "${staged}" "${APP}"
+}
+
+function link_extras {
+  # Drop the previous release's links first, so anything a release removes
+  # doesn't linger
+  rm -f "${TERMINFO_DIR}/alacritty"* "${MAN_DIR}"/man*/alacritty*.gz
+
+  # CLI (for `alacritty msg`, etc.)
+  mkdir -p "${BIN_DIR}"
+  ln -sf "${APP}/Contents/MacOS/alacritty" "${BIN_DIR}/alacritty"
+
+  # Terminfo
+  mkdir -p "${TERMINFO_DIR}"
+  ln -sf "${RESOURCES}/61/"* "${TERMINFO_DIR}/"
+
+  # Every man page the release ships, in whichever section it belongs. man
+  # finds these via ~/.local/bin being on PATH.
+  local page section
+  for page in "${RESOURCES}"/*.[0-9].gz; do
+    [[ -e "${page}" ]] || continue
+    section="${page%.gz}"
+    section="${section##*.}"
+    mkdir -p "${MAN_DIR}/man${section}"
+    ln -sf "${page}" "${MAN_DIR}/man${section}/"
+  done
+
+  # Zsh completion (added to fpath in tools/zsh/.zshrc)
+  mkdir -p "${ZSH_FUNCTIONS_DIR}"
+  ln -sf "${RESOURCES}/completions/_alacritty" "${ZSH_FUNCTIONS_DIR}/_alacritty"
+}
+
+function main {
+  local tag
+  if ! tag="$(latest_tag)"; then
+    echo "alacritty: couldn't find the latest release tag" >&2
+    exit 1
+  fi
+
+  if [[ "$(installed_tag)" == "${tag}" ]]; then
+    echo "Alacritty ${tag} is already installed"
+  else
+    build "${tag}"
+    install_app
+  fi
+
+  link_extras
+}
+
+main
