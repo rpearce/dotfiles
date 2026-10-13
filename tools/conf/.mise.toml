@@ -1,0 +1,11 @@
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+go_set_gobin = false
+
+[settings.ruby]
+compile = true
+
+[tools]
+actionlint = "1.7.12"
+go = "1.27.2"
+ruby = "4.0.7"

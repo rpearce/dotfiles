@@ -42,6 +42,10 @@ function main {
   chmod 700 "${HOME}/.gnupg"
   ln -sf "${CURRENT_DIR}/.gpg-agent.conf" "${HOME}/.gnupg/gpg-agent.conf"
 
+  # Mise
+  mkdir -p "${XDG_CONFIG_HOME}/mise"
+  ln -sf "${CURRENT_DIR}/.mise.toml" "${XDG_CONFIG_HOME}/mise/config.toml"
+
   # Nix
   mkdir -p "${XDG_CONFIG_HOME}/nix"
   ln -sf "${CURRENT_DIR}/.nix.conf" "${XDG_CONFIG_HOME}/nix/nix.conf"
