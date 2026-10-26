@@ -36,6 +36,7 @@ brew "lazygit"
 brew "libyaml" # for ruby
 brew "luacheck"
 brew "luarocks"
+brew "mailpit"
 brew "mas"
 brew "mise"
 brew "neovim"
